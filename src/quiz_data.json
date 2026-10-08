@@ -1,0 +1,971 @@
+[
+  {
+    "id": 1,
+    "unlabeled_image": "s01_ulb.jpg",
+    "labeled_image": "s01.jpg",
+    "questions": [
+      {
+        "letter": "A",
+        "answer": "Nucleus gracilis"
+      },
+      {
+        "letter": "B",
+        "answer": "Nucleus cuneatus"
+      },
+      {
+        "letter": "C",
+        "answer": "Spinal Trigeminal Nucleus"
+      },
+      {
+        "letter": "D",
+        "answer": "ALS"
+      },
+      {
+        "letter": "F",
+        "answer": "Spinal Trigeminal tract"
+      },
+      {
+        "letter": "G",
+        "answer": "Fasciculus cuneatus"
+      },
+      {
+        "letter": "H",
+        "answer": "Fasciculus gracilis"
+      }
+    ]
+  },
+  {
+    "id": 2,
+    "unlabeled_image": "s03_ulb.jpg",
+    "labeled_image": "s03.jpg",
+    "questions": [
+      {
+        "letter": "A",
+        "answer": "Nucleus gracilis"
+      },
+      {
+        "letter": "B",
+        "answer": "Nucleus cuneatus"
+      },
+      {
+        "letter": "C",
+        "answer": "Fasciculus cuneatus"
+      },
+      {
+        "letter": "D",
+        "answer": "Spinal trigeminal nucleus"
+      },
+      {
+        "letter": "E",
+        "answer": "Spinal Trigeminal tract"
+      },
+      {
+        "letter": "F",
+        "answer": "ALS"
+      },
+      {
+        "letter": "H",
+        "answer": "Medial lemniscus"
+      },
+      {
+        "letter": "I",
+        "answer": "Decussation of medial lemniscus"
+      },
+      {
+        "letter": "J",
+        "answer": "Internal arcuate fibers"
+      }
+    ]
+  },
+  {
+    "id": 3,
+    "unlabeled_image": "s05_ulb.jpg",
+    "labeled_image": "s05.jpg",
+    "questions": [
+      {
+        "letter": "A",
+        "answer": "Nucleus gracilis"
+      },
+      {
+        "letter": "B",
+        "answer": "Spinal Trigeminal tract"
+      },
+      {
+        "letter": "C",
+        "answer": "Spinal trigeminal nucleus"
+      },
+      {
+        "letter": "D",
+        "answer": "ALS"
+      },
+      {
+        "letter": "E",
+        "answer": "Internal arcuate fibers"
+      },
+      {
+        "letter": "F",
+        "answer": "Medial lemniscus"
+      },
+      {
+        "letter": "G",
+        "answer": "Fasciculus cuneatus"
+      },
+      {
+        "letter": "H",
+        "answer": "Nucleus cuneatus"
+      }
+    ]
+  },
+  {
+    "id": 4,
+    "unlabeled_image": "s07_ulb.jpg",
+    "labeled_image": "s07.jpg",
+    "questions": [
+      {
+        "letter": "A",
+        "answer": "Fourth ventricle"
+      },
+      {
+        "letter": "F",
+        "answer": "ALS"
+      },
+      {
+        "letter": "G",
+        "answer": "Medial lemniscus"
+      },
+      {
+        "letter": "H",
+        "answer": "VTT"
+      },
+      {
+        "letter": "I",
+        "answer": "Spinal Trigeminal tract"
+      }
+    ]
+  },
+  {
+    "id": 5,
+    "unlabeled_image": "s09_ulb.jpg",
+    "labeled_image": "s09.jpg",
+    "questions": [
+      {
+        "letter": "D",
+        "answer": "Spinal Trigeminal nucleus/tract"
+      },
+      {
+        "letter": "G",
+        "answer": "ALS"
+      },
+      {
+        "letter": "H",
+        "answer": "VTT"
+      },
+      {
+        "letter": "I",
+        "answer": "Medial lemniscus"
+      }
+    ]
+  },
+  {
+    "id": 6,
+    "unlabeled_image": "s12_ulb.jpg",
+    "labeled_image": "s12.jpg",
+    "questions": [
+      {
+        "letter": "E",
+        "answer": "ALS"
+      },
+      {
+        "letter": "F",
+        "answer": "VTT"
+      },
+      {
+        "letter": "G",
+        "answer": "Medial lemniscus"
+      },
+      {
+        "letter": "H",
+        "answer": "Spinal trigeminal tract"
+      }
+    ]
+  },
+  {
+    "id": 7,
+    "unlabeled_image": "s15a_ulb.jpg",
+    "labeled_image": "s15a.jpg",
+    "questions": [
+      {
+        "letter": "C",
+        "answer": "Medial lemniscus"
+      },
+      {
+        "letter": "D",
+        "answer": "VTT"
+      },
+      {
+        "letter": "E",
+        "answer": "ALS"
+      },
+      {
+        "letter": "F",
+        "answer": "Spinal trigeminal tract"
+      }
+    ]
+  },
+  {
+    "id": 8,
+    "unlabeled_image": "s17_ulb.jpg",
+    "labeled_image": "s17.jpg",
+    "questions": [
+      {
+        "letter": "B",
+        "answer": "Fibers of Trigeminal nerve"
+      },
+      {
+        "letter": "C",
+        "answer": "Medial lemniscus"
+      },
+      {
+        "letter": "D",
+        "answer": "VTT"
+      },
+      {
+        "letter": "E",
+        "answer": "Trigeminal nerve"
+      },
+      {
+        "letter": "F",
+        "answer": "ALS"
+      },
+      {
+        "letter": "G",
+        "answer": "Trigeminal Motor nucleus"
+      },
+      {
+        "letter": "H",
+        "answer": "Chief sensory nucleus of V"
+      }
+    ]
+  },
+  {
+    "id": 9,
+    "unlabeled_image": "s21_ulb.jpg",
+    "labeled_image": "s21.jpg",
+    "questions": [
+      {
+        "letter": "A",
+        "answer": "Fourth ventricle"
+      },
+      {
+        "letter": "D",
+        "answer": "VTT"
+      },
+      {
+        "letter": "E",
+        "answer": "Medial lemniscus"
+      },
+      {
+        "letter": "F",
+        "answer": "ALS"
+      }
+    ]
+  },
+  {
+    "id": 10,
+    "unlabeled_image": "s23_ulb.jpg",
+    "labeled_image": "s23.jpg",
+    "questions": [
+      {
+        "letter": "A",
+        "answer": "Cerebral aqueduct"
+      },
+      {
+        "letter": "D",
+        "answer": "ALS"
+      },
+      {
+        "letter": "E",
+        "answer": "Medial lemniscus"
+      },
+      {
+        "letter": "F",
+        "answer": "VTT"
+      },
+      {
+        "letter": "G",
+        "answer": "Interpeduncular fossa"
+      },
+      {
+        "letter": "K",
+        "answer": "PAG"
+      }
+    ]
+  },
+  {
+    "id": 11,
+    "unlabeled_image": "s26_ulb.jpg",
+    "labeled_image": "s26.jpg",
+    "questions": [
+      {
+        "letter": "A",
+        "answer": "Cerebral aqueduct"
+      },
+      {
+        "letter": "D",
+        "answer": "ALS"
+      },
+      {
+        "letter": "G",
+        "answer": "VTT"
+      },
+      {
+        "letter": "H",
+        "answer": "Medial lemniscus"
+      },
+      {
+        "letter": "N",
+        "answer": "PAG"
+      }
+    ]
+  },
+  {
+    "id": 12,
+    "unlabeled_image": "s32_ulb.jpg",
+    "labeled_image": "s32.jpg",
+    "questions": [
+      {
+        "letter": "G",
+        "answer": "VTT"
+      },
+      {
+        "letter": "H",
+        "answer": "Medial lemniscus"
+      },
+      {
+        "letter": "I",
+        "answer": "ALS"
+      },
+      {
+        "letter": "M",
+        "answer": "PAG"
+      },
+      {
+        "letter": "N",
+        "answer": "Cerebral aqueduct"
+      }
+    ]
+  },
+  {
+    "id": 13,
+    "unlabeled_image": "s34_ulb.jpg",
+    "labeled_image": "s34.jpg",
+    "questions": [
+      {
+        "letter": "A",
+        "answer": "Cingulate gyrus"
+      },
+      {
+        "letter": "C",
+        "answer": "PAG"
+      },
+      {
+        "letter": "D",
+        "answer": "VTT"
+      },
+      {
+        "letter": "G",
+        "answer": "Cerebral aqueduct"
+      }
+    ]
+  },
+  {
+    "id": 14,
+    "unlabeled_image": "s37_ulb.jpg",
+    "labeled_image": "s37.jpg",
+    "questions": [
+      {
+        "letter": "A",
+        "answer": "Lateral ventricle anterior horn"
+      },
+      {
+        "letter": "B",
+        "answer": "VPL"
+      },
+      {
+        "letter": "C",
+        "answer": "VPM"
+      },
+      {
+        "letter": "D",
+        "answer": "Lateral ventricle temporal horn"
+      }
+    ]
+  },
+  {
+    "id": 15,
+    "unlabeled_image": "s39_ulb.jpg",
+    "labeled_image": "s39.jpg",
+    "questions": [
+      {
+        "letter": "A",
+        "answer": "Cingulate gyrus"
+      },
+      {
+        "letter": "B",
+        "answer": "Third ventricle"
+      },
+      {
+        "letter": "D",
+        "answer": "Insula"
+      }
+    ]
+  },
+  {
+    "id": 16,
+    "unlabeled_image": "s41_ulb.jpg",
+    "labeled_image": "s41.jpg",
+    "questions": [
+      {
+        "letter": "C",
+        "answer": "Internal capsule"
+      },
+      {
+        "letter": "D",
+        "answer": "Lateral ventricle"
+      }
+    ]
+  },
+  {
+    "id": 17,
+    "unlabeled_image": "s43_ulb.jpg",
+    "labeled_image": "s43.jpg",
+    "questions": [
+      {
+        "letter": "B",
+        "answer": "Third ventricle"
+      },
+      {
+        "letter": "C",
+        "answer": "Internal capsule"
+      },
+      {
+        "letter": "D",
+        "answer": "Lateral ventricle"
+      }
+    ]
+  },
+  {
+    "id": 18,
+    "unlabeled_image": "s45_ulb.jpg",
+    "labeled_image": "s45.jpg",
+    "questions": [
+      {
+        "letter": "B",
+        "answer": "Third ventricle"
+      },
+      {
+        "letter": "D",
+        "answer": "Internal capsule"
+      }
+    ]
+  },
+  {
+    "id": 19,
+    "unlabeled_image": "s47_ulb.jpg",
+    "labeled_image": "s47.jpg",
+    "questions": [
+      {
+        "letter": "A",
+        "answer": "Internal capsule"
+      },
+      {
+        "letter": "B",
+        "answer": "Third ventricle"
+      },
+      {
+        "letter": "C",
+        "answer": "Lateral ventricle"
+      }
+    ]
+  },
+  {
+    "id": 20,
+    "unlabeled_image": "s49_ulb.jpg",
+    "labeled_image": "s49.jpg",
+    "questions": [
+      {
+        "letter": "A",
+        "answer": "Third ventricle"
+      }
+    ]
+  },
+  {
+    "id": 21,
+    "unlabeled_image": "s50_ulb.jpg",
+    "labeled_image": "s50.jpg",
+    "questions": [
+      {
+        "letter": "A",
+        "answer": "Insula"
+      },
+      {
+        "letter": "B",
+        "answer": "Septum pellucidum"
+      },
+      {
+        "letter": "C",
+        "answer": "Internal capsule"
+      }
+    ]
+  },
+  {
+    "id": 22,
+    "unlabeled_image": "s51_ulb.jpg",
+    "labeled_image": "s51.jpg",
+    "questions": [
+      {
+        "letter": "A",
+        "answer": "Internal capsule"
+      },
+      {
+        "letter": "B",
+        "answer": "VPL"
+      },
+      {
+        "letter": "C",
+        "answer": "VPM"
+      },
+      {
+        "letter": "D",
+        "answer": "Internal capsule Genu"
+      },
+      {
+        "letter": "E",
+        "answer": "Internal capsule anterior limb"
+      }
+    ]
+  },
+  {
+    "id": 23,
+    "unlabeled_image": "s67_ulb.jpg",
+    "labeled_image": "s67.jpg",
+    "questions": [
+      {
+        "letter": "A",
+        "answer": "Lateral ventricle posterior horn"
+      },
+      {
+        "letter": "B",
+        "answer": "Thalamus"
+      },
+      {
+        "letter": "C",
+        "answer": "Internal capsule posterior limb"
+      },
+      {
+        "letter": "D",
+        "answer": "Internal capsule anterior limb"
+      }
+    ]
+  },
+  {
+    "id": 24,
+    "unlabeled_image": "s74_ulb.jpg",
+    "labeled_image": "s74.jpg",
+    "questions": [
+      {
+        "letter": "A",
+        "answer": "Cingulate gyrus"
+      },
+      {
+        "letter": "B",
+        "answer": "Cerebral aqueduct"
+      },
+      {
+        "letter": "C",
+        "answer": "Midbrain"
+      },
+      {
+        "letter": "D",
+        "answer": "Fourth ventricle"
+      },
+      {
+        "letter": "E",
+        "answer": "Pons"
+      },
+      {
+        "letter": "F",
+        "answer": "Medulla"
+      },
+      {
+        "letter": "H",
+        "answer": "Thalamus"
+      },
+      {
+        "letter": "I",
+        "answer": "Lateral ventricle"
+      }
+    ]
+  },
+  {
+    "id": 25,
+    "unlabeled_image": "s104_ulb.jpg",
+    "labeled_image": "s104.jpg",
+    "questions": [
+      {
+        "letter": "A",
+        "answer": "Subarachnoid space"
+      },
+      {
+        "letter": "B",
+        "answer": "Nerve rootlets"
+      },
+      {
+        "letter": "C",
+        "answer": "Gray matter"
+      },
+      {
+        "letter": "D",
+        "answer": "White matter"
+      },
+      {
+        "letter": "E",
+        "answer": "Pia"
+      },
+      {
+        "letter": "F",
+        "answer": "Dura"
+      },
+      {
+        "letter": "G",
+        "answer": "Arachnoid"
+      }
+    ]
+  },
+  {
+    "id": 26,
+    "unlabeled_image": "s108_ulb.jpg",
+    "labeled_image": "s108.jpg",
+    "questions": [
+      {
+        "letter": "A",
+        "answer": "Dorsal median sulcus"
+      },
+      {
+        "letter": "B",
+        "answer": "Fasciculus gracilis"
+      },
+      {
+        "letter": "C",
+        "answer": "Fasciculus cuneatus"
+      },
+      {
+        "letter": "D",
+        "answer": "Dorsolateral sulcus"
+      },
+      {
+        "letter": "E",
+        "answer": "Dorsolateral fasciculus"
+      },
+      {
+        "letter": "F",
+        "answer": "Anterior white commissure"
+      },
+      {
+        "letter": "G",
+        "answer": "Ventral median fissure"
+      },
+      {
+        "letter": "H",
+        "answer": "ALS"
+      },
+      {
+        "letter": "I",
+        "answer": "Nucleus proprius"
+      },
+      {
+        "letter": "J",
+        "answer": "Substantia gelatinosa"
+      },
+      {
+        "letter": "K",
+        "answer": "Dorsal intermediate sulcus"
+      }
+    ]
+  },
+  {
+    "id": 27,
+    "unlabeled_image": "s109_ulb.jpg",
+    "labeled_image": "s109.jpg",
+    "questions": [
+      {
+        "letter": "A",
+        "answer": "Dorsal median sulcus"
+      },
+      {
+        "letter": "B",
+        "answer": "Fasciculus gracilis"
+      },
+      {
+        "letter": "C",
+        "answer": "Intermediolateral cell column"
+      },
+      {
+        "letter": "D",
+        "answer": "Anterior white commissure"
+      },
+      {
+        "letter": "E",
+        "answer": "Ventral median fissure"
+      },
+      {
+        "letter": "F",
+        "answer": "ALS"
+      },
+      {
+        "letter": "G",
+        "answer": "Dorsolateral fasciculus"
+      }
+    ]
+  },
+  {
+    "id": 28,
+    "unlabeled_image": "s110_ulb.jpg",
+    "labeled_image": "s110.jpg",
+    "questions": [
+      {
+        "letter": "A",
+        "answer": "Dorsal median sulcus"
+      },
+      {
+        "letter": "B",
+        "answer": "Fasciculus gracilis"
+      },
+      {
+        "letter": "C",
+        "answer": "Substantia gelatinosa"
+      },
+      {
+        "letter": "D",
+        "answer": "Nucleus proprius"
+      },
+      {
+        "letter": "E",
+        "answer": "Pia"
+      },
+      {
+        "letter": "F",
+        "answer": "Anterior white commissure"
+      },
+      {
+        "letter": "G",
+        "answer": "Ventral median fissure"
+      },
+      {
+        "letter": "H",
+        "answer": "ALS"
+      },
+      {
+        "letter": "I",
+        "answer": "Dorsolateral fasciculus"
+      }
+    ]
+  },
+  {
+    "id": 29,
+    "unlabeled_image": "s111_ulb.jpg",
+    "labeled_image": "s111.jpg",
+    "questions": [
+      {
+        "letter": "A",
+        "answer": "Dorsal median sulcus"
+      },
+      {
+        "letter": "B",
+        "answer": "Fasciculus gracilis"
+      },
+      {
+        "letter": "C",
+        "answer": "Substantia gelatinosa"
+      },
+      {
+        "letter": "D",
+        "answer": "Nucleus proprius"
+      },
+      {
+        "letter": "E",
+        "answer": "Pia"
+      },
+      {
+        "letter": "F",
+        "answer": "Anterior white commissure"
+      },
+      {
+        "letter": "G",
+        "answer": "Ventral median fissure"
+      },
+      {
+        "letter": "H",
+        "answer": "ALS"
+      },
+      {
+        "letter": "I",
+        "answer": "Dorsolateral fasciculus"
+      }
+    ]
+  },
+  {
+    "id": 30,
+    "unlabeled_image": "s112_ulb.jpg",
+    "labeled_image": "s112.jpg",
+    "questions": [
+      {
+        "letter": "A",
+        "answer": "Cervical"
+      }
+    ]
+  },
+  {
+    "id": 31,
+    "unlabeled_image": "s113_ulb.jpg",
+    "labeled_image": "s113.jpg",
+    "questions": [
+      {
+        "letter": "A",
+        "answer": "Lumbar"
+      }
+    ]
+  },
+  {
+    "id": 32,
+    "unlabeled_image": "s114_ulb.jpg",
+    "labeled_image": "s114.jpg",
+    "questions": [
+      {
+        "letter": "A",
+        "answer": "Thoracic"
+      }
+    ]
+  },
+  {
+    "id": 33,
+    "unlabeled_image": "s115_ulb.jpg",
+    "labeled_image": "s115.jpg",
+    "questions": [
+      {
+        "letter": "A",
+        "answer": "Sacral"
+      }
+    ]
+  },
+  {
+    "id": 34,
+    "unlabeled_image": "g1_ulb.jpg",
+    "labeled_image": "g1.jpg",
+    "questions": [
+      {
+        "letter": "A",
+        "answer": "Internal capsule"
+      }
+    ]
+  },
+  {
+    "id": 35,
+    "unlabeled_image": "g2_ulb.jpg",
+    "labeled_image": "g2.jpg",
+    "questions": [
+      {
+        "letter": "A",
+        "answer": "Cingulate gyrus"
+      }
+    ]
+  },
+  {
+    "id": 36,
+    "unlabeled_image": "g3_ulb.jpg",
+    "labeled_image": "g3.jpg",
+    "questions": []
+  },
+  {
+    "id": 37,
+    "unlabeled_image": "g4_ulb.jpg",
+    "labeled_image": "g4.jpg",
+    "questions": []
+  },
+  {
+    "id": 38,
+    "unlabeled_image": "g5_ulb.jpg",
+    "labeled_image": "g5.jpg",
+    "questions": []
+  },
+  {
+    "id": 39,
+    "unlabeled_image": "g6_ulb.jpg",
+    "labeled_image": "g6.jpg",
+    "questions": [
+      {
+        "letter": "A",
+        "answer": "Postcentral gyrus"
+      }
+    ]
+  },
+  {
+    "id": 40,
+    "unlabeled_image": "g7_ulb.jpg",
+    "labeled_image": "g7.jpg",
+    "questions": [
+      {
+        "letter": "A",
+        "answer": "Cingulate gyrus"
+      },
+      {
+        "letter": "B",
+        "answer": "Paracentral lobule"
+      },
+      {
+        "letter": "C",
+        "answer": "Central sulcus"
+      }
+    ]
+  },
+  {
+    "id": 41,
+    "unlabeled_image": "g8_ulb.jpg",
+    "labeled_image": "g8.jpg",
+    "questions": [
+      {
+        "letter": "A",
+        "answer": "Interventricular foramen"
+      }
+    ]
+  },
+  {
+    "id": 42,
+    "unlabeled_image": "g9_ulb.jpg",
+    "labeled_image": "g9.jpg",
+    "questions": []
+  },
+  {
+    "id": 43,
+    "unlabeled_image": "g10_ulb.jpg",
+    "labeled_image": "g10.jpg",
+    "questions": [
+      {
+        "letter": "A",
+        "answer": "Internal capsule anterior limb"
+      },
+      {
+        "letter": "B",
+        "answer": "Internal capsule genu"
+      },
+      {
+        "letter": "C",
+        "answer": "Internal capsule posterior limb"
+      },
+      {
+        "letter": "F",
+        "answer": "Thalamus"
+      }
+    ]
+  }
+]
