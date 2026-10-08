@@ -18,6 +18,8 @@ const ALTERNATIVE_ANSWERS = {
   "mlf": ["medial longitudinal fasciculus"],
   "fourth ventricle": ["4th ventricle"],
   "ventral trigeminothalamic tract": ["vtt", "ventral trigeminalthalamic tract"],
+  "trigeminal nerve": ["cn v", "cn 5", "cranial nerve v", "cranial nerve 5"],
+  "cn v": ["trigeminal nerve", "cranial nerve v", "cn 5"],
 };
 
 function App() {
