@@ -16,6 +16,8 @@ const ALTERNATIVE_ANSWERS = {
   "medial lemniscus": ["reils band", "ribbon of reil"],
   "corticospinal tract": ["pyramidal tract"],
   "mlf": ["medial longitudinal fasciculus"],
+  "fourth ventricle": ["4th ventricle"],
+  "ventral trigeminothalamic tract": ["vtt", "ventral trigeminalthalamic tract"],
 };
 
 function App() {
