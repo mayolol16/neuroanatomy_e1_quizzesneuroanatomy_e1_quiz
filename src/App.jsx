@@ -1,65 +1,13 @@
 import React, { useState, useEffect } from 'react';
-import { ChevronLeft, ChevronRight, CheckCircle, XCircle, Info, RefreshCw, BarChart2, X } from 'lucide-react';
-import stringSimilarity from 'string-similarity';
+import { ChevronLeft, ChevronRight, CheckCircle, XCircle, Info, RefreshCw, BarChart2, X, BrainCircuit } from 'lucide-react';
 import quizData from './quiz_data.json';
+import { checkAnswer } from './utils';
+import SpacedRepetition from './SpacedRepetition';
 
 const BASE_URL = import.meta.env.BASE_URL + 'images/';
 
-const ALTERNATIVE_ANSWERS = {
-  "als": ["lateral spinothalamic tract", "anterolateral system", "spinothalamic tract"],
-  "spinal trigeminal nucleus": ["nucleus of the spinal tract of v", "spinal nucleus of v", "spinal nucleus of 5"],
-  "spinal trigeminal tract": ["spinal tract of v", "spinal tract of 5"],
-  "spinal trigeminal nucleustract": ["spinal trigeminal nucleus and tract", "spinal tract of v", "nucleus of the spinal tract of v", "spinal trigeminal nucleus", "spinal trigeminal tract"],
-  "fasciculus gracilis": ["gracile fasciculus", "tract of goll"],
-  "fasciculus cuneatus": ["cuneate fasciculus", "tract of burdach"],
-  "nucleus gracilis": ["gracile nucleus"],
-  "nucleus cuneatus": ["cuneate nucleus"],
-  "medial lemniscus": ["reils band", "ribbon of reil"],
-  "decussation of medial lemniscus": ["internal arcuate fibers decussation", "sensory decussation"],
-  "internal arcuate fibers": ["internal arcuate fibres"],
-  "corticospinal tract": ["pyramidal tract"],
-  "mlf": ["medial longitudinal fasciculus"],
-  "fourth ventricle": ["4th ventricle", "iv ventricle"],
-  "third ventricle": ["3rd ventricle", "iii ventricle"],
-  "ventral trigeminothalamic tract": ["vtt", "ventral trigeminalthalamic tract", "ventral trigeminal tract", "ventral trigeminothalamic"],
-  "vtt": ["ventral trigeminothalamic tract", "ventral trigeminalthalamic tract", "ventral trigeminal tract"],
-  "trigeminal nerve": ["cn v", "cn 5", "cranial nerve v", "cranial nerve 5", "cranial nerve five"],
-  "cn v": ["trigeminal nerve", "cranial nerve v", "cn 5", "cranial nerve 5"],
-  "fibers of trigeminal nerve": ["trigeminal nerve fibers", "cn v fibers", "cn 5 fibers"],
-  "chief sensory nucleus of v": ["principal sensory nucleus of v", "main sensory nucleus of v", "chief sensory nucleus of 5"],
-  "trigeminal motor nucleus": ["motor nucleus of v", "motor nucleus of 5", "masticatory nucleus"],
-  "pag": ["periaqueductal gray", "periaqueductal grey", "central gray"],
-  "periaqueductal gray": ["pag", "periaqueductal grey", "central gray"],
-  "vpl": ["ventral posterolateral nucleus", "ventral posterolateral", "vpl nucleus"],
-  "vpm": ["ventral posteromedial nucleus", "ventral posteromedial", "vpm nucleus"],
-  "anterior white commissure": ["ventral white commissure"],
-  "dorsal median sulcus": ["posterior median sulcus"],
-  "dorsolateral fasciculus": ["tract of lissauer", "lissauers tract"],
-  "dorsolateral sulcus": ["posterolateral sulcus"],
-  "substantia gelatinosa": ["lamina ii", "lamina 2"],
-  "nucleus proprius": ["lamina iii and iv", "lamina 3 and 4"],
-  "intermediolateral cell column": ["iml", "lateral horn"],
-  "ventral median fissure": ["anterior median fissure"],
-  "cerebral aqueduct": ["aqueduct of sylvius", "mesencephalic aqueduct"],
-  "interventricular foramen": ["foramen of monro"],
-  "lateral ventricle anterior horn": ["frontal horn of lateral ventricle", "anterior horn of lateral ventricle", "anterior horn", "frontal horn"],
-  "lateral ventricle posterior horn": ["occipital horn of lateral ventricle", "posterior horn of lateral ventricle", "posterior horn", "occipital horn"],
-  "lateral ventricle temporal horn": ["inferior horn of lateral ventricle", "temporal horn of lateral ventricle", "lateral ventricle inferior horn", "inferior horn", "temporal horn"],
-  "internal capsule anterior limb": ["anterior limb of internal capsule", "anterior limb internal capsule"],
-  "internal capsule posterior limb": ["posterior limb of internal capsule", "posterior limb internal capsule"],
-  "internal capsule genu": ["genu of internal capsule", "genu internal capsule"],
-  "central sulcus": ["fissure of rolando", "rolandic fissure"],
-  "postcentral gyrus": ["primary somatosensory cortex", "somatosensory cortex", "s1"],
-  "cingulate gyrus": ["cingulate cortex"],
-  "subarachnoid space": ["subarachnoid cavity"],
-  "pia": ["pia mater"],
-  "dura": ["dura mater"],
-  "arachnoid": ["arachnoid mater"],
-  "gray matter": ["grey matter", "substantia grisea"],
-  "white matter": ["substantia alba"],
-};
-
 function App() {
+  const [mode, setMode] = useState('quiz');
   const [currentIndex, setCurrentIndex] = useState(0);
   const [answers, setAnswers] = useState({});
   const [submitted, setSubmitted] = useState(false);
@@ -72,32 +20,13 @@ function App() {
     return saved ? JSON.parse(saved) : {};
   });
 
+  const [mistakes, setMistakes] = useState(() => {
+    const saved = localStorage.getItem('neuroQuizMistakes');
+    return saved ? JSON.parse(saved) : {};
+  });
+
   const currentQuiz = quizData[currentIndex];
   
-  const checkAnswer = (userAns, correctAns) => {
-    if (!userAns) return false;
-    const clean = (str) => str.toLowerCase().replace(/[^\w\s]|_/g, "").replace(/\s+/g, " ").trim();
-    
-    const cleanUser = clean(userAns);
-    const cleanCorrect = clean(correctAns);
-    
-    // Check main answer
-    if (cleanUser === cleanCorrect || stringSimilarity.compareTwoStrings(cleanUser, cleanCorrect) > 0.8) {
-      return true;
-    }
-    
-    // Check alternatives
-    const alternatives = ALTERNATIVE_ANSWERS[cleanCorrect] || [];
-    for (const alt of alternatives) {
-      const cleanAlt = clean(alt);
-      if (cleanUser === cleanAlt || stringSimilarity.compareTwoStrings(cleanUser, cleanAlt) > 0.8) {
-        return true;
-      }
-    }
-    
-    return false;
-  };
-
   const handleInputChange = (letter, value) => {
     setAnswers(prev => ({ ...prev, [letter]: value }));
   };
@@ -110,18 +39,44 @@ function App() {
 
     // Update stats
     const newStats = { ...stats };
+    const newMistakes = { ...mistakes };
+    
     currentQuiz.questions.forEach(q => {
       const isCorrect = checkAnswer(answers[q.letter] || '', q.answer);
       if (!newStats[q.answer]) {
         newStats[q.answer] = { correct: 0, total: 0 };
       }
       newStats[q.answer].total += 1;
+      
+      const mistakeKey = `${currentQuiz.id}_${q.letter}`;
+      
       if (isCorrect) {
         newStats[q.answer].correct += 1;
+      } else {
+        // Record mistake for spaced repetition
+        if (!newMistakes[mistakeKey]) {
+          newMistakes[mistakeKey] = {
+            id: mistakeKey,
+            slideId: currentQuiz.id,
+            letter: q.letter,
+            answer: q.answer,
+            unlabeled_image: currentQuiz.unlabeled_image,
+            labeled_image: currentQuiz.labeled_image,
+            interval: 1,
+            nextReviewDate: Date.now()
+          };
+        } else {
+          // Reset interval if missed again on main quiz
+          newMistakes[mistakeKey].interval = 1;
+          newMistakes[mistakeKey].nextReviewDate = Date.now();
+        }
       }
     });
+    
     setStats(newStats);
+    setMistakes(newMistakes);
     localStorage.setItem('neuroQuizStats', JSON.stringify(newStats));
+    localStorage.setItem('neuroQuizMistakes', JSON.stringify(newMistakes));
   };
 
   const nextQuestion = () => {
@@ -153,10 +108,20 @@ function App() {
   const toggleImage = () => setShowLabeled(prev => !prev);
   const toggleStats = () => setShowStats(prev => !prev);
   const clearStats = () => {
-    if (window.confirm('Are you sure you want to clear your statistics?')) {
+    if (window.confirm('Are you sure you want to clear your statistics and review queue?')) {
       setStats({});
+      setMistakes({});
       localStorage.removeItem('neuroQuizStats');
+      localStorage.removeItem('neuroQuizMistakes');
     }
+  };
+
+  const updateMistake = (id, updates) => {
+    setMistakes(prev => {
+      const updated = { ...prev, [id]: { ...prev[id], ...updates } };
+      localStorage.setItem('neuroQuizMistakes', JSON.stringify(updated));
+      return updated;
+    });
   };
 
   let correctCount = 0;
@@ -178,14 +143,32 @@ function App() {
 
   if (!currentQuiz) return <div className="app-container">Loading...</div>;
 
+  if (mode === 'review') {
+    return (
+      <SpacedRepetition 
+        mistakes={mistakes} 
+        updateMistake={updateMistake} 
+        onExit={() => setMode('quiz')} 
+      />
+    );
+  }
+
+  const dueItemsCount = Object.values(mistakes).filter(m => m.nextReviewDate <= Date.now()).length;
+
   return (
     <div className="app-container">
       <div className="header">
         <h1>Neuro Practical Exam 1</h1>
         <p>Interactive Quiz Mode with Flexible Grading</p>
-        <button className="btn btn-secondary stats-toggle-btn" onClick={toggleStats}>
-          <BarChart2 size={18} /> View Analytics
-        </button>
+        <div style={{ display: 'flex', gap: '10px', justifyContent: 'center', marginTop: '15px', flexWrap: 'wrap' }}>
+          <button className="btn btn-secondary stats-toggle-btn" onClick={toggleStats} style={{ position: 'static' }}>
+            <BarChart2 size={18} /> View Analytics
+          </button>
+          <button className="btn btn-primary" onClick={() => setMode('review')}>
+            <BrainCircuit size={18} style={{ marginRight: '8px' }} /> 
+            Spaced Repetition Review {dueItemsCount > 0 && <span style={{ background: '#ef4444', color: 'white', borderRadius: '50%', padding: '2px 8px', marginLeft: '5px', fontSize: '0.8rem' }}>{dueItemsCount}</span>}
+          </button>
+        </div>
       </div>
 
       {showStats && (
