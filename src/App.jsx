@@ -24,6 +24,7 @@ function App() {
   const [submitted, setSubmitted] = useState(false);
   const [showLabeled, setShowLabeled] = useState(false);
   const [showStats, setShowStats] = useState(false);
+  const [canSubmit, setCanSubmit] = useState(true);
   
   const [stats, setStats] = useState(() => {
     const saved = localStorage.getItem('neuroQuizStats');
@@ -62,6 +63,8 @@ function App() {
 
   const handleSubmit = (e) => {
     e.preventDefault();
+    if (!canSubmit) return;
+    
     setSubmitted(true);
 
     // Update stats
@@ -87,6 +90,9 @@ function App() {
       setSubmitted(false);
       setShowLabeled(false);
       window.scrollTo(0, 0);
+      
+      setCanSubmit(false);
+      setTimeout(() => setCanSubmit(true), 400);
     }
   };
 
@@ -97,6 +103,9 @@ function App() {
       setSubmitted(false);
       setShowLabeled(false);
       window.scrollTo(0, 0);
+      
+      setCanSubmit(false);
+      setTimeout(() => setCanSubmit(true), 400);
     }
   };
 
@@ -268,7 +277,7 @@ function App() {
           
           <div className="controls">
             {!submitted ? (
-              <button type="submit" className="btn btn-primary">
+              <button type="submit" className="btn btn-primary" disabled={!canSubmit}>
                 Submit Answers
               </button>
             ) : (
