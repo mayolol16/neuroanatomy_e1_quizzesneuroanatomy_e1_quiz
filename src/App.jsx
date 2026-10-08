@@ -5,6 +5,19 @@ import quizData from './quiz_data.json';
 
 const BASE_URL = import.meta.env.BASE_URL + 'images/';
 
+const ALTERNATIVE_ANSWERS = {
+  "als": ["lateral spinothalamic tract", "anterolateral system"],
+  "spinal trigeminal nucleus": ["nucleus of the spinal tract of v"],
+  "spinal trigeminal tract": ["spinal tract of v"],
+  "fasciculus gracilis": ["gracile fasciculus", "tract of goll"],
+  "fasciculus cuneatus": ["cuneate fasciculus", "tract of burdach"],
+  "nucleus gracilis": ["gracile nucleus"],
+  "nucleus cuneatus": ["cuneate nucleus"],
+  "medial lemniscus": ["reils band", "ribbon of reil"],
+  "corticospinal tract": ["pyramidal tract"],
+  "mlf": ["medial longitudinal fasciculus"],
+};
+
 function App() {
   const [currentIndex, setCurrentIndex] = useState(0);
   const [answers, setAnswers] = useState({});
@@ -21,11 +34,26 @@ function App() {
   
   const checkAnswer = (userAns, correctAns) => {
     if (!userAns) return false;
-    const cleanUser = userAns.toLowerCase().replace(/[^\w\s]|_/g, "").replace(/\s+/g, " ").trim();
-    const cleanCorrect = correctAns.toLowerCase().replace(/[^\w\s]|_/g, "").replace(/\s+/g, " ").trim();
-    if (cleanUser === cleanCorrect) return true;
-    const similarity = stringSimilarity.compareTwoStrings(cleanUser, cleanCorrect);
-    return similarity > 0.8;
+    const clean = (str) => str.toLowerCase().replace(/[^\w\s]|_/g, "").replace(/\s+/g, " ").trim();
+    
+    const cleanUser = clean(userAns);
+    const cleanCorrect = clean(correctAns);
+    
+    // Check main answer
+    if (cleanUser === cleanCorrect || stringSimilarity.compareTwoStrings(cleanUser, cleanCorrect) > 0.8) {
+      return true;
+    }
+    
+    // Check alternatives
+    const alternatives = ALTERNATIVE_ANSWERS[cleanCorrect] || [];
+    for (const alt of alternatives) {
+      const cleanAlt = clean(alt);
+      if (cleanUser === cleanAlt || stringSimilarity.compareTwoStrings(cleanUser, cleanAlt) > 0.8) {
+        return true;
+      }
+    }
+    
+    return false;
   };
 
   const handleInputChange = (letter, value) => {
