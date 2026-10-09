@@ -11,6 +11,7 @@ function SpacedRepetition({ mistakes, updateMistake, onExit }) {
   const [userAns, setUserAns] = useState('');
   const [submitted, setSubmitted] = useState(false);
   const [isCorrect, setIsCorrect] = useState(false);
+  const [canSubmit, setCanSubmit] = useState(true);
 
   if (dueItems.length === 0) {
     return (
@@ -28,7 +29,7 @@ function SpacedRepetition({ mistakes, updateMistake, onExit }) {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    if (submitted) return;
+    if (submitted || !canSubmit) return;
     
     const correct = checkAnswer(userAns, currentItem.answer);
     setIsCorrect(correct);
@@ -59,6 +60,9 @@ function SpacedRepetition({ mistakes, updateMistake, onExit }) {
       // Finished all due items
       setCurrentIndex(0);
     }
+    
+    setCanSubmit(false);
+    setTimeout(() => setCanSubmit(true), 400);
   };
 
   if (!currentItem) {
@@ -125,7 +129,7 @@ function SpacedRepetition({ mistakes, updateMistake, onExit }) {
           
           <div className="controls" style={{ marginTop: '20px' }}>
             {!submitted ? (
-              <button type="submit" className="btn btn-primary">
+              <button type="submit" className="btn btn-primary" disabled={!canSubmit}>
                 Check Answer
               </button>
             ) : (
