@@ -1,8 +1,9 @@
 import React, { useState, useEffect } from 'react';
-import { ChevronLeft, ChevronRight, CheckCircle, XCircle, Info, RefreshCw, BarChart2, X, BrainCircuit } from 'lucide-react';
+import { ChevronLeft, ChevronRight, CheckCircle, XCircle, Info, RefreshCw, BarChart2, X, BrainCircuit, Zap } from 'lucide-react';
 import quizData from './quiz_data.json';
 import { checkAnswer } from './utils';
 import SpacedRepetition from './SpacedRepetition';
+import ZenMode from './ZenMode';
 
 const BASE_URL = import.meta.env.BASE_URL + 'images/';
 
@@ -153,6 +154,19 @@ function App() {
     );
   }
 
+  if (mode === 'zen') {
+    return (
+      <ZenMode 
+        quizData={quizData}
+        stats={stats}
+        setStats={setStats}
+        mistakes={mistakes}
+        setMistakes={setMistakes}
+        onExit={() => setMode('quiz')}
+      />
+    );
+  }
+
   const dueItemsCount = Object.values(mistakes).filter(m => m.nextReviewDate <= Date.now()).length;
 
   return (
@@ -167,6 +181,9 @@ function App() {
           <button className="btn btn-primary" onClick={() => setMode('review')}>
             <BrainCircuit size={18} style={{ marginRight: '8px' }} /> 
             Spaced Repetition Review {dueItemsCount > 0 && <span style={{ background: '#ef4444', color: 'white', borderRadius: '50%', padding: '2px 8px', marginLeft: '5px', fontSize: '0.8rem' }}>{dueItemsCount}</span>}
+          </button>
+          <button className="btn" onClick={() => setMode('zen')} style={{ backgroundColor: '#8b5cf6', color: 'white' }}>
+            <Zap size={18} style={{ marginRight: '8px' }} /> Zen Mode
           </button>
         </div>
       </div>
