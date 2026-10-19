@@ -106,6 +106,13 @@ function SpacedRepetition({ mistakes, updateMistake, onExit }) {
 
   const isLast = currentIndex === reviewQueue.length - 1;
 
+  // Determine exam label
+  const examLabel = currentItem.exam === 'exam1' 
+    ? 'Exam 1 (Sensory)' 
+    : currentItem.exam === 'exam2' 
+      ? 'Exam 2 (Motor & CN)' 
+      : '';
+
   return (
     <div className="app-container">
       <div className="header">
@@ -121,8 +128,13 @@ function SpacedRepetition({ mistakes, updateMistake, onExit }) {
       </div>
 
       <div className="quiz-card">
-        <div style={{ textAlign: 'center', marginBottom: '10px', fontWeight: 600, color: '#64748b' }}>
-          Slide: {currentItem.slideId || currentItem.id.split('_')[0]}
+        <div style={{ textAlign: 'center', marginBottom: '10px', fontWeight: 600, color: '#64748b', display: 'flex', justifyContent: 'center', gap: '8px', alignItems: 'center' }}>
+          {examLabel && (
+            <span style={{ background: 'rgba(59, 130, 246, 0.2)', color: '#93c5fd', padding: '2px 8px', borderRadius: '4px', fontSize: '0.85rem' }}>
+              {examLabel}
+            </span>
+          )}
+          <span>Slide: {currentItem.slideId || currentItem.id.split('_')[1] || currentItem.id.split('_')[0]}</span>
         </div>
 
         <div className="image-container">

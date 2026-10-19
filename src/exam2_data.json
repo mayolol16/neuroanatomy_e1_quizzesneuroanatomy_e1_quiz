@@ -1,0 +1,948 @@
+[
+  {
+    "id": 1,
+    "unlabeled_image": "s01_ulb.jpg",
+    "labeled_image": "s01.jpg",
+    "questions": [
+      {
+        "letter": "E",
+        "answer": "Pyramidal decussation"
+      }
+    ]
+  },
+  {
+    "id": 2,
+    "unlabeled_image": "s03_ulb.jpg",
+    "labeled_image": "s03.jpg",
+    "questions": [
+      {
+        "letter": "G",
+        "answer": "Corticospinal tract"
+      }
+    ]
+  },
+  {
+    "id": 3,
+    "unlabeled_image": "s05_ulb.jpg",
+    "labeled_image": "s05.jpg",
+    "questions": [
+      {
+        "letter": "I",
+        "answer": "Corticospinal tract"
+      }
+    ]
+  },
+  {
+    "id": 4,
+    "unlabeled_image": "s07_ulb.jpg",
+    "labeled_image": "s07.jpg",
+    "questions": [
+      {
+        "letter": "B",
+        "answer": "Medial vestibular nucleus"
+      },
+      {
+        "letter": "C",
+        "answer": "Inferior vestibular nucleus"
+      },
+      {
+        "letter": "J",
+        "answer": "MLF"
+      },
+      {
+        "letter": "K",
+        "answer": "Solitary tract"
+      },
+      {
+        "letter": "L",
+        "answer": "Dorsal motor nucleus of vagus"
+      },
+      {
+        "letter": "M",
+        "answer": "Hypoglossal nucleus"
+      },
+      {
+        "letter": "N",
+        "answer": "Corticospinal tract"
+      }
+    ]
+  },
+  {
+    "id": 5,
+    "unlabeled_image": "s09_ulb.jpg",
+    "labeled_image": "s09.jpg",
+    "questions": [
+      {
+        "letter": "A",
+        "answer": "MLF"
+      },
+      {
+        "letter": "C",
+        "answer": "Dorsal cochlear nucleus"
+      },
+      {
+        "letter": "E",
+        "answer": "Cochlear portion of VIII"
+      },
+      {
+        "letter": "J",
+        "answer": "Vestibular portion of VIII"
+      },
+      {
+        "letter": "N",
+        "answer": "Corticospinal tract"
+      }
+    ]
+  },
+  {
+    "id": 6,
+    "unlabeled_image": "s12_ulb.jpg",
+    "labeled_image": "s12.jpg",
+    "questions": [
+      {
+        "letter": "C",
+        "answer": "Abducens nucleus"
+      },
+      {
+        "letter": "D",
+        "answer": "Superior olivary nucleus"
+      },
+      {
+        "letter": "E",
+        "answer": "ALS/Lateral lemniscus"
+      },
+      {
+        "letter": "J",
+        "answer": "Corticospinal tract"
+      },
+      {
+        "letter": "K",
+        "answer": "Facial nucleus"
+      }
+    ]
+  },
+  {
+    "id": 7,
+    "unlabeled_image": "s15a_ulb.jpg",
+    "labeled_image": "s15a.jpg",
+    "questions": [
+      {
+        "letter": "A",
+        "answer": "Abducens nucleus"
+      },
+      {
+        "letter": "B",
+        "answer": "Superior olivary nucleus"
+      },
+      {
+        "letter": "E",
+        "answer": "ALS/Lateral lemniscus"
+      },
+      {
+        "letter": "I",
+        "answer": "Corticospinal tract"
+      },
+      {
+        "letter": "J",
+        "answer": "Facial nucleus"
+      }
+    ]
+  },
+  {
+    "id": 8,
+    "unlabeled_image": "s17_ulb.jpg",
+    "labeled_image": "s17.jpg",
+    "questions": [
+      {
+        "letter": "E",
+        "answer": "CN V"
+      },
+      {
+        "letter": "F",
+        "answer": "ALS/Lateral lemniscus"
+      },
+      {
+        "letter": "G",
+        "answer": "Trigeminal motor nucleus"
+      },
+      {
+        "letter": "I",
+        "answer": "MLF"
+      },
+      {
+        "letter": "J",
+        "answer": "Corticospinal tract"
+      }
+    ]
+  },
+  {
+    "id": 9,
+    "unlabeled_image": "s21_ulb.jpg",
+    "labeled_image": "s21.jpg",
+    "questions": [
+      {
+        "letter": "B",
+        "answer": "Decussation of trochlear nerve"
+      },
+      {
+        "letter": "C",
+        "answer": "Lateral lemniscus"
+      },
+      {
+        "letter": "H",
+        "answer": "MLF"
+      },
+      {
+        "letter": "I",
+        "answer": "Corticospinal tract"
+      }
+    ]
+  },
+  {
+    "id": 10,
+    "unlabeled_image": "s23_ulb.jpg",
+    "labeled_image": "s23.jpg",
+    "questions": [
+      {
+        "letter": "B",
+        "answer": "Trochlear nucleus"
+      },
+      {
+        "letter": "C",
+        "answer": "Lateral lemniscus"
+      },
+      {
+        "letter": "H",
+        "answer": "Oculomotor nerve III"
+      },
+      {
+        "letter": "I",
+        "answer": "MLF"
+      },
+      {
+        "letter": "L",
+        "answer": "Inferior colliculus"
+      },
+      {
+        "letter": "M",
+        "answer": "Corticospinal tract"
+      }
+    ]
+  },
+  {
+    "id": 11,
+    "unlabeled_image": "s26_ulb.jpg",
+    "labeled_image": "s26.jpg",
+    "questions": [
+      {
+        "letter": "B",
+        "answer": "Superior colliculus"
+      },
+      {
+        "letter": "F",
+        "answer": "Medial geniculate nucleus"
+      },
+      {
+        "letter": "I",
+        "answer": "Oculomotor nerve III"
+      },
+      {
+        "letter": "L",
+        "answer": "Oculomotor nucleus"
+      },
+      {
+        "letter": "P",
+        "answer": "Corticospinal tract"
+      },
+      {
+        "letter": "R",
+        "answer": "Red nucleus"
+      }
+    ]
+  },
+  {
+    "id": 12,
+    "unlabeled_image": "s32_ulb.jpg",
+    "labeled_image": "s32.jpg",
+    "questions": [
+      {
+        "letter": "B",
+        "answer": "Superior colliculus"
+      },
+      {
+        "letter": "E",
+        "answer": "Lateral geniculate nucleus"
+      },
+      {
+        "letter": "F",
+        "answer": "Oculomotor nerve III"
+      },
+      {
+        "letter": "J",
+        "answer": "Medial geniculate nucleus"
+      },
+      {
+        "letter": "K",
+        "answer": "Oculomotor nucleus"
+      },
+      {
+        "letter": "O",
+        "answer": "Corticospinal tract"
+      },
+      {
+        "letter": "Q",
+        "answer": "Red nucleus"
+      }
+    ]
+  },
+  {
+    "id": 13,
+    "unlabeled_image": "s34_ulb.jpg",
+    "labeled_image": "s34.jpg",
+    "questions": [
+      {
+        "letter": "B",
+        "answer": "Pretectal area"
+      },
+      {
+        "letter": "E",
+        "answer": "Lateral geniculate nucleus"
+      },
+      {
+        "letter": "I",
+        "answer": "Corticospinal tract"
+      },
+      {
+        "letter": "J",
+        "answer": "Red nucleus"
+      },
+      {
+        "letter": "K",
+        "answer": "Medial geniculate nucleus"
+      }
+    ]
+  },
+  {
+    "id": 14,
+    "unlabeled_image": "s37_ulb.jpg",
+    "labeled_image": "s37.jpg",
+    "questions": [
+      {
+        "letter": "E",
+        "answer": "Optic tract"
+      }
+    ]
+  },
+  {
+    "id": 15,
+    "unlabeled_image": "s39_ulb.jpg",
+    "labeled_image": "s39.jpg",
+    "questions": [
+      {
+        "letter": "B",
+        "answer": "Third ventricle"
+      },
+      {
+        "letter": "C",
+        "answer": "Optic tract"
+      },
+      {
+        "letter": "D",
+        "answer": "Insula"
+      }
+    ]
+  },
+  {
+    "id": 16,
+    "unlabeled_image": "s41_ulb.jpg",
+    "labeled_image": "s41.jpg",
+    "questions": [
+      {
+        "letter": "A",
+        "answer": "Third ventricle"
+      },
+      {
+        "letter": "B",
+        "answer": "Optic tract"
+      },
+      {
+        "letter": "C",
+        "answer": "Internal capsule"
+      }
+    ]
+  },
+  {
+    "id": 17,
+    "unlabeled_image": "s43_ulb.jpg",
+    "labeled_image": "s43.jpg",
+    "questions": [
+      {
+        "letter": "A",
+        "answer": "Optic tract"
+      },
+      {
+        "letter": "B",
+        "answer": "Third ventricle"
+      },
+      {
+        "letter": "C",
+        "answer": "Internal capsule"
+      }
+    ]
+  },
+  {
+    "id": 18,
+    "unlabeled_image": "s45_ulb.jpg",
+    "labeled_image": "s45.jpg",
+    "questions": [
+      {
+        "letter": "A",
+        "answer": "Optic tract"
+      },
+      {
+        "letter": "B",
+        "answer": "Third ventricle"
+      },
+      {
+        "letter": "C",
+        "answer": "Hypothalamus"
+      },
+      {
+        "letter": "D",
+        "answer": "Internal capsule"
+      }
+    ]
+  },
+  {
+    "id": 19,
+    "unlabeled_image": "s47_ulb.jpg",
+    "labeled_image": "s47.jpg",
+    "questions": [
+      {
+        "letter": "A",
+        "answer": "Internal capsule"
+      },
+      {
+        "letter": "B",
+        "answer": "Third ventricle"
+      }
+    ]
+  },
+  {
+    "id": 20,
+    "unlabeled_image": "s49_ulb.jpg",
+    "labeled_image": "s49.jpg",
+    "questions": [
+      {
+        "letter": "A",
+        "answer": "Third ventricle"
+      },
+      {
+        "letter": "B",
+        "answer": "Optic tract"
+      },
+      {
+        "letter": "C",
+        "answer": "Optic chiasm"
+      },
+      {
+        "letter": "D",
+        "answer": "Optic nerve"
+      }
+    ]
+  },
+  {
+    "id": 21,
+    "unlabeled_image": "s50_ulb.jpg",
+    "labeled_image": "s50.jpg",
+    "questions": [
+      {
+        "letter": "A",
+        "answer": "Insula"
+      },
+      {
+        "letter": "C",
+        "answer": "Internal capsule"
+      }
+    ]
+  },
+  {
+    "id": 22,
+    "unlabeled_image": "s51_ulb.jpg",
+    "labeled_image": "s51.jpg",
+    "questions": [
+      {
+        "letter": "A",
+        "answer": "Internal capsule"
+      },
+      {
+        "letter": "D",
+        "answer": "Internal capsule Genu"
+      },
+      {
+        "letter": "E",
+        "answer": "Internal capsule anterior limb"
+      }
+    ]
+  },
+  {
+    "id": 23,
+    "unlabeled_image": "s67_ulb.jpg",
+    "labeled_image": "s67.jpg",
+    "questions": [
+      {
+        "letter": "B",
+        "answer": "Thalamus"
+      },
+      {
+        "letter": "C",
+        "answer": "Internal capsule posterior limb"
+      },
+      {
+        "letter": "D",
+        "answer": "Internal capsule anterior limb"
+      }
+    ]
+  },
+  {
+    "id": 24,
+    "unlabeled_image": "s74_ulb.jpg",
+    "labeled_image": "s74.jpg",
+    "questions": [
+      {
+        "letter": "A",
+        "answer": "Cingulate gyrus"
+      },
+      {
+        "letter": "G",
+        "answer": "Optic nerve"
+      },
+      {
+        "letter": "H",
+        "answer": "Thalamus"
+      }
+    ]
+  },
+  {
+    "id": 25,
+    "unlabeled_image": "s104_ulb.jpg",
+    "labeled_image": "s104.jpg",
+    "questions": []
+  },
+  {
+    "id": 26,
+    "unlabeled_image": "s108_ulb.jpg",
+    "labeled_image": "s108.jpg",
+    "questions": [
+      {
+        "letter": "L",
+        "answer": "Corticospinal tract"
+      }
+    ]
+  },
+  {
+    "id": 27,
+    "unlabeled_image": "s109_ulb.jpg",
+    "labeled_image": "s109.jpg",
+    "questions": [
+      {
+        "letter": "C",
+        "answer": "Intermediolateral cell column"
+      },
+      {
+        "letter": "H",
+        "answer": "Corticospinal tract"
+      }
+    ]
+  },
+  {
+    "id": 28,
+    "unlabeled_image": "s110_ulb.jpg",
+    "labeled_image": "s110.jpg",
+    "questions": [
+      {
+        "letter": "J",
+        "answer": "Corticospinal tract"
+      }
+    ]
+  },
+  {
+    "id": 29,
+    "unlabeled_image": "s111_ulb.jpg",
+    "labeled_image": "s111.jpg",
+    "questions": [
+      {
+        "letter": "J",
+        "answer": "Corticospinal tract"
+      }
+    ]
+  },
+  {
+    "id": 30,
+    "unlabeled_image": "s112_ulb.jpg",
+    "labeled_image": "s112.jpg",
+    "questions": []
+  },
+  {
+    "id": 31,
+    "unlabeled_image": "s113_ulb.jpg",
+    "labeled_image": "s113.jpg",
+    "questions": []
+  },
+  {
+    "id": 32,
+    "unlabeled_image": "s114_ulb.jpg",
+    "labeled_image": "s114.jpg",
+    "questions": []
+  },
+  {
+    "id": 33,
+    "unlabeled_image": "s115_ulb.jpg",
+    "labeled_image": "s115.jpg",
+    "questions": []
+  },
+  {
+    "id": 34,
+    "unlabeled_image": "g1_ulb.jpg",
+    "labeled_image": "g1.jpg",
+    "questions": [
+      {
+        "letter": "A",
+        "answer": "Internal capsule"
+      }
+    ]
+  },
+  {
+    "id": 35,
+    "unlabeled_image": "g2_ulb.jpg",
+    "labeled_image": "g2.jpg",
+    "questions": [
+      {
+        "letter": "B",
+        "answer": "Paracentral lobule"
+      }
+    ]
+  },
+  {
+    "id": 36,
+    "unlabeled_image": "g3_ulb.jpg",
+    "labeled_image": "g3.jpg",
+    "questions": [
+      {
+        "letter": "A",
+        "answer": "calcarine sulcus"
+      }
+    ]
+  },
+  {
+    "id": 37,
+    "unlabeled_image": "g4_ulb.jpg",
+    "labeled_image": "g4.jpg",
+    "questions": [
+      {
+        "letter": "A",
+        "answer": "Cuneus"
+      }
+    ]
+  },
+  {
+    "id": 38,
+    "unlabeled_image": "g5_ulb.jpg",
+    "labeled_image": "g5.jpg",
+    "questions": [
+      {
+        "letter": "A",
+        "answer": "Lingual gyrus"
+      }
+    ]
+  },
+  {
+    "id": 39,
+    "unlabeled_image": "g6_ulb.jpg",
+    "labeled_image": "g6.jpg",
+    "questions": [
+      {
+        "letter": "A",
+        "answer": "Postcentral gyrus"
+      }
+    ]
+  },
+  {
+    "id": 40,
+    "unlabeled_image": "g7_ulb.jpg",
+    "labeled_image": "g7.jpg",
+    "questions": [
+      {
+        "letter": "A",
+        "answer": "Cingulate gyrus"
+      },
+      {
+        "letter": "B",
+        "answer": "Paracentral lobule"
+      },
+      {
+        "letter": "C",
+        "answer": "Central sulcus"
+      },
+      {
+        "letter": "D",
+        "answer": "Cuneus"
+      },
+      {
+        "letter": "E",
+        "answer": "Calcarine sulcus"
+      },
+      {
+        "letter": "F",
+        "answer": "Lingual gyrus"
+      }
+    ]
+  },
+  {
+    "id": 41,
+    "unlabeled_image": "g8_ulb.jpg",
+    "labeled_image": "g8.jpg",
+    "questions": []
+  },
+  {
+    "id": 42,
+    "unlabeled_image": "g9_ulb.jpg",
+    "labeled_image": "g9.jpg",
+    "questions": [
+      {
+        "letter": "A",
+        "answer": "Superior colliculus"
+      },
+      {
+        "letter": "B",
+        "answer": "Inferior colliculus"
+      },
+      {
+        "letter": "D",
+        "answer": "Lateral geniculate nucleus"
+      },
+      {
+        "letter": "E",
+        "answer": "Medial geniculate nucleus"
+      }
+    ]
+  },
+  {
+    "id": 43,
+    "unlabeled_image": "g10_ulb.jpg",
+    "labeled_image": "g10.jpg",
+    "questions": []
+  },
+  {
+    "id": 44,
+    "unlabeled_image": "g11_ulb.jpg",
+    "labeled_image": "g11.jpg",
+    "questions": [
+      {
+        "letter": "A",
+        "answer": "Olfactory bulb"
+      },
+      {
+        "letter": "B",
+        "answer": "olfactory tract"
+      },
+      {
+        "letter": "C",
+        "answer": "Optic chiasm"
+      },
+      {
+        "letter": "D",
+        "answer": "Optic nerve"
+      },
+      {
+        "letter": "E",
+        "answer": "Optic tract"
+      },
+      {
+        "letter": "F",
+        "answer": "Uncus"
+      },
+      {
+        "letter": "G",
+        "answer": "CN III"
+      }
+    ]
+  },
+  {
+    "id": 45,
+    "unlabeled_image": "g12_ulb.jpg",
+    "labeled_image": "g12.jpg",
+    "questions": [
+      {
+        "letter": "A",
+        "answer": "CN IV"
+      },
+      {
+        "letter": "B",
+        "answer": "CN III"
+      },
+      {
+        "letter": "C",
+        "answer": "CN VI"
+      },
+      {
+        "letter": "D",
+        "answer": "CN V"
+      },
+      {
+        "letter": "E",
+        "answer": "CN VII"
+      },
+      {
+        "letter": "F",
+        "answer": "CN VIII"
+      },
+      {
+        "letter": "G",
+        "answer": "CN XII"
+      }
+    ]
+  },
+  {
+    "id": 46,
+    "unlabeled_image": "g13_ulb.jpg",
+    "labeled_image": "g13.jpg",
+    "questions": [
+      {
+        "letter": "A",
+        "answer": "Pinna"
+      },
+      {
+        "letter": "B",
+        "answer": "External ear"
+      },
+      {
+        "letter": "C",
+        "answer": "Middle ear"
+      },
+      {
+        "letter": "D",
+        "answer": "Inner ear"
+      },
+      {
+        "letter": "E",
+        "answer": "Tympanic membrane"
+      },
+      {
+        "letter": "F",
+        "answer": "semicircular canals"
+      },
+      {
+        "letter": "G",
+        "answer": "Cochlea"
+      },
+      {
+        "letter": "H",
+        "answer": "Oval window"
+      },
+      {
+        "letter": "I",
+        "answer": "Ossicles"
+      }
+    ]
+  },
+  {
+    "id": 47,
+    "unlabeled_image": "g14_ulb.jpg",
+    "labeled_image": "g14.jpg",
+    "questions": [
+      {
+        "letter": "A",
+        "answer": "Ciliary body"
+      },
+      {
+        "letter": "B",
+        "answer": "Cornea"
+      },
+      {
+        "letter": "C",
+        "answer": "Iris"
+      },
+      {
+        "letter": "D",
+        "answer": "Pupil"
+      },
+      {
+        "letter": "E",
+        "answer": "Lens"
+      },
+      {
+        "letter": "F",
+        "answer": "Anterior chamber"
+      },
+      {
+        "letter": "G",
+        "answer": "Posterior chamber"
+      },
+      {
+        "letter": "H",
+        "answer": "Slera"
+      },
+      {
+        "letter": "I",
+        "answer": "Chroroid"
+      },
+      {
+        "letter": "J",
+        "answer": "Retina"
+      },
+      {
+        "letter": "K",
+        "answer": "Fovea"
+      },
+      {
+        "letter": "L",
+        "answer": "Optic nerve"
+      },
+      {
+        "letter": "M",
+        "answer": "Vitreous chamber"
+      },
+      {
+        "letter": "N",
+        "answer": "Optic disc"
+      }
+    ]
+  },
+  {
+    "id": 48,
+    "unlabeled_image": "g15_ulb.jpg",
+    "labeled_image": "g15.jpg",
+    "questions": []
+  },
+  {
+    "id": 49,
+    "unlabeled_image": "g16_ulb.jpg",
+    "labeled_image": "g16.jpg",
+    "questions": []
+  },
+  {
+    "id": 50,
+    "unlabeled_image": "g17_ulb.jpg",
+    "labeled_image": "g17.jpg",
+    "questions": []
+  },
+  {
+    "id": 51,
+    "unlabeled_image": "g18_ulb.jpg",
+    "labeled_image": "g18.jpg",
+    "questions": []
+  },
+  {
+    "id": 52,
+    "unlabeled_image": "g19_ulb.jpg",
+    "labeled_image": "g19.jpg",
+    "questions": []
+  },
+  {
+    "id": 53,
+    "unlabeled_image": "g20_ulb.jpg",
+    "labeled_image": "g20.jpg",
+    "questions": []
+  }
+]

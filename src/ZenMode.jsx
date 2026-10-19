@@ -4,17 +4,21 @@ import { checkAnswer } from './utils';
 
 const BASE_URL = import.meta.env.BASE_URL + 'images/';
 
-function ZenMode({ quizData, stats, setStats, mistakes, setMistakes, onExit }) {
+function ZenMode({ quizData, activeExam, examTitle, stats, setStats, mistakes, setMistakes, onExit }) {
+  // Filter out any study slides that don't have questions
+  const validSlides = (quizData || []).filter(s => s.questions && s.questions.length > 0);
+
   // Pick initial random index
   const pickRandomIndex = () => {
-    // Heavy emphasis on first 30 slides (index 0 to 29)
-    // 70% chance to pick from first 30, 30% chance to pick from anywhere
-    const focusLimit = Math.min(30, quizData.length);
+    if (validSlides.length === 0) return 0;
+    // Heavy emphasis on first 25 slides
+    // 70% chance to pick from first 25, 30% chance to pick from anywhere
+    const focusLimit = Math.min(25, validSlides.length);
     const rand = Math.random();
     if (rand < 0.7) {
       return Math.floor(Math.random() * focusLimit);
     } else {
-      return Math.floor(Math.random() * quizData.length);
+      return Math.floor(Math.random() * validSlides.length);
     }
   };
 
@@ -24,7 +28,18 @@ function ZenMode({ quizData, stats, setStats, mistakes, setMistakes, onExit }) {
   const [showLabeled, setShowLabeled] = useState(false);
   const [canSubmit, setCanSubmit] = useState(true);
 
-  const currentQuiz = quizData[currentIndex];
+  if (validSlides.length === 0) {
+    return (
+      <div className="app-container" style={{ textAlign: 'center', padding: '40px' }}>
+        <h2>No questions found</h2>
+        <button className="btn btn-primary" onClick={onExit} style={{ marginTop: '20px' }}>
+          Back to Quiz
+        </button>
+      </div>
+    );
+  }
+
+  const currentQuiz = validSlides[currentIndex] || validSlides[0];
 
   const handleInputChange = (letter, value) => {
     setAnswers(prev => ({ ...prev, [letter]: value }));
@@ -46,7 +61,7 @@ function ZenMode({ quizData, stats, setStats, mistakes, setMistakes, onExit }) {
       }
       newStats[q.answer].total += 1;
       
-      const mistakeKey = `${currentQuiz.id}_${q.letter}`;
+      const mistakeKey = `${activeExam || 'exam'}_${currentQuiz.id}_${q.letter}`;
       
       if (isCorrect) {
         newStats[q.answer].correct += 1;
@@ -54,6 +69,7 @@ function ZenMode({ quizData, stats, setStats, mistakes, setMistakes, onExit }) {
         if (!newMistakes[mistakeKey]) {
           newMistakes[mistakeKey] = {
             id: mistakeKey,
+            exam: activeExam,
             slideId: currentQuiz.id,
             letter: q.letter,
             answer: q.answer,
@@ -89,15 +105,13 @@ function ZenMode({ quizData, stats, setStats, mistakes, setMistakes, onExit }) {
   const toggleImage = () => setShowLabeled(prev => !prev);
 
   let correctCount = 0;
-  if (submitted && currentQuiz) {
+  if (submitted && currentQuiz && currentQuiz.questions) {
     currentQuiz.questions.forEach(q => {
       if (checkAnswer(answers[q.letter] || '', q.answer)) {
         correctCount++;
       }
     });
   }
-
-  if (!currentQuiz) return <div className="app-container">Loading...</div>;
 
   return (
     <div className="app-container">
@@ -106,10 +120,14 @@ function ZenMode({ quizData, stats, setStats, mistakes, setMistakes, onExit }) {
           <ArrowLeft size={18} style={{ marginRight: '8px' }}/> Exit Zen Mode
         </button>
         <h1>Zen Mode 🧘</h1>
-        <p>Endless random practice. Heavy emphasis on the first 30 slides.</p>
+        <p>{examTitle || 'Endless practice'}. Random slide repetition with focus on key structures.</p>
       </div>
 
       <div className="quiz-card">
+        <div style={{ textAlign: 'center', marginBottom: '8px', color: '#94a3b8', fontWeight: 600 }}>
+          Slide: {currentQuiz.id}
+        </div>
+
         <div className="image-container">
           <img 
             src={BASE_URL + (showLabeled ? currentQuiz.labeled_image : currentQuiz.unlabeled_image)} 

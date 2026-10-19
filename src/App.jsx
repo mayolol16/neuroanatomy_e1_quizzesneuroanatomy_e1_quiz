@@ -1,6 +1,7 @@
-import React, { useState, useEffect } from 'react';
-import { ChevronLeft, ChevronRight, CheckCircle, XCircle, Info, RefreshCw, BarChart2, X, BrainCircuit, Zap } from 'lucide-react';
-import quizData from './quiz_data.json';
+import React, { useState } from 'react';
+import { ChevronLeft, ChevronRight, CheckCircle, XCircle, RefreshCw, BarChart2, X, BrainCircuit, Zap, BookOpen } from 'lucide-react';
+import exam1Data from './quiz_data.json';
+import exam2Data from './exam2_data.json';
 import { checkAnswer } from './utils';
 import SpacedRepetition from './SpacedRepetition';
 import ZenMode from './ZenMode';
@@ -8,6 +9,10 @@ import ZenMode from './ZenMode';
 const BASE_URL = import.meta.env.BASE_URL + 'images/';
 
 function App() {
+  const [activeExam, setActiveExam] = useState(() => {
+    return localStorage.getItem('neuroQuizActiveExam') || 'exam2';
+  });
+
   const [mode, setMode] = useState('quiz');
   const [currentIndex, setCurrentIndex] = useState(0);
   const [answers, setAnswers] = useState({});
@@ -26,7 +31,18 @@ function App() {
     return saved ? JSON.parse(saved) : {};
   });
 
-  const currentQuiz = quizData[currentIndex];
+  const currentQuizData = activeExam === 'exam1' ? exam1Data : exam2Data;
+  const currentQuiz = currentQuizData[currentIndex];
+
+  const switchExam = (examKey) => {
+    setActiveExam(examKey);
+    localStorage.setItem('neuroQuizActiveExam', examKey);
+    setCurrentIndex(0);
+    setAnswers({});
+    setSubmitted(false);
+    setShowLabeled(false);
+    window.scrollTo(0, 0);
+  };
   
   const handleInputChange = (letter, value) => {
     setAnswers(prev => ({ ...prev, [letter]: value }));
@@ -38,7 +54,7 @@ function App() {
     
     setSubmitted(true);
 
-    // Update stats
+    // Update stats & mistakes
     const newStats = { ...stats };
     const newMistakes = { ...mistakes };
     
@@ -49,7 +65,7 @@ function App() {
       }
       newStats[q.answer].total += 1;
       
-      const mistakeKey = `${currentQuiz.id}_${q.letter}`;
+      const mistakeKey = `${activeExam}_${currentQuiz.id}_${q.letter}`;
       
       if (isCorrect) {
         newStats[q.answer].correct += 1;
@@ -58,6 +74,7 @@ function App() {
         if (!newMistakes[mistakeKey]) {
           newMistakes[mistakeKey] = {
             id: mistakeKey,
+            exam: activeExam,
             slideId: currentQuiz.id,
             letter: q.letter,
             answer: q.answer,
@@ -81,7 +98,7 @@ function App() {
   };
 
   const nextQuestion = () => {
-    if (currentIndex < quizData.length - 1) {
+    if (currentIndex < currentQuizData.length - 1) {
       setCurrentIndex(prev => prev + 1);
       setAnswers({});
       setSubmitted(false);
@@ -126,7 +143,7 @@ function App() {
   };
 
   let correctCount = 0;
-  if (submitted && currentQuiz) {
+  if (submitted && currentQuiz && currentQuiz.questions) {
     currentQuiz.questions.forEach(q => {
       if (checkAnswer(answers[q.letter] || '', q.answer)) {
         correctCount++;
@@ -157,7 +174,9 @@ function App() {
   if (mode === 'zen') {
     return (
       <ZenMode 
-        quizData={quizData}
+        quizData={currentQuizData}
+        activeExam={activeExam}
+        examTitle={activeExam === 'exam1' ? 'Exam 1: Sensory Systems' : 'Exam 2: Motor, Cranial Nerves & Senses'}
         stats={stats}
         setStats={setStats}
         mistakes={mistakes}
@@ -168,12 +187,44 @@ function App() {
   }
 
   const dueItemsCount = Object.values(mistakes).filter(m => m.nextReviewDate <= Date.now()).length;
+  const isStudySlide = !currentQuiz.questions || currentQuiz.questions.length === 0;
 
   return (
     <div className="app-container">
       <div className="header">
-        <h1>Neuro Practical Exam 1</h1>
-        <p>Interactive Quiz Mode with Flexible Grading</p>
+        {/* Exam Mode Selector */}
+        <div style={{ display: 'flex', justifyContent: 'center', gap: '10px', marginBottom: '20px', flexWrap: 'wrap' }}>
+          <button 
+            className={`btn ${activeExam === 'exam1' ? 'btn-primary' : 'btn-secondary'}`}
+            onClick={() => switchExam('exam1')}
+            style={{ 
+              fontWeight: 700, 
+              padding: '10px 20px',
+              border: activeExam === 'exam1' ? '2px solid #60a5fa' : '2px solid transparent'
+            }}
+          >
+            <BookOpen size={18} /> Exam 1 (Sensory)
+          </button>
+          <button 
+            className={`btn ${activeExam === 'exam2' ? 'btn-primary' : 'btn-secondary'}`}
+            onClick={() => switchExam('exam2')}
+            style={{ 
+              fontWeight: 700, 
+              padding: '10px 20px',
+              border: activeExam === 'exam2' ? '2px solid #60a5fa' : '2px solid transparent'
+            }}
+          >
+            <BookOpen size={18} /> Exam 2 (Motor, CNs, Ear & Eye)
+          </button>
+        </div>
+
+        <h1>{activeExam === 'exam1' ? 'Neuro Practical Exam 1' : 'Neuro Practical Exam 2'}</h1>
+        <p>
+          {activeExam === 'exam1' 
+            ? 'Sensory Pathways & Brainstem Neuroanatomy' 
+            : 'Motor Pathways, Cranial Nerves, Auditory & Visual Systems'}
+        </p>
+
         <div style={{ display: 'flex', gap: '10px', justifyContent: 'center', marginTop: '15px', flexWrap: 'wrap' }}>
           <button className="btn btn-secondary stats-toggle-btn" onClick={toggleStats} style={{ position: 'static' }}>
             <BarChart2 size={18} /> View Analytics
@@ -233,11 +284,11 @@ function App() {
       )}
 
       <div className="progress-container">
-        <span>Question {currentIndex + 1} of {quizData.length}</span>
+        <span>Slide {currentIndex + 1} of {currentQuizData.length}</span>
         <div className="progress-bar">
           <div 
             className="progress-fill" 
-            style={{ width: `${((currentIndex + 1) / quizData.length) * 100}%` }}
+            style={{ width: `${((currentIndex + 1) / currentQuizData.length) * 100}%` }}
           ></div>
         </div>
       </div>
@@ -251,11 +302,11 @@ function App() {
           >
             <ChevronLeft size={20} /> Previous
           </button>
-          <span style={{ fontWeight: 600 }}>Slide: {currentQuiz.id}</span>
+          <span style={{ fontWeight: 600 }}>Slide {currentQuiz.id}</span>
           <button 
             className="btn" 
             onClick={nextQuestion} 
-            disabled={currentIndex === quizData.length - 1}
+            disabled={currentIndex === currentQuizData.length - 1}
           >
             Next <ChevronRight size={20} />
           </button>
@@ -276,48 +327,81 @@ function App() {
         </div>
 
         <form onSubmit={handleSubmit}>
-          <h3>Identify the following structures:</h3>
-          
-          {submitted && (
-            <div className="score-display">
-              You answered {correctCount} out of {currentQuiz.questions.length} questions correctly.
+          {isStudySlide ? (
+            <div style={{ 
+              textAlign: 'center', 
+              padding: '24px', 
+              background: 'rgba(59, 130, 246, 0.08)', 
+              borderRadius: '12px', 
+              border: '1px solid rgba(59, 130, 246, 0.25)',
+              margin: '10px 0 20px 0'
+            }}>
+              <h4 style={{ color: '#93c5fd', marginBottom: '8px', fontSize: '1.2rem' }}>
+                📖 Study Reference Slide
+              </h4>
+              <p style={{ color: 'var(--text-color-muted)', marginBottom: '12px' }}>
+                Questions were not assigned for this slide on the original university practical exam.
+              </p>
+              <p style={{ color: 'var(--text-color)', fontSize: '0.95rem' }}>
+                Click <strong>"Show Labeled Image"</strong> above to study these anatomical landmarks, then click Continue to proceed.
+              </p>
             </div>
-          )}
-
-          <div className="form-grid">
-            {currentQuiz.questions.map((q) => {
-              const userAns = answers[q.letter] || '';
-              const isCorrect = submitted ? checkAnswer(userAns, q.answer) : null;
+          ) : (
+            <>
+              <h3>Identify the following structures:</h3>
               
-              return (
-                <div className="input-group" key={q.letter}>
-                  <label>
-                    <span className="letter-badge">{q.letter}</span>
-                    {submitted && (
-                      <span className={`status-badge ${isCorrect ? 'correct' : 'incorrect'}`}>
-                        {isCorrect ? 'Correct' : 'Incorrect'}
-                      </span>
-                    )}
-                  </label>
-                  <input 
-                    type="text" 
-                    value={userAns}
-                    onChange={(e) => handleInputChange(q.letter, e.target.value)}
-                    disabled={submitted}
-                    placeholder={`Structure ${q.letter}`}
-                  />
-                  {submitted && !isCorrect && (
-                    <div className="correct-answer-text">
-                      <strong>Answer:</strong> {q.answer}
-                    </div>
-                  )}
+              {submitted && (
+                <div className="score-display">
+                  You answered {correctCount} out of {currentQuiz.questions.length} questions correctly.
                 </div>
-              );
-            })}
-          </div>
+              )}
+
+              <div className="form-grid">
+                {currentQuiz.questions.map((q) => {
+                  const userAns = answers[q.letter] || '';
+                  const isCorrect = submitted ? checkAnswer(userAns, q.answer) : null;
+                  
+                  return (
+                    <div className="input-group" key={q.letter}>
+                      <label>
+                        <span className="letter-badge">{q.letter}</span>
+                        {submitted && (
+                          <span className={`status-badge ${isCorrect ? 'correct' : 'incorrect'}`}>
+                            {isCorrect ? 'Correct' : 'Incorrect'}
+                          </span>
+                        )}
+                      </label>
+                      <input 
+                        type="text" 
+                        value={userAns}
+                        onChange={(e) => handleInputChange(q.letter, e.target.value)}
+                        disabled={submitted}
+                        placeholder={`Structure ${q.letter}`}
+                        autoComplete="off"
+                      />
+                      {submitted && !isCorrect && (
+                        <div className="correct-answer-text">
+                          <strong>Answer:</strong> {q.answer}
+                        </div>
+                      )}
+                    </div>
+                  );
+                })}
+              </div>
+            </>
+          )}
           
           <div className="controls">
-            {!submitted ? (
+            {isStudySlide ? (
+              <button 
+                type="button" 
+                className="btn btn-primary" 
+                onClick={nextQuestion}
+                disabled={currentIndex === currentQuizData.length - 1}
+              >
+                Continue to Next Slide <ChevronRight size={20} />
+              </button>
+            ) : !submitted ? (
               <button type="submit" className="btn btn-primary" disabled={!canSubmit}>
                 Submit Answers
               </button>
@@ -326,7 +410,7 @@ function App() {
                 type="button" 
                 className="btn btn-primary" 
                 onClick={nextQuestion}
-                disabled={currentIndex === quizData.length - 1}
+                disabled={currentIndex === currentQuizData.length - 1}
               >
                 Continue to Next Slide <ChevronRight size={20} />
               </button>
