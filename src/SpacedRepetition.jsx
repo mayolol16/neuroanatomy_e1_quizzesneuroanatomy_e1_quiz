@@ -1,13 +1,13 @@
 import React, { useState, useEffect, useRef } from 'react';
-import { ChevronRight, ArrowLeft, CheckCircle, XCircle, HelpCircle } from 'lucide-react';
-import { checkAnswer } from './utils';
+import { ChevronRight, ArrowLeft, CheckCircle, XCircle, HelpCircle, BookOpen } from 'lucide-react';
+import { checkAnswer, isExamMistake } from './utils';
 
 const BASE_URL = import.meta.env.BASE_URL + 'images/';
 
-function SpacedRepetition({ mistakes, updateMistake, onExit }) {
-  // Snapshot the review queue for this session so index shifts don't disrupt card flow
+function SpacedRepetitionSession({ exam, mistakes, updateMistake, onSwitchExam, onExit }) {
+  // Snapshot the review queue for this exam session
   const [reviewQueue] = useState(() => {
-    return Object.values(mistakes || {}).filter(m => m.nextReviewDate <= Date.now());
+    return Object.values(mistakes || {}).filter(m => isExamMistake(m, exam) && m.nextReviewDate <= Date.now());
   });
   
   const [currentIndex, setCurrentIndex] = useState(0);
@@ -24,14 +24,23 @@ function SpacedRepetition({ mistakes, updateMistake, onExit }) {
     }
   }, [currentIndex, submitted]);
 
+  const examTitle = exam === 'exam1' ? 'Exam 1 (Sensory)' : 'Exam 2 (Motor & Special Senses)';
+
   if (reviewQueue.length === 0) {
     return (
       <div className="app-container" style={{ textAlign: 'center', padding: '40px' }}>
-        <h2>You're all caught up! 🎉</h2>
-        <p>You have no structures to review right now. Come back later or take the main quiz.</p>
-        <button className="btn btn-primary" onClick={onExit} style={{ marginTop: '20px' }}>
-          Back to Main Quiz
-        </button>
+        <h2>You're all caught up on {examTitle}! 🎉</h2>
+        <p style={{ color: 'var(--text-color-muted)', margin: '15px 0' }}>
+          You have no structures to review for this exam right now.
+        </p>
+        <div style={{ display: 'flex', gap: '10px', justifyContent: 'center', marginTop: '20px', flexWrap: 'wrap' }}>
+          <button className="btn btn-secondary" onClick={onSwitchExam}>
+            Review Different Exam
+          </button>
+          <button className="btn btn-primary" onClick={onExit}>
+            Back to Main Quiz
+          </button>
+        </div>
       </div>
     );
   }
@@ -39,11 +48,18 @@ function SpacedRepetition({ mistakes, updateMistake, onExit }) {
   if (currentIndex >= reviewQueue.length) {
     return (
       <div className="app-container" style={{ textAlign: 'center', padding: '40px' }}>
-        <h2>Great job! 🎉</h2>
-        <p>You have finished your review session for now.</p>
-        <button className="btn btn-primary" onClick={onExit} style={{ marginTop: '20px' }}>
-          Back to Main Quiz
-        </button>
+        <h2>Great job! Finished {examTitle} Review 🎉</h2>
+        <p style={{ color: 'var(--text-color-muted)', margin: '15px 0' }}>
+          You've completed all due review cards for this exam session.
+        </p>
+        <div style={{ display: 'flex', gap: '10px', justifyContent: 'center', marginTop: '20px', flexWrap: 'wrap' }}>
+          <button className="btn btn-secondary" onClick={onSwitchExam}>
+            Review Other Exam
+          </button>
+          <button className="btn btn-primary" onClick={onExit}>
+            Back to Main Quiz
+          </button>
+        </div>
       </div>
     );
   }
@@ -68,13 +84,11 @@ function SpacedRepetition({ mistakes, updateMistake, onExit }) {
     // Update spaced repetition state
     const currentInterval = currentItem.interval || 1;
     if (correct) {
-      // Increase interval
       updateMistake(currentItem.id, {
         interval: currentInterval * 2,
         nextReviewDate: Date.now() + (currentInterval * 2 * 24 * 60 * 60 * 1000)
       });
     } else {
-      // Reset interval to 1 day
       updateMistake(currentItem.id, {
         interval: 1,
         nextReviewDate: Date.now() + (24 * 60 * 60 * 1000)
@@ -106,21 +120,19 @@ function SpacedRepetition({ mistakes, updateMistake, onExit }) {
 
   const isLast = currentIndex === reviewQueue.length - 1;
 
-  // Determine exam label
-  const examLabel = currentItem.exam === 'exam1' 
-    ? 'Exam 1 (Sensory)' 
-    : currentItem.exam === 'exam2' 
-      ? 'Exam 2 (Motor & CN)' 
-      : '';
-
   return (
     <div className="app-container">
       <div className="header">
-        <button className="btn btn-secondary" onClick={onExit} style={{ float: 'left' }}>
-          <ArrowLeft size={18} style={{ marginRight: '8px' }}/> Exit Review
-        </button>
-        <h1>Spaced Repetition Mode</h1>
-        <p>Reviewing structures you previously missed.</p>
+        <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginBottom: '15px' }}>
+          <button className="btn btn-secondary" onClick={onExit}>
+            <ArrowLeft size={18} style={{ marginRight: '6px' }}/> Exit Review
+          </button>
+          <button className="btn btn-secondary" onClick={onSwitchExam} style={{ fontSize: '0.9rem' }}>
+            <BookOpen size={16} style={{ marginRight: '6px' }} /> Switch Exam
+          </button>
+        </div>
+        <h1>Spaced Repetition: {examTitle}</h1>
+        <p>Targeted review of structures you previously missed on this exam.</p>
       </div>
 
       <div className="progress-container">
@@ -129,11 +141,9 @@ function SpacedRepetition({ mistakes, updateMistake, onExit }) {
 
       <div className="quiz-card">
         <div style={{ textAlign: 'center', marginBottom: '10px', fontWeight: 600, color: '#64748b', display: 'flex', justifyContent: 'center', gap: '8px', alignItems: 'center' }}>
-          {examLabel && (
-            <span style={{ background: 'rgba(59, 130, 246, 0.2)', color: '#93c5fd', padding: '2px 8px', borderRadius: '4px', fontSize: '0.85rem' }}>
-              {examLabel}
-            </span>
-          )}
+          <span style={{ background: 'rgba(59, 130, 246, 0.2)', color: '#93c5fd', padding: '2px 8px', borderRadius: '4px', fontSize: '0.85rem' }}>
+            {exam === 'exam1' ? 'Exam 1' : 'Exam 2'}
+          </span>
           <span>Slide: {currentItem.slideId || currentItem.id.split('_')[1] || currentItem.id.split('_')[0]}</span>
         </div>
 
@@ -211,6 +221,78 @@ function SpacedRepetition({ mistakes, updateMistake, onExit }) {
         </form>
       </div>
     </div>
+  );
+}
+
+function SpacedRepetition({ mistakes, updateMistake, onExit, initialExam }) {
+  const [selectedExam, setSelectedExam] = useState(initialExam || null);
+
+  const exam1Due = Object.values(mistakes || {}).filter(m => isExamMistake(m, 'exam1') && m.nextReviewDate <= Date.now()).length;
+  const exam2Due = Object.values(mistakes || {}).filter(m => isExamMistake(m, 'exam2') && m.nextReviewDate <= Date.now()).length;
+
+  if (!selectedExam) {
+    return (
+      <div className="app-container">
+        <div className="header">
+          <button className="btn btn-secondary" onClick={onExit} style={{ float: 'left' }}>
+            <ArrowLeft size={18} style={{ marginRight: '8px' }}/> Back to Main
+          </button>
+          <h1>Spaced Repetition Review</h1>
+          <p>Select which exam you want to review structures from:</p>
+        </div>
+
+        <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(280px, 1fr))', gap: '20px', marginTop: '30px' }}>
+          <div 
+            className="quiz-card" 
+            style={{ textAlign: 'center', cursor: 'pointer', border: '2px solid transparent', transition: 'all 0.2s' }}
+            onClick={() => setSelectedExam('exam1')}
+            onMouseEnter={(e) => e.currentTarget.style.borderColor = '#3b82f6'}
+            onMouseLeave={(e) => e.currentTarget.style.borderColor = 'transparent'}
+          >
+            <h2 style={{ color: '#60a5fa' }}>Exam 1: Sensory</h2>
+            <p style={{ color: 'var(--text-color-muted)', margin: '10px 0' }}>
+              Sensory Pathways & Brainstem Neuroanatomy
+            </p>
+            <div style={{ fontSize: '1.3rem', fontWeight: 700, color: exam1Due > 0 ? '#ef4444' : '#10b981', margin: '15px 0' }}>
+              {exam1Due} {exam1Due === 1 ? 'card' : 'cards'} due for review
+            </div>
+            <button className="btn btn-primary" style={{ width: '100%', justifyContent: 'center' }}>
+              Start Exam 1 Review
+            </button>
+          </div>
+
+          <div 
+            className="quiz-card" 
+            style={{ textAlign: 'center', cursor: 'pointer', border: '2px solid transparent', transition: 'all 0.2s' }}
+            onClick={() => setSelectedExam('exam2')}
+            onMouseEnter={(e) => e.currentTarget.style.borderColor = '#3b82f6'}
+            onMouseLeave={(e) => e.currentTarget.style.borderColor = 'transparent'}
+          >
+            <h2 style={{ color: '#a78bfa' }}>Exam 2: Motor & CNs</h2>
+            <p style={{ color: 'var(--text-color-muted)', margin: '10px 0' }}>
+              Motor Pathways, Cranial Nerves, Auditory & Visual Systems
+            </p>
+            <div style={{ fontSize: '1.3rem', fontWeight: 700, color: exam2Due > 0 ? '#ef4444' : '#10b981', margin: '15px 0' }}>
+              {exam2Due} {exam2Due === 1 ? 'card' : 'cards'} due for review
+            </div>
+            <button className="btn btn-primary" style={{ width: '100%', justifyContent: 'center' }}>
+              Start Exam 2 Review
+            </button>
+          </div>
+        </div>
+      </div>
+    );
+  }
+
+  return (
+    <SpacedRepetitionSession 
+      key={selectedExam}
+      exam={selectedExam}
+      mistakes={mistakes}
+      updateMistake={updateMistake}
+      onSwitchExam={() => setSelectedExam(null)}
+      onExit={onExit}
+    />
   );
 }
 

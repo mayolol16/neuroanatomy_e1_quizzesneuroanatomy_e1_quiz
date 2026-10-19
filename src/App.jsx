@@ -1,8 +1,8 @@
 import React, { useState } from 'react';
-import { ChevronLeft, ChevronRight, CheckCircle, XCircle, RefreshCw, BarChart2, X, BrainCircuit, Zap, BookOpen } from 'lucide-react';
+import { ChevronLeft, ChevronRight, RefreshCw, BarChart2, X, BrainCircuit, Zap, BookOpen } from 'lucide-react';
 import exam1Data from './quiz_data.json';
 import exam2Data from './exam2_data.json';
-import { checkAnswer } from './utils';
+import { checkAnswer, isExamMistake } from './utils';
 import SpacedRepetition from './SpacedRepetition';
 import ZenMode from './ZenMode';
 
@@ -13,7 +13,10 @@ function App() {
     return localStorage.getItem('neuroQuizActiveExam') || 'exam2';
   });
 
-  const [mode, setMode] = useState('quiz');
+  const [mode, setMode] = useState('quiz'); // 'quiz', 'review', 'zen'
+  const [selectedReviewExam, setSelectedReviewExam] = useState(null);
+  const [selectedZenExam, setSelectedZenExam] = useState(null);
+
   const [currentIndex, setCurrentIndex] = useState(0);
   const [answers, setAnswers] = useState({});
   const [submitted, setSubmitted] = useState(false);
@@ -70,7 +73,6 @@ function App() {
       if (isCorrect) {
         newStats[q.answer].correct += 1;
       } else {
-        // Record mistake for spaced repetition
         if (!newMistakes[mistakeKey]) {
           newMistakes[mistakeKey] = {
             id: mistakeKey,
@@ -84,7 +86,6 @@ function App() {
             nextReviewDate: Date.now()
           };
         } else {
-          // Reset interval if missed again on main quiz
           newMistakes[mistakeKey].interval = 1;
           newMistakes[mistakeKey].nextReviewDate = Date.now();
         }
@@ -151,13 +152,21 @@ function App() {
     });
   }
 
-  // Process stats for display
-  const statsArray = Object.entries(stats).map(([structure, data]) => ({
-    structure,
-    correct: data.correct,
-    total: data.total,
-    accuracy: data.total > 0 ? (data.correct / data.total) * 100 : 0
-  })).sort((a, b) => a.accuracy - b.accuracy || b.total - a.total); // Weakest first
+  // Count due mistakes strictly separated by exam
+  const exam1DueCount = Object.values(mistakes).filter(m => isExamMistake(m, 'exam1') && m.nextReviewDate <= Date.now()).length;
+  const exam2DueCount = Object.values(mistakes).filter(m => isExamMistake(m, 'exam2') && m.nextReviewDate <= Date.now()).length;
+  const currentExamDueCount = activeExam === 'exam1' ? exam1DueCount : exam2DueCount;
+
+  // Process stats for display (filtered to structures appearing in current exam)
+  const currentExamStructures = new Set(currentQuizData.flatMap(s => (s.questions || []).map(q => q.answer)));
+  const statsArray = Object.entries(stats)
+    .filter(([structure]) => currentExamStructures.has(structure))
+    .map(([structure, data]) => ({
+      structure,
+      correct: data.correct,
+      total: data.total,
+      accuracy: data.total > 0 ? (data.correct / data.total) * 100 : 0
+    })).sort((a, b) => a.accuracy - b.accuracy || b.total - a.total); // Weakest first
 
   if (!currentQuiz) return <div className="app-container">Loading...</div>;
 
@@ -166,7 +175,11 @@ function App() {
       <SpacedRepetition 
         mistakes={mistakes} 
         updateMistake={updateMistake} 
-        onExit={() => setMode('quiz')} 
+        initialExam={selectedReviewExam}
+        onExit={() => {
+          setSelectedReviewExam(null);
+          setMode('quiz');
+        }} 
       />
     );
   }
@@ -174,50 +187,112 @@ function App() {
   if (mode === 'zen') {
     return (
       <ZenMode 
-        quizData={currentQuizData}
-        activeExam={activeExam}
-        examTitle={activeExam === 'exam1' ? 'Exam 1: Sensory Systems' : 'Exam 2: Motor, Cranial Nerves & Senses'}
+        quizData1={exam1Data}
+        quizData2={exam2Data}
+        initialExam={selectedZenExam}
         stats={stats}
         setStats={setStats}
         mistakes={mistakes}
         setMistakes={setMistakes}
-        onExit={() => setMode('quiz')}
+        onExit={() => {
+          setSelectedZenExam(null);
+          setMode('quiz');
+        }}
       />
     );
   }
 
-  const dueItemsCount = Object.values(mistakes).filter(m => m.nextReviewDate <= Date.now()).length;
   const isStudySlide = !currentQuiz.questions || currentQuiz.questions.length === 0;
 
   return (
     <div className="app-container">
       <div className="header">
-        {/* Exam Mode Selector */}
-        <div style={{ display: 'flex', justifyContent: 'center', gap: '10px', marginBottom: '20px', flexWrap: 'wrap' }}>
-          <button 
-            className={`btn ${activeExam === 'exam1' ? 'btn-primary' : 'btn-secondary'}`}
-            onClick={() => switchExam('exam1')}
-            style={{ 
-              fontWeight: 700, 
-              padding: '10px 20px',
-              border: activeExam === 'exam1' ? '2px solid #60a5fa' : '2px solid transparent'
-            }}
-          >
-            <BookOpen size={18} /> Exam 1 (Sensory)
-          </button>
-          <button 
-            className={`btn ${activeExam === 'exam2' ? 'btn-primary' : 'btn-secondary'}`}
-            onClick={() => switchExam('exam2')}
-            style={{ 
-              fontWeight: 700, 
-              padding: '10px 20px',
-              border: activeExam === 'exam2' ? '2px solid #60a5fa' : '2px solid transparent'
-            }}
-          >
-            <BookOpen size={18} /> Exam 2 (Motor, CNs, Ear & Eye)
-          </button>
+        {/* STEP 1: SELECT EXAM AT THE START */}
+        <div style={{ 
+          background: 'var(--surface-color)', 
+          padding: '16px', 
+          borderRadius: '14px', 
+          marginBottom: '20px', 
+          border: '1px solid var(--surface-color-light)',
+          boxShadow: '0 4px 15px rgba(0,0,0,0.2)'
+        }}>
+          <div style={{ 
+            fontSize: '0.85rem', 
+            textTransform: 'uppercase', 
+            letterSpacing: '0.08em', 
+            color: '#94a3b8', 
+            fontWeight: 700, 
+            marginBottom: '12px', 
+            textAlign: 'center' 
+          }}>
+            Step 1: Choose Exam to Review
+          </div>
+          <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(280px, 1fr))', gap: '12px' }}>
+            <div 
+              onClick={() => switchExam('exam1')}
+              style={{
+                padding: '16px',
+                borderRadius: '10px',
+                cursor: 'pointer',
+                border: activeExam === 'exam1' ? '2px solid #3b82f6' : '1px solid rgba(255,255,255,0.08)',
+                background: activeExam === 'exam1' ? 'rgba(59, 130, 246, 0.16)' : 'rgba(0,0,0,0.25)',
+                transition: 'all 0.2s',
+                display: 'flex',
+                flexDirection: 'column',
+                gap: '6px',
+                textAlign: 'left'
+              }}
+            >
+              <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center' }}>
+                <strong style={{ fontSize: '1.1rem', color: activeExam === 'exam1' ? '#60a5fa' : '#f8fafc' }}>
+                  Exam 1: Sensory Systems
+                </strong>
+                {activeExam === 'exam1' && (
+                  <span style={{ background: '#3b82f6', color: 'white', fontSize: '0.75rem', padding: '2px 8px', borderRadius: '999px', fontWeight: 700 }}>
+                    SELECTED
+                  </span>
+                )}
+              </div>
+              <span style={{ fontSize: '0.88rem', color: '#94a3b8' }}>43 Slides • Sensory Tracts, Nuclei & Brainstem</span>
+              <div style={{ fontSize: '0.82rem', color: exam1DueCount > 0 ? '#f87171' : '#34d399', fontWeight: 600, marginTop: '2px' }}>
+                {exam1DueCount} Spaced Repetition {exam1DueCount === 1 ? 'card' : 'cards'} due
+              </div>
+            </div>
+
+            <div 
+              onClick={() => switchExam('exam2')}
+              style={{
+                padding: '16px',
+                borderRadius: '10px',
+                cursor: 'pointer',
+                border: activeExam === 'exam2' ? '2px solid #3b82f6' : '1px solid rgba(255,255,255,0.08)',
+                background: activeExam === 'exam2' ? 'rgba(59, 130, 246, 0.16)' : 'rgba(0,0,0,0.25)',
+                transition: 'all 0.2s',
+                display: 'flex',
+                flexDirection: 'column',
+                gap: '6px',
+                textAlign: 'left'
+              }}
+            >
+              <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center' }}>
+                <strong style={{ fontSize: '1.1rem', color: activeExam === 'exam2' ? '#60a5fa' : '#f8fafc' }}>
+                  Exam 2: Motor & CNs
+                </strong>
+                {activeExam === 'exam2' && (
+                  <span style={{ background: '#3b82f6', color: 'white', fontSize: '0.75rem', padding: '2px 8px', borderRadius: '999px', fontWeight: 700 }}>
+                    SELECTED
+                  </span>
+                )}
+              </div>
+              <span style={{ fontSize: '0.88rem', color: '#94a3b8' }}>53 Slides • Motor Tracts, CNs, Ear & Eye</span>
+              <div style={{ fontSize: '0.82rem', color: exam2DueCount > 0 ? '#f87171' : '#34d399', fontWeight: 600, marginTop: '2px' }}>
+                {exam2DueCount} Spaced Repetition {exam2DueCount === 1 ? 'card' : 'cards'} due
+              </div>
+            </div>
+          </div>
         </div>
 
+        {/* TITLE & DESCRIPTION */}
         <h1>{activeExam === 'exam1' ? 'Neuro Practical Exam 1' : 'Neuro Practical Exam 2'}</h1>
         <p>
           {activeExam === 'exam1' 
@@ -225,16 +300,37 @@ function App() {
             : 'Motor Pathways, Cranial Nerves, Auditory & Visual Systems'}
         </p>
 
-        <div style={{ display: 'flex', gap: '10px', justifyContent: 'center', marginTop: '15px', flexWrap: 'wrap' }}>
+        {/* STEP 2: SELECT MODE */}
+        <div style={{ display: 'flex', gap: '10px', justifyContent: 'center', marginTop: '16px', flexWrap: 'wrap' }}>
           <button className="btn btn-secondary stats-toggle-btn" onClick={toggleStats} style={{ position: 'static' }}>
-            <BarChart2 size={18} /> View Analytics
+            <BarChart2 size={18} /> {activeExam === 'exam1' ? 'Exam 1' : 'Exam 2'} Analytics
           </button>
-          <button className="btn btn-primary" onClick={() => setMode('review')}>
+          
+          <button 
+            className="btn btn-primary" 
+            onClick={() => {
+              setSelectedReviewExam(activeExam);
+              setMode('review');
+            }}
+          >
             <BrainCircuit size={18} style={{ marginRight: '8px' }} /> 
-            Spaced Repetition Review {dueItemsCount > 0 && <span style={{ background: '#ef4444', color: 'white', borderRadius: '50%', padding: '2px 8px', marginLeft: '5px', fontSize: '0.8rem' }}>{dueItemsCount}</span>}
+            {activeExam === 'exam1' ? 'Exam 1' : 'Exam 2'} Spaced Repetition 
+            {currentExamDueCount > 0 && (
+              <span style={{ background: '#ef4444', color: 'white', borderRadius: '50%', padding: '2px 8px', marginLeft: '6px', fontSize: '0.8rem' }}>
+                {currentExamDueCount}
+              </span>
+            )}
           </button>
-          <button className="btn" onClick={() => setMode('zen')} style={{ backgroundColor: '#8b5cf6', color: 'white' }}>
-            <Zap size={18} style={{ marginRight: '8px' }} /> Zen Mode
+          
+          <button 
+            className="btn" 
+            onClick={() => {
+              setSelectedZenExam(activeExam);
+              setMode('zen');
+            }} 
+            style={{ backgroundColor: '#8b5cf6', color: 'white' }}
+          >
+            <Zap size={18} style={{ marginRight: '8px' }} /> {activeExam === 'exam1' ? 'Exam 1' : 'Exam 2'} Zen Mode
           </button>
         </div>
       </div>
@@ -243,13 +339,13 @@ function App() {
         <div className="stats-modal-overlay">
           <div className="stats-modal">
             <div className="stats-modal-header">
-              <h2>Performance Analytics</h2>
+              <h2>{activeExam === 'exam1' ? 'Exam 1' : 'Exam 2'} Analytics</h2>
               <button className="icon-btn" onClick={toggleStats}><X size={24} /></button>
             </div>
             
             <div className="stats-content">
               {statsArray.length === 0 ? (
-                <p className="no-stats">Answer some questions to see your strengths and weaknesses!</p>
+                <p className="no-stats">Answer questions in {activeExam === 'exam1' ? 'Exam 1' : 'Exam 2'} to see your strengths and weaknesses!</p>
               ) : (
                 <>
                   <div className="stats-legend">

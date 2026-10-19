@@ -168,3 +168,14 @@ export const checkAnswer = (userAns, correctAns) => {
   
   return false;
 };
+
+export const isExamMistake = (m, targetExam) => {
+  if (!m) return false;
+  if (targetExam === 'exam2') {
+    return m.exam === 'exam2' || (m.id && String(m.id).startsWith('exam2_'));
+  }
+  if (targetExam === 'exam1') {
+    return m.exam === 'exam1' || (m.id && String(m.id).startsWith('exam1_')) || (!m.exam && !String(m.id).startsWith('exam2_'));
+  }
+  return true;
+};

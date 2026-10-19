@@ -1,18 +1,16 @@
 import React, { useState } from 'react';
-import { ChevronRight, ArrowLeft, RefreshCw } from 'lucide-react';
+import { ChevronRight, ArrowLeft, RefreshCw, Zap, BookOpen } from 'lucide-react';
 import { checkAnswer } from './utils';
 
 const BASE_URL = import.meta.env.BASE_URL + 'images/';
 
-function ZenMode({ quizData, activeExam, examTitle, stats, setStats, mistakes, setMistakes, onExit }) {
-  // Filter out any study slides that don't have questions
+function ZenModeSession({ exam, quizData, stats, setStats, mistakes, setMistakes, onSwitchExam, onExit }) {
+  // Only quiz on slides that actually have questions
   const validSlides = (quizData || []).filter(s => s.questions && s.questions.length > 0);
 
-  // Pick initial random index
   const pickRandomIndex = () => {
     if (validSlides.length === 0) return 0;
     // Heavy emphasis on first 25 slides
-    // 70% chance to pick from first 25, 30% chance to pick from anywhere
     const focusLimit = Math.min(25, validSlides.length);
     const rand = Math.random();
     if (rand < 0.7) {
@@ -31,15 +29,16 @@ function ZenMode({ quizData, activeExam, examTitle, stats, setStats, mistakes, s
   if (validSlides.length === 0) {
     return (
       <div className="app-container" style={{ textAlign: 'center', padding: '40px' }}>
-        <h2>No questions found</h2>
+        <h2>No questions available</h2>
         <button className="btn btn-primary" onClick={onExit} style={{ marginTop: '20px' }}>
-          Back to Quiz
+          Back to Main Quiz
         </button>
       </div>
     );
   }
 
   const currentQuiz = validSlides[currentIndex] || validSlides[0];
+  const examTitle = exam === 'exam1' ? 'Exam 1: Sensory Systems' : 'Exam 2: Motor, Cranial Nerves, Ear & Eye';
 
   const handleInputChange = (letter, value) => {
     setAnswers(prev => ({ ...prev, [letter]: value }));
@@ -61,7 +60,7 @@ function ZenMode({ quizData, activeExam, examTitle, stats, setStats, mistakes, s
       }
       newStats[q.answer].total += 1;
       
-      const mistakeKey = `${activeExam || 'exam'}_${currentQuiz.id}_${q.letter}`;
+      const mistakeKey = `${exam}_${currentQuiz.id}_${q.letter}`;
       
       if (isCorrect) {
         newStats[q.answer].correct += 1;
@@ -69,7 +68,7 @@ function ZenMode({ quizData, activeExam, examTitle, stats, setStats, mistakes, s
         if (!newMistakes[mistakeKey]) {
           newMistakes[mistakeKey] = {
             id: mistakeKey,
-            exam: activeExam,
+            exam: exam,
             slideId: currentQuiz.id,
             letter: q.letter,
             answer: q.answer,
@@ -116,16 +115,24 @@ function ZenMode({ quizData, activeExam, examTitle, stats, setStats, mistakes, s
   return (
     <div className="app-container">
       <div className="header">
-        <button className="btn btn-secondary" onClick={onExit} style={{ float: 'left' }}>
-          <ArrowLeft size={18} style={{ marginRight: '8px' }}/> Exit Zen Mode
-        </button>
-        <h1>Zen Mode 🧘</h1>
-        <p>{examTitle || 'Endless practice'}. Random slide repetition with focus on key structures.</p>
+        <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginBottom: '15px' }}>
+          <button className="btn btn-secondary" onClick={onExit}>
+            <ArrowLeft size={18} style={{ marginRight: '6px' }}/> Exit Zen Mode
+          </button>
+          <button className="btn btn-secondary" onClick={onSwitchExam} style={{ fontSize: '0.9rem' }}>
+            <BookOpen size={16} style={{ marginRight: '6px' }} /> Switch Exam
+          </button>
+        </div>
+        <h1>Zen Mode: {exam === 'exam1' ? 'Exam 1' : 'Exam 2'} 🧘</h1>
+        <p>{examTitle} • Endless random rapid-fire practice</p>
       </div>
 
       <div className="quiz-card">
-        <div style={{ textAlign: 'center', marginBottom: '8px', color: '#94a3b8', fontWeight: 600 }}>
-          Slide: {currentQuiz.id}
+        <div style={{ textAlign: 'center', marginBottom: '8px', color: '#94a3b8', fontWeight: 600, display: 'flex', justifyContent: 'center', gap: '8px', alignItems: 'center' }}>
+          <span style={{ background: 'rgba(139, 92, 246, 0.2)', color: '#c4b5fd', padding: '2px 8px', borderRadius: '4px', fontSize: '0.85rem' }}>
+            {exam === 'exam1' ? 'Exam 1' : 'Exam 2'}
+          </span>
+          <span>Slide: {currentQuiz.id}</span>
         </div>
 
         <div className="image-container">
@@ -172,6 +179,7 @@ function ZenMode({ quizData, activeExam, examTitle, stats, setStats, mistakes, s
                     onChange={(e) => handleInputChange(q.letter, e.target.value)}
                     disabled={submitted}
                     placeholder={`Structure ${q.letter}`}
+                    autoComplete="off"
                   />
                   {submitted && !isCorrect && (
                     <div className="correct-answer-text">
@@ -201,6 +209,78 @@ function ZenMode({ quizData, activeExam, examTitle, stats, setStats, mistakes, s
         </form>
       </div>
     </div>
+  );
+}
+
+function ZenMode({ quizData1, quizData2, initialExam, stats, setStats, mistakes, setMistakes, onExit }) {
+  const [selectedExam, setSelectedExam] = useState(initialExam || null);
+
+  if (!selectedExam) {
+    return (
+      <div className="app-container">
+        <div className="header">
+          <button className="btn btn-secondary" onClick={onExit} style={{ float: 'left' }}>
+            <ArrowLeft size={18} style={{ marginRight: '8px' }}/> Back to Main
+          </button>
+          <h1>Zen Mode Practice 🧘</h1>
+          <p>Select which exam you want to practice endlessly:</p>
+        </div>
+
+        <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(280px, 1fr))', gap: '20px', marginTop: '30px' }}>
+          <div 
+            className="quiz-card" 
+            style={{ textAlign: 'center', cursor: 'pointer', border: '2px solid transparent', transition: 'all 0.2s' }}
+            onClick={() => setSelectedExam('exam1')}
+            onMouseEnter={(e) => e.currentTarget.style.borderColor = '#8b5cf6'}
+            onMouseLeave={(e) => e.currentTarget.style.borderColor = 'transparent'}
+          >
+            <h2 style={{ color: '#60a5fa' }}>Exam 1: Sensory Systems</h2>
+            <p style={{ color: 'var(--text-color-muted)', margin: '10px 0' }}>
+              Sensory Pathways & Brainstem Sections
+            </p>
+            <p style={{ color: '#c4b5fd', fontWeight: 600, margin: '15px 0' }}>
+              43 Slides • Rapid-fire random practice
+            </p>
+            <button className="btn btn-primary" style={{ width: '100%', justifyContent: 'center', backgroundColor: '#8b5cf6' }}>
+              <Zap size={18} style={{ marginRight: '8px' }} /> Start Exam 1 Zen
+            </button>
+          </div>
+
+          <div 
+            className="quiz-card" 
+            style={{ textAlign: 'center', cursor: 'pointer', border: '2px solid transparent', transition: 'all 0.2s' }}
+            onClick={() => setSelectedExam('exam2')}
+            onMouseEnter={(e) => e.currentTarget.style.borderColor = '#8b5cf6'}
+            onMouseLeave={(e) => e.currentTarget.style.borderColor = 'transparent'}
+          >
+            <h2 style={{ color: '#a78bfa' }}>Exam 2: Motor & CNs</h2>
+            <p style={{ color: 'var(--text-color-muted)', margin: '10px 0' }}>
+              Motor Pathways, Cranial Nerves, Ear & Eye
+            </p>
+            <p style={{ color: '#c4b5fd', fontWeight: 600, margin: '15px 0' }}>
+              53 Slides • Rapid-fire random practice
+            </p>
+            <button className="btn btn-primary" style={{ width: '100%', justifyContent: 'center', backgroundColor: '#8b5cf6' }}>
+              <Zap size={18} style={{ marginRight: '8px' }} /> Start Exam 2 Zen
+            </button>
+          </div>
+        </div>
+      </div>
+    );
+  }
+
+  return (
+    <ZenModeSession 
+      key={selectedExam}
+      exam={selectedExam}
+      quizData={selectedExam === 'exam1' ? quizData1 : quizData2}
+      stats={stats}
+      setStats={setStats}
+      mistakes={mistakes}
+      setMistakes={setMistakes}
+      onSwitchExam={() => setSelectedExam(null)}
+      onExit={onExit}
+    />
   );
 }
 
