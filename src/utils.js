@@ -138,6 +138,7 @@ export const ALTERNATIVE_ANSWERS = {
   "hypothalamus": ["hypothalamic area", "hypothalamic nuclei"],
   "thalamus": ["dorsal thalamus"],
   "insula": ["insular cortex", "island of reil"],
+  "transverse temporal gyrus": ["heschls gyrus", "heschl gyrus", "heschls gyri", "primary auditory cortex", "a1", "transverse temporal gyri", "transverse temporal", "anterior transverse temporal gyrus", "gyrus of heschl"],
 
   // Meninges
   "subarachnoid space": ["subarachnoid cavity"],

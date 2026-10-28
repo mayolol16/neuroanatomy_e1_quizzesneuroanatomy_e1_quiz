@@ -164,7 +164,9 @@ function SpacedRepetitionSession({ exam, mistakes, updateMistake, onSwitchExam, 
                   ? '#ef4444' 
                   : currentItem.letter.toLowerCase().includes('pink') 
                     ? '#ec4899' 
-                    : undefined,
+                    : currentItem.letter.toLowerCase().includes('blue')
+                      ? '#0284c7'
+                      : undefined,
                 marginLeft: '8px'
               }}
             >

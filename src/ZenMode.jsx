@@ -174,7 +174,9 @@ function ZenModeSession({ exam, quizData, stats, setStats, mistakes, setMistakes
                           ? '#ef4444' 
                           : q.letter.toLowerCase().includes('pink') 
                             ? '#ec4899' 
-                            : undefined
+                            : q.letter.toLowerCase().includes('blue')
+                              ? '#0284c7'
+                              : undefined
                       }}
                     >
                       {q.letter}

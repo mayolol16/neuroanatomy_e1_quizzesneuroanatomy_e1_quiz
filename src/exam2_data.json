@@ -973,5 +973,17 @@
         "answer": "Nucleus ambiguus"
       }
     ]
+  },
+  {
+    "id": 56,
+    "unlabeled_image": "foo3.jpg",
+    "labeled_image": "foo3_labeled.jpg",
+    "questions": [
+      {
+        "letter": "Blue",
+        "description": "Blue / cyan highlight",
+        "answer": "Transverse temporal gyrus"
+      }
+    ]
   }
 ]
