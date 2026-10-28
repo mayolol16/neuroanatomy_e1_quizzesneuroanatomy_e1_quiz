@@ -19,7 +19,10 @@ export const ALTERNATIVE_ANSWERS = {
   // Motor & Corticospinal System
   "corticospinal tract": ["pyramidal tract", "lateral corticospinal tract", "cst", "anterior corticospinal tract", "corticospinal"],
   "pyramidal decussation": ["decussation of the pyramids", "decussation of pyramids", "motor decussation", "corticospinal decussation"],
-  "red nucleus": ["nucleus ruber"],
+  "red nucleus": ["nucleus ruber", "red nucleus", "nucleus ruber midbrain"],
+  "reticular formation": ["rf", "brainstem reticular formation", "medullary reticular formation", "reticular", "reticular substance"],
+  "nucleus ambiguus": ["nucleus ambiguous", "ambiguus nucleus", "ambiguous nucleus", "ambiguus", "ambiguous", "na"],
+  "nucleus ambiguous": ["nucleus ambiguus", "ambiguus nucleus", "ambiguous nucleus", "ambiguus", "ambiguous", "na"],
 
   // Cranial Nerves, Nuclei & Decussations
   "mlf": ["medial longitudinal fasciculus"],

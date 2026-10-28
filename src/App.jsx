@@ -79,6 +79,7 @@ function App() {
             exam: activeExam,
             slideId: currentQuiz.id,
             letter: q.letter,
+            description: q.description,
             answer: q.answer,
             unlabeled_image: currentQuiz.unlabeled_image,
             labeled_image: currentQuiz.labeled_image,
@@ -253,7 +254,7 @@ function App() {
                   </span>
                 )}
               </div>
-              <span style={{ fontSize: '0.88rem', color: '#94a3b8' }}>43 Slides • Sensory Tracts, Nuclei & Brainstem</span>
+              <span style={{ fontSize: '0.88rem', color: '#94a3b8' }}>{exam1Data.length} Slides • Sensory Tracts, Nuclei & Brainstem</span>
               <div style={{ fontSize: '0.82rem', color: exam1DueCount > 0 ? '#f87171' : '#34d399', fontWeight: 600, marginTop: '2px' }}>
                 {exam1DueCount} Spaced Repetition {exam1DueCount === 1 ? 'card' : 'cards'} due
               </div>
@@ -284,7 +285,7 @@ function App() {
                   </span>
                 )}
               </div>
-              <span style={{ fontSize: '0.88rem', color: '#94a3b8' }}>53 Slides • Motor Tracts, CNs, Ear & Eye</span>
+              <span style={{ fontSize: '0.88rem', color: '#94a3b8' }}>{exam2Data.length} Slides • Motor Tracts, CNs, Ear & Eye, Nuclei</span>
               <div style={{ fontSize: '0.82rem', color: exam2DueCount > 0 ? '#f87171' : '#34d399', fontWeight: 600, marginTop: '2px' }}>
                 {exam2DueCount} Spaced Repetition {exam2DueCount === 1 ? 'card' : 'cards'} due
               </div>
@@ -460,7 +461,19 @@ function App() {
                   return (
                     <div className="input-group" key={q.letter}>
                       <label>
-                        <span className="letter-badge">{q.letter}</span>
+                        <span 
+                          className="letter-badge"
+                          style={{
+                            backgroundColor: q.letter.toLowerCase().includes('red') 
+                              ? '#ef4444' 
+                              : q.letter.toLowerCase().includes('pink') 
+                                ? '#ec4899' 
+                                : undefined
+                          }}
+                        >
+                          {q.letter}
+                        </span>
+                        {q.description && <span style={{ fontSize: '0.9rem', color: '#94a3b8', fontWeight: 500 }}>({q.description})</span>}
                         {submitted && (
                           <span className={`status-badge ${isCorrect ? 'correct' : 'incorrect'}`}>
                             {isCorrect ? 'Correct' : 'Incorrect'}
@@ -472,7 +485,7 @@ function App() {
                         value={userAns}
                         onChange={(e) => handleInputChange(q.letter, e.target.value)}
                         disabled={submitted}
-                        placeholder={`Structure ${q.letter}`}
+                        placeholder={q.description ? `Identify ${q.letter} structure (${q.description})...` : `Structure ${q.letter}`}
                         autoComplete="off"
                       />
                       {submitted && !isCorrect && (

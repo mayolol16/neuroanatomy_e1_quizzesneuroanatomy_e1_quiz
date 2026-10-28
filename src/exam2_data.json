@@ -944,5 +944,34 @@
     "unlabeled_image": "g20_ulb.jpg",
     "labeled_image": "g20.jpg",
     "questions": []
+  },
+  {
+    "id": 54,
+    "unlabeled_image": "foo.jpeg",
+    "labeled_image": "foo_labeled.jpeg",
+    "questions": [
+      {
+        "letter": "Red",
+        "description": "Red arrow / circle",
+        "answer": "Red Nucleus"
+      },
+      {
+        "letter": "Pink",
+        "description": "Pink arrow / outline",
+        "answer": "Reticular formation"
+      }
+    ]
+  },
+  {
+    "id": 55,
+    "unlabeled_image": "foo2.jpg",
+    "labeled_image": "foo2_labeled.jpg",
+    "questions": [
+      {
+        "letter": "A",
+        "description": "Dotted red circle",
+        "answer": "Nucleus ambiguus"
+      }
+    ]
   }
 ]

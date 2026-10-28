@@ -155,7 +155,27 @@ function SpacedRepetitionSession({ exam, mistakes, updateMistake, onSwitchExam, 
         </div>
 
         <form onSubmit={handleSubmit} style={{ marginTop: '20px' }}>
-          <h3>Identify Structure: <span className="letter-badge">{currentItem.letter}</span></h3>
+          <h3>
+            Identify Structure: 
+            <span 
+              className="letter-badge"
+              style={{
+                backgroundColor: currentItem.letter.toLowerCase().includes('red') 
+                  ? '#ef4444' 
+                  : currentItem.letter.toLowerCase().includes('pink') 
+                    ? '#ec4899' 
+                    : undefined,
+                marginLeft: '8px'
+              }}
+            >
+              {currentItem.letter}
+            </span>
+            {currentItem.description && (
+              <span style={{ fontSize: '0.95rem', color: '#94a3b8', fontWeight: 500, marginLeft: '8px' }}>
+                ({currentItem.description})
+              </span>
+            )}
+          </h3>
           
           <div className="input-group">
             <input 
@@ -166,7 +186,7 @@ function SpacedRepetitionSession({ exam, mistakes, updateMistake, onSwitchExam, 
               value={userAns}
               onChange={(e) => setUserAns(e.target.value)}
               disabled={submitted}
-              placeholder={`Type answer for ${currentItem.letter}...`}
+              placeholder={currentItem.description ? `Type answer for ${currentItem.letter} (${currentItem.description})...` : `Type answer for ${currentItem.letter}...`}
               style={{ padding: '12px', fontSize: '1.1rem', width: '100%' }}
               autoFocus
               autoComplete="off"

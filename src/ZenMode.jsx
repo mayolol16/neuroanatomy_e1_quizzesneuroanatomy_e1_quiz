@@ -71,6 +71,7 @@ function ZenModeSession({ exam, quizData, stats, setStats, mistakes, setMistakes
             exam: exam,
             slideId: currentQuiz.id,
             letter: q.letter,
+            description: q.description,
             answer: q.answer,
             unlabeled_image: currentQuiz.unlabeled_image,
             labeled_image: currentQuiz.labeled_image,
@@ -166,7 +167,19 @@ function ZenModeSession({ exam, quizData, stats, setStats, mistakes, setMistakes
               return (
                 <div className="input-group" key={q.letter}>
                   <label>
-                    <span className="letter-badge">{q.letter}</span>
+                    <span 
+                      className="letter-badge"
+                      style={{
+                        backgroundColor: q.letter.toLowerCase().includes('red') 
+                          ? '#ef4444' 
+                          : q.letter.toLowerCase().includes('pink') 
+                            ? '#ec4899' 
+                            : undefined
+                      }}
+                    >
+                      {q.letter}
+                    </span>
+                    {q.description && <span style={{ fontSize: '0.9rem', color: '#94a3b8', fontWeight: 500 }}>({q.description})</span>}
                     {submitted && (
                       <span className={`status-badge ${isCorrect ? 'correct' : 'incorrect'}`}>
                         {isCorrect ? 'Correct' : 'Incorrect'}
@@ -178,7 +191,7 @@ function ZenModeSession({ exam, quizData, stats, setStats, mistakes, setMistakes
                     value={userAns}
                     onChange={(e) => handleInputChange(q.letter, e.target.value)}
                     disabled={submitted}
-                    placeholder={`Structure ${q.letter}`}
+                    placeholder={q.description ? `Identify ${q.letter} structure (${q.description})...` : `Structure ${q.letter}`}
                     autoComplete="off"
                   />
                   {submitted && !isCorrect && (
@@ -239,7 +252,7 @@ function ZenMode({ quizData1, quizData2, initialExam, stats, setStats, mistakes,
               Sensory Pathways & Brainstem Sections
             </p>
             <p style={{ color: '#c4b5fd', fontWeight: 600, margin: '15px 0' }}>
-              43 Slides • Rapid-fire random practice
+              {(quizData1 || []).length} Slides • Rapid-fire random practice
             </p>
             <button className="btn btn-primary" style={{ width: '100%', justifyContent: 'center', backgroundColor: '#8b5cf6' }}>
               <Zap size={18} style={{ marginRight: '8px' }} /> Start Exam 1 Zen
@@ -258,7 +271,7 @@ function ZenMode({ quizData1, quizData2, initialExam, stats, setStats, mistakes,
               Motor Pathways, Cranial Nerves, Ear & Eye
             </p>
             <p style={{ color: '#c4b5fd', fontWeight: 600, margin: '15px 0' }}>
-              53 Slides • Rapid-fire random practice
+              {(quizData2 || []).length} Slides • Rapid-fire random practice
             </p>
             <button className="btn btn-primary" style={{ width: '100%', justifyContent: 'center', backgroundColor: '#8b5cf6' }}>
               <Zap size={18} style={{ marginRight: '8px' }} /> Start Exam 2 Zen
