@@ -207,6 +207,17 @@ export const ALTERNATIVE_ANSWERS = {
   "lateral vestibular nucleus": ["deiters nucleus", "lateral vestibular"],
   "ventral cochlear nucleus": ["anterior cochlear nucleus"],
   "corticospinal and corticobulbar fibers": ["corticospinal fibers", "corticobulbar fibers", "corticospinal and corticobulbar tract"],
+  "central sulcus": ["rolandic fissure", "sulcus of rolando", "fissure of rolando", "rolandic sulcus"],
+  "olfactory bulb": ["olfactory nerve", "cn i", "cn 1"],
+  "olfactory tract": ["olfactory stria"],
+  "parahippocampal gyrus": ["parahippocampal cortex", "parahippocampus"],
+  "uncus": ["uncus of parahippocampal gyrus"],
+  "cerebellar tonsil": ["tonsil of cerebellum", "cerebellar tonsils", "tonsil"],
+  "lateral cerebellar hemisphere": ["cerebellar hemisphere", "cerebellar hemisphere lateral", "cerebellar hemispheres"],
+  "superior longitudinal fasciculus": ["slf"],
+  "corona radiata": ["corona"],
+  "decussation of pyramid": ["decussation of pyramids", "pyramidal decussation", "motor decussation", "corticospinal decussation"],
+  "decussation of pyramids": ["decussation of pyramid", "pyramidal decussation", "motor decussation", "corticospinal decussation"],
 };
 
 export const checkAnswer = (userAns, correctAns) => {
@@ -235,6 +246,9 @@ export const checkAnswer = (userAns, correctAns) => {
 
 export const isExamMistake = (m, targetExam) => {
   if (!m) return false;
+  if (targetExam === 'comprehensive') {
+    return m.exam === 'comprehensive' || (m.id && String(m.id).startsWith('comprehensive_'));
+  }
   if (targetExam === 'exam3') {
     return m.exam === 'exam3' || (m.id && String(m.id).startsWith('exam3_'));
   }
@@ -242,7 +256,11 @@ export const isExamMistake = (m, targetExam) => {
     return m.exam === 'exam2' || (m.id && String(m.id).startsWith('exam2_'));
   }
   if (targetExam === 'exam1') {
-    return m.exam === 'exam1' || (m.id && String(m.id).startsWith('exam1_')) || (!m.exam && !String(m.id).startsWith('exam2_') && !String(m.id).startsWith('exam3_'));
+    return (
+      m.exam === 'exam1' ||
+      (m.id && String(m.id).startsWith('exam1_')) ||
+      (!m.exam && !String(m.id).startsWith('exam2_') && !String(m.id).startsWith('exam3_') && !String(m.id).startsWith('comprehensive_'))
+    );
   }
   return true;
 };

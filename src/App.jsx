@@ -3,6 +3,7 @@ import { ChevronLeft, ChevronRight, RefreshCw, BarChart2, X, BrainCircuit, Zap, 
 import exam1Data from './quiz_data.json';
 import exam2Data from './exam2_data.json';
 import exam3Data from './exam3_data.json';
+import comprehensiveData from './comprehensive_data.json';
 import { checkAnswer, isExamMistake } from './utils';
 import SpacedRepetition from './SpacedRepetition';
 import ZenMode from './ZenMode';
@@ -35,7 +36,13 @@ function App() {
     return saved ? JSON.parse(saved) : {};
   });
 
-  const currentQuizData = activeExam === 'exam1' ? exam1Data : activeExam === 'exam2' ? exam2Data : exam3Data;
+  const currentQuizData = activeExam === 'exam1' 
+    ? exam1Data 
+    : activeExam === 'exam2' 
+      ? exam2Data 
+      : activeExam === 'exam3' 
+        ? exam3Data 
+        : comprehensiveData;
   const currentQuiz = currentQuizData[currentIndex];
 
   const switchExam = (examKey) => {
@@ -158,7 +165,22 @@ function App() {
   const exam1DueCount = Object.values(mistakes).filter(m => isExamMistake(m, 'exam1') && m.nextReviewDate <= Date.now()).length;
   const exam2DueCount = Object.values(mistakes).filter(m => isExamMistake(m, 'exam2') && m.nextReviewDate <= Date.now()).length;
   const exam3DueCount = Object.values(mistakes).filter(m => isExamMistake(m, 'exam3') && m.nextReviewDate <= Date.now()).length;
-  const currentExamDueCount = activeExam === 'exam1' ? exam1DueCount : activeExam === 'exam2' ? exam2DueCount : exam3DueCount;
+  const compDueCount = Object.values(mistakes).filter(m => isExamMistake(m, 'comprehensive') && m.nextReviewDate <= Date.now()).length;
+  const currentExamDueCount = activeExam === 'exam1' 
+    ? exam1DueCount 
+    : activeExam === 'exam2' 
+      ? exam2DueCount 
+      : activeExam === 'exam3' 
+        ? exam3DueCount 
+        : compDueCount;
+
+  const currentExamName = activeExam === 'exam1' 
+    ? 'Exam 1' 
+    : activeExam === 'exam2' 
+      ? 'Exam 2' 
+      : activeExam === 'exam3' 
+        ? 'Exam 3' 
+        : 'Comprehensive';
 
   // Process stats for display (filtered to structures appearing in current exam)
   const currentExamStructures = new Set(currentQuizData.flatMap(s => (s.questions || []).map(q => q.answer)));
@@ -193,6 +215,7 @@ function App() {
         quizData1={exam1Data}
         quizData2={exam2Data}
         quizData3={exam3Data}
+        quizDataComp={comprehensiveData}
         initialExam={selectedZenExam}
         stats={stats}
         setStats={setStats}
@@ -231,7 +254,7 @@ function App() {
           }}>
             Step 1: Choose Exam to Review
           </div>
-          <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(280px, 1fr))', gap: '12px' }}>
+          <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(260px, 1fr))', gap: '12px' }}>
             <div 
               onClick={() => switchExam('exam1')}
               style={{
@@ -248,16 +271,16 @@ function App() {
               }}
             >
               <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center' }}>
-                <strong style={{ fontSize: '1.1rem', color: activeExam === 'exam1' ? '#60a5fa' : '#f8fafc' }}>
+                <strong style={{ fontSize: '1.05rem', color: activeExam === 'exam1' ? '#60a5fa' : '#f8fafc' }}>
                   Exam 1: Sensory Systems
                 </strong>
                 {activeExam === 'exam1' && (
-                  <span style={{ background: '#3b82f6', color: 'white', fontSize: '0.75rem', padding: '2px 8px', borderRadius: '999px', fontWeight: 700 }}>
+                  <span style={{ background: '#3b82f6', color: 'white', fontSize: '0.72rem', padding: '2px 8px', borderRadius: '999px', fontWeight: 700 }}>
                     SELECTED
                   </span>
                 )}
               </div>
-              <span style={{ fontSize: '0.88rem', color: '#94a3b8' }}>{exam1Data.length} Slides • Sensory Tracts, Nuclei & Brainstem</span>
+              <span style={{ fontSize: '0.85rem', color: '#94a3b8' }}>{exam1Data.length} Slides • Sensory Tracts, Nuclei & Brainstem</span>
               <div style={{ fontSize: '0.82rem', color: exam1DueCount > 0 ? '#f87171' : '#34d399', fontWeight: 600, marginTop: '2px' }}>
                 {exam1DueCount} Spaced Repetition {exam1DueCount === 1 ? 'card' : 'cards'} due
               </div>
@@ -279,16 +302,16 @@ function App() {
               }}
             >
               <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center' }}>
-                <strong style={{ fontSize: '1.1rem', color: activeExam === 'exam2' ? '#60a5fa' : '#f8fafc' }}>
+                <strong style={{ fontSize: '1.05rem', color: activeExam === 'exam2' ? '#60a5fa' : '#f8fafc' }}>
                   Exam 2: Motor & CNs
                 </strong>
                 {activeExam === 'exam2' && (
-                  <span style={{ background: '#3b82f6', color: 'white', fontSize: '0.75rem', padding: '2px 8px', borderRadius: '999px', fontWeight: 700 }}>
+                  <span style={{ background: '#3b82f6', color: 'white', fontSize: '0.72rem', padding: '2px 8px', borderRadius: '999px', fontWeight: 700 }}>
                     SELECTED
                   </span>
                 )}
               </div>
-              <span style={{ fontSize: '0.88rem', color: '#94a3b8' }}>{exam2Data.length} Slides • Motor Tracts, CNs, Ear & Eye, Nuclei</span>
+              <span style={{ fontSize: '0.85rem', color: '#94a3b8' }}>{exam2Data.length} Slides • Motor Tracts, CNs, Ear & Eye, Nuclei</span>
               <div style={{ fontSize: '0.82rem', color: exam2DueCount > 0 ? '#f87171' : '#34d399', fontWeight: 600, marginTop: '2px' }}>
                 {exam2DueCount} Spaced Repetition {exam2DueCount === 1 ? 'card' : 'cards'} due
               </div>
@@ -310,31 +333,72 @@ function App() {
               }}
             >
               <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center' }}>
-                <strong style={{ fontSize: '1.1rem', color: activeExam === 'exam3' ? '#60a5fa' : '#f8fafc' }}>
-                  Exam 3: Comprehensive
+                <strong style={{ fontSize: '1.05rem', color: activeExam === 'exam3' ? '#60a5fa' : '#f8fafc' }}>
+                  Exam 3: New Material (Blue)
                 </strong>
                 {activeExam === 'exam3' && (
-                  <span style={{ background: '#3b82f6', color: 'white', fontSize: '0.75rem', padding: '2px 8px', borderRadius: '999px', fontWeight: 700 }}>
+                  <span style={{ background: '#3b82f6', color: 'white', fontSize: '0.72rem', padding: '2px 8px', borderRadius: '999px', fontWeight: 700 }}>
                     SELECTED
                   </span>
                 )}
               </div>
-              <span style={{ fontSize: '0.88rem', color: '#94a3b8' }}>{exam3Data.length} Slides • Cerebellum, Basal Ganglia, Cortex & Gross</span>
+              <span style={{ fontSize: '0.85rem', color: '#94a3b8' }}>{exam3Data.length} Slides • 275 Questions • Blue Structures Only</span>
               <div style={{ fontSize: '0.82rem', color: exam3DueCount > 0 ? '#f87171' : '#34d399', fontWeight: 600, marginTop: '2px' }}>
                 {exam3DueCount} Spaced Repetition {exam3DueCount === 1 ? 'card' : 'cards'} due
+              </div>
+            </div>
+
+            <div 
+              onClick={() => switchExam('comprehensive')}
+              style={{
+                padding: '16px',
+                borderRadius: '10px',
+                cursor: 'pointer',
+                border: activeExam === 'comprehensive' ? '2px solid #3b82f6' : '1px solid rgba(255,255,255,0.08)',
+                background: activeExam === 'comprehensive' ? 'rgba(59, 130, 246, 0.16)' : 'rgba(0,0,0,0.25)',
+                transition: 'all 0.2s',
+                display: 'flex',
+                flexDirection: 'column',
+                gap: '6px',
+                textAlign: 'left'
+              }}
+            >
+              <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center' }}>
+                <strong style={{ fontSize: '1.05rem', color: activeExam === 'comprehensive' ? '#60a5fa' : '#f8fafc' }}>
+                  Comprehensive Practical
+                </strong>
+                {activeExam === 'comprehensive' && (
+                  <span style={{ background: '#3b82f6', color: 'white', fontSize: '0.72rem', padding: '2px 8px', borderRadius: '999px', fontWeight: 700 }}>
+                    SELECTED
+                  </span>
+                )}
+              </div>
+              <span style={{ fontSize: '0.85rem', color: '#94a3b8' }}>{comprehensiveData.length} Slides • All 461 Black & Blue Structures</span>
+              <div style={{ fontSize: '0.82rem', color: compDueCount > 0 ? '#f87171' : '#34d399', fontWeight: 600, marginTop: '2px' }}>
+                {compDueCount} Spaced Repetition {compDueCount === 1 ? 'card' : 'cards'} due
               </div>
             </div>
           </div>
         </div>
 
         {/* TITLE & DESCRIPTION */}
-        <h1>{activeExam === 'exam1' ? 'Neuro Practical Exam 1' : activeExam === 'exam2' ? 'Neuro Practical Exam 2' : 'Neuro Practical Exam 3'}</h1>
+        <h1>
+          {activeExam === 'exam1' 
+            ? 'Neuro Practical Exam 1' 
+            : activeExam === 'exam2' 
+              ? 'Neuro Practical Exam 2' 
+              : activeExam === 'exam3' 
+                ? 'Neuro Practical Exam 3 (New Material)' 
+                : 'Comprehensive Neuro Practical'}
+        </h1>
         <p>
           {activeExam === 'exam1' 
             ? 'Sensory Pathways & Brainstem Neuroanatomy' 
             : activeExam === 'exam2'
               ? 'Motor Pathways, Cranial Nerves, Auditory & Visual Systems'
-              : 'Comprehensive Practical: Cerebellum, Basal Ganglia, Cortex, Vasculature & Gross Anatomy'}
+              : activeExam === 'exam3'
+                ? 'New Exam 3 Material Only: Cerebellum, Basal Ganglia, Cortex, Vasculature & Gross Neuroanatomy (Blue Only)'
+                : 'Full Practical Exam: All Structures from Exams 1, 2, and 3 (Sensory, Motor, CNs, Cerebellum, Gross)'}
         </p>
 
         {activeExam === 'exam3' && (
@@ -350,16 +414,35 @@ function App() {
             borderRadius: '999px',
             marginTop: '10px'
           }}>
-            <span>💡 <strong>Black</strong> = Structures on Exam 1-2</span>
+            <span style={{ color: '#60a5fa', fontWeight: 700 }}>💡 Blue Structures Only</span>
             <span>•</span>
-            <span style={{ color: '#60a5fa', fontWeight: 700 }}>Blue = New structures on Exam 3</span>
+            <span>Filtered strictly to new Exam 3 material (black review arrows excluded)</span>
+          </div>
+        )}
+
+        {activeExam === 'comprehensive' && (
+          <div style={{ 
+            display: 'inline-flex', 
+            alignItems: 'center', 
+            gap: '8px', 
+            fontSize: '0.85rem', 
+            color: '#cbd5e1', 
+            background: 'rgba(59, 130, 246, 0.12)', 
+            border: '1px solid rgba(59, 130, 246, 0.28)',
+            padding: '6px 14px', 
+            borderRadius: '999px',
+            marginTop: '10px'
+          }}>
+            <span>💡 <strong>Black</strong> = Exam 1-2 Review Structures</span>
+            <span>•</span>
+            <span style={{ color: '#60a5fa', fontWeight: 700 }}>Blue = New Exam 3 Structures</span>
           </div>
         )}
 
         {/* STEP 2: SELECT MODE */}
         <div style={{ display: 'flex', gap: '10px', justifyContent: 'center', marginTop: '16px', flexWrap: 'wrap' }}>
           <button className="btn btn-secondary stats-toggle-btn" onClick={toggleStats} style={{ position: 'static' }}>
-            <BarChart2 size={18} /> {activeExam === 'exam1' ? 'Exam 1' : activeExam === 'exam2' ? 'Exam 2' : 'Exam 3'} Analytics
+            <BarChart2 size={18} /> {currentExamName} Analytics
           </button>
           
           <button 
@@ -370,7 +453,7 @@ function App() {
             }}
           >
             <BrainCircuit size={18} style={{ marginRight: '8px' }} /> 
-            {activeExam === 'exam1' ? 'Exam 1' : activeExam === 'exam2' ? 'Exam 2' : 'Exam 3'} Spaced Repetition 
+            {currentExamName} Spaced Repetition 
             {currentExamDueCount > 0 && (
               <span style={{ background: '#ef4444', color: 'white', borderRadius: '50%', padding: '2px 8px', marginLeft: '6px', fontSize: '0.8rem' }}>
                 {currentExamDueCount}
@@ -386,7 +469,7 @@ function App() {
             }} 
             style={{ backgroundColor: '#8b5cf6', color: 'white' }}
           >
-            <Zap size={18} style={{ marginRight: '8px' }} /> {activeExam === 'exam1' ? 'Exam 1' : activeExam === 'exam2' ? 'Exam 2' : 'Exam 3'} Zen Mode
+            <Zap size={18} style={{ marginRight: '8px' }} /> {currentExamName} Zen Mode
           </button>
         </div>
       </div>
@@ -395,13 +478,13 @@ function App() {
         <div className="stats-modal-overlay">
           <div className="stats-modal">
             <div className="stats-modal-header">
-              <h2>{activeExam === 'exam1' ? 'Exam 1' : activeExam === 'exam2' ? 'Exam 2' : 'Exam 3'} Analytics</h2>
+              <h2>{currentExamName} Analytics</h2>
               <button className="icon-btn" onClick={toggleStats}><X size={24} /></button>
             </div>
             
             <div className="stats-content">
               {statsArray.length === 0 ? (
-                <p className="no-stats">Answer questions in {activeExam === 'exam1' ? 'Exam 1' : activeExam === 'exam2' ? 'Exam 2' : 'Exam 3'} to see your strengths and weaknesses!</p>
+                <p className="no-stats">Answer questions in {currentExamName} to see your strengths and weaknesses!</p>
               ) : (
                 <>
                   <div className="stats-legend">
@@ -515,7 +598,7 @@ function App() {
                   
                   return (
                     <div className="input-group" key={q.letter}>
-                      <label>
+                      <label style={{ display: 'flex', alignItems: 'center', flexWrap: 'wrap', gap: '6px' }}>
                         <span 
                           className="letter-badge"
                           style={{
@@ -523,16 +606,33 @@ function App() {
                               ? '#ef4444' 
                               : q.letter.toLowerCase().includes('pink') 
                                 ? '#ec4899' 
-                                : q.letter.toLowerCase().includes('blue')
-                                  ? '#0284c7'
+                                : (activeExam === 'exam3' || q.color === 'blue' || q.letter.toLowerCase().includes('blue'))
+                                  ? '#2563eb'
                                   : undefined
                           }}
                         >
                           {q.letter}
                         </span>
                         {q.description && <span style={{ fontSize: '0.9rem', color: '#94a3b8', fontWeight: 500 }}>({q.description})</span>}
+                        {activeExam === 'exam3' && (
+                          <span style={{ fontSize: '0.74rem', color: '#60a5fa', fontWeight: 600, background: 'rgba(59, 130, 246, 0.15)', padding: '2px 7px', borderRadius: '4px' }}>
+                            Blue Arrow
+                          </span>
+                        )}
+                        {activeExam === 'comprehensive' && (
+                          <span style={{ 
+                            fontSize: '0.74rem', 
+                            fontWeight: 600, 
+                            padding: '2px 7px', 
+                            borderRadius: '4px',
+                            background: q.color === 'blue' ? 'rgba(59, 130, 246, 0.2)' : 'rgba(255, 255, 255, 0.08)',
+                            color: q.color === 'blue' ? '#60a5fa' : '#94a3b8'
+                          }}>
+                            {q.color === 'blue' ? 'New (Blue)' : 'Review (Black)'}
+                          </span>
+                        )}
                         {submitted && (
-                          <span className={`status-badge ${isCorrect ? 'correct' : 'incorrect'}`}>
+                          <span className={`status-badge ${isCorrect ? 'correct' : 'incorrect'}`} style={{ marginLeft: 'auto' }}>
                             {isCorrect ? 'Correct' : 'Incorrect'}
                           </span>
                         )}

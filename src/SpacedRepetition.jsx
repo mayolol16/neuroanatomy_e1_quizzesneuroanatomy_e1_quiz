@@ -28,7 +28,9 @@ function SpacedRepetitionSession({ exam, mistakes, updateMistake, onSwitchExam, 
     ? 'Exam 1 (Sensory)' 
     : exam === 'exam2' 
       ? 'Exam 2 (Motor & Special Senses)' 
-      : 'Exam 3 (Comprehensive)';
+      : exam === 'exam3'
+        ? 'Exam 3 (New Material - Blue Only)'
+        : 'Comprehensive Practical (All)';
 
   if (reviewQueue.length === 0) {
     return (
@@ -146,7 +148,7 @@ function SpacedRepetitionSession({ exam, mistakes, updateMistake, onSwitchExam, 
       <div className="quiz-card">
         <div style={{ textAlign: 'center', marginBottom: '10px', fontWeight: 600, color: '#64748b', display: 'flex', justifyContent: 'center', gap: '8px', alignItems: 'center' }}>
           <span style={{ background: 'rgba(59, 130, 246, 0.2)', color: '#93c5fd', padding: '2px 8px', borderRadius: '4px', fontSize: '0.85rem' }}>
-            {exam === 'exam1' ? 'Exam 1' : exam === 'exam2' ? 'Exam 2' : 'Exam 3'}
+            {exam === 'exam1' ? 'Exam 1' : exam === 'exam2' ? 'Exam 2' : exam === 'exam3' ? 'Exam 3' : 'Comprehensive'}
           </span>
           <span>Slide: {currentItem.slideId || currentItem.id.split('_')[1] || currentItem.id.split('_')[0]}</span>
         </div>
@@ -159,8 +161,8 @@ function SpacedRepetitionSession({ exam, mistakes, updateMistake, onSwitchExam, 
         </div>
 
         <form onSubmit={handleSubmit} style={{ marginTop: '20px' }}>
-          <h3>
-            Identify Structure: 
+          <h3 style={{ display: 'flex', alignItems: 'center', justifyContent: 'center', flexWrap: 'wrap', gap: '6px' }}>
+            <span>Identify Structure:</span> 
             <span 
               className="letter-badge"
               style={{
@@ -168,17 +170,33 @@ function SpacedRepetitionSession({ exam, mistakes, updateMistake, onSwitchExam, 
                   ? '#ef4444' 
                   : currentItem.letter.toLowerCase().includes('pink') 
                     ? '#ec4899' 
-                    : currentItem.letter.toLowerCase().includes('blue')
-                      ? '#0284c7'
-                      : undefined,
-                marginLeft: '8px'
+                    : (exam === 'exam3' || currentItem.color === 'blue' || currentItem.letter.toLowerCase().includes('blue'))
+                      ? '#2563eb'
+                      : undefined
               }}
             >
               {currentItem.letter}
             </span>
             {currentItem.description && (
-              <span style={{ fontSize: '0.95rem', color: '#94a3b8', fontWeight: 500, marginLeft: '8px' }}>
+              <span style={{ fontSize: '0.95rem', color: '#94a3b8', fontWeight: 500 }}>
                 ({currentItem.description})
+              </span>
+            )}
+            {exam === 'exam3' && (
+              <span style={{ fontSize: '0.78rem', color: '#60a5fa', fontWeight: 600, background: 'rgba(59, 130, 246, 0.15)', padding: '2px 8px', borderRadius: '4px' }}>
+                Blue Arrow
+              </span>
+            )}
+            {exam === 'comprehensive' && (
+              <span style={{ 
+                fontSize: '0.78rem', 
+                fontWeight: 600, 
+                padding: '2px 8px', 
+                borderRadius: '4px',
+                background: currentItem.color === 'blue' ? 'rgba(59, 130, 246, 0.2)' : 'rgba(255, 255, 255, 0.08)',
+                color: currentItem.color === 'blue' ? '#60a5fa' : '#94a3b8'
+              }}>
+                {currentItem.color === 'blue' ? 'New (Blue)' : 'Review (Black)'}
               </span>
             )}
           </h3>
@@ -256,6 +274,7 @@ function SpacedRepetition({ mistakes, updateMistake, onExit, initialExam }) {
   const exam1Due = Object.values(mistakes || {}).filter(m => isExamMistake(m, 'exam1') && m.nextReviewDate <= Date.now()).length;
   const exam2Due = Object.values(mistakes || {}).filter(m => isExamMistake(m, 'exam2') && m.nextReviewDate <= Date.now()).length;
   const exam3Due = Object.values(mistakes || {}).filter(m => isExamMistake(m, 'exam3') && m.nextReviewDate <= Date.now()).length;
+  const compDue = Object.values(mistakes || {}).filter(m => isExamMistake(m, 'comprehensive') && m.nextReviewDate <= Date.now()).length;
 
   if (!selectedExam) {
     return (
@@ -268,7 +287,7 @@ function SpacedRepetition({ mistakes, updateMistake, onExit, initialExam }) {
           <p>Select which exam you want to review structures from:</p>
         </div>
 
-        <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(280px, 1fr))', gap: '20px', marginTop: '30px' }}>
+        <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(260px, 1fr))', gap: '20px', marginTop: '30px' }}>
           <div 
             className="quiz-card" 
             style={{ textAlign: 'center', cursor: 'pointer', border: '2px solid transparent', transition: 'all 0.2s' }}
@@ -314,15 +333,34 @@ function SpacedRepetition({ mistakes, updateMistake, onExit, initialExam }) {
             onMouseEnter={(e) => e.currentTarget.style.borderColor = '#3b82f6'}
             onMouseLeave={(e) => e.currentTarget.style.borderColor = 'transparent'}
           >
-            <h2 style={{ color: '#38bdf8' }}>Exam 3: Comprehensive</h2>
+            <h2 style={{ color: '#38bdf8' }}>Exam 3: New Material</h2>
             <p style={{ color: 'var(--text-color-muted)', margin: '10px 0' }}>
-              Cerebellum, Basal Ganglia, Cortex, Vasculature & Gross Neuroanatomy
+              Cerebellum, Basal Ganglia, Cortex & Gross (Blue Structures Only)
             </p>
             <div style={{ fontSize: '1.3rem', fontWeight: 700, color: exam3Due > 0 ? '#ef4444' : '#10b981', margin: '15px 0' }}>
               {exam3Due} {exam3Due === 1 ? 'card' : 'cards'} due for review
             </div>
             <button className="btn btn-primary" style={{ width: '100%', justifyContent: 'center' }}>
               Start Exam 3 Review
+            </button>
+          </div>
+
+          <div 
+            className="quiz-card" 
+            style={{ textAlign: 'center', cursor: 'pointer', border: '2px solid transparent', transition: 'all 0.2s' }}
+            onClick={() => setSelectedExam('comprehensive')}
+            onMouseEnter={(e) => e.currentTarget.style.borderColor = '#3b82f6'}
+            onMouseLeave={(e) => e.currentTarget.style.borderColor = 'transparent'}
+          >
+            <h2 style={{ color: '#34d399' }}>Comprehensive</h2>
+            <p style={{ color: 'var(--text-color-muted)', margin: '10px 0' }}>
+              All 461 Questions across Exam 1, 2, and 3 Practical Slides
+            </p>
+            <div style={{ fontSize: '1.3rem', fontWeight: 700, color: compDue > 0 ? '#ef4444' : '#10b981', margin: '15px 0' }}>
+              {compDue} {compDue === 1 ? 'card' : 'cards'} due for review
+            </div>
+            <button className="btn btn-primary" style={{ width: '100%', justifyContent: 'center', backgroundColor: '#059669' }}>
+              Start Comprehensive Review
             </button>
           </div>
         </div>

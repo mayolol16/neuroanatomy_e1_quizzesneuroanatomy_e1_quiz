@@ -1,0 +1,2620 @@
+[
+  {
+    "id": 1,
+    "unlabeled_image": "e3_s01_ulb.jpg",
+    "labeled_image": "e3_s01.jpg",
+    "questions": [
+      {
+        "letter": "A",
+        "answer": "Nucleus gracilis",
+        "color": "black"
+      },
+      {
+        "letter": "B",
+        "answer": "Nucleus cuneatus",
+        "color": "black"
+      },
+      {
+        "letter": "C",
+        "answer": "Spinal Trigeminal Nucleus",
+        "color": "black"
+      },
+      {
+        "letter": "D",
+        "answer": "ALS",
+        "color": "black"
+      },
+      {
+        "letter": "E",
+        "answer": "Decussation of pyramid",
+        "color": "blue"
+      },
+      {
+        "letter": "F",
+        "answer": "Spinal Trigeminal tract",
+        "color": "black"
+      },
+      {
+        "letter": "G",
+        "answer": "Fasciculus cuneatus",
+        "color": "black"
+      },
+      {
+        "letter": "H",
+        "answer": "Fasciculus gracilis",
+        "color": "black"
+      },
+      {
+        "letter": "I",
+        "answer": "Dorsal spinocerebellar tract",
+        "color": "blue"
+      },
+      {
+        "letter": "J",
+        "answer": "Ventral spinocerebellar tract",
+        "color": "blue"
+      }
+    ]
+  },
+  {
+    "id": 2,
+    "unlabeled_image": "e3_s03_ulb.jpg",
+    "labeled_image": "e3_s03.jpg",
+    "questions": [
+      {
+        "letter": "A",
+        "answer": "Nucleus gracilis",
+        "color": "black"
+      },
+      {
+        "letter": "B",
+        "answer": "Nucleus cuneatus",
+        "color": "black"
+      },
+      {
+        "letter": "C",
+        "answer": "Fasciculus cuneatus",
+        "color": "black"
+      },
+      {
+        "letter": "D",
+        "answer": "Spinal trigeminal nucleus",
+        "color": "black"
+      },
+      {
+        "letter": "E",
+        "answer": "Spinal Trigeminal tract",
+        "color": "black"
+      },
+      {
+        "letter": "F",
+        "answer": "ALS",
+        "color": "black"
+      },
+      {
+        "letter": "G",
+        "answer": "Pyramid",
+        "color": "blue"
+      },
+      {
+        "letter": "H",
+        "answer": "Medial lemniscus",
+        "color": "black"
+      },
+      {
+        "letter": "I",
+        "answer": "Decussation of medial lemniscus",
+        "color": "black"
+      },
+      {
+        "letter": "J",
+        "answer": "Internal arcuate fibers",
+        "color": "black"
+      },
+      {
+        "letter": "K",
+        "answer": "Lateral cuneate nucleus",
+        "color": "blue"
+      },
+      {
+        "letter": "L",
+        "answer": "Solitary tract",
+        "color": "blue"
+      },
+      {
+        "letter": "M",
+        "answer": "Dorsal spinocerebellar tract",
+        "color": "blue"
+      },
+      {
+        "letter": "N",
+        "answer": "Ventral spinocerebellar tract",
+        "color": "blue"
+      }
+    ]
+  },
+  {
+    "id": 3,
+    "unlabeled_image": "e3_s05_ulb.jpg",
+    "labeled_image": "e3_s05.jpg",
+    "questions": [
+      {
+        "letter": "A",
+        "answer": "Nucleus gracilis",
+        "color": "black"
+      },
+      {
+        "letter": "B",
+        "answer": "Spinal Trigeminal tract",
+        "color": "black"
+      },
+      {
+        "letter": "C",
+        "answer": "Spinal trigeminal nucleus",
+        "color": "black"
+      },
+      {
+        "letter": "D",
+        "answer": "ALS",
+        "color": "black"
+      },
+      {
+        "letter": "E",
+        "answer": "Internal arcuate fibers",
+        "color": "black"
+      },
+      {
+        "letter": "F",
+        "answer": "Medial lemniscus",
+        "color": "black"
+      },
+      {
+        "letter": "G",
+        "answer": "Fasciculus cuneatus",
+        "color": "black"
+      },
+      {
+        "letter": "H",
+        "answer": "Nucleus cuneatus",
+        "color": "black"
+      },
+      {
+        "letter": "I",
+        "answer": "Solitary tract",
+        "color": "blue"
+      },
+      {
+        "letter": "J",
+        "answer": "Lateral cuneate nucleus",
+        "color": "blue"
+      },
+      {
+        "letter": "K",
+        "answer": "Pyramid",
+        "color": "blue"
+      },
+      {
+        "letter": "L",
+        "answer": "Ventral spinocerebellar tract",
+        "color": "blue"
+      },
+      {
+        "letter": "M",
+        "answer": "Dorsal spinocerebellar tract",
+        "color": "blue"
+      }
+    ]
+  },
+  {
+    "id": 4,
+    "unlabeled_image": "e3_s07_ulb.jpg",
+    "labeled_image": "e3_s07.jpg",
+    "questions": [
+      {
+        "letter": "A",
+        "answer": "Fourth ventricle",
+        "color": "black"
+      },
+      {
+        "letter": "B",
+        "answer": "Medial vestibular nucleus",
+        "color": "black"
+      },
+      {
+        "letter": "C",
+        "answer": "Inferior vestibular nucleus",
+        "color": "black"
+      },
+      {
+        "letter": "D",
+        "answer": "Inferior cerebellar peduncle",
+        "color": "blue"
+      },
+      {
+        "letter": "E",
+        "answer": "Spinal Trigeminal nucleus & tract",
+        "color": "black"
+      },
+      {
+        "letter": "F",
+        "answer": "ALS",
+        "color": "black"
+      },
+      {
+        "letter": "G",
+        "answer": "Medial lemniscus",
+        "color": "black"
+      },
+      {
+        "letter": "H",
+        "answer": "VTT",
+        "color": "black"
+      },
+      {
+        "letter": "I",
+        "answer": "Spinal Trigeminal tract",
+        "color": "black"
+      },
+      {
+        "letter": "J",
+        "answer": "MLF",
+        "color": "black"
+      },
+      {
+        "letter": "K",
+        "answer": "Hypoglossal nucleus",
+        "color": "blue"
+      },
+      {
+        "letter": "L",
+        "answer": "Dorsal motor nucleus of vagus",
+        "color": "blue"
+      },
+      {
+        "letter": "M",
+        "answer": "Ventral spinocerebellar tract",
+        "color": "blue"
+      },
+      {
+        "letter": "N",
+        "answer": "Pyramid",
+        "color": "blue"
+      },
+      {
+        "letter": "O",
+        "answer": "Inferior olive",
+        "color": "blue"
+      },
+      {
+        "letter": "P",
+        "answer": "Nucleus ambiguus",
+        "color": "blue"
+      },
+      {
+        "letter": "Q",
+        "answer": "Vagus nerve",
+        "color": "blue"
+      },
+      {
+        "letter": "R",
+        "answer": "Solitary tract",
+        "color": "blue"
+      }
+    ]
+  },
+  {
+    "id": 5,
+    "unlabeled_image": "e3_s09_ulb.jpg",
+    "labeled_image": "e3_s09.jpg",
+    "questions": [
+      {
+        "letter": "A",
+        "answer": "MLF",
+        "color": "black"
+      },
+      {
+        "letter": "B",
+        "answer": "Inferior vestibular nucleus",
+        "color": "black"
+      },
+      {
+        "letter": "C",
+        "answer": "Dorsal cochlear nucleus",
+        "color": "black"
+      },
+      {
+        "letter": "D",
+        "answer": "Spinal Trigeminal nucleus & tract",
+        "color": "black"
+      },
+      {
+        "letter": "E",
+        "answer": "Cochlear division of VIII",
+        "color": "black"
+      },
+      {
+        "letter": "F",
+        "answer": "Ventral spinocerebellar tract",
+        "color": "blue"
+      },
+      {
+        "letter": "G",
+        "answer": "ALS",
+        "color": "black"
+      },
+      {
+        "letter": "H",
+        "answer": "VTT",
+        "color": "black"
+      },
+      {
+        "letter": "I",
+        "answer": "Medial lemniscus",
+        "color": "black"
+      },
+      {
+        "letter": "J",
+        "answer": "Vestibular division of VIII",
+        "color": "black"
+      },
+      {
+        "letter": "K",
+        "answer": "Ventral cochlear nucleus",
+        "color": "black"
+      },
+      {
+        "letter": "L",
+        "answer": "Lateral vestibular nucleus",
+        "color": "black"
+      },
+      {
+        "letter": "M",
+        "answer": "Medial vestibular nucleus",
+        "color": "black"
+      },
+      {
+        "letter": "N",
+        "answer": "Nodulus",
+        "color": "blue"
+      },
+      {
+        "letter": "O",
+        "answer": "Dentate nucleus",
+        "color": "blue"
+      },
+      {
+        "letter": "P",
+        "answer": "Pyramid",
+        "color": "blue"
+      },
+      {
+        "letter": "Q",
+        "answer": "Inferior olive",
+        "color": "blue"
+      },
+      {
+        "letter": "R",
+        "answer": "Flocculus",
+        "color": "blue"
+      }
+    ]
+  },
+  {
+    "id": 6,
+    "unlabeled_image": "e3_s12_ulb.jpg",
+    "labeled_image": "e3_s12.jpg",
+    "questions": [
+      {
+        "letter": "A",
+        "answer": "Superior vestibular nucleus",
+        "color": "black"
+      },
+      {
+        "letter": "C",
+        "answer": "Abducens nucleus",
+        "color": "blue"
+      },
+      {
+        "letter": "D",
+        "answer": "Superior olivary nucleus",
+        "color": "black"
+      },
+      {
+        "letter": "E",
+        "answer": "ALS/Lateral lemniscus",
+        "color": "black"
+      },
+      {
+        "letter": "F",
+        "answer": "VTT",
+        "color": "black"
+      },
+      {
+        "letter": "G",
+        "answer": "Medial lemniscus",
+        "color": "black"
+      },
+      {
+        "letter": "H",
+        "answer": "Spinal trigeminal nucleus & tract",
+        "color": "black"
+      },
+      {
+        "letter": "I",
+        "answer": "Inferior cerebellar peduncle",
+        "color": "blue"
+      },
+      {
+        "letter": "J",
+        "answer": "Superior cerebellar peduncle",
+        "color": "blue"
+      },
+      {
+        "letter": "K",
+        "answer": "Dentate nucleus",
+        "color": "blue"
+      },
+      {
+        "letter": "L",
+        "answer": "Fastigial nucleus",
+        "color": "blue"
+      },
+      {
+        "letter": "M",
+        "answer": "Interpositus (Globose) nucleus",
+        "color": "blue"
+      },
+      {
+        "letter": "N",
+        "answer": "Interpositus (Emboliform) nucleus",
+        "color": "blue"
+      },
+      {
+        "letter": "O",
+        "answer": "Middle cerebellar peduncle",
+        "color": "blue"
+      },
+      {
+        "letter": "P",
+        "answer": "Facial nucleus",
+        "color": "blue"
+      },
+      {
+        "letter": "Q",
+        "answer": "Transverse pontine fibers",
+        "color": "blue"
+      },
+      {
+        "letter": "R",
+        "answer": "Corticospinal fibers",
+        "color": "blue"
+      },
+      {
+        "letter": "S",
+        "answer": "Facial nerve",
+        "color": "blue"
+      }
+    ]
+  },
+  {
+    "id": 7,
+    "unlabeled_image": "e3_s15a_ulb.jpg",
+    "labeled_image": "e3_s15a.jpg",
+    "questions": [
+      {
+        "letter": "A",
+        "answer": "Abducens nucleus",
+        "color": "blue"
+      },
+      {
+        "letter": "B",
+        "answer": "Superior olivary nucleus",
+        "color": "black"
+      },
+      {
+        "letter": "C",
+        "answer": "Medial lemniscus",
+        "color": "black"
+      },
+      {
+        "letter": "D",
+        "answer": "VTT",
+        "color": "black"
+      },
+      {
+        "letter": "E",
+        "answer": "ALS/Lateral lemniscus",
+        "color": "black"
+      },
+      {
+        "letter": "F",
+        "answer": "Spinal trigeminal tract",
+        "color": "black"
+      },
+      {
+        "letter": "G",
+        "answer": "Spinal trigeminal nucleus",
+        "color": "black"
+      },
+      {
+        "letter": "H",
+        "answer": "Superior vestibular nucleus",
+        "color": "black"
+      },
+      {
+        "letter": "I",
+        "answer": "Superior cerebellar peduncle",
+        "color": "blue"
+      },
+      {
+        "letter": "J",
+        "answer": "Middle cerebellar peduncle",
+        "color": "blue"
+      },
+      {
+        "letter": "K",
+        "answer": "Facial nerve",
+        "color": "blue"
+      },
+      {
+        "letter": "L",
+        "answer": "Facial nucleus",
+        "color": "blue"
+      },
+      {
+        "letter": "M",
+        "answer": "Pontine nuclei",
+        "color": "blue"
+      },
+      {
+        "letter": "N",
+        "answer": "Corticospinal and corticobulbar fibers",
+        "color": "blue"
+      },
+      {
+        "letter": "O",
+        "answer": "Vermis",
+        "color": "blue"
+      }
+    ]
+  },
+  {
+    "id": 8,
+    "unlabeled_image": "e3_s17_ulb.jpg",
+    "labeled_image": "e3_s17.jpg",
+    "questions": [
+      {
+        "letter": "A",
+        "answer": "Mesencephalic nucleus",
+        "color": "black"
+      },
+      {
+        "letter": "B",
+        "answer": "Fibers of Trigeminal nerve",
+        "color": "black"
+      },
+      {
+        "letter": "C",
+        "answer": "Medial lemniscus",
+        "color": "black"
+      },
+      {
+        "letter": "D",
+        "answer": "VTT",
+        "color": "black"
+      },
+      {
+        "letter": "E",
+        "answer": "Trigeminal nerve",
+        "color": "blue"
+      },
+      {
+        "letter": "F",
+        "answer": "ALS/Lateral lemniscus",
+        "color": "black"
+      },
+      {
+        "letter": "G",
+        "answer": "Motor nucleus of V",
+        "color": "blue"
+      },
+      {
+        "letter": "H",
+        "answer": "Chief sensory nucleus",
+        "color": "black"
+      },
+      {
+        "letter": "I",
+        "answer": "MLF",
+        "color": "black"
+      },
+      {
+        "letter": "J",
+        "answer": "Superior cerebellar peduncle",
+        "color": "blue"
+      },
+      {
+        "letter": "K",
+        "answer": "Middle cerebellar peduncle",
+        "color": "blue"
+      },
+      {
+        "letter": "L",
+        "answer": "Transverse pontine fibers",
+        "color": "blue"
+      },
+      {
+        "letter": "M",
+        "answer": "Pontine nuclei",
+        "color": "blue"
+      },
+      {
+        "letter": "N",
+        "answer": "Corticospinal and corticobulbar fibers",
+        "color": "blue"
+      }
+    ]
+  },
+  {
+    "id": 9,
+    "unlabeled_image": "e3_s21_ulb.jpg",
+    "labeled_image": "e3_s21.jpg",
+    "questions": [
+      {
+        "letter": "A",
+        "answer": "Cerebral aqueduct",
+        "color": "black"
+      },
+      {
+        "letter": "B",
+        "answer": "Decussation of trochlear nerve",
+        "color": "black"
+      },
+      {
+        "letter": "C",
+        "answer": "Lateral lemniscus",
+        "color": "black"
+      },
+      {
+        "letter": "D",
+        "answer": "VTT",
+        "color": "black"
+      },
+      {
+        "letter": "E",
+        "answer": "Medial lemniscus",
+        "color": "black"
+      },
+      {
+        "letter": "F",
+        "answer": "ALS",
+        "color": "black"
+      },
+      {
+        "letter": "G",
+        "answer": "Mesencephalic nucleus",
+        "color": "black"
+      },
+      {
+        "letter": "H",
+        "answer": "MLF",
+        "color": "black"
+      },
+      {
+        "letter": "I",
+        "answer": "Superior cerebellar peduncle",
+        "color": "blue"
+      },
+      {
+        "letter": "J",
+        "answer": "corticospinal and corticobulbar fibers",
+        "color": "blue"
+      },
+      {
+        "letter": "K",
+        "answer": "Transverse pontine fibers",
+        "color": "blue"
+      },
+      {
+        "letter": "L",
+        "answer": "Pontine nuclei",
+        "color": "blue"
+      }
+    ]
+  },
+  {
+    "id": 10,
+    "unlabeled_image": "e3_s23_ulb.jpg",
+    "labeled_image": "e3_s23.jpg",
+    "questions": [
+      {
+        "letter": "A",
+        "answer": "Cerebral aqueduct",
+        "color": "black"
+      },
+      {
+        "letter": "B",
+        "answer": "Trochlear nucleus",
+        "color": "blue"
+      },
+      {
+        "letter": "C",
+        "answer": "Lateral lemniscus",
+        "color": "black"
+      },
+      {
+        "letter": "D",
+        "answer": "ALS",
+        "color": "black"
+      },
+      {
+        "letter": "E",
+        "answer": "Medial lemniscus",
+        "color": "black"
+      },
+      {
+        "letter": "F",
+        "answer": "VTT",
+        "color": "black"
+      },
+      {
+        "letter": "G",
+        "answer": "Interpeduncular fossa",
+        "color": "black"
+      },
+      {
+        "letter": "H",
+        "answer": "Oculomotor nerve",
+        "color": "blue"
+      },
+      {
+        "letter": "I",
+        "answer": "MLF",
+        "color": "black"
+      },
+      {
+        "letter": "J",
+        "answer": "Mesencephalic nucleus and tract",
+        "color": "black"
+      },
+      {
+        "letter": "K",
+        "answer": "PAG",
+        "color": "black"
+      },
+      {
+        "letter": "L",
+        "answer": "Inferior colliculus",
+        "color": "black"
+      },
+      {
+        "letter": "M",
+        "answer": "Crus cerebri",
+        "color": "blue"
+      },
+      {
+        "letter": "N",
+        "answer": "Decussation of superior cerebellar peduncle",
+        "color": "blue"
+      }
+    ]
+  },
+  {
+    "id": 11,
+    "unlabeled_image": "e3_s26_ulb.jpg",
+    "labeled_image": "e3_s26.jpg",
+    "questions": [
+      {
+        "letter": "A",
+        "answer": "Cerebral aqueduct",
+        "color": "black"
+      },
+      {
+        "letter": "B",
+        "answer": "Superior colliculus",
+        "color": "black"
+      },
+      {
+        "letter": "C",
+        "answer": "Brachium of superior colliculus",
+        "color": "black"
+      },
+      {
+        "letter": "D",
+        "answer": "ALS",
+        "color": "black"
+      },
+      {
+        "letter": "E",
+        "answer": "Brachium of inferior colliculus",
+        "color": "black"
+      },
+      {
+        "letter": "F",
+        "answer": "Medial geniculate nucleus",
+        "color": "black"
+      },
+      {
+        "letter": "G",
+        "answer": "VTT",
+        "color": "black"
+      },
+      {
+        "letter": "H",
+        "answer": "Medial lemniscus",
+        "color": "black"
+      },
+      {
+        "letter": "I",
+        "answer": "Oculomotor nerve",
+        "color": "black"
+      },
+      {
+        "letter": "J",
+        "answer": "MLF",
+        "color": "black"
+      },
+      {
+        "letter": "K",
+        "answer": "Brachium of inferior colliculus",
+        "color": "black"
+      },
+      {
+        "letter": "L",
+        "answer": "Oculomotor nucleus",
+        "color": "blue"
+      },
+      {
+        "letter": "M",
+        "answer": "Edinger-Westfal nucleus",
+        "color": "black"
+      },
+      {
+        "letter": "N",
+        "answer": "PAG",
+        "color": "black"
+      },
+      {
+        "letter": "O",
+        "answer": "Corticospinal and corticobulbar fibers",
+        "color": "blue"
+      },
+      {
+        "letter": "P",
+        "answer": "Red nucleus",
+        "color": "blue"
+      },
+      {
+        "letter": "Q",
+        "answer": "Crus cerebri",
+        "color": "blue"
+      },
+      {
+        "letter": "R",
+        "answer": "Substantia nigra",
+        "color": "blue"
+      }
+    ]
+  },
+  {
+    "id": 12,
+    "unlabeled_image": "e3_s32_ulb.jpg",
+    "labeled_image": "e3_s32.jpg",
+    "questions": [
+      {
+        "letter": "A",
+        "answer": "Pineal",
+        "color": "black"
+      },
+      {
+        "letter": "B",
+        "answer": "Superior colliculus",
+        "color": "black"
+      },
+      {
+        "letter": "C",
+        "answer": "Brachium of superior colliculus",
+        "color": "blue"
+      },
+      {
+        "letter": "D",
+        "answer": "Brachium of inferior colliculus",
+        "color": "black"
+      },
+      {
+        "letter": "E",
+        "answer": "Lateral geniculate nucleus",
+        "color": "black"
+      },
+      {
+        "letter": "F",
+        "answer": "Oculomotor nerve",
+        "color": "blue"
+      },
+      {
+        "letter": "G",
+        "answer": "VTT",
+        "color": "black"
+      },
+      {
+        "letter": "H",
+        "answer": "Medial lemniscus",
+        "color": "black"
+      },
+      {
+        "letter": "I",
+        "answer": "ALS",
+        "color": "black"
+      },
+      {
+        "letter": "J",
+        "answer": "Medial geniculate nucleus",
+        "color": "black"
+      },
+      {
+        "letter": "K",
+        "answer": "Oculomotor nucleus",
+        "color": "blue"
+      },
+      {
+        "letter": "L",
+        "answer": "Edinger-Westfal nucleus",
+        "color": "black"
+      },
+      {
+        "letter": "M",
+        "answer": "PAG",
+        "color": "black"
+      },
+      {
+        "letter": "N",
+        "answer": "Cerebral aqueduct",
+        "color": "black"
+      },
+      {
+        "letter": "O",
+        "answer": "Corpus callosum",
+        "color": "blue"
+      },
+      {
+        "letter": "P",
+        "answer": "Substantia nigra",
+        "color": "blue"
+      },
+      {
+        "letter": "Q",
+        "answer": "Crus cerebri",
+        "color": "blue"
+      },
+      {
+        "letter": "R",
+        "answer": "Red nucleus",
+        "color": "blue"
+      }
+    ]
+  },
+  {
+    "id": 13,
+    "unlabeled_image": "e3_s34_ulb.jpg",
+    "labeled_image": "e3_s34.jpg",
+    "questions": [
+      {
+        "letter": "A",
+        "answer": "Cingulate gyrus",
+        "color": "black"
+      },
+      {
+        "letter": "B",
+        "answer": "Pretectal area",
+        "color": "black"
+      },
+      {
+        "letter": "C",
+        "answer": "PAG",
+        "color": "black"
+      },
+      {
+        "letter": "D",
+        "answer": "VTT",
+        "color": "black"
+      },
+      {
+        "letter": "E",
+        "answer": "Lateral geniculate nucleus",
+        "color": "black"
+      },
+      {
+        "letter": "F",
+        "answer": "Optic radiations",
+        "color": "black"
+      },
+      {
+        "letter": "G",
+        "answer": "Cerebral aqueduct",
+        "color": "black"
+      },
+      {
+        "letter": "H",
+        "answer": "Corpus callosum",
+        "color": "blue"
+      },
+      {
+        "letter": "I",
+        "answer": "Fornix",
+        "color": "blue"
+      },
+      {
+        "letter": "J",
+        "answer": "Crus cerebri",
+        "color": "blue"
+      },
+      {
+        "letter": "K",
+        "answer": "Substantia nigra",
+        "color": "blue"
+      },
+      {
+        "letter": "L",
+        "answer": "Red nucleus",
+        "color": "blue"
+      },
+      {
+        "letter": "M",
+        "answer": "Temporal horn of lateral ventricle",
+        "color": "blue"
+      }
+    ]
+  },
+  {
+    "id": 14,
+    "unlabeled_image": "e3_s37_ulb.jpg",
+    "labeled_image": "e3_s37.jpg",
+    "questions": [
+      {
+        "letter": "A",
+        "answer": "Anterior horn of lateral ventricle",
+        "color": "black"
+      },
+      {
+        "letter": "B",
+        "answer": "VPL",
+        "color": "black"
+      },
+      {
+        "letter": "C",
+        "answer": "VPM",
+        "color": "black"
+      },
+      {
+        "letter": "D",
+        "answer": "Temporal horn of lateral ventricle",
+        "color": "blue"
+      },
+      {
+        "letter": "E",
+        "answer": "Optic tract",
+        "color": "black"
+      },
+      {
+        "letter": "F",
+        "answer": "Subthalamic nucleus",
+        "color": "blue"
+      },
+      {
+        "letter": "G",
+        "answer": "Red nucleus",
+        "color": "blue"
+      },
+      {
+        "letter": "H",
+        "answer": "Crus cerebri",
+        "color": "blue"
+      },
+      {
+        "letter": "I",
+        "answer": "Substantia nigra",
+        "color": "blue"
+      },
+      {
+        "letter": "J",
+        "answer": "Fornix",
+        "color": "blue"
+      },
+      {
+        "letter": "L",
+        "answer": "Caudate",
+        "color": "blue"
+      },
+      {
+        "letter": "M",
+        "answer": "Putamen",
+        "color": "blue"
+      },
+      {
+        "letter": "N",
+        "answer": "Globus pallidus",
+        "color": "blue"
+      },
+      {
+        "letter": "O",
+        "answer": "Tail of caudate",
+        "color": "blue"
+      },
+      {
+        "letter": "P",
+        "answer": "Hippocampus",
+        "color": "blue"
+      },
+      {
+        "letter": "Q",
+        "answer": "Corpus callosum",
+        "color": "blue"
+      }
+    ]
+  },
+  {
+    "id": 15,
+    "unlabeled_image": "e3_s39_ulb.jpg",
+    "labeled_image": "e3_s39.jpg",
+    "questions": [
+      {
+        "letter": "A",
+        "answer": "Cingulate gyrus",
+        "color": "black"
+      },
+      {
+        "letter": "B",
+        "answer": "Third ventricle",
+        "color": "black"
+      },
+      {
+        "letter": "C",
+        "answer": "Optic tract",
+        "color": "black"
+      },
+      {
+        "letter": "D",
+        "answer": "Insula",
+        "color": "blue"
+      },
+      {
+        "letter": "E",
+        "answer": "Caudate",
+        "color": "blue"
+      },
+      {
+        "letter": "F",
+        "answer": "Corpus callosum",
+        "color": "blue"
+      },
+      {
+        "letter": "G",
+        "answer": "Fornix",
+        "color": "blue"
+      },
+      {
+        "letter": "I",
+        "answer": "VL",
+        "color": "blue"
+      },
+      {
+        "letter": "J",
+        "answer": "Thalamic fasciculus",
+        "color": "blue"
+      },
+      {
+        "letter": "K",
+        "answer": "Lenticular fasciculus",
+        "color": "blue"
+      },
+      {
+        "letter": "L",
+        "answer": "Subthalamic nucleus",
+        "color": "blue"
+      },
+      {
+        "letter": "M",
+        "answer": "Mammillary body",
+        "color": "blue"
+      },
+      {
+        "letter": "O",
+        "answer": "Temporal horn of lateral ventricle",
+        "color": "blue"
+      },
+      {
+        "letter": "P",
+        "answer": "Tail of caudate",
+        "color": "blue"
+      },
+      {
+        "letter": "Q",
+        "answer": "Globus pallidus",
+        "color": "blue"
+      },
+      {
+        "letter": "R",
+        "answer": "Putamen",
+        "color": "blue"
+      }
+    ]
+  },
+  {
+    "id": 16,
+    "unlabeled_image": "e3_s41_ulb.jpg",
+    "labeled_image": "e3_s41.jpg",
+    "questions": [
+      {
+        "letter": "A",
+        "answer": "Third ventricle",
+        "color": "black"
+      },
+      {
+        "letter": "B",
+        "answer": "Optic tract",
+        "color": "black"
+      },
+      {
+        "letter": "C",
+        "answer": "Posterior limb of internal capsule",
+        "color": "blue"
+      },
+      {
+        "letter": "D",
+        "answer": "Lateral ventricle",
+        "color": "black"
+      },
+      {
+        "letter": "E",
+        "answer": "Corpus callosum",
+        "color": "blue"
+      },
+      {
+        "letter": "F",
+        "answer": "Fornix",
+        "color": "blue"
+      },
+      {
+        "letter": "G",
+        "answer": "Caudate",
+        "color": "blue"
+      },
+      {
+        "letter": "I",
+        "answer": "VL",
+        "color": "blue"
+      },
+      {
+        "letter": "K",
+        "answer": "Lenticular fasciculus",
+        "color": "blue"
+      },
+      {
+        "letter": "L",
+        "answer": "Hippocampus",
+        "color": "blue"
+      },
+      {
+        "letter": "M",
+        "answer": "Hypothalamus",
+        "color": "blue"
+      },
+      {
+        "letter": "N",
+        "answer": "Mammillary body",
+        "color": "blue"
+      },
+      {
+        "letter": "O",
+        "answer": "Amygdala",
+        "color": "blue"
+      },
+      {
+        "letter": "P",
+        "answer": "Globus pallidus",
+        "color": "blue"
+      },
+      {
+        "letter": "Q",
+        "answer": "Putamen",
+        "color": "blue"
+      },
+      {
+        "letter": "R",
+        "answer": "Insula",
+        "color": "blue"
+      }
+    ]
+  },
+  {
+    "id": 17,
+    "unlabeled_image": "e3_s43_ulb.jpg",
+    "labeled_image": "e3_s43.jpg",
+    "questions": [
+      {
+        "letter": "A",
+        "answer": "Optic tract",
+        "color": "black"
+      },
+      {
+        "letter": "B",
+        "answer": "Third ventricle",
+        "color": "black"
+      },
+      {
+        "letter": "C",
+        "answer": "Posterior limb of internal capsule",
+        "color": "black"
+      },
+      {
+        "letter": "D",
+        "answer": "Lateral ventricle",
+        "color": "black"
+      },
+      {
+        "letter": "E",
+        "answer": "Insula",
+        "color": "blue"
+      },
+      {
+        "letter": "F",
+        "answer": "Putamen",
+        "color": "blue"
+      },
+      {
+        "letter": "G",
+        "answer": "Globus pallidus",
+        "color": "blue"
+      },
+      {
+        "letter": "H",
+        "answer": "Amygdala",
+        "color": "blue"
+      },
+      {
+        "letter": "J",
+        "answer": "Fornix",
+        "color": "blue"
+      },
+      {
+        "letter": "K",
+        "answer": "Caudate",
+        "color": "blue"
+      }
+    ]
+  },
+  {
+    "id": 18,
+    "unlabeled_image": "e3_s45_ulb.jpg",
+    "labeled_image": "e3_s45.jpg",
+    "questions": [
+      {
+        "letter": "A",
+        "answer": "Optic tract",
+        "color": "black"
+      },
+      {
+        "letter": "B",
+        "answer": "Third ventricle",
+        "color": "black"
+      },
+      {
+        "letter": "C",
+        "answer": "Hypothalamus",
+        "color": "blue"
+      },
+      {
+        "letter": "D",
+        "answer": "Anterior limb of internal capsule",
+        "color": "blue"
+      },
+      {
+        "letter": "E",
+        "answer": "Caudate",
+        "color": "blue"
+      },
+      {
+        "letter": "F",
+        "answer": "Amygdala",
+        "color": "blue"
+      },
+      {
+        "letter": "G",
+        "answer": "Anterior commissure",
+        "color": "blue"
+      },
+      {
+        "letter": "H",
+        "answer": "Globus pallidus",
+        "color": "blue"
+      },
+      {
+        "letter": "I",
+        "answer": "Putamen",
+        "color": "blue"
+      },
+      {
+        "letter": "J",
+        "answer": "Fornix",
+        "color": "blue"
+      }
+    ]
+  },
+  {
+    "id": 19,
+    "unlabeled_image": "e3_s47_ulb.jpg",
+    "labeled_image": "e3_s47.jpg",
+    "questions": [
+      {
+        "letter": "A",
+        "answer": "Internal capsule genu",
+        "color": "black"
+      },
+      {
+        "letter": "B",
+        "answer": "Third ventricle",
+        "color": "black"
+      },
+      {
+        "letter": "C",
+        "answer": "Lateral ventricle",
+        "color": "black"
+      },
+      {
+        "letter": "D",
+        "answer": "Insula",
+        "color": "blue"
+      },
+      {
+        "letter": "E",
+        "answer": "Globus pallidus",
+        "color": "blue"
+      },
+      {
+        "letter": "F",
+        "answer": "Putamen",
+        "color": "blue"
+      },
+      {
+        "letter": "G",
+        "answer": "Amygdala",
+        "color": "blue"
+      },
+      {
+        "letter": "H",
+        "answer": "Anterior commissure",
+        "color": "blue"
+      },
+      {
+        "letter": "I",
+        "answer": "Caudate",
+        "color": "blue"
+      },
+      {
+        "letter": "J",
+        "answer": "Corpus callosum",
+        "color": "blue"
+      },
+      {
+        "letter": "K",
+        "answer": "Fornix",
+        "color": "blue"
+      }
+    ]
+  },
+  {
+    "id": 20,
+    "unlabeled_image": "e3_s49_ulb.jpg",
+    "labeled_image": "e3_s49.jpg",
+    "questions": [
+      {
+        "letter": "A",
+        "answer": "Third ventricle",
+        "color": "black"
+      },
+      {
+        "letter": "B",
+        "answer": "Optic tract",
+        "color": "black"
+      },
+      {
+        "letter": "C",
+        "answer": "Optic chiasm",
+        "color": "black"
+      },
+      {
+        "letter": "D",
+        "answer": "Optic nerve",
+        "color": "black"
+      },
+      {
+        "letter": "E",
+        "answer": "Caudate",
+        "color": "blue"
+      },
+      {
+        "letter": "F",
+        "answer": "Corpus callosum",
+        "color": "blue"
+      },
+      {
+        "letter": "G",
+        "answer": "Fornix",
+        "color": "blue"
+      },
+      {
+        "letter": "H",
+        "answer": "Amygdala",
+        "color": "blue"
+      },
+      {
+        "letter": "I",
+        "answer": "Anterior commissure",
+        "color": "blue"
+      },
+      {
+        "letter": "J",
+        "answer": "Globus pallidus",
+        "color": "blue"
+      },
+      {
+        "letter": "K",
+        "answer": "Putamen",
+        "color": "blue"
+      }
+    ]
+  },
+  {
+    "id": 21,
+    "unlabeled_image": "e3_s50_ulb.jpg",
+    "labeled_image": "e3_s50.jpg",
+    "questions": [
+      {
+        "letter": "A",
+        "answer": "Insula",
+        "color": "blue"
+      },
+      {
+        "letter": "B",
+        "answer": "Septum pellucidum",
+        "color": "blue"
+      },
+      {
+        "letter": "C",
+        "answer": "Anterior limb of internal capsule",
+        "color": "blue"
+      },
+      {
+        "letter": "D",
+        "answer": "Putamen",
+        "color": "blue"
+      },
+      {
+        "letter": "E",
+        "answer": "Caudate",
+        "color": "blue"
+      },
+      {
+        "letter": "F",
+        "answer": "Anterior horn of lateral ventricle",
+        "color": "blue"
+      }
+    ]
+  },
+  {
+    "id": 22,
+    "unlabeled_image": "e3_s51_ulb.jpg",
+    "labeled_image": "e3_s51.jpg",
+    "questions": [
+      {
+        "letter": "A",
+        "answer": "Tail of caudate",
+        "color": "blue"
+      },
+      {
+        "letter": "B",
+        "answer": "VPL",
+        "color": "black"
+      },
+      {
+        "letter": "C",
+        "answer": "VPM",
+        "color": "black"
+      },
+      {
+        "letter": "D",
+        "answer": "Genu of internal capsule",
+        "color": "black"
+      },
+      {
+        "letter": "E",
+        "answer": "Anterior limb of internal capsule",
+        "color": "blue"
+      },
+      {
+        "letter": "G",
+        "answer": "VL",
+        "color": "blue"
+      },
+      {
+        "letter": "H",
+        "answer": "Head of caudate",
+        "color": "blue"
+      },
+      {
+        "letter": "I",
+        "answer": "Putamen",
+        "color": "blue"
+      },
+      {
+        "letter": "J",
+        "answer": "Globus pallidus",
+        "color": "blue"
+      },
+      {
+        "letter": "K",
+        "answer": "Posterior limb of internal capsule",
+        "color": "blue"
+      }
+    ]
+  },
+  {
+    "id": 23,
+    "unlabeled_image": "e3_s67_ulb.jpg",
+    "labeled_image": "e3_s67.jpg",
+    "questions": [
+      {
+        "letter": "A",
+        "answer": "Posterior horn of lateral ventricle",
+        "color": "black"
+      },
+      {
+        "letter": "B",
+        "answer": "Thalamus",
+        "color": "black"
+      },
+      {
+        "letter": "C",
+        "answer": "Posterior limb of internal capsule",
+        "color": "blue"
+      },
+      {
+        "letter": "D",
+        "answer": "Fornix",
+        "color": "blue"
+      },
+      {
+        "letter": "E",
+        "answer": "Anterior limb of internal capsule",
+        "color": "blue"
+      },
+      {
+        "letter": "F",
+        "answer": "Caudate",
+        "color": "blue"
+      },
+      {
+        "letter": "G",
+        "answer": "Putamen",
+        "color": "blue"
+      },
+      {
+        "letter": "H",
+        "answer": "Globus pallidus",
+        "color": "blue"
+      },
+      {
+        "letter": "I",
+        "answer": "Corpus callosum",
+        "color": "blue"
+      }
+    ]
+  },
+  {
+    "id": 24,
+    "unlabeled_image": "e3_s74_ulb.jpg",
+    "labeled_image": "e3_s74.jpg",
+    "questions": [
+      {
+        "letter": "A",
+        "answer": "Cingulate gyrus",
+        "color": "black"
+      },
+      {
+        "letter": "B",
+        "answer": "Cerebral aqueduct",
+        "color": "black"
+      },
+      {
+        "letter": "C",
+        "answer": "Midbrain",
+        "color": "black"
+      },
+      {
+        "letter": "D",
+        "answer": "Fourth ventricle",
+        "color": "black"
+      },
+      {
+        "letter": "E",
+        "answer": "Pons",
+        "color": "black"
+      },
+      {
+        "letter": "F",
+        "answer": "Medulla",
+        "color": "black"
+      },
+      {
+        "letter": "G",
+        "answer": "Optic nerve",
+        "color": "black"
+      },
+      {
+        "letter": "H",
+        "answer": "Thalamus",
+        "color": "black"
+      },
+      {
+        "letter": "I",
+        "answer": "Lateral ventricle",
+        "color": "black"
+      },
+      {
+        "letter": "J",
+        "answer": "Corpus callosum",
+        "color": "blue"
+      },
+      {
+        "letter": "K",
+        "answer": "Fornix",
+        "color": "blue"
+      },
+      {
+        "letter": "L",
+        "answer": "Vermis",
+        "color": "blue"
+      },
+      {
+        "letter": "M",
+        "answer": "Mammillary body",
+        "color": "blue"
+      },
+      {
+        "letter": "N",
+        "answer": "Anterior commissure",
+        "color": "blue"
+      }
+    ]
+  },
+  {
+    "id": 25,
+    "unlabeled_image": "e3_s108_ulb.jpg",
+    "labeled_image": "e3_s108.jpg",
+    "questions": [
+      {
+        "letter": "A",
+        "answer": "Dorsal median sulcus",
+        "color": "black"
+      },
+      {
+        "letter": "B",
+        "answer": "Fasciculus gracilis",
+        "color": "black"
+      },
+      {
+        "letter": "C",
+        "answer": "Fasciculus cuneatus",
+        "color": "black"
+      },
+      {
+        "letter": "D",
+        "answer": "Dorsolateral sulcus",
+        "color": "black"
+      },
+      {
+        "letter": "E",
+        "answer": "Dorsolateral fasciculus",
+        "color": "black"
+      },
+      {
+        "letter": "F",
+        "answer": "Anterior white commissure",
+        "color": "black"
+      },
+      {
+        "letter": "G",
+        "answer": "Ventral median fissure",
+        "color": "black"
+      },
+      {
+        "letter": "H",
+        "answer": "ALS",
+        "color": "black"
+      },
+      {
+        "letter": "I",
+        "answer": "Nucleus proprius",
+        "color": "black"
+      },
+      {
+        "letter": "J",
+        "answer": "Substantia gelatinosa",
+        "color": "black"
+      },
+      {
+        "letter": "K",
+        "answer": "Dorsal intermediate sulcus",
+        "color": "black"
+      },
+      {
+        "letter": "L",
+        "answer": "Lateral corticospinal tract",
+        "color": "blue"
+      }
+    ]
+  },
+  {
+    "id": 26,
+    "unlabeled_image": "e3_s109_ulb.jpg",
+    "labeled_image": "e3_s109.jpg",
+    "questions": [
+      {
+        "letter": "A",
+        "answer": "Dorsal median sulcus",
+        "color": "black"
+      },
+      {
+        "letter": "B",
+        "answer": "Fasciculus gracilis",
+        "color": "black"
+      },
+      {
+        "letter": "C",
+        "answer": "Intermediolateral cell column",
+        "color": "blue"
+      },
+      {
+        "letter": "D",
+        "answer": "Anterior white commissure",
+        "color": "black"
+      },
+      {
+        "letter": "E",
+        "answer": "Ventral median fissure",
+        "color": "black"
+      },
+      {
+        "letter": "F",
+        "answer": "ALS",
+        "color": "black"
+      },
+      {
+        "letter": "G",
+        "answer": "Dorsolateral fasciculus",
+        "color": "black"
+      },
+      {
+        "letter": "H",
+        "answer": "Lateral corticospinal tract",
+        "color": "blue"
+      },
+      {
+        "letter": "I",
+        "answer": "Nucleus dorsalis",
+        "color": "blue"
+      }
+    ]
+  },
+  {
+    "id": 27,
+    "unlabeled_image": "e3_s110_ulb.jpg",
+    "labeled_image": "e3_s110.jpg",
+    "questions": [
+      {
+        "letter": "A",
+        "answer": "Dorsal median sulcus",
+        "color": "black"
+      },
+      {
+        "letter": "B",
+        "answer": "Fasciculus gracilis",
+        "color": "black"
+      },
+      {
+        "letter": "C",
+        "answer": "Substantia gelatinosa",
+        "color": "black"
+      },
+      {
+        "letter": "D",
+        "answer": "Nucleus proprius",
+        "color": "black"
+      },
+      {
+        "letter": "E",
+        "answer": "Pia",
+        "color": "black"
+      },
+      {
+        "letter": "F",
+        "answer": "Anterior white commissure",
+        "color": "black"
+      },
+      {
+        "letter": "G",
+        "answer": "Ventral median fissure",
+        "color": "black"
+      },
+      {
+        "letter": "H",
+        "answer": "ALS",
+        "color": "black"
+      },
+      {
+        "letter": "I",
+        "answer": "Dorsolateral fasciculus",
+        "color": "black"
+      },
+      {
+        "letter": "J",
+        "answer": "Lateral corticospinal tract",
+        "color": "blue"
+      }
+    ]
+  },
+  {
+    "id": 28,
+    "unlabeled_image": "e3_s111_ulb.jpg",
+    "labeled_image": "e3_s111.jpg",
+    "questions": [
+      {
+        "letter": "A",
+        "answer": "Dorsal median sulcus",
+        "color": "black"
+      },
+      {
+        "letter": "B",
+        "answer": "Fasciculus gracilis",
+        "color": "black"
+      },
+      {
+        "letter": "C",
+        "answer": "Substantia gelatinosa",
+        "color": "black"
+      },
+      {
+        "letter": "D",
+        "answer": "Nucleus proprius",
+        "color": "black"
+      },
+      {
+        "letter": "E",
+        "answer": "Pia",
+        "color": "black"
+      },
+      {
+        "letter": "F",
+        "answer": "Anterior white commissure",
+        "color": "black"
+      },
+      {
+        "letter": "G",
+        "answer": "Ventral median fissure",
+        "color": "black"
+      },
+      {
+        "letter": "H",
+        "answer": "ALS",
+        "color": "black"
+      },
+      {
+        "letter": "I",
+        "answer": "Dorsolateral fasciculus",
+        "color": "black"
+      },
+      {
+        "letter": "J",
+        "answer": "Lateral corticospinal tract",
+        "color": "blue"
+      }
+    ]
+  },
+  {
+    "id": 29,
+    "unlabeled_image": "e3_g1_ulb.jpg",
+    "labeled_image": "e3_g1.jpg",
+    "questions": [
+      {
+        "letter": "A",
+        "answer": "Fontal lobe",
+        "color": "blue"
+      },
+      {
+        "letter": "B",
+        "answer": "Central sulcus",
+        "color": "blue"
+      },
+      {
+        "letter": "C",
+        "answer": "Parietal lobe",
+        "color": "blue"
+      },
+      {
+        "letter": "D",
+        "answer": "Occipital lobe",
+        "color": "blue"
+      },
+      {
+        "letter": "E",
+        "answer": "Temporal lobe",
+        "color": "blue"
+      },
+      {
+        "letter": "F",
+        "answer": "Lateral fissure",
+        "color": "blue"
+      }
+    ]
+  },
+  {
+    "id": 30,
+    "unlabeled_image": "e3_g2_ulb.jpg",
+    "labeled_image": "e3_g2.jpg",
+    "questions": [
+      {
+        "letter": "A",
+        "answer": "Lateral ventricle",
+        "color": "blue"
+      },
+      {
+        "letter": "B",
+        "answer": "Corpus callosum",
+        "color": "blue"
+      },
+      {
+        "letter": "C",
+        "answer": "Thalamus",
+        "color": "blue"
+      },
+      {
+        "letter": "D",
+        "answer": "vermis",
+        "color": "blue"
+      },
+      {
+        "letter": "E",
+        "answer": "Pyramid",
+        "color": "blue"
+      },
+      {
+        "letter": "F",
+        "answer": "Mammillary body",
+        "color": "blue"
+      },
+      {
+        "letter": "G",
+        "answer": "Hypothalamus",
+        "color": "blue"
+      },
+      {
+        "letter": "I",
+        "answer": "Septum pellucidum",
+        "color": "blue"
+      },
+      {
+        "letter": "J",
+        "answer": "Cingulate gyrus",
+        "color": "blue"
+      },
+      {
+        "letter": "K",
+        "answer": "Fornix",
+        "color": "blue"
+      }
+    ]
+  },
+  {
+    "id": 31,
+    "unlabeled_image": "e3_g3_ulb.jpg",
+    "labeled_image": "e3_g3.jpg",
+    "questions": [
+      {
+        "letter": "A",
+        "answer": "Basilar artery",
+        "color": "blue"
+      },
+      {
+        "letter": "B",
+        "answer": "Superior cerebellar artery",
+        "color": "blue"
+      },
+      {
+        "letter": "C",
+        "answer": "Posterior communicating artery",
+        "color": "blue"
+      },
+      {
+        "letter": "D",
+        "answer": "Mammillary body",
+        "color": "blue"
+      },
+      {
+        "letter": "E",
+        "answer": "Optic chiasm",
+        "color": "blue"
+      },
+      {
+        "letter": "F",
+        "answer": "Anterior cerebral artery",
+        "color": "blue"
+      },
+      {
+        "letter": "G",
+        "answer": "Olfactory tract",
+        "color": "blue"
+      },
+      {
+        "letter": "H",
+        "answer": "Optic nerve",
+        "color": "blue"
+      },
+      {
+        "letter": "I",
+        "answer": "Internal carotid artery",
+        "color": "blue"
+      },
+      {
+        "letter": "J",
+        "answer": "Uncus",
+        "color": "blue"
+      },
+      {
+        "letter": "K",
+        "answer": "Oculomotor nerve",
+        "color": "blue"
+      },
+      {
+        "letter": "L",
+        "answer": "Posterior cerebral artery",
+        "color": "blue"
+      }
+    ]
+  },
+  {
+    "id": 32,
+    "unlabeled_image": "e3_g4_ulb.jpg",
+    "labeled_image": "e3_g4.jpg",
+    "questions": [
+      {
+        "letter": "A",
+        "answer": "Head of caudate",
+        "color": "blue"
+      },
+      {
+        "letter": "B",
+        "answer": "Lentiform nucleus",
+        "color": "blue"
+      },
+      {
+        "letter": "D",
+        "answer": "Olfactory tract",
+        "color": "blue"
+      },
+      {
+        "letter": "E",
+        "answer": "Amygdala",
+        "color": "blue"
+      },
+      {
+        "letter": "F",
+        "answer": "Hippocampus",
+        "color": "blue"
+      },
+      {
+        "letter": "G",
+        "answer": "Internal capsule",
+        "color": "blue"
+      },
+      {
+        "letter": "H",
+        "answer": "Tail of caudate",
+        "color": "blue"
+      }
+    ]
+  },
+  {
+    "id": 33,
+    "unlabeled_image": "e3_g5_ulb.jpg",
+    "labeled_image": "e3_g5.jpg",
+    "questions": [
+      {
+        "letter": "A",
+        "answer": "Olfactory tract",
+        "color": "blue"
+      },
+      {
+        "letter": "B",
+        "answer": "Anterior cerebral artery",
+        "color": "blue"
+      },
+      {
+        "letter": "C",
+        "answer": "Middle cerebral artery",
+        "color": "blue"
+      },
+      {
+        "letter": "D",
+        "answer": "Superior cerebellar artery",
+        "color": "blue"
+      },
+      {
+        "letter": "E",
+        "answer": "Basilar artery",
+        "comment": "And CN VI",
+        "color": "blue"
+      },
+      {
+        "letter": "F",
+        "answer": "Anterior spinal artery",
+        "color": "blue"
+      },
+      {
+        "letter": "G",
+        "answer": "Vertebral artery",
+        "color": "blue"
+      },
+      {
+        "letter": "H",
+        "answer": "Olfactory bulb",
+        "color": "blue"
+      },
+      {
+        "letter": "I",
+        "answer": "Anterior communicating artery",
+        "color": "blue"
+      },
+      {
+        "letter": "J",
+        "answer": "Internal carotid artery",
+        "color": "blue"
+      },
+      {
+        "letter": "K",
+        "answer": "Posterior communicating artery",
+        "color": "blue"
+      },
+      {
+        "letter": "L",
+        "answer": "Posterior cerebral artery",
+        "color": "blue"
+      },
+      {
+        "letter": "M",
+        "answer": "AICA",
+        "color": "blue"
+      },
+      {
+        "letter": "N",
+        "answer": "PICA",
+        "color": "blue"
+      }
+    ]
+  },
+  {
+    "id": 34,
+    "unlabeled_image": "e3_g6_ulb.jpg",
+    "labeled_image": "e3_g6.jpg",
+    "questions": [
+      {
+        "letter": "A",
+        "answer": "Uncus",
+        "color": "blue"
+      },
+      {
+        "letter": "B",
+        "answer": "Parahippocampal gyrus",
+        "color": "blue"
+      }
+    ]
+  },
+  {
+    "id": 35,
+    "unlabeled_image": "e3_g7_ulb.jpg",
+    "labeled_image": "e3_g7.jpg",
+    "questions": [
+      {
+        "letter": "A",
+        "answer": "Insula",
+        "color": "blue"
+      }
+    ]
+  },
+  {
+    "id": 36,
+    "unlabeled_image": "e3_g8_ulb.jpg",
+    "labeled_image": "e3_g8.jpg",
+    "questions": [
+      {
+        "letter": "A",
+        "answer": "Facial and vestibulocochlear nerves",
+        "color": "blue"
+      },
+      {
+        "letter": "B",
+        "answer": "Flocculus",
+        "color": "blue"
+      },
+      {
+        "letter": "C",
+        "answer": "Pyramid",
+        "color": "blue"
+      },
+      {
+        "letter": "D",
+        "answer": "Accessory nerve",
+        "color": "blue"
+      },
+      {
+        "letter": "E",
+        "answer": "Fornix",
+        "color": "blue"
+      },
+      {
+        "letter": "F",
+        "answer": "Olfactory tract",
+        "color": "blue"
+      },
+      {
+        "letter": "G",
+        "answer": "Optic nerve",
+        "color": "blue"
+      },
+      {
+        "letter": "H",
+        "answer": "Oculomotor nerve",
+        "color": "blue"
+      },
+      {
+        "letter": "I",
+        "answer": "Trigeminal nerve",
+        "color": "blue"
+      },
+      {
+        "letter": "J",
+        "answer": "Abducens nerve",
+        "color": "blue"
+      },
+      {
+        "letter": "K",
+        "answer": "Olive",
+        "comment": "Not required",
+        "color": "blue"
+      },
+      {
+        "letter": "L",
+        "answer": "Decussation of pyramids",
+        "color": "blue"
+      },
+      {
+        "letter": "M",
+        "answer": "Caudate",
+        "color": "blue"
+      },
+      {
+        "letter": "N",
+        "answer": "Lentiform nucleus",
+        "color": "blue"
+      }
+    ]
+  },
+  {
+    "id": 37,
+    "unlabeled_image": "e3_g9_ulb.jpg",
+    "labeled_image": "e3_g9.jpg",
+    "questions": [
+      {
+        "letter": "A",
+        "answer": "Superior cerebellar peduncle",
+        "color": "blue"
+      },
+      {
+        "letter": "B",
+        "answer": "Middle cerebellar peduncle",
+        "color": "blue"
+      },
+      {
+        "letter": "C",
+        "answer": "Vermis",
+        "color": "blue"
+      },
+      {
+        "letter": "D",
+        "answer": "Nodulus",
+        "color": "blue"
+      },
+      {
+        "letter": "E",
+        "answer": "Inferior cerebellar peduncle",
+        "color": "blue"
+      },
+      {
+        "letter": "F",
+        "answer": "Flocculus",
+        "color": "blue"
+      },
+      {
+        "letter": "G",
+        "answer": "Cerebellar tonsil",
+        "color": "blue"
+      }
+    ]
+  },
+  {
+    "id": 38,
+    "unlabeled_image": "e3_g10_ulb.jpg",
+    "labeled_image": "e3_g10.jpg",
+    "questions": [
+      {
+        "letter": "A",
+        "answer": "Vermis",
+        "color": "blue"
+      },
+      {
+        "letter": "B",
+        "answer": "Lateral cerebellar hemisphere",
+        "color": "blue"
+      }
+    ]
+  },
+  {
+    "id": 39,
+    "unlabeled_image": "e3_g11_ulb.jpg",
+    "labeled_image": "e3_g11.jpg",
+    "questions": [
+      {
+        "letter": "A",
+        "answer": "Vermis",
+        "color": "blue"
+      },
+      {
+        "letter": "C",
+        "answer": "Middle cerebellar peduncle",
+        "color": "blue"
+      },
+      {
+        "letter": "D",
+        "answer": "Nodulus",
+        "color": "blue"
+      },
+      {
+        "letter": "E",
+        "answer": "Flocculus",
+        "color": "blue"
+      },
+      {
+        "letter": "F",
+        "answer": "Cerebellar tonsil",
+        "color": "blue"
+      }
+    ]
+  },
+  {
+    "id": 40,
+    "unlabeled_image": "e3_g12_ulb.jpg",
+    "labeled_image": "e3_g12.jpg",
+    "questions": [
+      {
+        "letter": "A",
+        "answer": "Uncus",
+        "comment": "Amygdala lies beneath the uncus",
+        "color": "blue"
+      },
+      {
+        "letter": "B",
+        "answer": "Fornix",
+        "comment": "Body of fornix",
+        "color": "blue"
+      },
+      {
+        "letter": "C",
+        "answer": "Hippocampus",
+        "color": "blue"
+      },
+      {
+        "letter": "D",
+        "answer": "Parahippocampal gyrus",
+        "color": "blue"
+      },
+      {
+        "letter": "E",
+        "answer": "Fornix",
+        "color": "blue"
+      },
+      {
+        "letter": "F",
+        "answer": "Head of caudate",
+        "color": "blue"
+      }
+    ]
+  },
+  {
+    "id": 41,
+    "unlabeled_image": "e3_g13_ulb.jpg",
+    "labeled_image": "e3_g13.jpg",
+    "questions": [
+      {
+        "letter": "A",
+        "answer": "Internal capsule",
+        "color": "blue"
+      },
+      {
+        "letter": "B",
+        "answer": "Mammillary body",
+        "color": "blue"
+      },
+      {
+        "letter": "C",
+        "answer": "Corona radiata",
+        "color": "blue"
+      },
+      {
+        "letter": "D",
+        "answer": "Optic radiation",
+        "color": "blue"
+      },
+      {
+        "letter": "E",
+        "answer": "Flocculus",
+        "color": "blue"
+      }
+    ]
+  },
+  {
+    "id": 42,
+    "unlabeled_image": "e3_g14_ulb.jpg",
+    "labeled_image": "e3_g14.jpg",
+    "questions": [
+      {
+        "letter": "A",
+        "answer": "Corona radiata",
+        "color": "blue"
+      },
+      {
+        "letter": "B",
+        "answer": "Lentiform nucleus",
+        "color": "blue"
+      },
+      {
+        "letter": "C",
+        "answer": "Optic radiation",
+        "color": "blue"
+      }
+    ]
+  },
+  {
+    "id": 43,
+    "unlabeled_image": "e3_g15_ulb.jpg",
+    "labeled_image": "e3_g15.jpg",
+    "questions": [
+      {
+        "letter": "A",
+        "answer": "Superior longitudinal fasciculus",
+        "color": "blue"
+      }
+    ]
+  },
+  {
+    "id": 44,
+    "unlabeled_image": "e3_g16_ulb.jpg",
+    "labeled_image": "e3_g16.jpg",
+    "questions": [
+      {
+        "letter": "A",
+        "answer": "CT scan",
+        "comment": "Good luck on your exam!",
+        "color": "blue"
+      }
+    ]
+  }
+]
