@@ -147,6 +147,66 @@ export const ALTERNATIVE_ANSWERS = {
   "arachnoid": ["arachnoid mater"],
   "gray matter": ["grey matter", "substantia grisea"],
   "white matter": ["substantia alba"],
+
+  // Exam 3 Cerebellar, Basal Ganglia, Cranial, Vascular & Gross Neuroanatomy
+  "fontal lobe": ["frontal lobe"],
+  "frontal lobe": ["fontal lobe"],
+  "aica": ["anterior inferior cerebellar artery"],
+  "anterior inferior cerebellar artery": ["aica"],
+  "pica": ["posterior inferior cerebellar artery"],
+  "posterior inferior cerebellar artery": ["pica"],
+  "edinger-westfal nucleus": ["edinger westphal nucleus", "edinger westphal", "edinger-westphal nucleus", "edinger westfal"],
+  "edinger westphal nucleus": ["edinger westfal nucleus", "edinger westphal", "edinger-westphal nucleus"],
+  "decussation of superior cerebellar peduncle": ["superior cerebellar peduncle decussation", "brachium conjunctivum decussation"],
+  "superior cerebellar peduncle": ["brachium conjunctivum", "scp"],
+  "middle cerebellar peduncle": ["brachium pontis", "mcp"],
+  "inferior cerebellar peduncle": ["restiform body", "icp"],
+  "caudate": ["caudate nucleus"],
+  "head of caudate": ["caudate head", "head of caudate nucleus"],
+  "tail of caudate": ["caudate tail", "tail of caudate nucleus"],
+  "lentiform nucleus": ["lenticular nucleus"],
+  "lateral fissure": ["sylvian fissure", "lateral sulcus"],
+  "optic radiation": ["optic radiations", "geniculocalcarine tract"],
+  "optic radiations": ["optic radiation", "geniculocalcarine tract"],
+  "interpositus emboliform nucleus": ["emboliform nucleus", "interpositus nucleus", "nucleus interpositus"],
+  "interpositus globose nucleus": ["globose nucleus", "interpositus nucleus", "nucleus interpositus"],
+  "interpositus nucleus": ["nucleus interpositus"],
+  "dentate nucleus": ["nucleus dentatus"],
+  "fastigial nucleus": ["nucleus fastigii"],
+  "crus cerebri": ["cerebral peduncle", "basis pedunculi"],
+  "substantia nigra": ["sn"],
+  "subthalamic nucleus": ["stn", "subthalamus", "luys body"],
+  "superior cerebellar artery": ["sca"],
+  "posterior cerebral artery": ["pca"],
+  "middle cerebral artery": ["mca"],
+  "anterior cerebral artery": ["aca"],
+  "anterior communicating artery": ["acom"],
+  "posterior communicating artery": ["pcom"],
+  "basilar artery": ["basilar"],
+  "vertebral artery": ["vertebral"],
+  "internal carotid artery": ["ica", "internal carotid"],
+  "anterior spinal artery": ["asa"],
+  "vagus nerve": ["cn x", "cn 10", "cranial nerve x", "cranial nerve 10"],
+  "accessory nerve": ["cn xi", "cn 11", "cranial nerve xi", "cranial nerve 11", "spinal accessory nerve"],
+  "facial and vestibulocochlear nerves": ["cn vii and viii", "cn 7 and 8", "facial and acoustic nerves"],
+  "vermis": ["cerebellar vermis"],
+  "flocculus": ["floccular lobe"],
+  "nodulus": ["nodule"],
+  "pineal": ["pineal gland", "pineal body", "epiphysis"],
+  "septum pellucidum": ["septum"],
+  "corpus callosum": ["callosum"],
+  "fornix": ["fornical body"],
+  "hippocampus": ["hippocampal formation"],
+  "amygdala": ["amygdaloid body", "amygdaloid nucleus", "amygdaloid complex"],
+  "globus pallidus": ["pallidum", "gp"],
+  "putamen": ["putaminal area"],
+  "ct scan": ["ct", "computed tomography", "computed tomography scan"],
+  "anterior commissure": ["commissura anterior"],
+  "vl": ["ventral lateral nucleus", "ventral lateral", "vl nucleus", "ventrolateral nucleus"],
+  "superior vestibular nucleus": ["nucleus of bechterew", "superior vestibular"],
+  "lateral vestibular nucleus": ["deiters nucleus", "lateral vestibular"],
+  "ventral cochlear nucleus": ["anterior cochlear nucleus"],
+  "corticospinal and corticobulbar fibers": ["corticospinal fibers", "corticobulbar fibers", "corticospinal and corticobulbar tract"],
 };
 
 export const checkAnswer = (userAns, correctAns) => {
@@ -175,11 +235,14 @@ export const checkAnswer = (userAns, correctAns) => {
 
 export const isExamMistake = (m, targetExam) => {
   if (!m) return false;
+  if (targetExam === 'exam3') {
+    return m.exam === 'exam3' || (m.id && String(m.id).startsWith('exam3_'));
+  }
   if (targetExam === 'exam2') {
     return m.exam === 'exam2' || (m.id && String(m.id).startsWith('exam2_'));
   }
   if (targetExam === 'exam1') {
-    return m.exam === 'exam1' || (m.id && String(m.id).startsWith('exam1_')) || (!m.exam && !String(m.id).startsWith('exam2_'));
+    return m.exam === 'exam1' || (m.id && String(m.id).startsWith('exam1_')) || (!m.exam && !String(m.id).startsWith('exam2_') && !String(m.id).startsWith('exam3_'));
   }
   return true;
 };

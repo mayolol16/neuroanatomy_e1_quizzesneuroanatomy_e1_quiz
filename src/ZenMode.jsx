@@ -38,7 +38,11 @@ function ZenModeSession({ exam, quizData, stats, setStats, mistakes, setMistakes
   }
 
   const currentQuiz = validSlides[currentIndex] || validSlides[0];
-  const examTitle = exam === 'exam1' ? 'Exam 1: Sensory Systems' : 'Exam 2: Motor, Cranial Nerves, Ear & Eye';
+  const examTitle = exam === 'exam1' 
+    ? 'Exam 1: Sensory Systems' 
+    : exam === 'exam2' 
+      ? 'Exam 2: Motor, Cranial Nerves, Ear & Eye' 
+      : 'Exam 3: Comprehensive Practical';
 
   const handleInputChange = (letter, value) => {
     setAnswers(prev => ({ ...prev, [letter]: value }));
@@ -124,14 +128,14 @@ function ZenModeSession({ exam, quizData, stats, setStats, mistakes, setMistakes
             <BookOpen size={16} style={{ marginRight: '6px' }} /> Switch Exam
           </button>
         </div>
-        <h1>Zen Mode: {exam === 'exam1' ? 'Exam 1' : 'Exam 2'} 🧘</h1>
+        <h1>Zen Mode: {exam === 'exam1' ? 'Exam 1' : exam === 'exam2' ? 'Exam 2' : 'Exam 3'} 🧘</h1>
         <p>{examTitle} • Endless random rapid-fire practice</p>
       </div>
 
       <div className="quiz-card">
         <div style={{ textAlign: 'center', marginBottom: '8px', color: '#94a3b8', fontWeight: 600, display: 'flex', justifyContent: 'center', gap: '8px', alignItems: 'center' }}>
           <span style={{ background: 'rgba(139, 92, 246, 0.2)', color: '#c4b5fd', padding: '2px 8px', borderRadius: '4px', fontSize: '0.85rem' }}>
-            {exam === 'exam1' ? 'Exam 1' : 'Exam 2'}
+            {exam === 'exam1' ? 'Exam 1' : exam === 'exam2' ? 'Exam 2' : 'Exam 3'}
           </span>
           <span>Slide: {currentQuiz.id}</span>
         </div>
@@ -227,7 +231,7 @@ function ZenModeSession({ exam, quizData, stats, setStats, mistakes, setMistakes
   );
 }
 
-function ZenMode({ quizData1, quizData2, initialExam, stats, setStats, mistakes, setMistakes, onExit }) {
+function ZenMode({ quizData1, quizData2, quizData3, initialExam, stats, setStats, mistakes, setMistakes, onExit }) {
   const [selectedExam, setSelectedExam] = useState(initialExam || null);
 
   if (!selectedExam) {
@@ -279,6 +283,25 @@ function ZenMode({ quizData1, quizData2, initialExam, stats, setStats, mistakes,
               <Zap size={18} style={{ marginRight: '8px' }} /> Start Exam 2 Zen
             </button>
           </div>
+
+          <div 
+            className="quiz-card" 
+            style={{ textAlign: 'center', cursor: 'pointer', border: '2px solid transparent', transition: 'all 0.2s' }}
+            onClick={() => setSelectedExam('exam3')}
+            onMouseEnter={(e) => e.currentTarget.style.borderColor = '#8b5cf6'}
+            onMouseLeave={(e) => e.currentTarget.style.borderColor = 'transparent'}
+          >
+            <h2 style={{ color: '#38bdf8' }}>Exam 3: Comprehensive</h2>
+            <p style={{ color: 'var(--text-color-muted)', margin: '10px 0' }}>
+              Cerebellum, Basal Ganglia, Cortex, Vasculature & Gross Neuroanatomy
+            </p>
+            <p style={{ color: '#c4b5fd', fontWeight: 600, margin: '15px 0' }}>
+              {(quizData3 || []).length} Slides • Rapid-fire random practice
+            </p>
+            <button className="btn btn-primary" style={{ width: '100%', justifyContent: 'center', backgroundColor: '#8b5cf6' }}>
+              <Zap size={18} style={{ marginRight: '8px' }} /> Start Exam 3 Zen
+            </button>
+          </div>
         </div>
       </div>
     );
@@ -288,7 +311,7 @@ function ZenMode({ quizData1, quizData2, initialExam, stats, setStats, mistakes,
     <ZenModeSession 
       key={selectedExam}
       exam={selectedExam}
-      quizData={selectedExam === 'exam1' ? quizData1 : quizData2}
+      quizData={selectedExam === 'exam1' ? quizData1 : selectedExam === 'exam2' ? quizData2 : quizData3}
       stats={stats}
       setStats={setStats}
       mistakes={mistakes}

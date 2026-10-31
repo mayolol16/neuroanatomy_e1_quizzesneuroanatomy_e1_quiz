@@ -24,7 +24,11 @@ function SpacedRepetitionSession({ exam, mistakes, updateMistake, onSwitchExam, 
     }
   }, [currentIndex, submitted]);
 
-  const examTitle = exam === 'exam1' ? 'Exam 1 (Sensory)' : 'Exam 2 (Motor & Special Senses)';
+  const examTitle = exam === 'exam1' 
+    ? 'Exam 1 (Sensory)' 
+    : exam === 'exam2' 
+      ? 'Exam 2 (Motor & Special Senses)' 
+      : 'Exam 3 (Comprehensive)';
 
   if (reviewQueue.length === 0) {
     return (
@@ -142,7 +146,7 @@ function SpacedRepetitionSession({ exam, mistakes, updateMistake, onSwitchExam, 
       <div className="quiz-card">
         <div style={{ textAlign: 'center', marginBottom: '10px', fontWeight: 600, color: '#64748b', display: 'flex', justifyContent: 'center', gap: '8px', alignItems: 'center' }}>
           <span style={{ background: 'rgba(59, 130, 246, 0.2)', color: '#93c5fd', padding: '2px 8px', borderRadius: '4px', fontSize: '0.85rem' }}>
-            {exam === 'exam1' ? 'Exam 1' : 'Exam 2'}
+            {exam === 'exam1' ? 'Exam 1' : exam === 'exam2' ? 'Exam 2' : 'Exam 3'}
           </span>
           <span>Slide: {currentItem.slideId || currentItem.id.split('_')[1] || currentItem.id.split('_')[0]}</span>
         </div>
@@ -251,6 +255,7 @@ function SpacedRepetition({ mistakes, updateMistake, onExit, initialExam }) {
 
   const exam1Due = Object.values(mistakes || {}).filter(m => isExamMistake(m, 'exam1') && m.nextReviewDate <= Date.now()).length;
   const exam2Due = Object.values(mistakes || {}).filter(m => isExamMistake(m, 'exam2') && m.nextReviewDate <= Date.now()).length;
+  const exam3Due = Object.values(mistakes || {}).filter(m => isExamMistake(m, 'exam3') && m.nextReviewDate <= Date.now()).length;
 
   if (!selectedExam) {
     return (
@@ -299,6 +304,25 @@ function SpacedRepetition({ mistakes, updateMistake, onExit, initialExam }) {
             </div>
             <button className="btn btn-primary" style={{ width: '100%', justifyContent: 'center' }}>
               Start Exam 2 Review
+            </button>
+          </div>
+
+          <div 
+            className="quiz-card" 
+            style={{ textAlign: 'center', cursor: 'pointer', border: '2px solid transparent', transition: 'all 0.2s' }}
+            onClick={() => setSelectedExam('exam3')}
+            onMouseEnter={(e) => e.currentTarget.style.borderColor = '#3b82f6'}
+            onMouseLeave={(e) => e.currentTarget.style.borderColor = 'transparent'}
+          >
+            <h2 style={{ color: '#38bdf8' }}>Exam 3: Comprehensive</h2>
+            <p style={{ color: 'var(--text-color-muted)', margin: '10px 0' }}>
+              Cerebellum, Basal Ganglia, Cortex, Vasculature & Gross Neuroanatomy
+            </p>
+            <div style={{ fontSize: '1.3rem', fontWeight: 700, color: exam3Due > 0 ? '#ef4444' : '#10b981', margin: '15px 0' }}>
+              {exam3Due} {exam3Due === 1 ? 'card' : 'cards'} due for review
+            </div>
+            <button className="btn btn-primary" style={{ width: '100%', justifyContent: 'center' }}>
+              Start Exam 3 Review
             </button>
           </div>
         </div>
