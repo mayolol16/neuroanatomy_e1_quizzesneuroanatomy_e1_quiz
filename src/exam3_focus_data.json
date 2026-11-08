@@ -7,20 +7,17 @@
       {
         "letter": "C",
         "answer": "Spinal Trigeminal Nucleus",
-        "color": "black",
-        "category": "CN V & Nuclei"
+        "color": "black"
       },
       {
         "letter": "F",
         "answer": "Spinal Trigeminal tract",
-        "color": "black",
-        "category": "CN V & Nuclei"
+        "color": "black"
       },
       {
         "letter": "I",
         "answer": "Dorsal spinocerebellar tract",
-        "color": "blue",
-        "category": "Dorsal Spinocerebellar Tract"
+        "color": "blue"
       }
     ]
   },
@@ -32,32 +29,27 @@
       {
         "letter": "D",
         "answer": "Spinal trigeminal nucleus",
-        "color": "black",
-        "category": "CN V & Nuclei"
+        "color": "black"
       },
       {
         "letter": "E",
         "answer": "Spinal Trigeminal tract",
-        "color": "black",
-        "category": "CN V & Nuclei"
+        "color": "black"
       },
       {
         "letter": "K",
         "answer": "Lateral cuneate nucleus",
-        "color": "blue",
-        "category": "Lateral Cuneate Nucleus"
+        "color": "blue"
       },
       {
         "letter": "L",
         "answer": "Solitary tract",
-        "color": "blue",
-        "category": "CN IX/X & Nuclei"
+        "color": "blue"
       },
       {
         "letter": "M",
         "answer": "Dorsal spinocerebellar tract",
-        "color": "blue",
-        "category": "Dorsal Spinocerebellar Tract"
+        "color": "blue"
       }
     ]
   },
@@ -69,32 +61,27 @@
       {
         "letter": "B",
         "answer": "Spinal Trigeminal tract",
-        "color": "black",
-        "category": "CN V & Nuclei"
+        "color": "black"
       },
       {
         "letter": "C",
         "answer": "Spinal trigeminal nucleus",
-        "color": "black",
-        "category": "CN V & Nuclei"
+        "color": "black"
       },
       {
         "letter": "I",
         "answer": "Solitary tract",
-        "color": "blue",
-        "category": "CN IX/X & Nuclei"
+        "color": "blue"
       },
       {
         "letter": "J",
         "answer": "Lateral cuneate nucleus",
-        "color": "blue",
-        "category": "Lateral Cuneate Nucleus"
+        "color": "blue"
       },
       {
         "letter": "M",
         "answer": "Dorsal spinocerebellar tract",
-        "color": "blue",
-        "category": "Dorsal Spinocerebellar Tract"
+        "color": "blue"
       }
     ]
   },
@@ -106,62 +93,52 @@
       {
         "letter": "B",
         "answer": "Medial vestibular nucleus",
-        "color": "black",
-        "category": "Vestibular Nuclei"
+        "color": "black"
       },
       {
         "letter": "C",
         "answer": "Inferior vestibular nucleus",
-        "color": "black",
-        "category": "Vestibular Nuclei"
+        "color": "black"
       },
       {
         "letter": "D",
         "answer": "Inferior cerebellar peduncle",
-        "color": "blue",
-        "category": "Cerebellar Peduncles"
+        "color": "blue"
       },
       {
         "letter": "E",
         "answer": "Spinal Trigeminal nucleus & tract",
-        "color": "black",
-        "category": "CN V & Nuclei"
+        "color": "black"
       },
       {
         "letter": "I",
         "answer": "Spinal Trigeminal tract",
-        "color": "black",
-        "category": "CN V & Nuclei"
+        "color": "black"
       },
       {
         "letter": "K",
         "answer": "Hypoglossal nucleus",
-        "color": "blue",
-        "category": "CN XII & Nuclei"
+        "color": "blue"
       },
       {
         "letter": "L",
         "answer": "Dorsal motor nucleus of vagus",
-        "color": "blue",
-        "category": "CN V & Nuclei"
+        "color": "blue"
       },
       {
         "letter": "P",
         "answer": "Nucleus ambiguus",
-        "color": "blue",
-        "category": "CN IX/X & Nuclei"
+        "color": "blue"
       },
       {
         "letter": "Q",
         "answer": "Vagus nerve",
-        "color": "blue",
-        "category": "CN IX/X & Nuclei"
+        "color": "blue"
       },
       {
         "letter": "R",
         "answer": "Solitary tract",
-        "color": "blue",
-        "category": "CN IX/X & Nuclei"
+        "color": "blue"
       }
     ]
   },
@@ -173,44 +150,37 @@
       {
         "letter": "B",
         "answer": "Inferior vestibular nucleus",
-        "color": "black",
-        "category": "Vestibular Nuclei"
+        "color": "black"
       },
       {
         "letter": "D",
         "answer": "Spinal Trigeminal nucleus & tract",
-        "color": "black",
-        "category": "CN V & Nuclei"
+        "color": "black"
       },
       {
         "letter": "L",
         "answer": "Lateral vestibular nucleus",
-        "color": "black",
-        "category": "Vestibular Nuclei"
+        "color": "black"
       },
       {
         "letter": "M",
         "answer": "Medial vestibular nucleus",
-        "color": "black",
-        "category": "Vestibular Nuclei"
+        "color": "black"
       },
       {
         "letter": "N",
         "answer": "Nodulus",
-        "color": "blue",
-        "category": "Flocculus / Nodulus / Vermis"
+        "color": "blue"
       },
       {
         "letter": "O",
         "answer": "Dentate nucleus",
-        "color": "blue",
-        "category": "Cerebellar Deep Nuclei"
+        "color": "blue"
       },
       {
         "letter": "R",
         "answer": "Flocculus",
-        "color": "blue",
-        "category": "Flocculus / Nodulus / Vermis"
+        "color": "blue"
       }
     ]
   },
@@ -222,80 +192,67 @@
       {
         "letter": "A",
         "answer": "Superior vestibular nucleus",
-        "color": "black",
-        "category": "Vestibular Nuclei"
+        "color": "black"
       },
       {
         "letter": "C",
         "answer": "Abducens nucleus",
-        "color": "blue",
-        "category": "CN VI & Nuclei"
+        "color": "blue"
       },
       {
         "letter": "H",
         "answer": "Spinal trigeminal nucleus & tract",
-        "color": "black",
-        "category": "CN V & Nuclei"
+        "color": "black"
       },
       {
         "letter": "I",
         "answer": "Inferior cerebellar peduncle",
-        "color": "blue",
-        "category": "Cerebellar Peduncles"
+        "color": "blue"
       },
       {
         "letter": "J",
         "answer": "Superior cerebellar peduncle",
-        "color": "blue",
-        "category": "Cerebellar Peduncles"
+        "color": "blue"
       },
       {
         "letter": "K",
         "answer": "Dentate nucleus",
-        "color": "blue",
-        "category": "Cerebellar Deep Nuclei"
+        "color": "blue"
       },
       {
         "letter": "L",
         "answer": "Fastigial nucleus",
-        "color": "blue",
-        "category": "Cerebellar Deep Nuclei"
+        "color": "blue"
       },
       {
         "letter": "M",
         "answer": "Interpositus (Globose) nucleus",
-        "color": "blue",
-        "category": "Cerebellar Deep Nuclei"
+        "color": "blue"
       },
       {
         "letter": "N",
         "answer": "Interpositus (Emboliform) nucleus",
-        "color": "blue",
-        "category": "Cerebellar Deep Nuclei"
+        "color": "blue"
       },
       {
         "letter": "O",
         "answer": "Middle cerebellar peduncle",
-        "color": "blue",
-        "category": "Cerebellar Peduncles"
+        "color": "blue"
       },
       {
         "letter": "P",
         "answer": "Facial nucleus",
-        "color": "blue",
-        "category": "CN VII & Nuclei"
+        "color": "blue"
       },
       {
         "letter": "R",
         "answer": "Corticospinal fibers",
-        "color": "blue",
-        "category": "Crus Cerebri / Motor Pathways"
+        "color": "blue"
       },
       {
         "letter": "S",
         "answer": "Facial nerve",
-        "color": "blue",
-        "category": "CN VII & Nuclei"
+        "color": "blue"
       }
     ]
   },
@@ -307,68 +264,57 @@
       {
         "letter": "A",
         "answer": "Abducens nucleus",
-        "color": "blue",
-        "category": "CN VI & Nuclei"
+        "color": "blue"
       },
       {
         "letter": "F",
         "answer": "Spinal trigeminal tract",
-        "color": "black",
-        "category": "CN V & Nuclei"
+        "color": "black"
       },
       {
         "letter": "G",
         "answer": "Spinal trigeminal nucleus",
-        "color": "black",
-        "category": "CN V & Nuclei"
+        "color": "black"
       },
       {
         "letter": "H",
         "answer": "Superior vestibular nucleus",
-        "color": "black",
-        "category": "Vestibular Nuclei"
+        "color": "black"
       },
       {
         "letter": "I",
         "answer": "Superior cerebellar peduncle",
-        "color": "blue",
-        "category": "Cerebellar Peduncles"
+        "color": "blue"
       },
       {
         "letter": "J",
         "answer": "Middle cerebellar peduncle",
-        "color": "blue",
-        "category": "Cerebellar Peduncles"
+        "color": "blue"
       },
       {
         "letter": "K",
         "answer": "Facial nerve",
-        "color": "blue",
-        "category": "CN VII & Nuclei"
+        "color": "blue"
       },
       {
         "letter": "L",
         "answer": "Facial nucleus",
-        "color": "blue",
-        "category": "CN VII & Nuclei"
+        "color": "blue"
       },
       {
         "letter": "M",
         "answer": "Pontine nuclei",
-        "color": "blue",
-        "category": "Pontine Nuclei"
+        "color": "blue"
       },
       {
         "letter": "N",
         "answer": "Corticospinal and corticobulbar fibers",
-        "color": "blue",
-        "category": "Crus Cerebri / Motor Pathways"
+        "color": "blue"
       },
       {
         "letter": "O",
         "answer": "Vermis",
-        "color": "blue",
-        "category": "Flocculus / Nodulus / Vermis"
+        "color": "blue"
       }
     ]
   },
@@ -380,56 +326,47 @@
       {
         "letter": "A",
         "answer": "Mesencephalic nucleus",
-        "color": "black",
-        "category": "CN V & Nuclei"
+        "color": "black"
       },
       {
         "letter": "B",
         "answer": "Fibers of Trigeminal nerve",
-        "color": "black",
-        "category": "CN V & Nuclei"
+        "color": "black"
       },
       {
         "letter": "E",
         "answer": "Trigeminal nerve",
-        "color": "blue",
-        "category": "CN V & Nuclei"
+        "color": "blue"
       },
       {
         "letter": "G",
         "answer": "Motor nucleus of V",
-        "color": "blue",
-        "category": "CN V & Nuclei"
+        "color": "blue"
       },
       {
         "letter": "H",
         "answer": "Chief sensory nucleus",
-        "color": "black",
-        "category": "CN V & Nuclei"
+        "color": "black"
       },
       {
         "letter": "J",
         "answer": "Superior cerebellar peduncle",
-        "color": "blue",
-        "category": "Cerebellar Peduncles"
+        "color": "blue"
       },
       {
         "letter": "K",
         "answer": "Middle cerebellar peduncle",
-        "color": "blue",
-        "category": "Cerebellar Peduncles"
+        "color": "blue"
       },
       {
         "letter": "M",
         "answer": "Pontine nuclei",
-        "color": "blue",
-        "category": "Pontine Nuclei"
+        "color": "blue"
       },
       {
         "letter": "N",
         "answer": "Corticospinal and corticobulbar fibers",
-        "color": "blue",
-        "category": "Crus Cerebri / Motor Pathways"
+        "color": "blue"
       }
     ]
   },
@@ -441,32 +378,27 @@
       {
         "letter": "B",
         "answer": "Decussation of trochlear nerve",
-        "color": "black",
-        "category": "CN IV & Nuclei"
+        "color": "black"
       },
       {
         "letter": "G",
         "answer": "Mesencephalic nucleus",
-        "color": "black",
-        "category": "CN V & Nuclei"
+        "color": "black"
       },
       {
         "letter": "I",
         "answer": "Superior cerebellar peduncle",
-        "color": "blue",
-        "category": "Cerebellar Peduncles"
+        "color": "blue"
       },
       {
         "letter": "J",
         "answer": "corticospinal and corticobulbar fibers",
-        "color": "blue",
-        "category": "Crus Cerebri / Motor Pathways"
+        "color": "blue"
       },
       {
         "letter": "L",
         "answer": "Pontine nuclei",
-        "color": "blue",
-        "category": "Pontine Nuclei"
+        "color": "blue"
       }
     ]
   },
@@ -478,32 +410,27 @@
       {
         "letter": "B",
         "answer": "Trochlear nucleus",
-        "color": "blue",
-        "category": "CN IV & Nuclei"
+        "color": "blue"
       },
       {
         "letter": "H",
         "answer": "Oculomotor nerve",
-        "color": "blue",
-        "category": "CN III & Nuclei"
+        "color": "blue"
       },
       {
         "letter": "J",
         "answer": "Mesencephalic nucleus and tract",
-        "color": "black",
-        "category": "CN V & Nuclei"
+        "color": "black"
       },
       {
         "letter": "M",
         "answer": "Crus cerebri",
-        "color": "blue",
-        "category": "Crus Cerebri / Motor Pathways"
+        "color": "blue"
       },
       {
         "letter": "N",
         "answer": "Decussation of superior cerebellar peduncle",
-        "color": "blue",
-        "category": "Cerebellar Peduncles"
+        "color": "blue"
       }
     ]
   },
@@ -515,38 +442,32 @@
       {
         "letter": "I",
         "answer": "Oculomotor nerve",
-        "color": "black",
-        "category": "CN III & Nuclei"
+        "color": "black"
       },
       {
         "letter": "L",
         "answer": "Oculomotor nucleus",
-        "color": "blue",
-        "category": "CN III & Nuclei"
+        "color": "blue"
       },
       {
         "letter": "M",
         "answer": "Edinger-Westfal nucleus",
-        "color": "black",
-        "category": "CN III & Nuclei"
+        "color": "black"
       },
       {
         "letter": "O",
         "answer": "Corticospinal and corticobulbar fibers",
-        "color": "blue",
-        "category": "Crus Cerebri / Motor Pathways"
+        "color": "blue"
       },
       {
         "letter": "Q",
         "answer": "Crus cerebri",
-        "color": "blue",
-        "category": "Crus Cerebri / Motor Pathways"
+        "color": "blue"
       },
       {
         "letter": "R",
         "answer": "Substantia nigra",
-        "color": "blue",
-        "category": "Basal Ganglia"
+        "color": "blue"
       }
     ]
   },
@@ -558,38 +479,32 @@
       {
         "letter": "F",
         "answer": "Oculomotor nerve",
-        "color": "blue",
-        "category": "CN III & Nuclei"
+        "color": "blue"
       },
       {
         "letter": "K",
         "answer": "Oculomotor nucleus",
-        "color": "blue",
-        "category": "CN III & Nuclei"
+        "color": "blue"
       },
       {
         "letter": "L",
         "answer": "Edinger-Westfal nucleus",
-        "color": "black",
-        "category": "CN III & Nuclei"
+        "color": "black"
       },
       {
         "letter": "O",
         "answer": "Corpus callosum",
-        "color": "blue",
-        "category": "Corpus Callosum"
+        "color": "blue"
       },
       {
         "letter": "P",
         "answer": "Substantia nigra",
-        "color": "blue",
-        "category": "Basal Ganglia"
+        "color": "blue"
       },
       {
         "letter": "Q",
         "answer": "Crus cerebri",
-        "color": "blue",
-        "category": "Crus Cerebri / Motor Pathways"
+        "color": "blue"
       }
     ]
   },
@@ -601,26 +516,22 @@
       {
         "letter": "H",
         "answer": "Corpus callosum",
-        "color": "blue",
-        "category": "Corpus Callosum"
+        "color": "blue"
       },
       {
         "letter": "I",
         "answer": "Fornix",
-        "color": "blue",
-        "category": "Limbic System"
+        "color": "blue"
       },
       {
         "letter": "J",
         "answer": "Crus cerebri",
-        "color": "blue",
-        "category": "Crus Cerebri / Motor Pathways"
+        "color": "blue"
       },
       {
         "letter": "K",
         "answer": "Substantia nigra",
-        "color": "blue",
-        "category": "Basal Ganglia"
+        "color": "blue"
       }
     ]
   },
@@ -632,62 +543,52 @@
       {
         "letter": "F",
         "answer": "Subthalamic nucleus",
-        "color": "blue",
-        "category": "Basal Ganglia"
+        "color": "blue"
       },
       {
         "letter": "H",
         "answer": "Crus cerebri",
-        "color": "blue",
-        "category": "Crus Cerebri / Motor Pathways"
+        "color": "blue"
       },
       {
         "letter": "I",
         "answer": "Substantia nigra",
-        "color": "blue",
-        "category": "Basal Ganglia"
+        "color": "blue"
       },
       {
         "letter": "J",
         "answer": "Fornix",
-        "color": "blue",
-        "category": "Limbic System"
+        "color": "blue"
       },
       {
         "letter": "L",
         "answer": "Caudate",
-        "color": "blue",
-        "category": "Basal Ganglia"
+        "color": "blue"
       },
       {
         "letter": "M",
         "answer": "Putamen",
-        "color": "blue",
-        "category": "Basal Ganglia"
+        "color": "blue"
       },
       {
         "letter": "N",
         "answer": "Globus pallidus",
-        "color": "blue",
-        "category": "Basal Ganglia"
+        "color": "blue"
       },
       {
         "letter": "O",
         "answer": "Tail of caudate",
-        "color": "blue",
-        "category": "Basal Ganglia"
+        "color": "blue"
       },
       {
         "letter": "P",
         "answer": "Hippocampus",
-        "color": "blue",
-        "category": "Limbic System"
+        "color": "blue"
       },
       {
         "letter": "Q",
         "answer": "Corpus callosum",
-        "color": "blue",
-        "category": "Corpus Callosum"
+        "color": "blue"
       }
     ]
   },
@@ -699,50 +600,42 @@
       {
         "letter": "E",
         "answer": "Caudate",
-        "color": "blue",
-        "category": "Basal Ganglia"
+        "color": "blue"
       },
       {
         "letter": "F",
         "answer": "Corpus callosum",
-        "color": "blue",
-        "category": "Corpus Callosum"
+        "color": "blue"
       },
       {
         "letter": "G",
         "answer": "Fornix",
-        "color": "blue",
-        "category": "Limbic System"
+        "color": "blue"
       },
       {
         "letter": "L",
         "answer": "Subthalamic nucleus",
-        "color": "blue",
-        "category": "Basal Ganglia"
+        "color": "blue"
       },
       {
         "letter": "M",
         "answer": "Mammillary body",
-        "color": "blue",
-        "category": "Limbic System"
+        "color": "blue"
       },
       {
         "letter": "P",
         "answer": "Tail of caudate",
-        "color": "blue",
-        "category": "Basal Ganglia"
+        "color": "blue"
       },
       {
         "letter": "Q",
         "answer": "Globus pallidus",
-        "color": "blue",
-        "category": "Basal Ganglia"
+        "color": "blue"
       },
       {
         "letter": "R",
         "answer": "Putamen",
-        "color": "blue",
-        "category": "Basal Ganglia"
+        "color": "blue"
       }
     ]
   },
@@ -754,56 +647,47 @@
       {
         "letter": "C",
         "answer": "Posterior limb of internal capsule",
-        "color": "blue",
-        "category": "Internal Capsule"
+        "color": "blue"
       },
       {
         "letter": "E",
         "answer": "Corpus callosum",
-        "color": "blue",
-        "category": "Corpus Callosum"
+        "color": "blue"
       },
       {
         "letter": "F",
         "answer": "Fornix",
-        "color": "blue",
-        "category": "Limbic System"
+        "color": "blue"
       },
       {
         "letter": "G",
         "answer": "Caudate",
-        "color": "blue",
-        "category": "Basal Ganglia"
+        "color": "blue"
       },
       {
         "letter": "L",
         "answer": "Hippocampus",
-        "color": "blue",
-        "category": "Limbic System"
+        "color": "blue"
       },
       {
         "letter": "N",
         "answer": "Mammillary body",
-        "color": "blue",
-        "category": "Limbic System"
+        "color": "blue"
       },
       {
         "letter": "O",
         "answer": "Amygdala",
-        "color": "blue",
-        "category": "Limbic System"
+        "color": "blue"
       },
       {
         "letter": "P",
         "answer": "Globus pallidus",
-        "color": "blue",
-        "category": "Basal Ganglia"
+        "color": "blue"
       },
       {
         "letter": "Q",
         "answer": "Putamen",
-        "color": "blue",
-        "category": "Basal Ganglia"
+        "color": "blue"
       }
     ]
   },
@@ -815,38 +699,32 @@
       {
         "letter": "C",
         "answer": "Posterior limb of internal capsule",
-        "color": "black",
-        "category": "Internal Capsule"
+        "color": "black"
       },
       {
         "letter": "F",
         "answer": "Putamen",
-        "color": "blue",
-        "category": "Basal Ganglia"
+        "color": "blue"
       },
       {
         "letter": "G",
         "answer": "Globus pallidus",
-        "color": "blue",
-        "category": "Basal Ganglia"
+        "color": "blue"
       },
       {
         "letter": "H",
         "answer": "Amygdala",
-        "color": "blue",
-        "category": "Limbic System"
+        "color": "blue"
       },
       {
         "letter": "J",
         "answer": "Fornix",
-        "color": "blue",
-        "category": "Limbic System"
+        "color": "blue"
       },
       {
         "letter": "K",
         "answer": "Caudate",
-        "color": "blue",
-        "category": "Basal Ganglia"
+        "color": "blue"
       }
     ]
   },
@@ -858,38 +736,32 @@
       {
         "letter": "D",
         "answer": "Anterior limb of internal capsule",
-        "color": "blue",
-        "category": "Internal Capsule"
+        "color": "blue"
       },
       {
         "letter": "E",
         "answer": "Caudate",
-        "color": "blue",
-        "category": "Basal Ganglia"
+        "color": "blue"
       },
       {
         "letter": "F",
         "answer": "Amygdala",
-        "color": "blue",
-        "category": "Limbic System"
+        "color": "blue"
       },
       {
         "letter": "H",
         "answer": "Globus pallidus",
-        "color": "blue",
-        "category": "Basal Ganglia"
+        "color": "blue"
       },
       {
         "letter": "I",
         "answer": "Putamen",
-        "color": "blue",
-        "category": "Basal Ganglia"
+        "color": "blue"
       },
       {
         "letter": "J",
         "answer": "Fornix",
-        "color": "blue",
-        "category": "Limbic System"
+        "color": "blue"
       }
     ]
   },
@@ -901,44 +773,37 @@
       {
         "letter": "A",
         "answer": "Internal capsule genu",
-        "color": "black",
-        "category": "Internal Capsule"
+        "color": "black"
       },
       {
         "letter": "E",
         "answer": "Globus pallidus",
-        "color": "blue",
-        "category": "Basal Ganglia"
+        "color": "blue"
       },
       {
         "letter": "F",
         "answer": "Putamen",
-        "color": "blue",
-        "category": "Basal Ganglia"
+        "color": "blue"
       },
       {
         "letter": "G",
         "answer": "Amygdala",
-        "color": "blue",
-        "category": "Limbic System"
+        "color": "blue"
       },
       {
         "letter": "I",
         "answer": "Caudate",
-        "color": "blue",
-        "category": "Basal Ganglia"
+        "color": "blue"
       },
       {
         "letter": "J",
         "answer": "Corpus callosum",
-        "color": "blue",
-        "category": "Corpus Callosum"
+        "color": "blue"
       },
       {
         "letter": "K",
         "answer": "Fornix",
-        "color": "blue",
-        "category": "Limbic System"
+        "color": "blue"
       }
     ]
   },
@@ -950,38 +815,32 @@
       {
         "letter": "E",
         "answer": "Caudate",
-        "color": "blue",
-        "category": "Basal Ganglia"
+        "color": "blue"
       },
       {
         "letter": "F",
         "answer": "Corpus callosum",
-        "color": "blue",
-        "category": "Corpus Callosum"
+        "color": "blue"
       },
       {
         "letter": "G",
         "answer": "Fornix",
-        "color": "blue",
-        "category": "Limbic System"
+        "color": "blue"
       },
       {
         "letter": "H",
         "answer": "Amygdala",
-        "color": "blue",
-        "category": "Limbic System"
+        "color": "blue"
       },
       {
         "letter": "J",
         "answer": "Globus pallidus",
-        "color": "blue",
-        "category": "Basal Ganglia"
+        "color": "blue"
       },
       {
         "letter": "K",
         "answer": "Putamen",
-        "color": "blue",
-        "category": "Basal Ganglia"
+        "color": "blue"
       }
     ]
   },
@@ -993,20 +852,17 @@
       {
         "letter": "C",
         "answer": "Anterior limb of internal capsule",
-        "color": "blue",
-        "category": "Internal Capsule"
+        "color": "blue"
       },
       {
         "letter": "D",
         "answer": "Putamen",
-        "color": "blue",
-        "category": "Basal Ganglia"
+        "color": "blue"
       },
       {
         "letter": "E",
         "answer": "Caudate",
-        "color": "blue",
-        "category": "Basal Ganglia"
+        "color": "blue"
       }
     ]
   },
@@ -1018,44 +874,37 @@
       {
         "letter": "A",
         "answer": "Tail of caudate",
-        "color": "blue",
-        "category": "Basal Ganglia"
+        "color": "blue"
       },
       {
         "letter": "D",
         "answer": "Genu of internal capsule",
-        "color": "black",
-        "category": "Internal Capsule"
+        "color": "black"
       },
       {
         "letter": "E",
         "answer": "Anterior limb of internal capsule",
-        "color": "blue",
-        "category": "Internal Capsule"
+        "color": "blue"
       },
       {
         "letter": "H",
         "answer": "Head of caudate",
-        "color": "blue",
-        "category": "Basal Ganglia"
+        "color": "blue"
       },
       {
         "letter": "I",
         "answer": "Putamen",
-        "color": "blue",
-        "category": "Basal Ganglia"
+        "color": "blue"
       },
       {
         "letter": "J",
         "answer": "Globus pallidus",
-        "color": "blue",
-        "category": "Basal Ganglia"
+        "color": "blue"
       },
       {
         "letter": "K",
         "answer": "Posterior limb of internal capsule",
-        "color": "blue",
-        "category": "Internal Capsule"
+        "color": "blue"
       }
     ]
   },
@@ -1067,44 +916,37 @@
       {
         "letter": "C",
         "answer": "Posterior limb of internal capsule",
-        "color": "blue",
-        "category": "Internal Capsule"
+        "color": "blue"
       },
       {
         "letter": "D",
         "answer": "Fornix",
-        "color": "blue",
-        "category": "Limbic System"
+        "color": "blue"
       },
       {
         "letter": "E",
         "answer": "Anterior limb of internal capsule",
-        "color": "blue",
-        "category": "Internal Capsule"
+        "color": "blue"
       },
       {
         "letter": "F",
         "answer": "Caudate",
-        "color": "blue",
-        "category": "Basal Ganglia"
+        "color": "blue"
       },
       {
         "letter": "G",
         "answer": "Putamen",
-        "color": "blue",
-        "category": "Basal Ganglia"
+        "color": "blue"
       },
       {
         "letter": "H",
         "answer": "Globus pallidus",
-        "color": "blue",
-        "category": "Basal Ganglia"
+        "color": "blue"
       },
       {
         "letter": "I",
         "answer": "Corpus callosum",
-        "color": "blue",
-        "category": "Corpus Callosum"
+        "color": "blue"
       }
     ]
   },
@@ -1116,26 +958,22 @@
       {
         "letter": "J",
         "answer": "Corpus callosum",
-        "color": "blue",
-        "category": "Corpus Callosum"
+        "color": "blue"
       },
       {
         "letter": "K",
         "answer": "Fornix",
-        "color": "blue",
-        "category": "Limbic System"
+        "color": "blue"
       },
       {
         "letter": "L",
         "answer": "Vermis",
-        "color": "blue",
-        "category": "Flocculus / Nodulus / Vermis"
+        "color": "blue"
       },
       {
         "letter": "M",
         "answer": "Mammillary body",
-        "color": "blue",
-        "category": "Limbic System"
+        "color": "blue"
       }
     ]
   },
@@ -1147,8 +985,7 @@
       {
         "letter": "L",
         "answer": "Lateral corticospinal tract",
-        "color": "blue",
-        "category": "Crus Cerebri / Motor Pathways"
+        "color": "blue"
       }
     ]
   },
@@ -1160,14 +997,12 @@
       {
         "letter": "H",
         "answer": "Lateral corticospinal tract",
-        "color": "blue",
-        "category": "Crus Cerebri / Motor Pathways"
+        "color": "blue"
       },
       {
         "letter": "I",
         "answer": "Nucleus dorsalis",
-        "color": "blue",
-        "category": "Nucleus Dorsalis"
+        "color": "blue"
       }
     ]
   },
@@ -1179,8 +1014,7 @@
       {
         "letter": "J",
         "answer": "Lateral corticospinal tract",
-        "color": "blue",
-        "category": "Crus Cerebri / Motor Pathways"
+        "color": "blue"
       }
     ]
   },
@@ -1192,8 +1026,7 @@
       {
         "letter": "J",
         "answer": "Lateral corticospinal tract",
-        "color": "blue",
-        "category": "Crus Cerebri / Motor Pathways"
+        "color": "blue"
       }
     ]
   },
@@ -1205,8 +1038,7 @@
       {
         "letter": "B",
         "answer": "Central sulcus",
-        "color": "blue",
-        "category": "Cerebral Cortex Gyri"
+        "color": "blue"
       }
     ]
   },
@@ -1218,26 +1050,22 @@
       {
         "letter": "B",
         "answer": "Corpus callosum",
-        "color": "blue",
-        "category": "Corpus Callosum"
+        "color": "blue"
       },
       {
         "letter": "D",
         "answer": "vermis",
-        "color": "blue",
-        "category": "Flocculus / Nodulus / Vermis"
+        "color": "blue"
       },
       {
         "letter": "F",
         "answer": "Mammillary body",
-        "color": "blue",
-        "category": "Limbic System"
+        "color": "blue"
       },
       {
         "letter": "K",
         "answer": "Fornix",
-        "color": "blue",
-        "category": "Limbic System"
+        "color": "blue"
       }
     ]
   },
@@ -1249,56 +1077,47 @@
       {
         "letter": "A",
         "answer": "Basilar artery",
-        "color": "blue",
-        "category": "Cerebral & Brainstem Vasculature"
+        "color": "blue"
       },
       {
         "letter": "B",
         "answer": "Superior cerebellar artery",
-        "color": "blue",
-        "category": "Cerebral & Brainstem Vasculature"
+        "color": "blue"
       },
       {
         "letter": "C",
         "answer": "Posterior communicating artery",
-        "color": "blue",
-        "category": "Cerebral & Brainstem Vasculature"
+        "color": "blue"
       },
       {
         "letter": "D",
         "answer": "Mammillary body",
-        "color": "blue",
-        "category": "Limbic System"
+        "color": "blue"
       },
       {
         "letter": "F",
         "answer": "Anterior cerebral artery",
-        "color": "blue",
-        "category": "Cerebral & Brainstem Vasculature"
+        "color": "blue"
       },
       {
         "letter": "I",
         "answer": "Internal carotid artery",
-        "color": "blue",
-        "category": "Cerebral & Brainstem Vasculature"
+        "color": "blue"
       },
       {
         "letter": "J",
         "answer": "Uncus",
-        "color": "blue",
-        "category": "Limbic System"
+        "color": "blue"
       },
       {
         "letter": "K",
         "answer": "Oculomotor nerve",
-        "color": "blue",
-        "category": "CN III & Nuclei"
+        "color": "blue"
       },
       {
         "letter": "L",
         "answer": "Posterior cerebral artery",
-        "color": "blue",
-        "category": "Cerebral & Brainstem Vasculature"
+        "color": "blue"
       }
     ]
   },
@@ -1310,38 +1129,32 @@
       {
         "letter": "A",
         "answer": "Head of caudate",
-        "color": "blue",
-        "category": "Basal Ganglia"
+        "color": "blue"
       },
       {
         "letter": "B",
         "answer": "Lentiform nucleus",
-        "color": "blue",
-        "category": "Basal Ganglia"
+        "color": "blue"
       },
       {
         "letter": "E",
         "answer": "Amygdala",
-        "color": "blue",
-        "category": "Limbic System"
+        "color": "blue"
       },
       {
         "letter": "F",
         "answer": "Hippocampus",
-        "color": "blue",
-        "category": "Limbic System"
+        "color": "blue"
       },
       {
         "letter": "G",
         "answer": "Internal capsule",
-        "color": "blue",
-        "category": "Internal Capsule"
+        "color": "blue"
       },
       {
         "letter": "H",
         "answer": "Tail of caudate",
-        "color": "blue",
-        "category": "Basal Ganglia"
+        "color": "blue"
       }
     ]
   },
@@ -1353,75 +1166,63 @@
       {
         "letter": "B",
         "answer": "Anterior cerebral artery",
-        "color": "blue",
-        "category": "Cerebral & Brainstem Vasculature"
+        "color": "blue"
       },
       {
         "letter": "C",
         "answer": "Middle cerebral artery",
-        "color": "blue",
-        "category": "Cerebral & Brainstem Vasculature"
+        "color": "blue"
       },
       {
         "letter": "D",
         "answer": "Superior cerebellar artery",
-        "color": "blue",
-        "category": "Cerebral & Brainstem Vasculature"
+        "color": "blue"
       },
       {
         "letter": "E",
         "answer": "Basilar artery",
         "comment": "And CN VI",
-        "color": "blue",
-        "category": "Cerebral & Brainstem Vasculature"
+        "color": "blue"
       },
       {
         "letter": "F",
         "answer": "Anterior spinal artery",
-        "color": "blue",
-        "category": "Cerebral & Brainstem Vasculature"
+        "color": "blue"
       },
       {
         "letter": "G",
         "answer": "Vertebral artery",
-        "color": "blue",
-        "category": "Cerebral & Brainstem Vasculature"
+        "color": "blue"
       },
       {
         "letter": "I",
         "answer": "Anterior communicating artery",
-        "color": "blue",
-        "category": "Cerebral & Brainstem Vasculature"
+        "color": "blue"
       },
       {
         "letter": "J",
         "answer": "Internal carotid artery",
-        "color": "blue",
-        "category": "Cerebral & Brainstem Vasculature"
+        "color": "blue"
       },
       {
         "letter": "K",
         "answer": "Posterior communicating artery",
-        "color": "blue",
-        "category": "Cerebral & Brainstem Vasculature"
+        "color": "blue"
       },
       {
         "letter": "L",
         "answer": "Posterior cerebral artery",
-        "color": "blue",
-        "category": "Cerebral & Brainstem Vasculature"
+        "color": "blue"
       },
       {
         "letter": "M",
         "answer": "AICA",
-        "color": "blue",
-        "category": "Cerebral & Brainstem Vasculature"
+        "color": "blue"
       },
       {
         "letter": "N",
         "answer": "PICA",
-        "color": "blue",
-        "category": "Cerebral & Brainstem Vasculature"
+        "color": "blue"
       }
     ]
   },
@@ -1433,14 +1234,12 @@
       {
         "letter": "A",
         "answer": "Uncus",
-        "color": "blue",
-        "category": "Limbic System"
+        "color": "blue"
       },
       {
         "letter": "B",
         "answer": "Parahippocampal gyrus",
-        "color": "blue",
-        "category": "Limbic System"
+        "color": "blue"
       }
     ]
   },
@@ -1458,50 +1257,42 @@
       {
         "letter": "A",
         "answer": "Facial and vestibulocochlear nerves",
-        "color": "blue",
-        "category": "CN VII & Nuclei"
+        "color": "blue"
       },
       {
         "letter": "B",
         "answer": "Flocculus",
-        "color": "blue",
-        "category": "Flocculus / Nodulus / Vermis"
+        "color": "blue"
       },
       {
         "letter": "E",
         "answer": "Fornix",
-        "color": "blue",
-        "category": "Limbic System"
+        "color": "blue"
       },
       {
         "letter": "H",
         "answer": "Oculomotor nerve",
-        "color": "blue",
-        "category": "CN III & Nuclei"
+        "color": "blue"
       },
       {
         "letter": "I",
         "answer": "Trigeminal nerve",
-        "color": "blue",
-        "category": "CN V & Nuclei"
+        "color": "blue"
       },
       {
         "letter": "J",
         "answer": "Abducens nerve",
-        "color": "blue",
-        "category": "CN VI & Nuclei"
+        "color": "blue"
       },
       {
         "letter": "M",
         "answer": "Caudate",
-        "color": "blue",
-        "category": "Basal Ganglia"
+        "color": "blue"
       },
       {
         "letter": "N",
         "answer": "Lentiform nucleus",
-        "color": "blue",
-        "category": "Basal Ganglia"
+        "color": "blue"
       }
     ]
   },
@@ -1513,44 +1304,37 @@
       {
         "letter": "A",
         "answer": "Superior cerebellar peduncle",
-        "color": "blue",
-        "category": "Cerebellar Peduncles"
+        "color": "blue"
       },
       {
         "letter": "B",
         "answer": "Middle cerebellar peduncle",
-        "color": "blue",
-        "category": "Cerebellar Peduncles"
+        "color": "blue"
       },
       {
         "letter": "C",
         "answer": "Vermis",
-        "color": "blue",
-        "category": "Flocculus / Nodulus / Vermis"
+        "color": "blue"
       },
       {
         "letter": "D",
         "answer": "Nodulus",
-        "color": "blue",
-        "category": "Flocculus / Nodulus / Vermis"
+        "color": "blue"
       },
       {
         "letter": "E",
         "answer": "Inferior cerebellar peduncle",
-        "color": "blue",
-        "category": "Cerebellar Peduncles"
+        "color": "blue"
       },
       {
         "letter": "F",
         "answer": "Flocculus",
-        "color": "blue",
-        "category": "Flocculus / Nodulus / Vermis"
+        "color": "blue"
       },
       {
         "letter": "G",
         "answer": "Cerebellar tonsil",
-        "color": "blue",
-        "category": "Cerebellum Gross"
+        "color": "blue"
       }
     ]
   },
@@ -1562,14 +1346,12 @@
       {
         "letter": "A",
         "answer": "Vermis",
-        "color": "blue",
-        "category": "Flocculus / Nodulus / Vermis"
+        "color": "blue"
       },
       {
         "letter": "B",
         "answer": "Lateral cerebellar hemisphere",
-        "color": "blue",
-        "category": "Cerebellum Gross"
+        "color": "blue"
       }
     ]
   },
@@ -1581,32 +1363,27 @@
       {
         "letter": "A",
         "answer": "Vermis",
-        "color": "blue",
-        "category": "Flocculus / Nodulus / Vermis"
+        "color": "blue"
       },
       {
         "letter": "C",
         "answer": "Middle cerebellar peduncle",
-        "color": "blue",
-        "category": "Cerebellar Peduncles"
+        "color": "blue"
       },
       {
         "letter": "D",
         "answer": "Nodulus",
-        "color": "blue",
-        "category": "Flocculus / Nodulus / Vermis"
+        "color": "blue"
       },
       {
         "letter": "E",
         "answer": "Flocculus",
-        "color": "blue",
-        "category": "Flocculus / Nodulus / Vermis"
+        "color": "blue"
       },
       {
         "letter": "F",
         "answer": "Cerebellar tonsil",
-        "color": "blue",
-        "category": "Cerebellum Gross"
+        "color": "blue"
       }
     ]
   },
@@ -1619,39 +1396,33 @@
         "letter": "A",
         "answer": "Uncus",
         "comment": "Amygdala lies beneath the uncus",
-        "color": "blue",
-        "category": "Limbic System"
+        "color": "blue"
       },
       {
         "letter": "B",
         "answer": "Fornix",
         "comment": "Body of fornix",
-        "color": "blue",
-        "category": "Limbic System"
+        "color": "blue"
       },
       {
         "letter": "C",
         "answer": "Hippocampus",
-        "color": "blue",
-        "category": "Limbic System"
+        "color": "blue"
       },
       {
         "letter": "D",
         "answer": "Parahippocampal gyrus",
-        "color": "blue",
-        "category": "Limbic System"
+        "color": "blue"
       },
       {
         "letter": "E",
         "answer": "Fornix",
-        "color": "blue",
-        "category": "Limbic System"
+        "color": "blue"
       },
       {
         "letter": "F",
         "answer": "Head of caudate",
-        "color": "blue",
-        "category": "Basal Ganglia"
+        "color": "blue"
       }
     ]
   },
@@ -1663,20 +1434,17 @@
       {
         "letter": "A",
         "answer": "Internal capsule",
-        "color": "blue",
-        "category": "Internal Capsule"
+        "color": "blue"
       },
       {
         "letter": "B",
         "answer": "Mammillary body",
-        "color": "blue",
-        "category": "Limbic System"
+        "color": "blue"
       },
       {
         "letter": "E",
         "answer": "Flocculus",
-        "color": "blue",
-        "category": "Flocculus / Nodulus / Vermis"
+        "color": "blue"
       }
     ]
   },
@@ -1688,8 +1456,7 @@
       {
         "letter": "B",
         "answer": "Lentiform nucleus",
-        "color": "blue",
-        "category": "Basal Ganglia"
+        "color": "blue"
       }
     ]
   },

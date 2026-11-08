@@ -669,28 +669,14 @@ function App() {
                               ? '#ef4444'
                               : q.letter.toLowerCase().includes('pink')
                                 ? '#ec4899'
-                                : activeExam === 'exam3_focus'
-                                  ? '#059669'
-                                  : (activeExam === 'exam3' || q.color === 'blue' || q.letter.toLowerCase().includes('blue'))
-                                    ? '#2563eb'
-                                    : undefined
+                                : (activeExam === 'exam3' || q.color === 'blue' || q.letter.toLowerCase().includes('blue'))
+                                  ? '#2563eb'
+                                  : undefined
                           }}
                         >
                           {q.letter}
                         </span>
                         {q.description && <span style={{ fontSize: '0.9rem', color: '#94a3b8', fontWeight: 500 }}>({q.description})</span>}
-                        {activeExam === 'exam3_focus' && (
-                          <span style={{
-                            fontSize: '0.74rem',
-                            fontWeight: 600,
-                            padding: '2px 7px',
-                            borderRadius: '4px',
-                            background: 'rgba(16, 185, 129, 0.2)',
-                            color: '#34d399'
-                          }}>
-                            {q.category || '2026 Focus'}
-                          </span>
-                        )}
                         {activeExam === 'exam3' && (
                           <span style={{ fontSize: '0.74rem', color: '#60a5fa', fontWeight: 600, background: 'rgba(59, 130, 246, 0.15)', padding: '2px 7px', borderRadius: '4px' }}>
                             Blue Arrow

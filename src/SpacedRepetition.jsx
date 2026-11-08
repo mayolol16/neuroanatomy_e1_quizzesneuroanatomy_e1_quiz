@@ -178,11 +178,9 @@ function SpacedRepetitionSession({ exam, mistakes, updateMistake, onSwitchExam, 
                   ? '#ef4444'
                   : currentItem.letter.toLowerCase().includes('pink')
                     ? '#ec4899'
-                    : exam === 'exam3_focus'
-                      ? '#059669'
-                      : (exam === 'exam3' || currentItem.color === 'blue' || currentItem.letter.toLowerCase().includes('blue'))
-                        ? '#2563eb'
-                        : undefined
+                    : (exam === 'exam3' || currentItem.color === 'blue' || currentItem.letter.toLowerCase().includes('blue'))
+                      ? '#2563eb'
+                      : undefined
               }}
             >
               {currentItem.letter}
@@ -190,11 +188,6 @@ function SpacedRepetitionSession({ exam, mistakes, updateMistake, onSwitchExam, 
             {currentItem.description && (
               <span style={{ fontSize: '0.95rem', color: '#94a3b8', fontWeight: 500 }}>
                 ({currentItem.description})
-              </span>
-            )}
-            {exam === 'exam3_focus' && (
-              <span style={{ fontSize: '0.78rem', color: '#34d399', fontWeight: 600, background: 'rgba(16, 185, 129, 0.15)', padding: '2px 8px', borderRadius: '4px' }}>
-                {currentItem.category || '2026 Focus'}
               </span>
             )}
             {exam === 'exam3' && (
