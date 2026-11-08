@@ -9,7 +9,7 @@ function SpacedRepetitionSession({ exam, mistakes, updateMistake, onSwitchExam, 
   const [reviewQueue] = useState(() => {
     return Object.values(mistakes || {}).filter(m => isExamMistake(m, exam) && m.nextReviewDate <= Date.now());
   });
-  
+
   const [currentIndex, setCurrentIndex] = useState(0);
   const [userAns, setUserAns] = useState('');
   const [submitted, setSubmitted] = useState(false);
@@ -24,13 +24,15 @@ function SpacedRepetitionSession({ exam, mistakes, updateMistake, onSwitchExam, 
     }
   }, [currentIndex, submitted]);
 
-  const examTitle = exam === 'exam1' 
-    ? 'Exam 1 (Sensory)' 
-    : exam === 'exam2' 
-      ? 'Exam 2 (Motor & Special Senses)' 
+  const examTitle = exam === 'exam1'
+    ? 'Exam 1 (Sensory)'
+    : exam === 'exam2'
+      ? 'Exam 2 (Motor & Special Senses)'
       : exam === 'exam3'
         ? 'Exam 3 (New Material - Blue Only)'
-        : 'Comprehensive Practical (All)';
+        : exam === 'exam3_focus'
+          ? 'Exam 3 Practical Focus (2026 Focus Sheet)'
+          : 'Comprehensive Practical (All)';
 
   if (reviewQueue.length === 0) {
     return (
@@ -79,14 +81,14 @@ function SpacedRepetitionSession({ exam, mistakes, updateMistake, onSwitchExam, 
       return;
     }
     if (!canSubmit) return;
-    
+
     const trimmed = userAns.trim();
     if (!trimmed) return;
-    
+
     const correct = checkAnswer(trimmed, currentItem.answer);
     setIsCorrect(correct);
     setSubmitted(true);
-    
+
     // Update spaced repetition state
     const currentInterval = currentItem.interval || 1;
     if (correct) {
@@ -131,7 +133,7 @@ function SpacedRepetitionSession({ exam, mistakes, updateMistake, onSwitchExam, 
       <div className="header">
         <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginBottom: '15px' }}>
           <button className="btn btn-secondary" onClick={onExit}>
-            <ArrowLeft size={18} style={{ marginRight: '6px' }}/> Exit Review
+            <ArrowLeft size={18} style={{ marginRight: '6px' }} /> Exit Review
           </button>
           <button className="btn btn-secondary" onClick={onSwitchExam} style={{ fontSize: '0.9rem' }}>
             <BookOpen size={16} style={{ marginRight: '6px' }} /> Switch Exam
@@ -147,32 +149,40 @@ function SpacedRepetitionSession({ exam, mistakes, updateMistake, onSwitchExam, 
 
       <div className="quiz-card">
         <div style={{ textAlign: 'center', marginBottom: '10px', fontWeight: 600, color: '#64748b', display: 'flex', justifyContent: 'center', gap: '8px', alignItems: 'center' }}>
-          <span style={{ background: 'rgba(59, 130, 246, 0.2)', color: '#93c5fd', padding: '2px 8px', borderRadius: '4px', fontSize: '0.85rem' }}>
-            {exam === 'exam1' ? 'Exam 1' : exam === 'exam2' ? 'Exam 2' : exam === 'exam3' ? 'Exam 3' : 'Comprehensive'}
+          <span style={{ 
+            background: exam === 'exam3_focus' ? 'rgba(16, 185, 129, 0.2)' : 'rgba(59, 130, 246, 0.2)', 
+            color: exam === 'exam3_focus' ? '#34d399' : '#93c5fd', 
+            padding: '2px 8px', 
+            borderRadius: '4px', 
+            fontSize: '0.85rem' 
+          }}>
+            {exam === 'exam1' ? 'Exam 1' : exam === 'exam2' ? 'Exam 2' : exam === 'exam3' ? 'Exam 3' : exam === 'exam3_focus' ? 'Exam 3 Focus' : 'Comprehensive'}
           </span>
           <span>Slide: {currentItem.slideId || currentItem.id.split('_')[1] || currentItem.id.split('_')[0]}</span>
         </div>
 
         <div className="image-container">
-          <img 
-            src={BASE_URL + (submitted ? currentItem.labeled_image : currentItem.unlabeled_image)} 
-            alt="Anatomical structure" 
+          <img
+            src={BASE_URL + (submitted ? currentItem.labeled_image : currentItem.unlabeled_image)}
+            alt="Anatomical structure"
           />
         </div>
 
         <form onSubmit={handleSubmit} style={{ marginTop: '20px' }}>
           <h3 style={{ display: 'flex', alignItems: 'center', justifyContent: 'center', flexWrap: 'wrap', gap: '6px' }}>
-            <span>Identify Structure:</span> 
-            <span 
+            <span>Identify Structure:</span>
+            <span
               className="letter-badge"
               style={{
-                backgroundColor: currentItem.letter.toLowerCase().includes('red') 
-                  ? '#ef4444' 
-                  : currentItem.letter.toLowerCase().includes('pink') 
-                    ? '#ec4899' 
-                    : (exam === 'exam3' || currentItem.color === 'blue' || currentItem.letter.toLowerCase().includes('blue'))
-                      ? '#2563eb'
-                      : undefined
+                backgroundColor: currentItem.letter.toLowerCase().includes('red')
+                  ? '#ef4444'
+                  : currentItem.letter.toLowerCase().includes('pink')
+                    ? '#ec4899'
+                    : exam === 'exam3_focus'
+                      ? '#059669'
+                      : (exam === 'exam3' || currentItem.color === 'blue' || currentItem.letter.toLowerCase().includes('blue'))
+                        ? '#2563eb'
+                        : undefined
               }}
             >
               {currentItem.letter}
@@ -182,16 +192,21 @@ function SpacedRepetitionSession({ exam, mistakes, updateMistake, onSwitchExam, 
                 ({currentItem.description})
               </span>
             )}
+            {exam === 'exam3_focus' && (
+              <span style={{ fontSize: '0.78rem', color: '#34d399', fontWeight: 600, background: 'rgba(16, 185, 129, 0.15)', padding: '2px 8px', borderRadius: '4px' }}>
+                {currentItem.category || '2026 Focus'}
+              </span>
+            )}
             {exam === 'exam3' && (
               <span style={{ fontSize: '0.78rem', color: '#60a5fa', fontWeight: 600, background: 'rgba(59, 130, 246, 0.15)', padding: '2px 8px', borderRadius: '4px' }}>
                 Blue Arrow
               </span>
             )}
             {exam === 'comprehensive' && (
-              <span style={{ 
-                fontSize: '0.78rem', 
-                fontWeight: 600, 
-                padding: '2px 8px', 
+              <span style={{
+                fontSize: '0.78rem',
+                fontWeight: 600,
+                padding: '2px 8px',
                 borderRadius: '4px',
                 background: currentItem.color === 'blue' ? 'rgba(59, 130, 246, 0.2)' : 'rgba(255, 255, 255, 0.08)',
                 color: currentItem.color === 'blue' ? '#60a5fa' : '#94a3b8'
@@ -200,13 +215,13 @@ function SpacedRepetitionSession({ exam, mistakes, updateMistake, onSwitchExam, 
               </span>
             )}
           </h3>
-          
+
           <div className="input-group">
-            <input 
+            <input
               key={currentItem.id}
               ref={inputRef}
               id="spaced-rep-input"
-              type="text" 
+              type="text"
               value={userAns}
               onChange={(e) => setUserAns(e.target.value)}
               disabled={submitted}
@@ -229,21 +244,21 @@ function SpacedRepetitionSession({ exam, mistakes, updateMistake, onSwitchExam, 
               </div>
             )}
           </div>
-          
+
           <div className="controls" style={{ marginTop: '20px', display: 'flex', gap: '10px', justifyContent: 'center' }}>
             {!submitted ? (
               <>
-                <button 
-                  type="button" 
-                  className="btn btn-secondary" 
+                <button
+                  type="button"
+                  className="btn btn-secondary"
                   onClick={handleIDontKnow}
                   disabled={!canSubmit}
                 >
                   <HelpCircle size={18} style={{ marginRight: '6px' }} /> Don't Know
                 </button>
-                <button 
-                  type="submit" 
-                  className="btn btn-primary" 
+                <button
+                  type="submit"
+                  className="btn btn-primary"
                   id="spaced-rep-submit-btn"
                   disabled={!canSubmit || !userAns.trim()}
                 >
@@ -251,9 +266,9 @@ function SpacedRepetitionSession({ exam, mistakes, updateMistake, onSwitchExam, 
                 </button>
               </>
             ) : (
-              <button 
-                type="button" 
-                className="btn btn-primary" 
+              <button
+                type="button"
+                className="btn btn-primary"
                 id="spaced-rep-continue-btn"
                 onClick={nextCard}
                 autoFocus
@@ -274,6 +289,7 @@ function SpacedRepetition({ mistakes, updateMistake, onExit, initialExam }) {
   const exam1Due = Object.values(mistakes || {}).filter(m => isExamMistake(m, 'exam1') && m.nextReviewDate <= Date.now()).length;
   const exam2Due = Object.values(mistakes || {}).filter(m => isExamMistake(m, 'exam2') && m.nextReviewDate <= Date.now()).length;
   const exam3Due = Object.values(mistakes || {}).filter(m => isExamMistake(m, 'exam3') && m.nextReviewDate <= Date.now()).length;
+  const exam3FocusDue = Object.values(mistakes || {}).filter(m => isExamMistake(m, 'exam3_focus') && m.nextReviewDate <= Date.now()).length;
   const compDue = Object.values(mistakes || {}).filter(m => isExamMistake(m, 'comprehensive') && m.nextReviewDate <= Date.now()).length;
 
   if (!selectedExam) {
@@ -281,15 +297,15 @@ function SpacedRepetition({ mistakes, updateMistake, onExit, initialExam }) {
       <div className="app-container">
         <div className="header">
           <button className="btn btn-secondary" onClick={onExit} style={{ float: 'left' }}>
-            <ArrowLeft size={18} style={{ marginRight: '8px' }}/> Back to Main
+            <ArrowLeft size={18} style={{ marginRight: '8px' }} /> Back to Main
           </button>
           <h1>Spaced Repetition Review</h1>
           <p>Select which exam you want to review structures from:</p>
         </div>
 
-        <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(260px, 1fr))', gap: '20px', marginTop: '30px' }}>
-          <div 
-            className="quiz-card" 
+        <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(240px, 1fr))', gap: '20px', marginTop: '30px' }}>
+          <div
+            className="quiz-card"
             style={{ textAlign: 'center', cursor: 'pointer', border: '2px solid transparent', transition: 'all 0.2s' }}
             onClick={() => setSelectedExam('exam1')}
             onMouseEnter={(e) => e.currentTarget.style.borderColor = '#3b82f6'}
@@ -307,8 +323,8 @@ function SpacedRepetition({ mistakes, updateMistake, onExit, initialExam }) {
             </button>
           </div>
 
-          <div 
-            className="quiz-card" 
+          <div
+            className="quiz-card"
             style={{ textAlign: 'center', cursor: 'pointer', border: '2px solid transparent', transition: 'all 0.2s' }}
             onClick={() => setSelectedExam('exam2')}
             onMouseEnter={(e) => e.currentTarget.style.borderColor = '#3b82f6'}
@@ -326,8 +342,8 @@ function SpacedRepetition({ mistakes, updateMistake, onExit, initialExam }) {
             </button>
           </div>
 
-          <div 
-            className="quiz-card" 
+          <div
+            className="quiz-card"
             style={{ textAlign: 'center', cursor: 'pointer', border: '2px solid transparent', transition: 'all 0.2s' }}
             onClick={() => setSelectedExam('exam3')}
             onMouseEnter={(e) => e.currentTarget.style.borderColor = '#3b82f6'}
@@ -345,21 +361,40 @@ function SpacedRepetition({ mistakes, updateMistake, onExit, initialExam }) {
             </button>
           </div>
 
-          <div 
-            className="quiz-card" 
+          <div
+            className="quiz-card"
+            style={{ textAlign: 'center', cursor: 'pointer', border: '2px solid transparent', transition: 'all 0.2s' }}
+            onClick={() => setSelectedExam('exam3_focus')}
+            onMouseEnter={(e) => e.currentTarget.style.borderColor = '#10b981'}
+            onMouseLeave={(e) => e.currentTarget.style.borderColor = 'transparent'}
+          >
+            <h2 style={{ color: '#34d399' }}>Exam 3 Focus</h2>
+            <p style={{ color: 'var(--text-color-muted)', margin: '10px 0' }}>
+              Targeted Review of 2026 Practical Exam 3 Document Structures
+            </p>
+            <div style={{ fontSize: '1.3rem', fontWeight: 700, color: exam3FocusDue > 0 ? '#ef4444' : '#10b981', margin: '15px 0' }}>
+              {exam3FocusDue} {exam3FocusDue === 1 ? 'card' : 'cards'} due for review
+            </div>
+            <button className="btn btn-primary" style={{ width: '100%', justifyContent: 'center', backgroundColor: '#059669' }}>
+              Start Focus Review
+            </button>
+          </div>
+
+          <div
+            className="quiz-card"
             style={{ textAlign: 'center', cursor: 'pointer', border: '2px solid transparent', transition: 'all 0.2s' }}
             onClick={() => setSelectedExam('comprehensive')}
             onMouseEnter={(e) => e.currentTarget.style.borderColor = '#3b82f6'}
             onMouseLeave={(e) => e.currentTarget.style.borderColor = 'transparent'}
           >
-            <h2 style={{ color: '#34d399' }}>Comprehensive</h2>
+            <h2 style={{ color: '#a3e635' }}>Comprehensive</h2>
             <p style={{ color: 'var(--text-color-muted)', margin: '10px 0' }}>
               All 461 Questions across Exam 1, 2, and 3 Practical Slides
             </p>
             <div style={{ fontSize: '1.3rem', fontWeight: 700, color: compDue > 0 ? '#ef4444' : '#10b981', margin: '15px 0' }}>
               {compDue} {compDue === 1 ? 'card' : 'cards'} due for review
             </div>
-            <button className="btn btn-primary" style={{ width: '100%', justifyContent: 'center', backgroundColor: '#059669' }}>
+            <button className="btn btn-primary" style={{ width: '100%', justifyContent: 'center', backgroundColor: '#65a30d' }}>
               Start Comprehensive Review
             </button>
           </div>
@@ -369,7 +404,7 @@ function SpacedRepetition({ mistakes, updateMistake, onExit, initialExam }) {
   }
 
   return (
-    <SpacedRepetitionSession 
+    <SpacedRepetitionSession
       key={selectedExam}
       exam={selectedExam}
       mistakes={mistakes}

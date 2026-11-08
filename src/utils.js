@@ -223,15 +223,15 @@ export const ALTERNATIVE_ANSWERS = {
 export const checkAnswer = (userAns, correctAns) => {
   if (!userAns) return false;
   const clean = (str) => str.toLowerCase().replace(/[^\w\s]|_/g, "").replace(/\s+/g, " ").trim();
-  
+
   const cleanUser = clean(userAns);
   const cleanCorrect = clean(correctAns);
-  
+
   // Check main answer
   if (cleanUser === cleanCorrect || stringSimilarity.compareTwoStrings(cleanUser, cleanCorrect) > 0.8) {
     return true;
   }
-  
+
   // Check alternatives
   const alternatives = ALTERNATIVE_ANSWERS[cleanCorrect] || [];
   for (const alt of alternatives) {
@@ -240,12 +240,15 @@ export const checkAnswer = (userAns, correctAns) => {
       return true;
     }
   }
-  
+
   return false;
 };
 
 export const isExamMistake = (m, targetExam) => {
   if (!m) return false;
+  if (targetExam === 'exam3_focus') {
+    return m.exam === 'exam3_focus' || (m.id && String(m.id).startsWith('exam3_focus_'));
+  }
   if (targetExam === 'comprehensive') {
     return m.exam === 'comprehensive' || (m.id && String(m.id).startsWith('comprehensive_'));
   }
@@ -259,7 +262,7 @@ export const isExamMistake = (m, targetExam) => {
     return (
       m.exam === 'exam1' ||
       (m.id && String(m.id).startsWith('exam1_')) ||
-      (!m.exam && !String(m.id).startsWith('exam2_') && !String(m.id).startsWith('exam3_') && !String(m.id).startsWith('comprehensive_'))
+      (!m.exam && !String(m.id).startsWith('exam2_') && !String(m.id).startsWith('exam3_') && !String(m.id).startsWith('exam3_focus_') && !String(m.id).startsWith('comprehensive_'))
     );
   }
   return true;

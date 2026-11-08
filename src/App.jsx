@@ -3,6 +3,7 @@ import { ChevronLeft, ChevronRight, RefreshCw, BarChart2, X, BrainCircuit, Zap, 
 import exam1Data from './quiz_data.json';
 import exam2Data from './exam2_data.json';
 import exam3Data from './exam3_data.json';
+import exam3FocusData from './exam3_focus_data.json';
 import comprehensiveData from './comprehensive_data.json';
 import { checkAnswer, isExamMistake } from './utils';
 import SpacedRepetition from './SpacedRepetition';
@@ -25,7 +26,7 @@ function App() {
   const [showLabeled, setShowLabeled] = useState(false);
   const [showStats, setShowStats] = useState(false);
   const [canSubmit, setCanSubmit] = useState(true);
-  
+
   const [stats, setStats] = useState(() => {
     const saved = localStorage.getItem('neuroQuizStats');
     return saved ? JSON.parse(saved) : {};
@@ -36,13 +37,15 @@ function App() {
     return saved ? JSON.parse(saved) : {};
   });
 
-  const currentQuizData = activeExam === 'exam1' 
-    ? exam1Data 
-    : activeExam === 'exam2' 
-      ? exam2Data 
-      : activeExam === 'exam3' 
-        ? exam3Data 
-        : comprehensiveData;
+  const currentQuizData = activeExam === 'exam1'
+    ? exam1Data
+    : activeExam === 'exam2'
+      ? exam2Data
+      : activeExam === 'exam3'
+        ? exam3Data
+        : activeExam === 'exam3_focus'
+          ? exam3FocusData
+          : comprehensiveData;
   const currentQuiz = currentQuizData[currentIndex];
 
   const switchExam = (examKey) => {
@@ -54,7 +57,7 @@ function App() {
     setShowLabeled(false);
     window.scrollTo(0, 0);
   };
-  
+
   const handleInputChange = (letter, value) => {
     setAnswers(prev => ({ ...prev, [letter]: value }));
   };
@@ -62,22 +65,22 @@ function App() {
   const handleSubmit = (e) => {
     e.preventDefault();
     if (!canSubmit) return;
-    
+
     setSubmitted(true);
 
     // Update stats & mistakes
     const newStats = { ...stats };
     const newMistakes = { ...mistakes };
-    
+
     currentQuiz.questions.forEach(q => {
       const isCorrect = checkAnswer(answers[q.letter] || '', q.answer);
       if (!newStats[q.answer]) {
         newStats[q.answer] = { correct: 0, total: 0 };
       }
       newStats[q.answer].total += 1;
-      
+
       const mistakeKey = `${activeExam}_${currentQuiz.id}_${q.letter}`;
-      
+
       if (isCorrect) {
         newStats[q.answer].correct += 1;
       } else {
@@ -100,7 +103,7 @@ function App() {
         }
       }
     });
-    
+
     setStats(newStats);
     setMistakes(newMistakes);
     localStorage.setItem('neuroQuizStats', JSON.stringify(newStats));
@@ -114,7 +117,7 @@ function App() {
       setSubmitted(false);
       setShowLabeled(false);
       window.scrollTo(0, 0);
-      
+
       setCanSubmit(false);
       setTimeout(() => setCanSubmit(true), 400);
     }
@@ -127,7 +130,7 @@ function App() {
       setSubmitted(false);
       setShowLabeled(false);
       window.scrollTo(0, 0);
-      
+
       setCanSubmit(false);
       setTimeout(() => setCanSubmit(true), 400);
     }
@@ -165,22 +168,27 @@ function App() {
   const exam1DueCount = Object.values(mistakes).filter(m => isExamMistake(m, 'exam1') && m.nextReviewDate <= Date.now()).length;
   const exam2DueCount = Object.values(mistakes).filter(m => isExamMistake(m, 'exam2') && m.nextReviewDate <= Date.now()).length;
   const exam3DueCount = Object.values(mistakes).filter(m => isExamMistake(m, 'exam3') && m.nextReviewDate <= Date.now()).length;
+  const exam3FocusDueCount = Object.values(mistakes).filter(m => isExamMistake(m, 'exam3_focus') && m.nextReviewDate <= Date.now()).length;
   const compDueCount = Object.values(mistakes).filter(m => isExamMistake(m, 'comprehensive') && m.nextReviewDate <= Date.now()).length;
-  const currentExamDueCount = activeExam === 'exam1' 
-    ? exam1DueCount 
-    : activeExam === 'exam2' 
-      ? exam2DueCount 
-      : activeExam === 'exam3' 
-        ? exam3DueCount 
-        : compDueCount;
+  const currentExamDueCount = activeExam === 'exam1'
+    ? exam1DueCount
+    : activeExam === 'exam2'
+      ? exam2DueCount
+      : activeExam === 'exam3'
+        ? exam3DueCount
+        : activeExam === 'exam3_focus'
+          ? exam3FocusDueCount
+          : compDueCount;
 
-  const currentExamName = activeExam === 'exam1' 
-    ? 'Exam 1' 
-    : activeExam === 'exam2' 
-      ? 'Exam 2' 
-      : activeExam === 'exam3' 
-        ? 'Exam 3' 
-        : 'Comprehensive';
+  const currentExamName = activeExam === 'exam1'
+    ? 'Exam 1'
+    : activeExam === 'exam2'
+      ? 'Exam 2'
+      : activeExam === 'exam3'
+        ? 'Exam 3'
+        : activeExam === 'exam3_focus'
+          ? 'Exam 3 Focus'
+          : 'Comprehensive';
 
   // Process stats for display (filtered to structures appearing in current exam)
   const currentExamStructures = new Set(currentQuizData.flatMap(s => (s.questions || []).map(q => q.answer)));
@@ -197,24 +205,25 @@ function App() {
 
   if (mode === 'review') {
     return (
-      <SpacedRepetition 
-        mistakes={mistakes} 
-        updateMistake={updateMistake} 
+      <SpacedRepetition
+        mistakes={mistakes}
+        updateMistake={updateMistake}
         initialExam={selectedReviewExam}
         onExit={() => {
           setSelectedReviewExam(null);
           setMode('quiz');
-        }} 
+        }}
       />
     );
   }
 
   if (mode === 'zen') {
     return (
-      <ZenMode 
+      <ZenMode
         quizData1={exam1Data}
         quizData2={exam2Data}
         quizData3={exam3Data}
+        quizData3Focus={exam3FocusData}
         quizDataComp={comprehensiveData}
         initialExam={selectedZenExam}
         stats={stats}
@@ -235,27 +244,27 @@ function App() {
     <div className="app-container">
       <div className="header">
         {/* STEP 1: SELECT EXAM AT THE START */}
-        <div style={{ 
-          background: 'var(--surface-color)', 
-          padding: '16px', 
-          borderRadius: '14px', 
-          marginBottom: '20px', 
+        <div style={{
+          background: 'var(--surface-color)',
+          padding: '16px',
+          borderRadius: '14px',
+          marginBottom: '20px',
           border: '1px solid var(--surface-color-light)',
           boxShadow: '0 4px 15px rgba(0,0,0,0.2)'
         }}>
-          <div style={{ 
-            fontSize: '0.85rem', 
-            textTransform: 'uppercase', 
-            letterSpacing: '0.08em', 
-            color: '#94a3b8', 
-            fontWeight: 700, 
-            marginBottom: '12px', 
-            textAlign: 'center' 
+          <div style={{
+            fontSize: '0.85rem',
+            textTransform: 'uppercase',
+            letterSpacing: '0.08em',
+            color: '#94a3b8',
+            fontWeight: 700,
+            marginBottom: '12px',
+            textAlign: 'center'
           }}>
             Step 1: Choose Exam to Review
           </div>
-          <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(260px, 1fr))', gap: '12px' }}>
-            <div 
+          <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(240px, 1fr))', gap: '12px' }}>
+            <div
               onClick={() => switchExam('exam1')}
               style={{
                 padding: '16px',
@@ -286,7 +295,7 @@ function App() {
               </div>
             </div>
 
-            <div 
+            <div
               onClick={() => switchExam('exam2')}
               style={{
                 padding: '16px',
@@ -317,7 +326,7 @@ function App() {
               </div>
             </div>
 
-            <div 
+            <div
               onClick={() => switchExam('exam3')}
               style={{
                 padding: '16px',
@@ -348,7 +357,38 @@ function App() {
               </div>
             </div>
 
-            <div 
+            <div
+              onClick={() => switchExam('exam3_focus')}
+              style={{
+                padding: '16px',
+                borderRadius: '10px',
+                cursor: 'pointer',
+                border: activeExam === 'exam3_focus' ? '2px solid #10b981' : '1px solid rgba(255,255,255,0.08)',
+                background: activeExam === 'exam3_focus' ? 'rgba(16, 185, 129, 0.16)' : 'rgba(0,0,0,0.25)',
+                transition: 'all 0.2s',
+                display: 'flex',
+                flexDirection: 'column',
+                gap: '6px',
+                textAlign: 'left'
+              }}
+            >
+              <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center' }}>
+                <strong style={{ fontSize: '1.05rem', color: activeExam === 'exam3_focus' ? '#34d399' : '#f8fafc' }}>
+                  Exam 3 Practical focus
+                </strong>
+                {activeExam === 'exam3_focus' && (
+                  <span style={{ background: '#10b981', color: 'white', fontSize: '0.72rem', padding: '2px 8px', borderRadius: '999px', fontWeight: 700 }}>
+                    SELECTED
+                  </span>
+                )}
+              </div>
+              <span style={{ fontSize: '0.85rem', color: '#94a3b8' }}>{exam3FocusData.length} Slides • 233 Questions • 2026 Focus Sheet Only</span>
+              <div style={{ fontSize: '0.82rem', color: exam3FocusDueCount > 0 ? '#f87171' : '#34d399', fontWeight: 600, marginTop: '2px' }}>
+                {exam3FocusDueCount} Spaced Repetition {exam3FocusDueCount === 1 ? 'card' : 'cards'} due
+              </div>
+            </div>
+
+            <div
               onClick={() => switchExam('comprehensive')}
               style={{
                 padding: '16px',
@@ -383,34 +423,57 @@ function App() {
 
         {/* TITLE & DESCRIPTION */}
         <h1>
-          {activeExam === 'exam1' 
-            ? 'Neuro Practical Exam 1' 
-            : activeExam === 'exam2' 
-              ? 'Neuro Practical Exam 2' 
-              : activeExam === 'exam3' 
-                ? 'Neuro Practical Exam 3 (New Material)' 
-                : 'Comprehensive Neuro Practical'}
+          {activeExam === 'exam1'
+            ? 'Neuro Practical Exam 1'
+            : activeExam === 'exam2'
+              ? 'Neuro Practical Exam 2'
+              : activeExam === 'exam3'
+                ? 'Neuro Practical Exam 3 (New Material)'
+                : activeExam === 'exam3_focus'
+                  ? 'Exam 3 Practical Focus (2026 Focus Sheet)'
+                  : 'Comprehensive Neuro Practical'}
         </h1>
         <p>
-          {activeExam === 'exam1' 
-            ? 'Sensory Pathways & Brainstem Neuroanatomy' 
+          {activeExam === 'exam1'
+            ? 'Sensory Pathways & Brainstem Neuroanatomy'
             : activeExam === 'exam2'
               ? 'Motor Pathways, Cranial Nerves, Auditory & Visual Systems'
               : activeExam === 'exam3'
                 ? 'New Exam 3 Material Only: Cerebellum, Basal Ganglia, Cortex, Vasculature & Gross Neuroanatomy (Blue Only)'
-                : 'Full Practical Exam: All Structures from Exams 1, 2, and 3 (Sensory, Motor, CNs, Cerebellum, Gross)'}
+                : activeExam === 'exam3_focus'
+                  ? 'Targeted High-Yield Review: Only structures from the official Practical Exam 3 2026.pdf focus sheet'
+                  : 'Full Practical Exam: All Structures from Exams 1, 2, and 3 (Sensory, Motor, CNs, Cerebellum, Gross)'}
         </p>
 
+        {activeExam === 'exam3_focus' && (
+          <div style={{
+            display: 'inline-flex',
+            alignItems: 'center',
+            gap: '8px',
+            fontSize: '0.85rem',
+            color: '#cbd5e1',
+            background: 'rgba(16, 185, 129, 0.12)',
+            border: '1px solid rgba(16, 185, 129, 0.28)',
+            padding: '6px 14px',
+            borderRadius: '999px',
+            marginTop: '10px'
+          }}>
+            <span style={{ color: '#34d399', fontWeight: 700 }}>🎯 2026 Practical Focus</span>
+            <span>•</span>
+            <span>Filtered strictly to structures from the official 'Structures you must know for Neuroscience Exam 3 Practical (2026)' PDF</span>
+          </div>
+        )}
+
         {activeExam === 'exam3' && (
-          <div style={{ 
-            display: 'inline-flex', 
-            alignItems: 'center', 
-            gap: '8px', 
-            fontSize: '0.85rem', 
-            color: '#cbd5e1', 
-            background: 'rgba(59, 130, 246, 0.12)', 
+          <div style={{
+            display: 'inline-flex',
+            alignItems: 'center',
+            gap: '8px',
+            fontSize: '0.85rem',
+            color: '#cbd5e1',
+            background: 'rgba(59, 130, 246, 0.12)',
             border: '1px solid rgba(59, 130, 246, 0.28)',
-            padding: '6px 14px', 
+            padding: '6px 14px',
             borderRadius: '999px',
             marginTop: '10px'
           }}>
@@ -421,15 +484,15 @@ function App() {
         )}
 
         {activeExam === 'comprehensive' && (
-          <div style={{ 
-            display: 'inline-flex', 
-            alignItems: 'center', 
-            gap: '8px', 
-            fontSize: '0.85rem', 
-            color: '#cbd5e1', 
-            background: 'rgba(59, 130, 246, 0.12)', 
+          <div style={{
+            display: 'inline-flex',
+            alignItems: 'center',
+            gap: '8px',
+            fontSize: '0.85rem',
+            color: '#cbd5e1',
+            background: 'rgba(59, 130, 246, 0.12)',
             border: '1px solid rgba(59, 130, 246, 0.28)',
-            padding: '6px 14px', 
+            padding: '6px 14px',
             borderRadius: '999px',
             marginTop: '10px'
           }}>
@@ -444,29 +507,29 @@ function App() {
           <button className="btn btn-secondary stats-toggle-btn" onClick={toggleStats} style={{ position: 'static' }}>
             <BarChart2 size={18} /> {currentExamName} Analytics
           </button>
-          
-          <button 
-            className="btn btn-primary" 
+
+          <button
+            className="btn btn-primary"
             onClick={() => {
               setSelectedReviewExam(activeExam);
               setMode('review');
             }}
           >
-            <BrainCircuit size={18} style={{ marginRight: '8px' }} /> 
-            {currentExamName} Spaced Repetition 
+            <BrainCircuit size={18} style={{ marginRight: '8px' }} />
+            {currentExamName} Spaced Repetition
             {currentExamDueCount > 0 && (
               <span style={{ background: '#ef4444', color: 'white', borderRadius: '50%', padding: '2px 8px', marginLeft: '6px', fontSize: '0.8rem' }}>
                 {currentExamDueCount}
               </span>
             )}
           </button>
-          
-          <button 
-            className="btn" 
+
+          <button
+            className="btn"
             onClick={() => {
               setSelectedZenExam(activeExam);
               setMode('zen');
-            }} 
+            }}
             style={{ backgroundColor: '#8b5cf6', color: 'white' }}
           >
             <Zap size={18} style={{ marginRight: '8px' }} /> {currentExamName} Zen Mode
@@ -481,7 +544,7 @@ function App() {
               <h2>{currentExamName} Analytics</h2>
               <button className="icon-btn" onClick={toggleStats}><X size={24} /></button>
             </div>
-            
+
             <div className="stats-content">
               {statsArray.length === 0 ? (
                 <p className="no-stats">Answer questions in {currentExamName} to see your strengths and weaknesses!</p>
@@ -496,7 +559,7 @@ function App() {
                         <div className="stat-name">{stat.structure}</div>
                         <div className="stat-bar-container">
                           <div className="stat-bar-bg">
-                            <div 
+                            <div
                               className={`stat-bar-fill ${stat.accuracy > 70 ? 'strong' : stat.accuracy > 40 ? 'medium' : 'weak'}`}
                               style={{ width: `${stat.accuracy}%` }}
                             ></div>
@@ -509,7 +572,7 @@ function App() {
                     ))}
                   </div>
                   <div style={{ textAlign: 'center', marginTop: '20px' }}>
-                    <button className="btn" onClick={clearStats} style={{color: '#ef4444'}}>Reset Stats</button>
+                    <button className="btn" onClick={clearStats} style={{ color: '#ef4444' }}>Reset Stats</button>
                   </div>
                 </>
               )}
@@ -521,8 +584,8 @@ function App() {
       <div className="progress-container">
         <span>Slide {currentIndex + 1} of {currentQuizData.length}</span>
         <div className="progress-bar">
-          <div 
-            className="progress-fill" 
+          <div
+            className="progress-fill"
             style={{ width: `${((currentIndex + 1) / currentQuizData.length) * 100}%` }}
           ></div>
         </div>
@@ -530,17 +593,17 @@ function App() {
 
       <div className="quiz-card">
         <div className="navigation">
-          <button 
-            className="btn" 
-            onClick={prevQuestion} 
+          <button
+            className="btn"
+            onClick={prevQuestion}
             disabled={currentIndex === 0}
           >
             <ChevronLeft size={20} /> Previous
           </button>
           <span style={{ fontWeight: 600 }}>Slide {currentQuiz.id}</span>
-          <button 
-            className="btn" 
-            onClick={nextQuestion} 
+          <button
+            className="btn"
+            onClick={nextQuestion}
             disabled={currentIndex === currentQuizData.length - 1}
           >
             Next <ChevronRight size={20} />
@@ -548,9 +611,9 @@ function App() {
         </div>
 
         <div className="image-container">
-          <img 
-            src={BASE_URL + (showLabeled ? currentQuiz.labeled_image : currentQuiz.unlabeled_image)} 
-            alt="Anatomical structure" 
+          <img
+            src={BASE_URL + (showLabeled ? currentQuiz.labeled_image : currentQuiz.unlabeled_image)}
+            alt="Anatomical structure"
           />
         </div>
 
@@ -563,11 +626,11 @@ function App() {
 
         <form onSubmit={handleSubmit}>
           {isStudySlide ? (
-            <div style={{ 
-              textAlign: 'center', 
-              padding: '24px', 
-              background: 'rgba(59, 130, 246, 0.08)', 
-              borderRadius: '12px', 
+            <div style={{
+              textAlign: 'center',
+              padding: '24px',
+              background: 'rgba(59, 130, 246, 0.08)',
+              borderRadius: '12px',
               border: '1px solid rgba(59, 130, 246, 0.25)',
               margin: '10px 0 20px 0'
             }}>
@@ -584,7 +647,7 @@ function App() {
           ) : (
             <>
               <h3>Identify the following structures:</h3>
-              
+
               {submitted && (
                 <div className="score-display">
                   You answered {correctCount} out of {currentQuiz.questions.length} questions correctly.
@@ -595,35 +658,49 @@ function App() {
                 {currentQuiz.questions.map((q) => {
                   const userAns = answers[q.letter] || '';
                   const isCorrect = submitted ? checkAnswer(userAns, q.answer) : null;
-                  
+
                   return (
                     <div className="input-group" key={q.letter}>
                       <label style={{ display: 'flex', alignItems: 'center', flexWrap: 'wrap', gap: '6px' }}>
-                        <span 
+                        <span
                           className="letter-badge"
                           style={{
-                            backgroundColor: q.letter.toLowerCase().includes('red') 
-                              ? '#ef4444' 
-                              : q.letter.toLowerCase().includes('pink') 
-                                ? '#ec4899' 
-                                : (activeExam === 'exam3' || q.color === 'blue' || q.letter.toLowerCase().includes('blue'))
-                                  ? '#2563eb'
-                                  : undefined
+                            backgroundColor: q.letter.toLowerCase().includes('red')
+                              ? '#ef4444'
+                              : q.letter.toLowerCase().includes('pink')
+                                ? '#ec4899'
+                                : activeExam === 'exam3_focus'
+                                  ? '#059669'
+                                  : (activeExam === 'exam3' || q.color === 'blue' || q.letter.toLowerCase().includes('blue'))
+                                    ? '#2563eb'
+                                    : undefined
                           }}
                         >
                           {q.letter}
                         </span>
                         {q.description && <span style={{ fontSize: '0.9rem', color: '#94a3b8', fontWeight: 500 }}>({q.description})</span>}
+                        {activeExam === 'exam3_focus' && (
+                          <span style={{
+                            fontSize: '0.74rem',
+                            fontWeight: 600,
+                            padding: '2px 7px',
+                            borderRadius: '4px',
+                            background: 'rgba(16, 185, 129, 0.2)',
+                            color: '#34d399'
+                          }}>
+                            {q.category || '2026 Focus'}
+                          </span>
+                        )}
                         {activeExam === 'exam3' && (
                           <span style={{ fontSize: '0.74rem', color: '#60a5fa', fontWeight: 600, background: 'rgba(59, 130, 246, 0.15)', padding: '2px 7px', borderRadius: '4px' }}>
                             Blue Arrow
                           </span>
                         )}
                         {activeExam === 'comprehensive' && (
-                          <span style={{ 
-                            fontSize: '0.74rem', 
-                            fontWeight: 600, 
-                            padding: '2px 7px', 
+                          <span style={{
+                            fontSize: '0.74rem',
+                            fontWeight: 600,
+                            padding: '2px 7px',
                             borderRadius: '4px',
                             background: q.color === 'blue' ? 'rgba(59, 130, 246, 0.2)' : 'rgba(255, 255, 255, 0.08)',
                             color: q.color === 'blue' ? '#60a5fa' : '#94a3b8'
@@ -637,8 +714,8 @@ function App() {
                           </span>
                         )}
                       </label>
-                      <input 
-                        type="text" 
+                      <input
+                        type="text"
                         value={userAns}
                         onChange={(e) => handleInputChange(q.letter, e.target.value)}
                         disabled={submitted}
@@ -656,12 +733,12 @@ function App() {
               </div>
             </>
           )}
-          
+
           <div className="controls">
             {isStudySlide ? (
-              <button 
-                type="button" 
-                className="btn btn-primary" 
+              <button
+                type="button"
+                className="btn btn-primary"
                 onClick={nextQuestion}
                 disabled={currentIndex === currentQuizData.length - 1}
               >
@@ -672,9 +749,9 @@ function App() {
                 Submit Answers
               </button>
             ) : (
-              <button 
-                type="button" 
-                className="btn btn-primary" 
+              <button
+                type="button"
+                className="btn btn-primary"
                 onClick={nextQuestion}
                 disabled={currentIndex === currentQuizData.length - 1}
               >
