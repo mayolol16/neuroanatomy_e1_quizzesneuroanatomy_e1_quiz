@@ -382,7 +382,7 @@ function App() {
                   </span>
                 )}
               </div>
-              <span style={{ fontSize: '0.85rem', color: '#94a3b8' }}>{exam3FocusData.length} Slides • 233 Questions • 2026 Focus Sheet Only</span>
+              <span style={{ fontSize: '0.85rem', color: '#94a3b8' }}>{exam3FocusData.length} Slides • 238 Questions • 2026 Focus Sheet</span>
               <div style={{ fontSize: '0.82rem', color: exam3FocusDueCount > 0 ? '#f87171' : '#34d399', fontWeight: 600, marginTop: '2px' }}>
                 {exam3FocusDueCount} Spaced Repetition {exam3FocusDueCount === 1 ? 'card' : 'cards'} due
               </div>

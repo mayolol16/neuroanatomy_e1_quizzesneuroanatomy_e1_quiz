@@ -356,7 +356,7 @@ function ZenMode({ quizData1, quizData2, quizData3, quizData3Focus, quizDataComp
               Structures from Practical Exam 3 2026.pdf
             </p>
             <p style={{ color: '#34d399', fontWeight: 600, margin: '15px 0' }}>
-              {(quizData3Focus || []).length} Slides • 233 Questions • Rapid-fire Focus Practice
+              {(quizData3Focus || []).length} Slides • 238 Questions • Rapid-fire Focus Practice
             </p>
             <button className="btn btn-primary" style={{ width: '100%', justifyContent: 'center', backgroundColor: '#059669' }}>
               <Zap size={18} style={{ marginRight: '8px' }} /> Start Exam 3 Focus Zen
