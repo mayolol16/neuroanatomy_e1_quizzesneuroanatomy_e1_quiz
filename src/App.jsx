@@ -38,9 +38,17 @@ function App() {
     try {
       const parsed = JSON.parse(saved);
       const normalized = {};
+      let changed = false;
       Object.entries(parsed).forEach(([id, card]) => {
-        normalized[id] = normalizeCard(card);
+        const norm = normalizeCard(card);
+        normalized[id] = norm;
+        if (norm.interval !== card.interval || norm.nextReviewDate !== card.nextReviewDate || norm.state !== card.state) {
+          changed = true;
+        }
       });
+      if (changed) {
+        localStorage.setItem('neuroQuizMistakes', JSON.stringify(normalized));
+      }
       return normalized;
     } catch (e) {
       return {};

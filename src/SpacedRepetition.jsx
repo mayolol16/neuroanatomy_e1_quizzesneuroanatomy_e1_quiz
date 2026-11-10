@@ -291,8 +291,8 @@ function SpacedRepetitionSession({ exam, mistakes, updateMistake, onSwitchExam, 
             fontSize: '0.82rem'
           }}>
             {currentItem.state === 'review'
-              ? `Review (${Math.round(currentItem.interval || 10)}d)`
-              : `Learning: Step ${(currentItem.step || 0) + 1}/3 (${currentItem.step === 0 ? '15m' : currentItem.step === 1 ? '23m' : '2d'})`}
+              ? `Review (${Math.round(currentItem.interval || 2)}d)`
+              : `Learning: Step ${(currentItem.step || 0) + 1}/2 (${currentItem.step === 0 ? '15m' : '23m'})`}
           </span>
 
           <span>Slide: {currentItem.slideId || currentItem.id.split('_')[1] || currentItem.id.split('_')[0]}</span>

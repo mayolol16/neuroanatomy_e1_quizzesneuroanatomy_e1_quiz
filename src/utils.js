@@ -78,6 +78,7 @@ export const ALTERNATIVE_ANSWERS = {
   "caudate nucleus": ["caudate"],
   "caudate tail": ["tail of caudate", "tail of caudate nucleus"],
   "cbt": ["corticobulbar", "corticobulbar fibers", "corticobulbar tract", "corticospinal and corticobulbar", "corticospinal and corticobulbar fibers", "corticospinal and corticobulbar system", "corticospinal and corticobulbar tract", "corticospinal corticobulbar", "corticospinal corticobulbar fibers", "cst and cbt", "cst cbt", "cstcbt", "pyramidal fibers", "pyramidal tract"],
+  "cc": ["callosum", "corpus callosum"],
   "central fissure": ["central sulcus", "fissure of rolando", "rolandic fissure", "rolandic sulcus", "sulcus of rolando"],
   "central gray": ["pag", "periaqueductal gray", "periaqueductal grey"],
   "central sulcus": ["central fissure", "fissure of rolando", "rolandic fissure", "rolandic sulcus", "sulcus of rolando"],
@@ -92,6 +93,11 @@ export const ALTERNATIVE_ANSWERS = {
   "cerebral aqueduct": ["aqueduct of sylvius", "mesencephalic aqueduct", "sylvian aqueduct"],
   "cerebral peduncle": ["basis pedunculi", "cerebral peduncles", "crus cerebri"],
   "cerebral peduncles": ["basis pedunculi", "cerebral peduncle", "crus cerebri"],
+  "cervical": ["cervical cord", "cervical level", "cervical segment", "cervical spinal cord"],
+  "cervical cord": ["cervical", "cervical level", "cervical segment", "cervical spinal cord"],
+  "cervical level": ["cervical", "cervical cord", "cervical segment", "cervical spinal cord"],
+  "cervical segment": ["cervical", "cervical cord", "cervical level", "cervical spinal cord"],
+  "cervical spinal cord": ["cervical", "cervical cord", "cervical level", "cervical segment"],
   "chief sensory": ["chief sensory nucleus", "chief sensory nucleus of 5", "chief sensory nucleus of v", "chief sensory of v", "chief sensory v", "main sensory nucleus", "main sensory nucleus of v", "principal sensory nucleus", "principal sensory nucleus of v", "principal sensory of v"],
   "chief sensory nucleus": ["chief sensory", "chief sensory nucleus of 5", "chief sensory nucleus of v", "chief sensory of v", "chief sensory v", "main sensory nucleus", "main sensory nucleus of v", "principal sensory nucleus", "principal sensory nucleus of v", "principal sensory of v"],
   "chief sensory nucleus of 5": ["chief sensory", "chief sensory nucleus", "chief sensory nucleus of v", "chief sensory of v", "chief sensory v", "main sensory nucleus", "main sensory nucleus of v", "principal sensory nucleus", "principal sensory nucleus of v", "principal sensory of v"],
@@ -170,20 +176,20 @@ export const ALTERNATIVE_ANSWERS = {
   "cornu ammonis": ["hippocampal formation", "hippocampus"],
   "corona": ["corona radiata"],
   "corona radiata": ["corona"],
-  "corpus callosum": ["callosum"],
-  "corticobulbar": ["cbt", "corticobulbar fibers", "corticobulbar tract", "corticospinal", "corticospinal and corticobulbar", "corticospinal and corticobulbar fibers", "corticospinal and corticobulbar system", "corticospinal and corticobulbar tract", "corticospinal corticobulbar", "corticospinal corticobulbar fibers", "corticospinal fibers", "corticospinal tract", "cst", "cst and cbt", "cst cbt", "cstcbt", "pyramidal fibers", "pyramidal tract"],
-  "corticobulbar fibers": ["cbt", "corticobulbar", "corticobulbar tract", "corticospinal", "corticospinal and corticobulbar", "corticospinal and corticobulbar fibers", "corticospinal and corticobulbar system", "corticospinal and corticobulbar tract", "corticospinal corticobulbar", "corticospinal corticobulbar fibers", "corticospinal fibers", "corticospinal tract", "cst", "cst and cbt", "cst cbt", "cstcbt", "pyramidal fibers", "pyramidal tract"],
-  "corticobulbar tract": ["cbt", "corticobulbar", "corticobulbar fibers", "corticospinal", "corticospinal and corticobulbar", "corticospinal and corticobulbar fibers", "corticospinal and corticobulbar system", "corticospinal and corticobulbar tract", "corticospinal corticobulbar", "corticospinal corticobulbar fibers", "corticospinal fibers", "corticospinal tract", "cst", "cst and cbt", "cst cbt", "cstcbt", "pyramidal fibers", "pyramidal tract"],
-  "corticospinal": ["cbt", "corticobulbar", "corticobulbar fibers", "corticobulbar tract", "corticospinal and corticobulbar", "corticospinal and corticobulbar fibers", "corticospinal and corticobulbar system", "corticospinal and corticobulbar tract", "corticospinal corticobulbar", "corticospinal corticobulbar fibers", "corticospinal fibers", "corticospinal tract", "cst", "cst and cbt", "cst cbt", "cstcbt", "pyramidal fibers", "pyramidal tract"],
-  "corticospinal and corticobulbar": ["cbt", "corticobulbar", "corticobulbar fibers", "corticobulbar tract", "corticospinal", "corticospinal and corticobulbar fibers", "corticospinal and corticobulbar system", "corticospinal and corticobulbar tract", "corticospinal corticobulbar", "corticospinal corticobulbar fibers", "corticospinal fibers", "corticospinal tract", "cst", "cst and cbt", "cst cbt", "cstcbt", "pyramidal fibers", "pyramidal tract"],
-  "corticospinal and corticobulbar fibers": ["cbt", "corticobulbar", "corticobulbar fibers", "corticobulbar tract", "corticospinal", "corticospinal and corticobulbar", "corticospinal and corticobulbar system", "corticospinal and corticobulbar tract", "corticospinal corticobulbar", "corticospinal corticobulbar fibers", "corticospinal fibers", "corticospinal tract", "cst", "cst and cbt", "cst cbt", "cstcbt", "pyramidal fibers", "pyramidal tract"],
-  "corticospinal and corticobulbar system": ["cbt", "corticobulbar", "corticobulbar fibers", "corticobulbar tract", "corticospinal", "corticospinal and corticobulbar", "corticospinal and corticobulbar fibers", "corticospinal and corticobulbar tract", "corticospinal corticobulbar", "corticospinal corticobulbar fibers", "corticospinal fibers", "corticospinal tract", "cst", "cst and cbt", "cst cbt", "cstcbt", "pyramidal fibers", "pyramidal tract"],
-  "corticospinal and corticobulbar tract": ["cbt", "corticobulbar", "corticobulbar fibers", "corticobulbar tract", "corticospinal", "corticospinal and corticobulbar", "corticospinal and corticobulbar fibers", "corticospinal and corticobulbar system", "corticospinal corticobulbar", "corticospinal corticobulbar fibers", "corticospinal fibers", "corticospinal tract", "cst", "cst and cbt", "cst cbt", "cstcbt", "pyramidal fibers", "pyramidal tract"],
-  "corticospinal corticobulbar": ["cbt", "corticobulbar", "corticobulbar fibers", "corticobulbar tract", "corticospinal", "corticospinal and corticobulbar", "corticospinal and corticobulbar fibers", "corticospinal and corticobulbar system", "corticospinal and corticobulbar tract", "corticospinal corticobulbar fibers", "corticospinal fibers", "corticospinal tract", "cst", "cst and cbt", "cst cbt", "cstcbt", "pyramidal fibers", "pyramidal tract"],
-  "corticospinal corticobulbar fibers": ["cbt", "corticobulbar", "corticobulbar fibers", "corticobulbar tract", "corticospinal", "corticospinal and corticobulbar", "corticospinal and corticobulbar fibers", "corticospinal and corticobulbar system", "corticospinal and corticobulbar tract", "corticospinal corticobulbar", "corticospinal fibers", "corticospinal tract", "cst", "cst and cbt", "cst cbt", "cstcbt", "pyramidal fibers", "pyramidal tract"],
+  "corpus callosum": ["callosum", "cc"],
+  "corticobulbar": ["cbt", "corticobulbar fibers", "corticobulbar tract"],
+  "corticobulbar fibers": ["cbt", "corticobulbar", "corticobulbar tract"],
+  "corticobulbar tract": ["cbt", "corticobulbar", "corticobulbar fibers"],
+  "corticospinal": ["corticospinal fibers", "corticospinal tract", "cst", "lateral corticospinal", "lateral corticospinal tract", "lateral cst", "lcst", "pyramidal fibers", "pyramidal tract"],
+  "corticospinal and corticobulbar": ["cbt", "corticobulbar", "corticobulbar fibers", "corticobulbar tract", "corticospinal", "corticospinal and corticobulbar fibers", "corticospinal and corticobulbar system", "corticospinal and corticobulbar tract", "corticospinal corticobulbar", "corticospinal corticobulbar fibers", "corticospinal fibers", "corticospinal tract", "cst", "cst and cbt", "cst cbt", "cstcbt", "lateral corticospinal", "lateral corticospinal tract", "lateral cst", "lcst", "pyramidal fibers", "pyramidal tract"],
+  "corticospinal and corticobulbar fibers": ["cbt", "corticobulbar", "corticobulbar fibers", "corticobulbar tract", "corticospinal", "corticospinal and corticobulbar", "corticospinal and corticobulbar system", "corticospinal and corticobulbar tract", "corticospinal corticobulbar", "corticospinal corticobulbar fibers", "corticospinal fibers", "corticospinal tract", "cst", "cst and cbt", "cst cbt", "cstcbt", "lateral corticospinal", "lateral corticospinal tract", "lateral cst", "lcst", "pyramidal fibers", "pyramidal tract"],
+  "corticospinal and corticobulbar system": ["cbt", "corticobulbar", "corticobulbar fibers", "corticobulbar tract", "corticospinal", "corticospinal and corticobulbar", "corticospinal and corticobulbar fibers", "corticospinal and corticobulbar tract", "corticospinal corticobulbar", "corticospinal corticobulbar fibers", "corticospinal fibers", "corticospinal tract", "cst", "cst and cbt", "cst cbt", "cstcbt", "lateral corticospinal", "lateral corticospinal tract", "lateral cst", "lcst", "pyramidal fibers", "pyramidal tract"],
+  "corticospinal and corticobulbar tract": ["cbt", "corticobulbar", "corticobulbar fibers", "corticobulbar tract", "corticospinal", "corticospinal and corticobulbar", "corticospinal and corticobulbar fibers", "corticospinal and corticobulbar system", "corticospinal corticobulbar", "corticospinal corticobulbar fibers", "corticospinal fibers", "corticospinal tract", "cst", "cst and cbt", "cst cbt", "cstcbt", "lateral corticospinal", "lateral corticospinal tract", "lateral cst", "lcst", "pyramidal fibers", "pyramidal tract"],
+  "corticospinal corticobulbar": ["cbt", "corticobulbar", "corticobulbar fibers", "corticobulbar tract", "corticospinal", "corticospinal and corticobulbar", "corticospinal and corticobulbar fibers", "corticospinal and corticobulbar system", "corticospinal and corticobulbar tract", "corticospinal corticobulbar fibers", "corticospinal fibers", "corticospinal tract", "cst", "cst and cbt", "cst cbt", "cstcbt", "lateral corticospinal", "lateral corticospinal tract", "lateral cst", "lcst", "pyramidal fibers", "pyramidal tract"],
+  "corticospinal corticobulbar fibers": ["cbt", "corticobulbar", "corticobulbar fibers", "corticobulbar tract", "corticospinal", "corticospinal and corticobulbar", "corticospinal and corticobulbar fibers", "corticospinal and corticobulbar system", "corticospinal and corticobulbar tract", "corticospinal corticobulbar", "corticospinal fibers", "corticospinal tract", "cst", "cst and cbt", "cst cbt", "cstcbt", "lateral corticospinal", "lateral corticospinal tract", "lateral cst", "lcst", "pyramidal fibers", "pyramidal tract"],
   "corticospinal decussation": ["decussation of pyramid", "decussation of pyramids", "motor decussation", "pyramidal decussation"],
-  "corticospinal fibers": ["cbt", "corticobulbar", "corticobulbar fibers", "corticobulbar tract", "corticospinal", "corticospinal and corticobulbar", "corticospinal and corticobulbar fibers", "corticospinal and corticobulbar system", "corticospinal and corticobulbar tract", "corticospinal corticobulbar", "corticospinal corticobulbar fibers", "corticospinal tract", "cst", "cst and cbt", "cst cbt", "cstcbt", "pyramidal fibers", "pyramidal tract"],
-  "corticospinal tract": ["anterior corticospinal tract", "cbt", "corticobulbar", "corticobulbar fibers", "corticobulbar tract", "corticospinal", "corticospinal and corticobulbar", "corticospinal and corticobulbar fibers", "corticospinal and corticobulbar system", "corticospinal and corticobulbar tract", "corticospinal corticobulbar", "corticospinal corticobulbar fibers", "corticospinal fibers", "cst", "cst and cbt", "cst cbt", "cstcbt", "lateral corticospinal", "lateral corticospinal tract", "lcst", "pyramidal fibers", "pyramidal tract"],
+  "corticospinal fibers": ["corticospinal", "corticospinal tract", "cst", "lateral corticospinal", "lateral corticospinal tract", "lateral cst", "lcst", "pyramidal fibers", "pyramidal tract"],
+  "corticospinal tract": ["anterior corticospinal tract", "corticospinal", "corticospinal fibers", "cst", "lateral corticospinal", "lateral corticospinal tract", "lateral cst", "lcst", "pyramidal fibers", "pyramidal tract"],
   "cranial nerve 1": ["bulbus olfactorius", "cn 1", "cn i", "cranial nerve i", "first cranial nerve", "olfactory", "olfactory bulb", "olfactory nerve"],
   "cranial nerve 10": ["cn 10", "cn x", "cranial nerve x", "tenth cranial nerve", "vagus", "vagus nerve"],
   "cranial nerve 11": ["accessory", "accessory nerve", "cn 11", "cn xi", "cranial nerve xi", "eleventh cranial nerve", "spinal accessory", "spinal accessory nerve"],
@@ -209,7 +215,7 @@ export const ALTERNATIVE_ANSWERS = {
   "cranial nerve xi": ["accessory", "accessory nerve", "cn 11", "cn xi", "cranial nerve 11", "eleventh cranial nerve", "spinal accessory", "spinal accessory nerve"],
   "cranial nerve xii": ["cn 12", "cn xii", "cranial nerve 12", "hypoglossal", "hypoglossal nerve", "twelfth cranial nerve"],
   "crus cerebri": ["basis pedunculi", "cerebral peduncle", "cerebral peduncles"],
-  "cst": ["corticospinal", "corticospinal and corticobulbar", "corticospinal and corticobulbar fibers", "corticospinal and corticobulbar system", "corticospinal and corticobulbar tract", "corticospinal corticobulbar", "corticospinal corticobulbar fibers", "corticospinal fibers", "corticospinal tract", "cst and cbt", "cst cbt", "cstcbt", "pyramidal fibers", "pyramidal tract"],
+  "cst": ["corticospinal", "corticospinal and corticobulbar", "corticospinal and corticobulbar fibers", "corticospinal and corticobulbar system", "corticospinal and corticobulbar tract", "corticospinal corticobulbar", "corticospinal corticobulbar fibers", "corticospinal fibers", "corticospinal tract", "cst and cbt", "cst cbt", "cstcbt", "lateral corticospinal", "lateral corticospinal tract", "lateral cst", "lcst", "pyramidal fibers", "pyramidal tract"],
   "cst and cbt": ["cbt", "corticobulbar", "corticobulbar fibers", "corticobulbar tract", "corticospinal", "corticospinal and corticobulbar", "corticospinal and corticobulbar fibers", "corticospinal and corticobulbar system", "corticospinal and corticobulbar tract", "corticospinal corticobulbar", "corticospinal corticobulbar fibers", "corticospinal fibers", "corticospinal tract", "cst", "cst cbt", "cstcbt", "pyramidal fibers", "pyramidal tract"],
   "cst cbt": ["cbt", "corticobulbar", "corticobulbar fibers", "corticobulbar tract", "corticospinal", "corticospinal and corticobulbar", "corticospinal and corticobulbar fibers", "corticospinal and corticobulbar system", "corticospinal and corticobulbar tract", "corticospinal corticobulbar", "corticospinal corticobulbar fibers", "corticospinal fibers", "corticospinal tract", "cst", "cst and cbt", "cstcbt", "pyramidal fibers", "pyramidal tract"],
   "cstcbt": ["cbt", "corticobulbar", "corticobulbar fibers", "corticobulbar tract", "corticospinal", "corticospinal and corticobulbar", "corticospinal and corticobulbar fibers", "corticospinal and corticobulbar system", "corticospinal and corticobulbar tract", "corticospinal corticobulbar", "corticospinal corticobulbar fibers", "corticospinal fibers", "corticospinal tract", "cst", "cst and cbt", "cst cbt", "pyramidal fibers", "pyramidal tract"],
@@ -233,6 +239,7 @@ export const ALTERNATIVE_ANSWERS = {
   "dmnx": ["dmn of vagus", "dmn of x", "dmv", "dorsal motor nucleus", "dorsal motor nucleus of 10", "dorsal motor nucleus of cn 10", "dorsal motor nucleus of cn x", "dorsal motor nucleus of the vagus nerve", "dorsal motor nucleus of vagus", "dorsal motor vagal nucleus"],
   "dmv": ["dmn of vagus", "dmn of x", "dmnx", "dorsal motor nucleus", "dorsal motor nucleus of 10", "dorsal motor nucleus of cn 10", "dorsal motor nucleus of cn x", "dorsal motor nucleus of the vagus nerve", "dorsal motor nucleus of vagus", "dorsal motor vagal nucleus"],
   "dorsal cochlear nucleus": ["posterior cochlear nucleus", "tuberculum acousticum"],
+  "dorsal intermediate sulcus": ["intermediate sulcus", "posterior intermediate sulcus", "posterior intermediate sulcus of spinal cord"],
   "dorsal median sulcus": ["posterior median sulcus"],
   "dorsal motor nucleus": ["dmn of vagus", "dmn of x", "dmnx", "dmv", "dorsal motor nucleus of 10", "dorsal motor nucleus of cn 10", "dorsal motor nucleus of cn x", "dorsal motor nucleus of the vagus nerve", "dorsal motor nucleus of vagus", "dorsal motor vagal nucleus"],
   "dorsal motor nucleus of 10": ["dmn of vagus", "dmn of x", "dmnx", "dmv", "dorsal motor nucleus", "dorsal motor nucleus of cn 10", "dorsal motor nucleus of cn x", "dorsal motor nucleus of the vagus nerve", "dorsal motor nucleus of vagus", "dorsal motor vagal nucleus"],
@@ -289,18 +296,22 @@ export const ALTERNATIVE_ANSWERS = {
   "fleichsigs tract": ["dorsal spinocerebellar", "dorsal spinocerebellar tract", "dsct", "flechsig tract", "flechsigs tract", "posterior spinocerebellar", "posterior spinocerebellar tract", "tract of flechsig"],
   "floccular lobe": ["cerebellar flocculus", "flocculus"],
   "flocculus": ["cerebellar flocculus", "floccular lobe"],
-  "fontal lobe": ["frontal cortex", "frontal lobe"],
+  "fontal": ["fontal lobe", "frontal", "frontal cortex", "frontal lobe"],
+  "fontal lobe": ["fontal", "frontal", "frontal cortex", "frontal lobe"],
+  "foramen monro": ["foramen of monro", "interventricular foramen", "monro", "monros foramen"],
+  "foramen of monro": ["foramen monro", "interventricular foramen", "monro", "monros foramen"],
   "fornical body": ["body of fornix", "column of fornix", "columns of fornix", "fornix"],
   "fornix": ["body of fornix", "column of fornix", "columns of fornix", "fornical body"],
   "fourth cranial nerve": ["cn 4", "cn iv", "cranial nerve 4", "cranial nerve iv", "trochlear", "trochlear nerve"],
   "fourth ventricle": ["4th ventricle", "iv ventricle"],
   "fovea": ["fovea centralis", "macula", "macula lutea"],
-  "frontal cortex": ["fontal lobe", "frontal lobe"],
+  "frontal": ["fontal", "fontal lobe", "frontal cortex", "frontal lobe"],
+  "frontal cortex": ["fontal", "fontal lobe", "frontal", "frontal lobe"],
   "frontal horn": ["anterior horn", "anterior horn lateral ventricle", "anterior horn of lateral ventricle", "anterior horn of the lateral ventricle", "frontal horn lateral ventricle", "frontal horn of lateral ventricle", "frontal horn of the lateral ventricle", "lateral ventricle anterior horn", "lateral ventricle frontal horn"],
   "frontal horn lateral ventricle": ["anterior horn", "anterior horn lateral ventricle", "anterior horn of lateral ventricle", "anterior horn of the lateral ventricle", "frontal horn", "frontal horn of lateral ventricle", "frontal horn of the lateral ventricle", "lateral ventricle anterior horn", "lateral ventricle frontal horn"],
   "frontal horn of lateral ventricle": ["anterior horn", "anterior horn lateral ventricle", "anterior horn of lateral ventricle", "anterior horn of the lateral ventricle", "frontal horn", "frontal horn lateral ventricle", "frontal horn of the lateral ventricle", "lateral ventricle anterior horn", "lateral ventricle frontal horn"],
   "frontal horn of the lateral ventricle": ["anterior horn", "anterior horn lateral ventricle", "anterior horn of lateral ventricle", "anterior horn of the lateral ventricle", "frontal horn", "frontal horn lateral ventricle", "frontal horn of lateral ventricle", "lateral ventricle anterior horn", "lateral ventricle frontal horn"],
-  "frontal lobe": ["fontal lobe", "frontal cortex"],
+  "frontal lobe": ["fontal", "fontal lobe", "frontal", "frontal cortex"],
   "geniculocalcarine tract": ["optic radiation", "optic radiations", "radiatio optica"],
   "genu": ["genu internal capsule", "genu of internal capsule", "internal capsule genu"],
   "genu internal capsule": ["genu", "genu of internal capsule", "internal capsule genu"],
@@ -359,19 +370,23 @@ export const ALTERNATIVE_ANSWERS = {
   "internal capsule posterior limb": ["plic", "posterior limb", "posterior limb internal capsule", "posterior limb of internal capsule"],
   "internal carotid": ["ica", "internal carotid artery"],
   "internal carotid artery": ["ica", "internal carotid"],
+  "interpeduncular": ["fossa interpeduncularis", "interpeduncular cistern", "interpeduncular fossa"],
+  "interpeduncular cistern": ["fossa interpeduncularis", "interpeduncular", "interpeduncular fossa"],
+  "interpeduncular fossa": ["fossa interpeduncularis", "interpeduncular", "interpeduncular cistern"],
   "interpositus emboliform": ["emboliform", "emboliform nucleus", "interpositus emboliform nucleus", "interpositus nucleus", "nucleus emboliformis", "nucleus interpositus"],
   "interpositus emboliform nucleus": ["emboliform", "emboliform nucleus", "interpositus emboliform", "interpositus nucleus", "nucleus emboliformis", "nucleus interpositus"],
   "interpositus globose": ["globose", "globose nucleus", "interpositus globose nucleus", "interpositus nucleus", "nucleus globosus", "nucleus interpositus"],
   "interpositus globose nucleus": ["globose", "globose nucleus", "interpositus globose", "interpositus nucleus", "nucleus globosus", "nucleus interpositus"],
   "interpositus nucleus": ["emboliform", "emboliform nucleus", "globose", "globose nucleus", "interpositus emboliform", "interpositus emboliform nucleus", "interpositus globose", "interpositus globose nucleus", "nucleus emboliformis", "nucleus globosus", "nucleus interpositus"],
-  "interventricular foramen": ["foramen of monro"],
+  "interventricular foramen": ["foramen monro", "foramen of monro", "monro", "monros foramen"],
   "ion": ["inferior olivary complex", "inferior olivary nucleus", "inferior olive", "olive"],
   "iris": ["iridial area"],
-  "island of reil": ["insula", "insular cortex", "insular lobe"],
+  "island of reil": ["cortex of insula", "insula", "insular", "insular cortex", "insular lobe"],
   "iv ventricle": ["4th ventricle", "fourth ventricle"],
   "lateral cerebellar hemisphere": ["cerebellar hemisphere", "cerebellar hemisphere lateral", "cerebellar hemispheres"],
-  "lateral corticospinal": ["corticospinal tract", "lateral corticospinal tract", "lcst", "pyramidal tract"],
-  "lateral corticospinal tract": ["corticospinal tract", "lateral corticospinal", "lcst", "pyramidal tract"],
+  "lateral corticospinal": ["corticospinal", "corticospinal fibers", "corticospinal tract", "cst", "lateral corticospinal tract", "lateral cst", "lcst", "pyramidal tract"],
+  "lateral corticospinal tract": ["corticospinal", "corticospinal fibers", "corticospinal tract", "cst", "lateral corticospinal", "lateral cst", "lcst", "pyramidal tract"],
+  "lateral cst": ["corticospinal", "corticospinal fibers", "corticospinal tract", "cst", "lateral corticospinal", "lateral corticospinal tract", "lcst", "pyramidal tract"],
   "lateral cuneate": ["accessory cuneate nucleus", "external cuneate nucleus", "lateral cuneate nucleus"],
   "lateral cuneate nucleus": ["accessory cuneate nucleus", "external cuneate nucleus", "lateral cuneate"],
   "lateral fissure": ["lateral sulcus", "sylvian fissure"],
@@ -389,12 +404,20 @@ export const ALTERNATIVE_ANSWERS = {
   "lateral ventricles": ["body of lateral ventricle", "body of the lateral ventricle", "lateral ventricle"],
   "lateral vestibular": ["deiters nucleus", "lateral vestibular nucleus", "nucleus of deiters"],
   "lateral vestibular nucleus": ["deiters nucleus", "lateral vestibular", "nucleus of deiters"],
-  "lcst": ["corticospinal tract", "lateral corticospinal", "lateral corticospinal tract", "pyramidal tract"],
+  "lcst": ["corticospinal", "corticospinal fibers", "corticospinal tract", "cst", "lateral corticospinal", "lateral corticospinal tract", "lateral cst", "pyramidal tract"],
   "lens": ["crystalline lens"],
   "lenticular fasciculus": ["fasciculus lenticularis", "field h2 of forel", "h2", "h2 field of forel"],
-  "lenticular nucleus": ["lentiform nucleus"],
-  "lentiform nucleus": ["lenticular nucleus"],
-  "lingual gyrus": ["lingual cortex", "medial occipitotemporal gyrus"],
+  "lenticular nucleus": ["lentiform", "lentiform nucleus"],
+  "lentiform": ["lenticular nucleus", "lentiform nucleus"],
+  "lentiform nucleus": ["lenticular nucleus", "lentiform"],
+  "lingual": ["lingual cortex", "lingual gyrus", "medial occipitotemporal gyrus"],
+  "lingual cortex": ["lingual", "lingual gyrus", "medial occipitotemporal gyrus"],
+  "lingual gyrus": ["lingual", "lingual cortex", "medial occipitotemporal gyrus"],
+  "lumbar": ["lumbar cord", "lumbar level", "lumbar segment", "lumbar spinal cord"],
+  "lumbar cord": ["lumbar", "lumbar level", "lumbar segment", "lumbar spinal cord"],
+  "lumbar level": ["lumbar", "lumbar cord", "lumbar segment", "lumbar spinal cord"],
+  "lumbar segment": ["lumbar", "lumbar cord", "lumbar level", "lumbar spinal cord"],
+  "lumbar spinal cord": ["lumbar", "lumbar cord", "lumbar level", "lumbar segment"],
   "luys body": ["body of luys", "stn", "subthalamic nucleus", "subthalamus"],
   "m1": ["motor cortex", "precentral gyrus", "primary motor cortex"],
   "main sensory nucleus": ["chief sensory", "chief sensory nucleus", "chief sensory nucleus of 5", "chief sensory nucleus of v", "chief sensory of v", "chief sensory v", "main sensory nucleus of v", "principal sensory nucleus", "principal sensory nucleus of v", "principal sensory of v"],
@@ -441,6 +464,8 @@ export const ALTERNATIVE_ANSWERS = {
   "motor nucleus of v": ["cn v motor", "cn v motor nucleus", "masticatory nucleus", "motor nucleus of 5", "motor nucleus of trigeminal", "trigeminal motor nucleus"],
   "myelencephalon": ["medulla", "medulla oblongata"],
   "na": ["ambiguous", "ambiguous nucleus", "ambiguus", "ambiguus nucleus", "nucleus ambiguous", "nucleus ambiguus"],
+  "nerve rootlets": ["dorsal rootlets", "nerve roots", "radicular fibers", "rootlets", "roots", "spinal rootlets", "ventral rootlets"],
+  "nerve roots": ["dorsal rootlets", "nerve rootlets", "radicular fibers", "rootlets", "roots", "spinal rootlets", "ventral rootlets"],
   "ninth cranial nerve": ["cn 9", "cn ix", "cranial nerve 9", "cranial nerve ix", "glossopharyngeal", "glossopharyngeal nerve"],
   "nodule": ["cerebellar nodulus", "nodulus"],
   "nodulus": ["cerebellar nodulus", "nodule"],
@@ -467,13 +492,14 @@ export const ALTERNATIVE_ANSWERS = {
   "nucleus of the spinal tract of v": ["nucleus of spinal tract of trigeminal", "spinal nucleus of 5", "spinal nucleus of trigeminal", "spinal nucleus of v", "spinal trigeminal", "spinal trigeminal nucleus", "spinal v nucleus"],
   "nucleus of trochlear nerve": ["cn 4", "cn 4 nucleus", "cn iv", "cn iv nucleus", "trochlear nerve nucleus", "trochlear nucleus"],
   "nucleus proprius": ["lamina 3 and 4", "lamina iii and iv"],
-  "nucleus ruber": ["red nucleus"],
-  "occipital cortex": ["occipital lobe"],
+  "nucleus ruber": ["red", "red nucleus", "nucleus ruber midbrain"],
+  "occipital": ["occipital cortex", "occipital lobe"],
+  "occipital cortex": ["occipital", "occipital lobe"],
   "occipital horn": ["lateral ventricle occipital horn", "lateral ventricle posterior horn", "occipital horn lateral ventricle", "occipital horn of lateral ventricle", "occipital horn of the lateral ventricle", "posterior horn", "posterior horn lateral ventricle", "posterior horn of lateral ventricle", "posterior horn of the lateral ventricle"],
   "occipital horn lateral ventricle": ["lateral ventricle occipital horn", "lateral ventricle posterior horn", "occipital horn", "occipital horn of lateral ventricle", "occipital horn of the lateral ventricle", "posterior horn", "posterior horn lateral ventricle", "posterior horn of lateral ventricle", "posterior horn of the lateral ventricle"],
   "occipital horn of lateral ventricle": ["lateral ventricle occipital horn", "lateral ventricle posterior horn", "occipital horn", "occipital horn lateral ventricle", "occipital horn of the lateral ventricle", "posterior horn", "posterior horn lateral ventricle", "posterior horn of lateral ventricle", "posterior horn of the lateral ventricle"],
   "occipital horn of the lateral ventricle": ["lateral ventricle occipital horn", "lateral ventricle posterior horn", "occipital horn", "occipital horn lateral ventricle", "occipital horn of lateral ventricle", "posterior horn", "posterior horn lateral ventricle", "posterior horn of lateral ventricle", "posterior horn of the lateral ventricle"],
-  "occipital lobe": ["occipital cortex"],
+  "occipital lobe": ["occipital", "occipital cortex"],
   "oculomotor": ["cn 3", "cn iii", "cranial nerve 3", "cranial nerve iii", "oculomotor nerve", "oculomotor nerve iii", "third cranial nerve"],
   "oculomotor nerve": ["cn 3", "cn iii", "cranial nerve 3", "cranial nerve iii", "oculomotor", "oculomotor nerve iii", "third cranial nerve"],
   "oculomotor nerve iii": ["cn 3", "cn 3 oculomotor", "cn iii", "cranial nerve 3", "cranial nerve iii", "oculomotor", "oculomotor nerve", "third cranial nerve"],
@@ -485,7 +511,8 @@ export const ALTERNATIVE_ANSWERS = {
   "olfactory tract": ["cn 1 tract", "cn i tract", "olfactory stria", "tractus olfactorius"],
   "olive": ["inferior olivary complex", "inferior olivary nucleus", "inferior olive", "ion"],
   "optic": ["cn 2", "cn ii", "cranial nerve 2", "cranial nerve ii", "optic nerve", "second cranial nerve"],
-  "optic chiasm": ["optic chiasma"],
+  "optic chiasm": ["chiasm", "chiasma", "optic chiasma"],
+  "optic chiasma": ["chiasm", "chiasma", "optic chiasm"],
   "optic disc": ["blind spot", "optic disk", "optic papilla"],
   "optic nerve": ["cn 2", "cn ii", "cranial nerve 2", "cranial nerve ii", "optic", "optic nerve ii", "second cranial nerve"],
   "optic radiation": ["geniculocalcarine tract", "optic radiations", "radiatio optica"],
@@ -497,11 +524,13 @@ export const ALTERNATIVE_ANSWERS = {
   "pallidum": ["globus pallidus", "globus pallidus internal and external", "gp"],
   "paracentral gyrus": ["paracentral lobule"],
   "paracentral lobule": ["paracentral gyrus"],
-  "parahippocampal cortex": ["parahippocampal gyrus", "parahippocampus"],
-  "parahippocampal gyrus": ["parahippocampal cortex", "parahippocampus"],
-  "parahippocampus": ["parahippocampal cortex", "parahippocampal gyrus"],
-  "parietal cortex": ["parietal lobe"],
-  "parietal lobe": ["parietal cortex"],
+  "parahippocampal": ["parahippocampal cortex", "parahippocampal gyrus", "parahippocampus"],
+  "parahippocampal cortex": ["parahippocampal", "parahippocampal gyrus", "parahippocampus"],
+  "parahippocampal gyrus": ["parahippocampal", "parahippocampal cortex", "parahippocampus"],
+  "parahippocampus": ["parahippocampal", "parahippocampal cortex", "parahippocampal gyrus"],
+  "parietal": ["parietal cortex", "parietal lobe"],
+  "parietal cortex": ["parietal", "parietal lobe"],
+  "parietal lobe": ["parietal", "parietal cortex"],
   "pca": ["posterior cerebral artery"],
   "pcom": ["pcomm", "posterior communicating", "posterior communicating artery"],
   "pcomm": ["pcom", "posterior communicating", "posterior communicating artery"],
@@ -552,13 +581,22 @@ export const ALTERNATIVE_ANSWERS = {
   "pyramidal tract": ["cbt", "corticobulbar", "corticobulbar fibers", "corticobulbar tract", "corticospinal", "corticospinal and corticobulbar", "corticospinal and corticobulbar fibers", "corticospinal and corticobulbar system", "corticospinal and corticobulbar tract", "corticospinal corticobulbar", "corticospinal corticobulbar fibers", "corticospinal fibers", "corticospinal tract", "cst", "cst and cbt", "cst cbt", "cstcbt", "lateral corticospinal", "lateral corticospinal tract", "lcst", "pyramidal fibers"],
   "pyramids": ["medullary pyramid", "medullary pyramids", "pyramid"],
   "radiatio optica": ["geniculocalcarine tract", "optic radiation", "optic radiations"],
-  "red nucleus": ["nucleus ruber", "nucleus ruber midbrain"],
+  "radicular fibers": ["dorsal rootlets", "nerve rootlets", "nerve roots", "rootlets", "roots", "spinal rootlets", "ventral rootlets"],
+  "red": ["nucleus ruber", "nucleus ruber midbrain", "red nucleus"],
+  "red nucleus": ["nucleus ruber", "nucleus ruber midbrain", "red"],
   "restiform body": ["icp", "inferior cerebellar peduncle"],
   "reticular formation": ["brainstem reticular formation", "medullary reticular formation", "reticular", "reticular substance", "rf"],
   "retina": ["neural retina", "retinal layer"],
   "rolandic fissure": ["central fissure", "central sulcus", "fissure of rolando", "rolandic sulcus", "sulcus of rolando"],
   "rolandic sulcus": ["central fissure", "central sulcus", "fissure of rolando", "rolandic fissure", "sulcus of rolando"],
+  "rootlets": ["dorsal rootlets", "nerve rootlets", "nerve roots", "radicular fibers", "roots", "spinal rootlets", "ventral rootlets"],
+  "roots": ["dorsal rootlets", "nerve rootlets", "nerve roots", "radicular fibers", "rootlets", "spinal rootlets", "ventral rootlets"],
   "s1": ["postcentral gyrus", "primary somatosensory cortex", "somatosensory cortex"],
+  "sacral": ["sacral cord", "sacral level", "sacral segment", "sacral spinal cord"],
+  "sacral cord": ["sacral", "sacral level", "sacral segment", "sacral spinal cord"],
+  "sacral level": ["sacral", "sacral cord", "sacral segment", "sacral spinal cord"],
+  "sacral segment": ["sacral", "sacral cord", "sacral level", "sacral spinal cord"],
+  "sacral spinal cord": ["sacral", "sacral cord", "sacral level", "sacral segment"],
   "sc": ["superior colliculi", "superior colliculus", "tectum"],
   "sca": ["superior cerebellar artery"],
   "sclera": ["scleral coat", "slera", "white of eye"],
@@ -629,17 +667,23 @@ export const ALTERNATIVE_ANSWERS = {
   "tail of caudate": ["caudate tail", "tail of caudate nucleus"],
   "tail of caudate nucleus": ["caudate tail", "tail of caudate"],
   "tectum": ["sc", "superior colliculi", "superior colliculus"],
-  "temporal cortex": ["temporal lobe"],
+  "temporal": ["temporal cortex", "temporal lobe"],
+  "temporal cortex": ["temporal", "temporal lobe"],
   "temporal horn": ["inferior horn", "inferior horn lateral ventricle", "inferior horn of lateral ventricle", "inferior horn of the lateral ventricle", "lateral ventricle inferior horn", "lateral ventricle temporal horn", "temporal horn lateral ventricle", "temporal horn of lateral ventricle", "temporal horn of the lateral ventricle"],
   "temporal horn lateral ventricle": ["inferior horn", "inferior horn lateral ventricle", "inferior horn of lateral ventricle", "inferior horn of the lateral ventricle", "lateral ventricle inferior horn", "lateral ventricle temporal horn", "temporal horn", "temporal horn of lateral ventricle", "temporal horn of the lateral ventricle"],
   "temporal horn of lateral ventricle": ["inferior horn", "inferior horn lateral ventricle", "inferior horn of lateral ventricle", "inferior horn of the lateral ventricle", "lateral ventricle inferior horn", "lateral ventricle temporal horn", "temporal horn", "temporal horn lateral ventricle", "temporal horn of the lateral ventricle"],
   "temporal horn of the lateral ventricle": ["inferior horn", "inferior horn lateral ventricle", "inferior horn of lateral ventricle", "inferior horn of the lateral ventricle", "lateral ventricle inferior horn", "lateral ventricle temporal horn", "temporal horn", "temporal horn lateral ventricle", "temporal horn of lateral ventricle"],
-  "temporal lobe": ["temporal cortex"],
+  "temporal lobe": ["temporal", "temporal cortex"],
   "tenth cranial nerve": ["cn 10", "cn x", "cranial nerve 10", "cranial nerve x", "vagus", "vagus nerve"],
   "thalamic fasciculus": ["fasciculus thalamicus", "field h1 of forel", "h1", "h1 field of forel"],
   "thalamus": ["dorsal thalamus"],
   "third cranial nerve": ["cn 3", "cn iii", "cranial nerve 3", "cranial nerve iii", "oculomotor", "oculomotor nerve", "oculomotor nerve iii"],
   "third ventricle": ["3rd ventricle", "iii ventricle"],
+  "thoracic": ["thoracic cord", "thoracic level", "thoracic segment", "thoracic spinal cord"],
+  "thoracic cord": ["thoracic", "thoracic level", "thoracic segment", "thoracic spinal cord"],
+  "thoracic level": ["thoracic", "thoracic cord", "thoracic segment", "thoracic spinal cord"],
+  "thoracic segment": ["thoracic", "thoracic cord", "thoracic level", "thoracic spinal cord"],
+  "thoracic spinal cord": ["thoracic", "thoracic cord", "thoracic level", "thoracic segment"],
   "tonsil": ["cerebellar tonsil", "cerebellar tonsils", "tonsil of cerebellum", "tonsils"],
   "tonsil of cerebellum": ["cerebellar tonsil", "cerebellar tonsils", "tonsil", "tonsils"],
   "tonsils": ["cerebellar tonsil", "cerebellar tonsils", "tonsil", "tonsil of cerebellum"],
@@ -733,7 +777,18 @@ const checkSingle = (user, target) => {
 
 export const checkAnswer = (userAns, correctAns) => {
   if (!userAns || !correctAns) return false;
-  const clean = (str) => str.toLowerCase().replace(/[^\w\s]|_/g, "").replace(/\s+/g, " ").trim();
+  const clean = (str) => {
+    if (!str) return "";
+    return str
+      .toLowerCase()
+      .replace(/[^\w\s]|_/g, " ")
+      .replace(/\s+/g, " ")
+      .trim()
+      .replace(/^(the|a|an)\s+/, "")
+      .replace(/\bfontal\b/g, "frontal")
+      .replace(/\bchroroid\b/g, "choroid")
+      .replace(/\bslera\b/g, "sclera");
+  };
 
   const cleanUser = clean(userAns);
   const cleanCorrect = clean(correctAns);
@@ -743,11 +798,32 @@ export const checkAnswer = (userAns, correctAns) => {
     return true;
   }
 
-  // Check alternatives
+  // Check suffix flexibility (e.g. "frontal" matches "frontal lobe", "cingulate" matches "cingulate gyrus")
+  const suffixes = ['lobe', 'gyrus', 'sulcus', 'fissure'];
+  for (const suf of suffixes) {
+    const sufPattern = new RegExp('\\s+' + suf + '$');
+    if (cleanCorrect.replace(sufPattern, '') === cleanUser) return true;
+    if (cleanUser.replace(sufPattern, '') === cleanCorrect) return true;
+  }
+
+  // Check alternatives defined for correct answer
   const alternatives = ALTERNATIVE_ANSWERS[cleanCorrect] || [];
   for (const alt of alternatives) {
     const cleanAlt = clean(alt);
     if (checkSingle(cleanUser, cleanAlt)) {
+      return true;
+    }
+    for (const suf of suffixes) {
+      const sufPattern = new RegExp('\\s+' + suf + '$');
+      if (cleanAlt.replace(sufPattern, '') === cleanUser) return true;
+    }
+  }
+
+  // Bidirectional check: also check alternatives defined for user's input
+  const userAlternatives = ALTERNATIVE_ANSWERS[cleanUser] || [];
+  for (const alt of userAlternatives) {
+    const cleanAlt = clean(alt);
+    if (checkSingle(cleanAlt, cleanCorrect)) {
       return true;
     }
   }
@@ -780,22 +856,20 @@ export const isExamMistake = (m, targetExam) => {
 };
 
 // --- Anki Spaced Repetition Parameters ---
-// • Learning steps: 15m 23m 2d
-// • Graduating interval: 10
-// • Easy interval: 14
+// • Learning steps: Again 15m, Hard 23m
+// • Graduating interval (Good): 2d
+// • Easy interval: 4d
 
 export const LEARNING_STEPS = [
   { name: '15m', ms: 15 * 60 * 1000 },
-  { name: '23m', ms: 23 * 60 * 1000 },
-  { name: '2d', ms: 2 * 24 * 60 * 60 * 1000 }
+  { name: '23m', ms: 23 * 60 * 1000 }
 ];
 
-export const GRADUATING_INTERVAL_DAYS = 10;
-export const EASY_INTERVAL_DAYS = 14;
+export const GRADUATING_INTERVAL_DAYS = 2;
+export const EASY_INTERVAL_DAYS = 4;
 
 /**
- * Normalizes card objects to ensure backward compatibility.
- * WILL NEVER delete existing user data or reset scheduled review dates.
+ * Normalizes card objects to ensure backward compatibility and apply updated intervals.
  */
 export const normalizeCard = (card) => {
   if (!card) return null;
@@ -803,6 +877,25 @@ export const normalizeCard = (card) => {
 
   if (typeof normalized.ease !== 'number' || isNaN(normalized.ease)) {
     normalized.ease = 2.5;
+  }
+
+  // Update cards from previous session tests to new requested intervals:
+  // 14d -> 4d, 10d -> 2d, or if step 1 (23m) was assigned on good -> graduate to 2d
+  if (normalized.interval === 14) {
+    normalized.interval = EASY_INTERVAL_DAYS; // 4
+    normalized.state = 'review';
+    normalized.step = 2;
+    normalized.nextReviewDate = Date.now() + EASY_INTERVAL_DAYS * 24 * 60 * 60 * 1000;
+  } else if (normalized.interval === 10) {
+    normalized.interval = GRADUATING_INTERVAL_DAYS; // 2
+    normalized.state = 'review';
+    normalized.step = 2;
+    normalized.nextReviewDate = Date.now() + GRADUATING_INTERVAL_DAYS * 24 * 60 * 60 * 1000;
+  } else if (normalized.step === 1 && normalized.interval < 1 && normalized.state === 'learning') {
+    normalized.interval = GRADUATING_INTERVAL_DAYS; // 2
+    normalized.state = 'review';
+    normalized.step = 2;
+    normalized.nextReviewDate = Date.now() + GRADUATING_INTERVAL_DAYS * 24 * 60 * 60 * 1000;
   }
 
   // If already migrated, keep as is
@@ -815,17 +908,13 @@ export const normalizeCard = (card) => {
     ? normalized.interval
     : 1;
 
-  if (currentInterval >= 10) {
+  if (currentInterval >= 2) {
     normalized.state = 'review';
-    normalized.step = 3;
-    normalized.interval = currentInterval;
-  } else if (currentInterval >= 2) {
-    normalized.state = 'learning';
-    normalized.step = 2; // 2d step
+    normalized.step = 2;
     normalized.interval = currentInterval;
   } else {
     normalized.state = 'learning';
-    normalized.step = 0; // 15m step
+    normalized.step = 0;
     normalized.interval = currentInterval;
   }
 
@@ -839,6 +928,7 @@ export const normalizeCard = (card) => {
 
 /**
  * Calculates next state, interval, ease, and review date using Anki logic.
+ * Learning: Again (15m), Hard (23m), Good (2d), Easy (4d).
  */
 export const calculateAnkiSchedule = (card, rating) => {
   const norm = normalizeCard(card);
@@ -860,41 +950,24 @@ export const calculateAnkiSchedule = (card, rating) => {
         break;
 
       case 'hard':
-        if (step === 2) {
-          nextReviewMs = 1 * 24 * 60 * 60 * 1000; // 1 day
-          nextIntervalDays = 1;
-        } else {
-          nextReviewMs = 15 * 60 * 1000;
-          nextIntervalDays = 15 / (24 * 60);
-        }
+        step = 1;
+        state = 'learning';
+        nextReviewMs = 23 * 60 * 1000; // 23 minutes
+        nextIntervalDays = 23 / (24 * 60);
         break;
 
       case 'good':
-        if (step === 0) {
-          step = 1;
-          state = 'learning';
-          nextReviewMs = 23 * 60 * 1000; // 23 minutes
-          nextIntervalDays = 23 / (24 * 60);
-        } else if (step === 1) {
-          step = 2;
-          state = 'learning';
-          nextReviewMs = 2 * 24 * 60 * 60 * 1000; // 2 days
-          nextIntervalDays = 2;
-        } else {
-          // Graduating from 2d step -> 10 days!
-          state = 'review';
-          step = 3;
-          interval = GRADUATING_INTERVAL_DAYS;
-          nextIntervalDays = GRADUATING_INTERVAL_DAYS;
-          nextReviewMs = GRADUATING_INTERVAL_DAYS * 24 * 60 * 60 * 1000;
-        }
+        state = 'review';
+        step = 2;
+        interval = GRADUATING_INTERVAL_DAYS; // 2 days
+        nextIntervalDays = GRADUATING_INTERVAL_DAYS;
+        nextReviewMs = GRADUATING_INTERVAL_DAYS * 24 * 60 * 60 * 1000;
         break;
 
       case 'easy':
-        // Graduate directly to Easy interval (14 days)
         state = 'review';
-        step = 3;
-        interval = EASY_INTERVAL_DAYS;
+        step = 2;
+        interval = EASY_INTERVAL_DAYS; // 4 days
         nextIntervalDays = EASY_INTERVAL_DAYS;
         nextReviewMs = EASY_INTERVAL_DAYS * 24 * 60 * 60 * 1000;
         break;
@@ -906,7 +979,7 @@ export const calculateAnkiSchedule = (card, rating) => {
     // Graduated review card
     switch (rating) {
       case 'again':
-        // Lapsed card returns to first learning step
+        // Lapsed card returns to first learning step (15m)
         state = 'learning';
         step = 0;
         ease = Math.max(1.3, ease - 0.2);
@@ -949,12 +1022,12 @@ export const calculateAnkiSchedule = (card, rating) => {
 };
 
 /**
- * Returns clean human-readable interval labels for Anki buttons (e.g., '15m', '23m', '2d', '10d', '14d')
+ * Returns clean human-readable interval labels for Anki buttons:
+ * Learning: Again -> '15m', Hard -> '23m', Good -> '2d', Easy -> '4d'
  */
 export const getAnkiIntervalLabel = (card, rating) => {
   const norm = normalizeCard(card);
   const state = norm.state || 'learning';
-  const step = typeof norm.step === 'number' ? norm.step : 0;
   const interval = typeof norm.interval === 'number' ? norm.interval : 0;
   const ease = typeof norm.ease === 'number' ? norm.ease : 2.5;
 
@@ -963,10 +1036,8 @@ export const getAnkiIntervalLabel = (card, rating) => {
       case 'again':
         return '15m';
       case 'hard':
-        return step === 2 ? '1d' : '15m';
+        return '23m';
       case 'good':
-        if (step === 0) return '23m';
-        if (step === 1) return '2d';
         return `${GRADUATING_INTERVAL_DAYS}d`;
       case 'easy':
         return `${EASY_INTERVAL_DAYS}d`;
