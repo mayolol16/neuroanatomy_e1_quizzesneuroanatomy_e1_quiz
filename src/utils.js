@@ -778,3 +778,213 @@ export const isExamMistake = (m, targetExam) => {
   }
   return true;
 };
+
+// --- Anki Spaced Repetition Parameters ---
+// • Learning steps: 15m 23m 2d
+// • Graduating interval: 10
+// • Easy interval: 14
+
+export const LEARNING_STEPS = [
+  { name: '15m', ms: 15 * 60 * 1000 },
+  { name: '23m', ms: 23 * 60 * 1000 },
+  { name: '2d', ms: 2 * 24 * 60 * 60 * 1000 }
+];
+
+export const GRADUATING_INTERVAL_DAYS = 10;
+export const EASY_INTERVAL_DAYS = 14;
+
+/**
+ * Normalizes card objects to ensure backward compatibility.
+ * WILL NEVER delete existing user data or reset scheduled review dates.
+ */
+export const normalizeCard = (card) => {
+  if (!card) return null;
+  const normalized = { ...card };
+
+  if (typeof normalized.ease !== 'number' || isNaN(normalized.ease)) {
+    normalized.ease = 2.5;
+  }
+
+  // If already migrated, keep as is
+  if (normalized.state === 'learning' || normalized.state === 'review') {
+    return normalized;
+  }
+
+  // Backward compatibility: map older interval values
+  const currentInterval = typeof normalized.interval === 'number' && !isNaN(normalized.interval)
+    ? normalized.interval
+    : 1;
+
+  if (currentInterval >= 10) {
+    normalized.state = 'review';
+    normalized.step = 3;
+    normalized.interval = currentInterval;
+  } else if (currentInterval >= 2) {
+    normalized.state = 'learning';
+    normalized.step = 2; // 2d step
+    normalized.interval = currentInterval;
+  } else {
+    normalized.state = 'learning';
+    normalized.step = 0; // 15m step
+    normalized.interval = currentInterval;
+  }
+
+  // Preserve existing nextReviewDate if present; otherwise make due now
+  if (typeof normalized.nextReviewDate !== 'number' || isNaN(normalized.nextReviewDate)) {
+    normalized.nextReviewDate = Date.now();
+  }
+
+  return normalized;
+};
+
+/**
+ * Calculates next state, interval, ease, and review date using Anki logic.
+ */
+export const calculateAnkiSchedule = (card, rating) => {
+  const norm = normalizeCard(card);
+  let state = norm.state || 'learning';
+  let step = typeof norm.step === 'number' ? norm.step : 0;
+  let interval = typeof norm.interval === 'number' ? norm.interval : 0;
+  let ease = typeof norm.ease === 'number' ? norm.ease : 2.5;
+
+  let nextIntervalDays = 0;
+  let nextReviewMs = 0;
+
+  if (state === 'learning') {
+    switch (rating) {
+      case 'again':
+        step = 0;
+        state = 'learning';
+        nextReviewMs = 15 * 60 * 1000; // 15 minutes
+        nextIntervalDays = 15 / (24 * 60);
+        break;
+
+      case 'hard':
+        if (step === 2) {
+          nextReviewMs = 1 * 24 * 60 * 60 * 1000; // 1 day
+          nextIntervalDays = 1;
+        } else {
+          nextReviewMs = 15 * 60 * 1000;
+          nextIntervalDays = 15 / (24 * 60);
+        }
+        break;
+
+      case 'good':
+        if (step === 0) {
+          step = 1;
+          state = 'learning';
+          nextReviewMs = 23 * 60 * 1000; // 23 minutes
+          nextIntervalDays = 23 / (24 * 60);
+        } else if (step === 1) {
+          step = 2;
+          state = 'learning';
+          nextReviewMs = 2 * 24 * 60 * 60 * 1000; // 2 days
+          nextIntervalDays = 2;
+        } else {
+          // Graduating from 2d step -> 10 days!
+          state = 'review';
+          step = 3;
+          interval = GRADUATING_INTERVAL_DAYS;
+          nextIntervalDays = GRADUATING_INTERVAL_DAYS;
+          nextReviewMs = GRADUATING_INTERVAL_DAYS * 24 * 60 * 60 * 1000;
+        }
+        break;
+
+      case 'easy':
+        // Graduate directly to Easy interval (14 days)
+        state = 'review';
+        step = 3;
+        interval = EASY_INTERVAL_DAYS;
+        nextIntervalDays = EASY_INTERVAL_DAYS;
+        nextReviewMs = EASY_INTERVAL_DAYS * 24 * 60 * 60 * 1000;
+        break;
+
+      default:
+        break;
+    }
+  } else {
+    // Graduated review card
+    switch (rating) {
+      case 'again':
+        // Lapsed card returns to first learning step
+        state = 'learning';
+        step = 0;
+        ease = Math.max(1.3, ease - 0.2);
+        nextReviewMs = 15 * 60 * 1000;
+        nextIntervalDays = 15 / (24 * 60);
+        break;
+
+      case 'hard':
+        ease = Math.max(1.3, ease - 0.15);
+        interval = Math.max(interval + 1, Math.round(interval * 1.2));
+        nextIntervalDays = interval;
+        nextReviewMs = interval * 24 * 60 * 60 * 1000;
+        break;
+
+      case 'good':
+        interval = Math.max(interval + 1, Math.round(interval * ease));
+        nextIntervalDays = interval;
+        nextReviewMs = interval * 24 * 60 * 60 * 1000;
+        break;
+
+      case 'easy':
+        ease = ease + 0.15;
+        interval = Math.max(interval + 2, Math.round(interval * ease * 1.3));
+        nextIntervalDays = interval;
+        nextReviewMs = interval * 24 * 60 * 60 * 1000;
+        break;
+
+      default:
+        break;
+    }
+  }
+
+  return {
+    state,
+    step,
+    interval: nextIntervalDays,
+    ease: Math.round(ease * 100) / 100,
+    nextReviewDate: Date.now() + nextReviewMs
+  };
+};
+
+/**
+ * Returns clean human-readable interval labels for Anki buttons (e.g., '15m', '23m', '2d', '10d', '14d')
+ */
+export const getAnkiIntervalLabel = (card, rating) => {
+  const norm = normalizeCard(card);
+  const state = norm.state || 'learning';
+  const step = typeof norm.step === 'number' ? norm.step : 0;
+  const interval = typeof norm.interval === 'number' ? norm.interval : 0;
+  const ease = typeof norm.ease === 'number' ? norm.ease : 2.5;
+
+  if (state === 'learning') {
+    switch (rating) {
+      case 'again':
+        return '15m';
+      case 'hard':
+        return step === 2 ? '1d' : '15m';
+      case 'good':
+        if (step === 0) return '23m';
+        if (step === 1) return '2d';
+        return `${GRADUATING_INTERVAL_DAYS}d`;
+      case 'easy':
+        return `${EASY_INTERVAL_DAYS}d`;
+      default:
+        return '';
+    }
+  } else {
+    switch (rating) {
+      case 'again':
+        return '15m';
+      case 'hard':
+        return `${Math.max(interval + 1, Math.round(interval * 1.2))}d`;
+      case 'good':
+        return `${Math.max(interval + 1, Math.round(interval * ease))}d`;
+      case 'easy':
+        return `${Math.max(interval + 2, Math.round(interval * ease * 1.3))}d`;
+      default:
+        return '';
+    }
+  }
+};

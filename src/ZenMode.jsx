@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { ChevronRight, ArrowLeft, RefreshCw, Zap, BookOpen } from 'lucide-react';
-import { checkAnswer } from './utils';
+import { checkAnswer, normalizeCard } from './utils';
 
 const BASE_URL = import.meta.env.BASE_URL + 'images/';
 
@@ -83,11 +83,15 @@ function ZenModeSession({ exam, quizData, stats, setStats, mistakes, setMistakes
             answer: q.answer,
             unlabeled_image: currentQuiz.unlabeled_image,
             labeled_image: currentQuiz.labeled_image,
-            interval: 1,
+            state: 'learning',
+            step: 0,
+            interval: 0,
+            ease: 2.5,
             nextReviewDate: Date.now()
           };
         } else {
-          newMistakes[mistakeKey].interval = 1;
+          newMistakes[mistakeKey].state = 'learning';
+          newMistakes[mistakeKey].step = 0;
           newMistakes[mistakeKey].nextReviewDate = Date.now();
         }
       }

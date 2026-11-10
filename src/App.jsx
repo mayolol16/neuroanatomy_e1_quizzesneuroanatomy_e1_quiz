@@ -5,7 +5,7 @@ import exam2Data from './exam2_data.json';
 import exam3Data from './exam3_data.json';
 import exam3FocusData from './exam3_focus_data.json';
 import comprehensiveData from './comprehensive_data.json';
-import { checkAnswer, isExamMistake } from './utils';
+import { checkAnswer, isExamMistake, normalizeCard } from './utils';
 import SpacedRepetition from './SpacedRepetition';
 import ZenMode from './ZenMode';
 
@@ -34,7 +34,17 @@ function App() {
 
   const [mistakes, setMistakes] = useState(() => {
     const saved = localStorage.getItem('neuroQuizMistakes');
-    return saved ? JSON.parse(saved) : {};
+    if (!saved) return {};
+    try {
+      const parsed = JSON.parse(saved);
+      const normalized = {};
+      Object.entries(parsed).forEach(([id, card]) => {
+        normalized[id] = normalizeCard(card);
+      });
+      return normalized;
+    } catch (e) {
+      return {};
+    }
   });
 
   const currentQuizData = activeExam === 'exam1'
@@ -94,11 +104,15 @@ function App() {
             answer: q.answer,
             unlabeled_image: currentQuiz.unlabeled_image,
             labeled_image: currentQuiz.labeled_image,
-            interval: 1,
+            state: 'learning',
+            step: 0,
+            interval: 0,
+            ease: 2.5,
             nextReviewDate: Date.now()
           };
         } else {
-          newMistakes[mistakeKey].interval = 1;
+          newMistakes[mistakeKey].state = 'learning';
+          newMistakes[mistakeKey].step = 0;
           newMistakes[mistakeKey].nextReviewDate = Date.now();
         }
       }
@@ -149,7 +163,9 @@ function App() {
 
   const updateMistake = (id, updates) => {
     setMistakes(prev => {
-      const updated = { ...prev, [id]: { ...prev[id], ...updates } };
+      const prevCard = prev[id] || {};
+      const updatedCard = normalizeCard({ ...prevCard, ...updates });
+      const updated = { ...prev, [id]: updatedCard };
       localStorage.setItem('neuroQuizMistakes', JSON.stringify(updated));
       return updated;
     });
