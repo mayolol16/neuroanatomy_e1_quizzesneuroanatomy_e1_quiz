@@ -159,11 +159,11 @@ function SpacedRepetitionSession({ exam, mistakes, updateMistake, onSwitchExam, 
             flexWrap: 'wrap',
             justifyContent: 'center'
           }}>
-            <span>✓ Learning steps: 15m • 23m • 2d</span>
+            <span>✓ Learning: 15m (Again) • 23m (Hard)</span>
             <span>•</span>
-            <span>Graduating: 10d</span>
+            <span>Good: 2d</span>
             <span>•</span>
-            <span>Easy: 14d</span>
+            <span>Easy: 4d</span>
           </div>
           <div style={{ display: 'flex', gap: '10px', justifyContent: 'center', marginTop: '10px', flexWrap: 'wrap' }}>
             <button className="btn btn-secondary" onClick={onSwitchExam}>
@@ -196,11 +196,11 @@ function SpacedRepetitionSession({ exam, mistakes, updateMistake, onSwitchExam, 
           flexWrap: 'wrap',
           justifyContent: 'center'
         }}>
-          <span>Anki Steps: 15m • 23m • 2d</span>
+          <span>Anki Intervals: 15m (Again) • 23m (Hard)</span>
           <span>•</span>
-          <span>Graduating: 10d</span>
+          <span>Good: 2d</span>
           <span>•</span>
-          <span>Easy: 14d</span>
+          <span>Easy: 4d</span>
         </div>
         <div style={{ display: 'flex', gap: '10px', justifyContent: 'center', marginTop: '10px', flexWrap: 'wrap' }}>
           <button className="btn btn-secondary" onClick={onSwitchExam}>
@@ -230,7 +230,7 @@ function SpacedRepetitionSession({ exam, mistakes, updateMistake, onSwitchExam, 
           </button>
         </div>
         <h1>Spaced Repetition: {examTitle}</h1>
-        <p>Anki Learning Steps (15m • 23m • 2d) → Graduating (10d) • Easy (14d)</p>
+        <p>Anki Intervals: Again (15m) • Hard (23m) • Good (2d) • Easy (4d)</p>
       </div>
 
       {/* Progress & Queue Pill */}
@@ -592,7 +592,7 @@ function SpacedRepetition({ mistakes, updateMistake, onExit, initialExam }) {
             <ArrowLeft size={18} style={{ marginRight: '8px' }} /> Back to Main
           </button>
           <h1>Anki Spaced Repetition 🧠</h1>
-          <p>Learning Steps: 15m • 23m • 2d | Graduating: 10d | Easy: 14d</p>
+          <p>Anki Intervals: Again (15m) • Hard (23m) • Good (2d) • Easy (4d)</p>
         </div>
 
         <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(240px, 1fr))', gap: '20px', marginTop: '30px' }}>
