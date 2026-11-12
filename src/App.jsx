@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { ChevronLeft, ChevronRight, RefreshCw, BarChart2, X, BrainCircuit, Zap, BookOpen } from 'lucide-react';
 import exam1Data from './quiz_data.json';
 import exam2Data from './exam2_data.json';
@@ -8,6 +8,7 @@ import comprehensiveData from './comprehensive_data.json';
 import { checkAnswer, isExamMistake, normalizeCard } from './utils';
 import SpacedRepetition from './SpacedRepetition';
 import ZenMode from './ZenMode';
+import MediumGroupQuiz from './MediumGroupQuiz';
 
 const BASE_URL = import.meta.env.BASE_URL + 'images/';
 
@@ -15,6 +16,34 @@ function App() {
   const [activeExam, setActiveExam] = useState(() => {
     return localStorage.getItem('neuroQuizActiveExam') || 'exam2';
   });
+
+  const [unlockedMediumGroup, setUnlockedMediumGroup] = useState(() => {
+    return localStorage.getItem('neuroQuizMediumGroupUnlocked') === 'true';
+  });
+  const [unlockNotification, setUnlockNotification] = useState(false);
+
+  // Secret keystroke listener for "pasta"
+  useEffect(() => {
+    let keyBuffer = '';
+    const handleKeyDown = (e) => {
+      // Don't capture keystrokes when typing into text inputs or textareas
+      const tag = e.target && e.target.tagName ? e.target.tagName.toUpperCase() : '';
+      if (tag === 'INPUT' || tag === 'TEXTAREA') return;
+
+      if (e.key && e.key.length === 1) {
+        keyBuffer = (keyBuffer + e.key.toLowerCase()).slice(-5);
+        if (keyBuffer === 'pasta') {
+          setUnlockedMediumGroup(true);
+          localStorage.setItem('neuroQuizMediumGroupUnlocked', 'true');
+          setUnlockNotification(true);
+          setTimeout(() => setUnlockNotification(false), 8000);
+        }
+      }
+    };
+
+    window.addEventListener('keydown', handleKeyDown);
+    return () => window.removeEventListener('keydown', handleKeyDown);
+  }, []);
 
   const [mode, setMode] = useState('quiz'); // 'quiz', 'review', 'zen'
   const [selectedReviewExam, setSelectedReviewExam] = useState(null);
@@ -224,6 +253,14 @@ function App() {
       total: data.total,
       accuracy: data.total > 0 ? (data.correct / data.total) * 100 : 0
     })).sort((a, b) => a.accuracy - b.accuracy || b.total - a.total); // Weakest first
+
+  if (activeExam === 'medium_group') {
+    return (
+      <MediumGroupQuiz
+        onExit={() => switchExam('exam3')}
+      />
+    );
+  }
 
   if (!currentQuiz) return <div className="app-container">Loading...</div>;
 
@@ -442,8 +479,87 @@ function App() {
                 {compDueCount} Spaced Repetition {compDueCount === 1 ? 'card' : 'cards'} due
               </div>
             </div>
+
+            {unlockedMediumGroup && (
+              <div
+                onClick={() => switchExam('medium_group')}
+                style={{
+                  padding: '16px',
+                  borderRadius: '10px',
+                  cursor: 'pointer',
+                  border: activeExam === 'medium_group' ? '2px solid #f59e0b' : '1px solid rgba(245, 158, 11, 0.35)',
+                  background: activeExam === 'medium_group' ? 'rgba(245, 158, 11, 0.22)' : 'rgba(245, 158, 11, 0.08)',
+                  transition: 'all 0.2s',
+                  display: 'flex',
+                  flexDirection: 'column',
+                  gap: '6px',
+                  textAlign: 'left'
+                }}
+              >
+                <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center' }}>
+                  <strong style={{ fontSize: '1.05rem', color: activeExam === 'medium_group' ? '#fbbf24' : '#fef3c7' }}>
+                    🍝 Medium Group (Knowledge Checks)
+                  </strong>
+                  <span style={{ background: '#f59e0b', color: '#000', fontSize: '0.72rem', padding: '2px 8px', borderRadius: '999px', fontWeight: 800 }}>
+                    {activeExam === 'medium_group' ? 'SELECTED' : 'SECRET UNLOCKED'}
+                  </span>
+                </div>
+                <span style={{ fontSize: '0.85rem', color: '#cbd5e1' }}>77 Questions Across 8 Forms (11/02 - 11/11) • Multiple Choice</span>
+                <div style={{ fontSize: '0.82rem', color: '#fbbf24', fontWeight: 600, marginTop: '2px' }}>
+                  Unlocked via 'pasta' • Select to practice
+                </div>
+              </div>
+            )}
           </div>
         </div>
+
+        {/* SECRET UNLOCK TOAST BANNER */}
+        {unlockNotification && (
+          <div style={{
+            position: 'fixed',
+            bottom: '24px',
+            right: '24px',
+            background: 'linear-gradient(135deg, #1e293b, #0f172a)',
+            border: '2px solid #f59e0b',
+            borderRadius: '12px',
+            padding: '16px 20px',
+            boxShadow: '0 10px 30px rgba(0,0,0,0.8), 0 0 20px rgba(245, 158, 11, 0.3)',
+            zIndex: 9999,
+            display: 'flex',
+            alignItems: 'center',
+            gap: '14px',
+            maxWidth: '440px'
+          }}>
+            <span style={{ fontSize: '2.2rem' }}>🍝</span>
+            <div style={{ flex: 1 }}>
+              <strong style={{ color: '#fbbf24', fontSize: '1rem', display: 'block', marginBottom: '2px' }}>
+                🎉 Secret Mode Unlocked!
+              </strong>
+              <span style={{ color: '#cbd5e1', fontSize: '0.85rem', lineHeight: 1.4 }}>
+                You entered "pasta"! <strong>Medium Group (Knowledge Checks)</strong> is now available in your exam list.
+              </span>
+            </div>
+            <button
+              className="btn"
+              onClick={() => {
+                setUnlockNotification(false);
+                switchExam('medium_group');
+              }}
+              style={{
+                background: '#f59e0b',
+                color: '#000',
+                fontWeight: 800,
+                padding: '8px 14px',
+                fontSize: '0.85rem',
+                borderRadius: '8px',
+                border: 'none',
+                cursor: 'pointer'
+              }}
+            >
+              Open Now
+            </button>
+          </div>
+        )}
 
         {/* TITLE & DESCRIPTION */}
         <h1>

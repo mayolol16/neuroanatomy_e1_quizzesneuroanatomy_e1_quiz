@@ -1,0 +1,1397 @@
+[
+  {
+    "id": 1,
+    "date": "11/02",
+    "formTitle": "11/2 Knowledge Check",
+    "question": "Choose the correct letter for the putamen",
+    "options": [
+      "A",
+      "B",
+      "C",
+      "D",
+      "E",
+      "F"
+    ],
+    "correctAnswer": "A",
+    "image": "medium_group/11_02_1_s-blob-v1-IMAGE-YXo64IomcfE.jpg",
+    "explanation": "A is the putamen (lateral part of the striatum)."
+  },
+  {
+    "id": 2,
+    "date": "11/02",
+    "formTitle": "11/2 Knowledge Check",
+    "question": "Choose the letter for the globus pallidus.",
+    "options": [
+      "A",
+      "B",
+      "C",
+      "D",
+      "E",
+      "F",
+      "G"
+    ],
+    "correctAnswer": "B",
+    "image": "medium_group/11_02_2_s-blob-v1-IMAGE-WpTF6GFLbHw.jpg",
+    "explanation": "B is the globus pallidus (medial to the putamen)."
+  },
+  {
+    "id": 3,
+    "date": "11/02",
+    "formTitle": "11/2 Knowledge Check",
+    "question": "Choose the letter for the caudate nucleus",
+    "options": [
+      "A",
+      "B",
+      "C",
+      "D",
+      "E",
+      "F",
+      "G"
+    ],
+    "correctAnswer": "A",
+    "image": "medium_group/11_02_3_s-blob-v1-IMAGE-6XBjkCd7osw.jpg",
+    "explanation": "A is the head of the caudate nucleus bulging into the lateral ventricle."
+  },
+  {
+    "id": 4,
+    "date": "11/02",
+    "formTitle": "11/2 Knowledge Check",
+    "question": "Choose the letter for the subthalamic nucleus",
+    "options": [
+      "A",
+      "B",
+      "C",
+      "D",
+      "E",
+      "F",
+      "G"
+    ],
+    "correctAnswer": "C",
+    "image": "medium_group/11_02_4_s-blob-v1-IMAGE-mVwc_2b2xUQ.jpg",
+    "explanation": "C is the subthalamic nucleus located superior to the substantia nigra."
+  },
+  {
+    "id": 5,
+    "date": "11/02",
+    "formTitle": "11/2 Knowledge Check",
+    "question": "A multiple sclerosis lesion could be found in which of the following structures",
+    "options": [
+      "CN III",
+      "CN VII",
+      "CN XII",
+      "medial lemniscus",
+      "C5 nerve root",
+      "L5 nerve root"
+    ],
+    "correctAnswer": "medial lemniscus",
+    "image": null,
+    "explanation": "Multiple sclerosis is a demyelinating disease of the central nervous system (CNS). The medial lemniscus is in the brainstem (CNS), whereas cranial nerves outside the brainstem and spinal roots are part of the peripheral nervous system (PNS)."
+  },
+  {
+    "id": 6,
+    "date": "11/02",
+    "formTitle": "11/2 Knowledge Check",
+    "question": "A patient who was diagnosed with relapsing-remitting MS several years ago is likely to have which of the following features present in their MRI?",
+    "options": [
+      "demyelinating plaques at the surface of gyri",
+      "demyelinating plaques at margins of lateral ventricles",
+      "demyelinating plaques in putamen",
+      "demyelinating plaques in thalamus",
+      "hydrocephalus"
+    ],
+    "correctAnswer": "demyelinating plaques at margins of lateral ventricles",
+    "image": null,
+    "explanation": "MS characteristically presents with periventricular demyelinating plaques (Dawson fingers) radiating around the lateral ventricles."
+  },
+  {
+    "id": 7,
+    "date": "11/03",
+    "formTitle": "11/3 Knowledge Check",
+    "question": "Choose the correct letter for the Superior Cerebellar Peduncle",
+    "options": [
+      "A",
+      "B",
+      "C",
+      "D",
+      "E",
+      "F",
+      "G"
+    ],
+    "correctAnswer": "D",
+    "image": "medium_group/11_03_1_s-blob-v1-IMAGE-5WBQzkgfWmQ.jpg",
+    "explanation": "D points to the superior cerebellar peduncle (brachium conjunctivum) forming the lateral wall of the 4th ventricle."
+  },
+  {
+    "id": 8,
+    "date": "11/03",
+    "formTitle": "11/3 Knowledge Check",
+    "question": "Choose the letter for the Pontine Nuclei.",
+    "options": [
+      "A",
+      "B",
+      "C",
+      "D",
+      "E",
+      "F",
+      "G",
+      "H",
+      "K",
+      "L"
+    ],
+    "correctAnswer": "H",
+    "image": "medium_group/11_03__2_s-blob-v1-IMAGE-2CSgNEqtw5E.jpg",
+    "explanation": "H indicates the pontine nuclei scattered among the longitudinal corticospinal fibers in the basilar pons."
+  },
+  {
+    "id": 9,
+    "date": "11/03",
+    "formTitle": "11/3 Knowledge Check",
+    "question": "Choose the letter for the Middle Cerebellar Peduncle",
+    "options": [
+      "A",
+      "B",
+      "C",
+      "D",
+      "E",
+      "F",
+      "G",
+      "H",
+      "K",
+      "M",
+      "N"
+    ],
+    "correctAnswer": "H",
+    "image": "medium_group/11_03_3_s-blob-v1-IMAGE-l1qnCmbQbEo.jpg",
+    "explanation": "H is the massive middle cerebellar peduncle (brachium pontis) carrying pontocerebellar fibers."
+  },
+  {
+    "id": 10,
+    "date": "11/03",
+    "formTitle": "11/3 Knowledge Check",
+    "question": "Choose the letter for the nodulus",
+    "options": [
+      "A",
+      "B",
+      "C",
+      "D",
+      "E"
+    ],
+    "correctAnswer": "B",
+    "image": "medium_group/11_03_4_s-blob-v1-IMAGE-ev2viPhC0f4.jpg",
+    "explanation": "B is the nodulus, the midline component of the flocculonodular lobe."
+  },
+  {
+    "id": 11,
+    "date": "11/03",
+    "formTitle": "11/3 Knowledge Check",
+    "question": "Choose the letter for the Dorsal Spinocerebellar Tract",
+    "options": [
+      "A",
+      "B",
+      "C",
+      "D",
+      "E",
+      "F",
+      "G",
+      "H",
+      "K"
+    ],
+    "correctAnswer": "K",
+    "image": "medium_group/11_03_5_s-blob-v1-IMAGE-bOfvaem51ss.jpg",
+    "explanation": "K is the dorsal spinocerebellar tract (DSCT) located on the dorsolateral margin of the spinal cord."
+  },
+  {
+    "id": 12,
+    "date": "11/03",
+    "formTitle": "11/3 Knowledge Check",
+    "question": "Choose the letter for the Decussation of the Superior Cerebellar Peduncle",
+    "options": [
+      "A",
+      "B",
+      "C",
+      "D",
+      "E",
+      "F",
+      "G"
+    ],
+    "correctAnswer": "D",
+    "image": "medium_group/11_03_6_s-blob-v1-IMAGE--oykPlgDLeM.jpg",
+    "explanation": "D is the decussation of the superior cerebellar peduncles in the caudal midbrain tegmentum."
+  },
+  {
+    "id": 13,
+    "date": "11/03",
+    "formTitle": "11/3 Knowledge Check",
+    "question": "Choose the letter for the inferior cerebellar peduncle",
+    "options": [
+      "A",
+      "B",
+      "C",
+      "D",
+      "E",
+      "F",
+      "G",
+      "H",
+      "K"
+    ],
+    "correctAnswer": "F",
+    "image": "medium_group/11_03_7_s-blob-v1-IMAGE-Nt2B3xeaUkY.jpg",
+    "explanation": "F is the inferior cerebellar peduncle (restiform body) on the dorsolateral medulla."
+  },
+  {
+    "id": 14,
+    "date": "11/03",
+    "formTitle": "11/3 Knowledge Check",
+    "question": "Choose the letter for the Dentate Nucleus",
+    "options": [
+      "A",
+      "B",
+      "C",
+      "D",
+      "E",
+      "F",
+      "G",
+      "H",
+      "K",
+      "M",
+      "N"
+    ],
+    "correctAnswer": "N",
+    "image": "medium_group/11_03_8_s-blob-v1-IMAGE-l1qnCmbQbEo.jpg",
+    "explanation": "N is the dentate nucleus, the largest and most lateral deep cerebellar nucleus."
+  },
+  {
+    "id": 15,
+    "date": "11/03",
+    "formTitle": "11/3 Knowledge Check",
+    "question": "A patient who has a lesion involving the cerebellar vermis would have which of the following symptoms",
+    "options": [
+      "inaccurate pointing to targets with an upper limb",
+      "intention tremor of a lower limb movement",
+      "difficulty with tandem walking",
+      "abnormal VOR",
+      "nystagmus",
+      "weakness"
+    ],
+    "correctAnswer": "difficulty with tandem walking",
+    "image": null,
+    "explanation": "The cerebellar vermis coordinates midline and axial body posture; lesions cause truncal ataxia and difficulty with tandem walking."
+  },
+  {
+    "id": 16,
+    "date": "11/03",
+    "formTitle": "11/3 Knowledge Check",
+    "question": "An MS plaque that occurs in the frontopontine fibers on the right side would cause which of the following symptoms?",
+    "options": [
+      "weakness on the left side of the body",
+      "limb ataxia on the right side",
+      "limb ataxia on the left side",
+      "truncal ataxia",
+      "nystagmus"
+    ],
+    "correctAnswer": "limb ataxia on the left side",
+    "image": null,
+    "explanation": "Right frontopontine fibers project to right pontine nuclei, which cross to the left cerebellum via the middle cerebellar peduncle. Since the left cerebellum coordinates the left limbs, a lesion of the right frontopontine pathway causes left limb ataxia."
+  },
+  {
+    "id": 17,
+    "date": "11/04",
+    "formTitle": "11/4 Knowledge Check",
+    "question": "Choose the letter for the position of frontopontine fibers",
+    "options": [
+      "A",
+      "B",
+      "C",
+      "D",
+      "E",
+      "F",
+      "G",
+      "H",
+      "I",
+      "J",
+      "K",
+      "L",
+      "M",
+      "N"
+    ],
+    "correctAnswer": "K",
+    "image": "medium_group/11_04_1_s-blob-v1-IMAGE-r4PFpo4N9Ys.jpg",
+    "explanation": "K represents the medial portion of the crus cerebri carrying frontopontine fibers."
+  },
+  {
+    "id": 18,
+    "date": "11/04",
+    "formTitle": "11/4 Knowledge Check",
+    "question": "A lesion located in the pontine nuclei on the left side would cause which of the following symptoms",
+    "options": [
+      "weakness on the right side of the body",
+      "slowed movement; tremor on the right side of the body",
+      "truncal ataxia",
+      "limb ataxia of limbs on the left side",
+      "limb ataxia on the right side",
+      "nystagmus"
+    ],
+    "correctAnswer": "limb ataxia on the right side",
+    "image": null,
+    "explanation": "Left pontine nuclei project across the midline to the right cerebellar hemisphere, which coordinates the right limbs. A left pontine lesion therefore causes right limb ataxia."
+  },
+  {
+    "id": 19,
+    "date": "11/04",
+    "formTitle": "11/4 Knowledge Check",
+    "question": "A lesion at the location indicated by B in the accompanying picture would cause which of the following symptoms",
+    "options": [
+      "limb ataxia",
+      "nystagmus",
+      "weakness",
+      "resting tremor"
+    ],
+    "correctAnswer": "nystagmus",
+    "image": "medium_group/11_04_3_s-blob-v1-IMAGE-IdeWNnkD5nE.jpg",
+    "explanation": "B is the nodulus (vestibulocerebellum); lesions disrupt vestibular coordination of eye and balance control, resulting in nystagmus."
+  },
+  {
+    "id": 20,
+    "date": "11/04",
+    "formTitle": "11/4 Knowledge Check",
+    "question": "Identify the structure labeled \"A\" in the accompanying picture.",
+    "options": [
+      "nodulus",
+      "vermis",
+      "cerebellar hemisphere",
+      "flocculus"
+    ],
+    "correctAnswer": "flocculus",
+    "image": "medium_group/11_04_4_s-blob-v1-IMAGE-I1-Vrf-ukcw.jpg",
+    "explanation": "A is the flocculus of the cerebellum."
+  },
+  {
+    "id": 21,
+    "date": "11/04",
+    "formTitle": "11/4 Knowledge Check",
+    "question": "Choose the letter for the position of superior cerebellar peduncle fibers",
+    "options": [
+      "A",
+      "B",
+      "C",
+      "D",
+      "E",
+      "F",
+      "G",
+      "H",
+      "I",
+      "J",
+      "K",
+      "L",
+      "M",
+      "N"
+    ],
+    "correctAnswer": "B",
+    "image": "medium_group/11_04_5_s-blob-v1-IMAGE-3OsikNxjmiA.jpg",
+    "explanation": "B designates superior cerebellar peduncle fibers entering and surrounding the red nucleus in the rostral midbrain."
+  },
+  {
+    "id": 22,
+    "date": "11/04",
+    "formTitle": "11/4 Knowledge Check",
+    "question": "Tumors can be identified as meningiomas in MRI/CT images by their",
+    "options": [
+      "density",
+      "dural tail",
+      "ring enhancement",
+      "blood vessel association",
+      "necrotic tissue"
+    ],
+    "correctAnswer": "dural tail",
+    "image": null,
+    "explanation": "Meningiomas are extra-axial dural-based tumors that characteristically display a dural tail sign on contrast MRI/CT."
+  },
+  {
+    "id": 23,
+    "date": "11/04",
+    "formTitle": "11/4 Knowledge Check",
+    "question": "Which of the following would be a diagnostic feature of a vestibular schwannoma?",
+    "options": [
+      "pseudo palisading nuclei",
+      "perivascular pseudo rosettes",
+      "varocay bodies",
+      "Homer-Wright rosettes",
+      "psammoma bodies"
+    ],
+    "correctAnswer": "varocay bodies",
+    "image": null,
+    "explanation": "Vestibular schwannomas characteristically show alternating Antoni A (dense with Verocay bodies) and Antoni B (hypocellular) patterns."
+  },
+  {
+    "id": 24,
+    "date": "11/04",
+    "formTitle": "11/4 Knowledge Check",
+    "question": "A pathologist's analysis of a biopsy specimen taken from a patient (shown in the picture) indicated the tumor was a glioblastoma multiforme. What feature of the specimen helped to make this diagnosis?",
+    "options": [
+      "Scattered nuclei",
+      "varocay bodies",
+      "pseudopalisading nuclei",
+      "psammoma bodies",
+      "homogeneity of cells"
+    ],
+    "correctAnswer": "pseudopalisading nuclei",
+    "image": "medium_group/11_04_8_s-blob-v1-IMAGE-ytolShdXgKA.jpg",
+    "explanation": "Glioblastoma multiforme (WHO grade IV) histologically features pseudopalisading necrosis and microvascular proliferation."
+  },
+  {
+    "id": 25,
+    "date": "11/04",
+    "formTitle": "11/4 Knowledge Check",
+    "question": "The picture below is a specimen from a tumor. Based on it's histological features, this tumor is best identified as",
+    "options": [
+      "astrocytoma",
+      "oligodendroglioma",
+      "glioblastoma",
+      "schwannoma",
+      "ependymoma",
+      "medulloblastoma"
+    ],
+    "correctAnswer": "oligodendroglioma",
+    "image": "medium_group/11_04_9_s-blob-v1-IMAGE-_iwYPrvQFYQ.jpg",
+    "explanation": "Oligodendrogliomas are characterized by cells with round nuclei and clear perinuclear halos ('fried egg' appearance) with a 'chicken-wire' capillary network."
+  },
+  {
+    "id": 26,
+    "date": "11/04",
+    "formTitle": "11/4 Knowledge Check",
+    "question": "Which of the following deficits is characteristic of a patient that has a medulloblastoma?",
+    "options": [
+      "gait ataxia",
+      "deviation of the tongue on protrusion",
+      "paralysis of vertical gaze",
+      "weakness on one side of the body",
+      "abnormal pupillary light reflex",
+      "Babinski sign"
+    ],
+    "correctAnswer": "gait ataxia",
+    "image": null,
+    "explanation": "Medulloblastoma commonly originates in the cerebellar vermis in children, presenting with truncal and gait ataxia."
+  },
+  {
+    "id": 27,
+    "date": "11/04",
+    "formTitle": "11/4 Knowledge Check",
+    "question": "Which of the following is a feature of NF2?",
+    "options": [
+      "ataxia",
+      "lisch nodules",
+      "neurofibromas",
+      "mutation in chromosome 17",
+      "schwannomas"
+    ],
+    "correctAnswer": "schwannomas",
+    "image": null,
+    "explanation": "Neurofibromatosis type 2 (NF2) is characterized by bilateral vestibular schwannomas (acoustic neuromas)."
+  },
+  {
+    "id": 28,
+    "date": "11/05",
+    "formTitle": "11/5 Knowledge Check",
+    "question": "HSV-1 encephalitis would be expected to cause a lesion in the",
+    "options": [
+      "brainstem",
+      "parietal lobe",
+      "occipital lobe",
+      "temporal lobe",
+      "spinal cord"
+    ],
+    "correctAnswer": "temporal lobe",
+    "image": null,
+    "explanation": "HSV-1 encephalitis has a strong predilection for the temporal lobes and inferior frontal lobes."
+  },
+  {
+    "id": 29,
+    "date": "11/05",
+    "formTitle": "11/5 Knowledge Check",
+    "question": "A patient who has a vesicular rash restricted to a single dermatome on the body most likely has",
+    "options": [
+      "HSV-1 infection",
+      "varicella zoster virus infection",
+      "rabies",
+      "toxoplasmosis",
+      "progressive multifocal leukoencephalopathy"
+    ],
+    "correctAnswer": "varicella zoster virus infection",
+    "image": null,
+    "explanation": "Varicella-zoster virus (VZV) reactivation causes shingles (herpes zoster), producing a painful vesicular rash restricted to a single dermatome."
+  },
+  {
+    "id": 30,
+    "date": "11/05",
+    "formTitle": "11/5 Knowledge Check",
+    "question": "Which of the following is a feature of rabies virus infection?",
+    "options": [
+      "entry of the virus directly into spinal cord from the skin",
+      "the virus enters the brain from the blood supply",
+      "cowdry type A inclusions in brain neurons",
+      "negri bodies in cytoplasm of brain neurons"
+    ],
+    "correctAnswer": "negri bodies in cytoplasm of brain neurons",
+    "image": null,
+    "explanation": "Rabies virus infection is pathognomonic for eosinophilic cytoplasmic inclusion bodies known as Negri bodies in pyramidal and Purkinje neurons."
+  },
+  {
+    "id": 31,
+    "date": "11/05",
+    "formTitle": "11/5 Knowledge Check",
+    "question": "Which of the following is a diagnostic feature of toxoplasmosis infection?",
+    "options": [
+      "demyelination of white matter in cerebral hemispheres",
+      "demyelination of dorsal columns",
+      "ring enhancing lesions on MRIs",
+      "periventricular demyelinating plaques",
+      "hemorrhagic lesions in frontal lobe"
+    ],
+    "correctAnswer": "ring enhancing lesions on MRIs",
+    "image": null,
+    "explanation": "Toxoplasmosis typically produces multiple ring-enhancing lesions on MRI with a predilection for the basal ganglia in immunocompromised patients."
+  },
+  {
+    "id": 32,
+    "date": "11/05",
+    "formTitle": "11/5 Knowledge Check",
+    "question": "An immunocompromised patient was diagnosed with progressive multifocal leukoencephalopathy. Which of the following features would support this diagnosis?",
+    "options": [
+      "demyelination of white matter in cerebral hemispheres",
+      "demyelination of dorsal columns",
+      "ring enhancing lesions on MRIs",
+      "periventricular demyelinating plaques",
+      "hemorrhagic lesions in frontal lobe",
+      "lesions in basal ganglia"
+    ],
+    "correctAnswer": "demyelination of white matter in cerebral hemispheres",
+    "image": null,
+    "explanation": "PML (caused by JC virus infecting oligodendrocytes) causes multifocal demyelination of subcortical white matter in cerebral hemispheres."
+  },
+  {
+    "id": 33,
+    "date": "11/05",
+    "formTitle": "11/5 Knowledge Check",
+    "question": "The india ink stain is a laboratory test that can be used to diagnose which of the following disorders?",
+    "options": [
+      "HSV-1 infection",
+      "cryptococcal meningitis",
+      "toxoplasmosis",
+      "PML",
+      "rabies",
+      "VZV"
+    ],
+    "correctAnswer": "cryptococcal meningitis",
+    "image": null,
+    "explanation": "India ink preparation reveals the prominent clear polysaccharide capsules of Cryptococcus neoformans in cerebrospinal fluid."
+  },
+  {
+    "id": 34,
+    "date": "11/06",
+    "formTitle": "11/6 Knowledge Check",
+    "question": "Choose the correct letter for the Middle Cerebral Artery",
+    "options": [
+      "A",
+      "B",
+      "C",
+      "D",
+      "E",
+      "F",
+      "G"
+    ],
+    "correctAnswer": "A",
+    "image": "medium_group/11_06_1_s-blob-v1-IMAGE-M9ih0-z-2gw.jpg",
+    "explanation": "A is the middle cerebral artery (MCA) coursing laterally into the lateral sulcus."
+  },
+  {
+    "id": 35,
+    "date": "11/06",
+    "formTitle": "11/6 Knowledge Check",
+    "question": "Choose the letter for the Basilar Artery.",
+    "options": [
+      "A",
+      "B",
+      "C",
+      "D",
+      "E",
+      "F",
+      "G",
+      "H",
+      "K",
+      "L"
+    ],
+    "correctAnswer": "C",
+    "image": "medium_group/11_06__2_s-blob-v1-IMAGE-wExxwy7Yyvg.jpg",
+    "explanation": "C is the basilar artery ascending on the anterior surface of the pons."
+  },
+  {
+    "id": 36,
+    "date": "11/06",
+    "formTitle": "11/6 Knowledge Check",
+    "question": "Choose the letter for the Anterior Cerebral Artery",
+    "options": [
+      "A",
+      "B",
+      "C",
+      "D",
+      "E",
+      "F",
+      "G"
+    ],
+    "correctAnswer": "B",
+    "image": "medium_group/11_06_3_s-blob-v1-IMAGE-C0AgZ2O2i_Y.jpg",
+    "explanation": "B is the anterior cerebral artery (ACA) heading anteromedially into the longitudinal fissure."
+  },
+  {
+    "id": 37,
+    "date": "11/06",
+    "formTitle": "11/6 Knowledge Check",
+    "question": "Choose the letter for the Vertebral Artery",
+    "options": [
+      "A",
+      "B",
+      "C",
+      "D",
+      "E",
+      "F"
+    ],
+    "correctAnswer": "D",
+    "image": "medium_group/11_06_4_s-blob-v1-IMAGE-POfdJ8cOPpg.jpg",
+    "explanation": "D is the vertebral artery ascending toward the pontomedullary junction."
+  },
+  {
+    "id": 38,
+    "date": "11/06",
+    "formTitle": "11/6 Knowledge Check",
+    "question": "What structure emerges between the posterior cerebral artery and superior cerebellar artery?",
+    "options": [
+      "CN II",
+      "CN III",
+      "CN IV",
+      "CN V",
+      "CN VI"
+    ],
+    "correctAnswer": "CN III",
+    "image": null,
+    "explanation": "The oculomotor nerve (CN III) emerges in the interpeduncular cistern between the posterior cerebral artery (PCA) and superior cerebellar artery (SCA)."
+  },
+  {
+    "id": 39,
+    "date": "11/06",
+    "formTitle": "11/6 Knowledge Check",
+    "question": "Choose the letter for the Posterior Cerebral Artery (use the answer to #5 to help)",
+    "options": [
+      "A",
+      "B",
+      "C",
+      "D",
+      "E",
+      "F",
+      "G"
+    ],
+    "correctAnswer": "F",
+    "image": "medium_group/11_06_6_s-blob-v1-IMAGE-6N7WFtVdgyE.jpg",
+    "explanation": "F is the posterior cerebral artery (PCA), passing superior to CN III."
+  },
+  {
+    "id": 40,
+    "date": "11/06",
+    "formTitle": "11/6 Knowledge Check",
+    "question": "Choose the letter for Broca's area.",
+    "options": [
+      "A",
+      "B",
+      "C",
+      "D",
+      "E",
+      "F",
+      "G",
+      "H"
+    ],
+    "correctAnswer": "H",
+    "image": "medium_group/11_06_7_s-blob-v1-IMAGE-4XHVNUtDakE.jpg",
+    "explanation": "H is Broca's area (pars opercularis and pars triangularis of the inferior frontal gyrus)."
+  },
+  {
+    "id": 41,
+    "date": "11/06",
+    "formTitle": "11/6 Knowledge Check",
+    "question": "A patient who can understand commands spoken to them and can speak normally but cannot repeat sentences told to them has which disorder?",
+    "options": [
+      "expressive aphasia",
+      "receptive aphasia",
+      "conduction aphasia",
+      "motor aphasia",
+      "dysarthria",
+      "global aphasia"
+    ],
+    "correctAnswer": "conduction aphasia",
+    "image": null,
+    "explanation": "Damage to the arcuate fasciculus disrupts repetition while preserving fluency and comprehension, defining conduction aphasia."
+  },
+  {
+    "id": 42,
+    "date": "11/06",
+    "formTitle": "11/6 Knowledge Check",
+    "question": "Choose the letter for Wernicke's area",
+    "options": [
+      "A",
+      "B",
+      "C",
+      "D",
+      "E",
+      "F",
+      "G",
+      "H",
+      "K"
+    ],
+    "correctAnswer": "E",
+    "image": "medium_group/11_06_9_s-blob-v1-IMAGE-aJgdTtiydAk.jpg",
+    "explanation": "E is Wernicke's area (posterior portion of the superior temporal gyrus)."
+  },
+  {
+    "id": 43,
+    "date": "11/06",
+    "formTitle": "11/6 Knowledge Check",
+    "question": "A patient who cannot speak but understands commands spoken to them probably has a lesion related to",
+    "options": [
+      "anterior cerebral artery infarct",
+      "middle cerebral artery infarct",
+      "posterior cerebral artery infarct",
+      "anterior part of the paracentral lobule",
+      "nucleus ambiguus lesion"
+    ],
+    "correctAnswer": "middle cerebral artery infarct",
+    "image": null,
+    "explanation": "Broca's expressive aphasia (intact comprehension with impaired speech production) is typically caused by a superior division MCA stroke."
+  },
+  {
+    "id": 44,
+    "date": "11/06",
+    "formTitle": "11/6 Knowledge Check",
+    "question": "An MS plaque that occurs in the arcuate fasciculus would cause which of the following symptoms?",
+    "options": [
+      "loss of tactile sensation on one side of the body",
+      "sudden, periodic attacks of pain",
+      "expressive aphasia",
+      "conduction aphasia",
+      "weakness on one side of the body"
+    ],
+    "correctAnswer": "conduction aphasia",
+    "image": null,
+    "explanation": "An MS plaque affecting the arcuate fasciculus disconnects Wernicke's and Broca's areas, causing conduction aphasia."
+  },
+  {
+    "id": 45,
+    "date": "11/06",
+    "formTitle": "11/6 Knowledge Check",
+    "question": "Choose the letter for the Posterior Communicating Artery",
+    "options": [
+      "25",
+      "26",
+      "27",
+      "28",
+      "34",
+      "35"
+    ],
+    "correctAnswer": "28",
+    "image": "medium_group/11_06_12_s-blob-v1-IMAGE--32DiQGqc0U.jpg",
+    "explanation": "28 is the posterior communicating artery connecting the internal carotid (34) to the posterior cerebral artery (27)."
+  },
+  {
+    "id": 46,
+    "date": "11/06",
+    "formTitle": "11/6 Knowledge Check",
+    "question": "Choose the letter for the Anterior Spinal Artery",
+    "options": [
+      "12",
+      "13",
+      "18",
+      "20",
+      "21"
+    ],
+    "correctAnswer": "12",
+    "image": "medium_group/11_06_13_s-blob-v1-IMAGE-n6XfUqxUcZE.jpg",
+    "explanation": "12 is the anterior spinal artery descending along the anterior median fissure of the medulla."
+  },
+  {
+    "id": 47,
+    "date": "11/09",
+    "formTitle": "11/9 Knowledge Check",
+    "question": "Which of the following symptoms is an example of a focal neurological deficit?",
+    "options": [
+      "nausea",
+      "headache",
+      "weakness of the right upper limb",
+      "confusion",
+      "dizziness"
+    ],
+    "correctAnswer": "weakness of the right upper limb",
+    "image": null,
+    "explanation": "Weakness of the right upper limb is a focal neurological deficit attributable to a discrete lesion in the contralateral motor system."
+  },
+  {
+    "id": 48,
+    "date": "11/09",
+    "formTitle": "11/9 Knowledge Check",
+    "question": "Which of the following areas is supplied by the anterior circulation of the brain?",
+    "options": [
+      "cerebellum",
+      "motor cortex",
+      "medulla",
+      "midbrain",
+      "thalamus"
+    ],
+    "correctAnswer": "motor cortex",
+    "image": null,
+    "explanation": "The primary motor cortex is supplied by the anterior circulation (internal carotid system via ACA and MCA)."
+  },
+  {
+    "id": 49,
+    "date": "11/09",
+    "formTitle": "11/9 Knowledge Check",
+    "question": "The most common cause of occlusion of small cerebral vessels is",
+    "options": [
+      "atherosclerosis",
+      "lipohyalinosis",
+      "amyloidosis",
+      "vasculitis"
+    ],
+    "correctAnswer": "lipohyalinosis",
+    "image": null,
+    "explanation": "Lipohyalinosis and microatheroma are the primary pathological mechanisms underlying small penetrating vessel occlusion (lacunar strokes)."
+  },
+  {
+    "id": 50,
+    "date": "11/09",
+    "formTitle": "11/9 Knowledge Check",
+    "question": "Which of the following is the most important risk factor for thrombotic stroke?",
+    "options": [
+      "hypertension",
+      "smoking",
+      "age",
+      "inflammation"
+    ],
+    "correctAnswer": "hypertension",
+    "image": null,
+    "explanation": "Hypertension is the single most important modifiable risk factor for thrombotic and ischemic stroke."
+  },
+  {
+    "id": 51,
+    "date": "11/09",
+    "formTitle": "11/9 Knowledge Check",
+    "question": "The lesion shown in the left hemisphere of the following image, is best characterized as",
+    "options": [
+      "large vessel stroke",
+      "MS plaque",
+      "lacunar infarct",
+      "PML",
+      "hemorrhage"
+    ],
+    "correctAnswer": "lacunar infarct",
+    "image": "medium_group/11_09_5_14GYMAqs3Oqm8uzfGD7inpG1nqnD3xFupy8iBdCftyZiun5s.jpg",
+    "explanation": "The small, discrete hyperintensity in the internal capsule on DWI represents an acute lacunar infarct."
+  },
+  {
+    "id": 52,
+    "date": "11/09",
+    "formTitle": "11/9 Knowledge Check",
+    "question": "The type of image shown in the previous question identifies small pathological areas more reliably? What type of image is it?",
+    "options": [
+      "CT",
+      "T1 weighted MRI",
+      "T2 weighted MRI",
+      "Diffusion weighted MRI"
+    ],
+    "correctAnswer": "Diffusion weighted MRI",
+    "image": null,
+    "explanation": "Diffusion-weighted MRI (DWI) is the most sensitive imaging modality for detecting acute ischemia and small lacunar infarcts."
+  },
+  {
+    "id": 53,
+    "date": "11/09",
+    "formTitle": "11/9 Knowledge Check",
+    "question": "The most common location for subarachnoid hemorrhage is",
+    "options": [
+      "parietal lobe",
+      "circle of willis",
+      "thalamus",
+      "cerebellum",
+      "pons"
+    ],
+    "correctAnswer": "circle of willis",
+    "image": null,
+    "explanation": "Subarachnoid hemorrhages most commonly arise from ruptured saccular (berry) aneurysms in the Circle of Willis."
+  },
+  {
+    "id": 54,
+    "date": "11/09",
+    "formTitle": "11/9 Knowledge Check",
+    "question": "The first step in treating a stroke patient is",
+    "options": [
+      "determine if the cause is thrombosis or embolis",
+      "determine the location of the lesion",
+      "rule out hemorrhage as the cause",
+      "immediate treatment with tPA",
+      "carotid ultrasound",
+      "echocardiogram",
+      "endovascular thrombectomy"
+    ],
+    "correctAnswer": "rule out hemorrhage as the cause",
+    "image": null,
+    "explanation": "The urgent first step in acute stroke evaluation is non-contrast CT to rule out intracranial hemorrhage before thrombolytic therapy."
+  },
+  {
+    "id": 55,
+    "date": "11/09",
+    "formTitle": "11/9 Knowledge Check",
+    "question": "Considering the relationship between mean arterial pressure and cerebral blood flow (CBF)",
+    "options": [
+      "CBF is directly proportional to mean arterial pressure",
+      "CBF is independent of mean arterial pressure over a broad range",
+      "CBF decreases with increases in mean arterial pressure",
+      "CBF is not affected by mean arterial pressure"
+    ],
+    "correctAnswer": "CBF is independent of mean arterial pressure over a broad range",
+    "image": null,
+    "explanation": "Cerebral autoregulation maintains constant cerebral blood flow (CBF) independent of mean arterial pressure across the range of approximately 60-150 mmHg."
+  },
+  {
+    "id": 56,
+    "date": "11/09",
+    "formTitle": "11/9 Knowledge Check",
+    "question": "The degenerative changes caused by excitotoxicity involve",
+    "options": [
+      "accumulation of Ca++ in neurons",
+      "high levels of ATP in damaged tissue",
+      "low levels of glutamate synthesis in damaged neurons",
+      "high levels of oxygen from loss of CBF autoregulation",
+      "inhibition of GABA receptors in hypoxic tissue"
+    ],
+    "correctAnswer": "accumulation of Ca++ in neurons",
+    "image": null,
+    "explanation": "Glutamate excitotoxicity triggers massive influx of Ca++ through NMDA receptors, activating apoptotic and necrotic pathways."
+  },
+  {
+    "id": 57,
+    "date": "11/09",
+    "formTitle": "11/9 Knowledge Check",
+    "question": "Which of the following are included as criteria to establish a diagnosis of brain death",
+    "options": [
+      "severe intoxication by barbiturates",
+      "loss of function of at least one cerebral hemisphere",
+      "loss of autoregulation of CBF",
+      "loss of brainstem function",
+      "hypothermia as a cause",
+      "an unknown cause if the EEG is silent"
+    ],
+    "correctAnswer": "loss of brainstem function",
+    "image": null,
+    "explanation": "Brain death criteria require irreversible cessation of all brainstem function (including absence of brainstem reflexes and apnea)."
+  },
+  {
+    "id": 58,
+    "date": "11/10",
+    "formTitle": "11/10 Knowledge Check",
+    "question": "Which blood vessel supplies the area for UMNs for the leg",
+    "options": [
+      "anterior cerebral artery",
+      "middle cerebral artery",
+      "posterior cerebral artery",
+      "anterior choroidal artery",
+      "internal carotid artery",
+      "ophthalmic artery",
+      "basilar artery",
+      "AICA",
+      "PICA",
+      "anterior spinal artery",
+      "posterior spinal artery",
+      "vertebral artery"
+    ],
+    "correctAnswer": "anterior cerebral artery",
+    "image": null,
+    "explanation": "The leg/lower limb representation in the primary motor homunculus is along the medial hemisphere surface, supplied by the anterior cerebral artery (ACA)."
+  },
+  {
+    "id": 59,
+    "date": "11/10",
+    "formTitle": "11/10 Knowledge Check",
+    "question": "Occlusion of which blood vessel would cause homonymous hemianopia with macular sparing.",
+    "options": [
+      "anterior cerebral artery",
+      "middle cerebral artery",
+      "posterior cerebral artery",
+      "anterior choroidal artery",
+      "internal carotid artery",
+      "ophthalmic artery",
+      "basilar artery",
+      "AICA",
+      "PICA",
+      "anterior spinal artery",
+      "posterior spinal artery",
+      "vertebral artery"
+    ],
+    "correctAnswer": "posterior cerebral artery",
+    "image": null,
+    "explanation": "Occlusion of the posterior cerebral artery (PCA) causes contralateral homonymous hemianopia with macular sparing due to collateral MCA supply at the occipital pole."
+  },
+  {
+    "id": 60,
+    "date": "11/10",
+    "formTitle": "11/10 Knowledge Check",
+    "question": "Which blood vessel supplies the hypoglossal nucleus and nerve.",
+    "options": [
+      "anterior cerebral artery",
+      "middle cerebral artery",
+      "posterior cerebral artery",
+      "anterior choroidal artery",
+      "internal carotid artery",
+      "ophthalmic artery",
+      "basilar artery",
+      "AICA",
+      "PICA",
+      "anterior spinal artery",
+      "posterior spinal artery",
+      "vertebral artery"
+    ],
+    "correctAnswer": "anterior spinal artery",
+    "image": null,
+    "explanation": "The hypoglossal nucleus and exiting nerve fibers in the medial medulla are supplied by the anterior spinal artery (ASA)."
+  },
+  {
+    "id": 61,
+    "date": "11/10",
+    "formTitle": "11/10 Knowledge Check",
+    "question": "Occlusion of which blood vessel would result in inability to understand words and spoken commands .",
+    "options": [
+      "anterior cerebral artery",
+      "middle cerebral artery",
+      "posterior cerebral artery",
+      "anterior choroidal artery",
+      "internal carotid artery",
+      "ophthalmic artery",
+      "basilar artery",
+      "AICA",
+      "PICA",
+      "anterior spinal artery",
+      "posterior spinal artery",
+      "vertebral artery"
+    ],
+    "correctAnswer": "middle cerebral artery",
+    "image": null,
+    "explanation": "Wernicke's area in the superior temporal gyrus is supplied by the inferior division of the middle cerebral artery (MCA)."
+  },
+  {
+    "id": 62,
+    "date": "11/10",
+    "formTitle": "11/10 Knowledge Check",
+    "question": "Which blood vessel supplies nucleus ambiguus.",
+    "options": [
+      "anterior cerebral artery",
+      "middle cerebral artery",
+      "posterior cerebral artery",
+      "anterior choroidal artery",
+      "internal carotid artery",
+      "ophthalmic artery",
+      "basilar artery",
+      "AICA",
+      "PICA",
+      "anterior spinal artery",
+      "posterior spinal artery",
+      "vertebral artery"
+    ],
+    "correctAnswer": "PICA",
+    "image": null,
+    "explanation": "Nucleus ambiguus in the lateral medulla is supplied by the posterior inferior cerebellar artery (PICA; lateral medullary syndrome)."
+  },
+  {
+    "id": 63,
+    "date": "11/10",
+    "formTitle": "11/10 Knowledge Check",
+    "question": "Occlusion of which blood vessel would result in thalamic pain syndrome.",
+    "options": [
+      "anterior cerebral artery",
+      "middle cerebral artery",
+      "posterior cerebral artery",
+      "anterior choroidal artery",
+      "internal carotid artery",
+      "ophthalmic artery",
+      "basilar artery",
+      "AICA",
+      "PICA",
+      "anterior spinal artery",
+      "posterior spinal artery",
+      "vertebral artery"
+    ],
+    "correctAnswer": "posterior cerebral artery",
+    "image": null,
+    "explanation": "Thalamic pain syndrome (Dejerine-Roussy) results from infarction of the sensory thalamus (VPL/VPM) supplied by thalamogeniculate branches of the PCA."
+  },
+  {
+    "id": 64,
+    "date": "11/10",
+    "formTitle": "11/10 Knowledge Check",
+    "question": "Which blood vessel supplies the corticospinal tract in the spinal cord.",
+    "options": [
+      "anterior cerebral artery",
+      "middle cerebral artery",
+      "posterior cerebral artery",
+      "anterior choroidal artery",
+      "internal carotid artery",
+      "ophthalmic artery",
+      "basilar artery",
+      "AICA",
+      "PICA",
+      "anterior spinal artery",
+      "posterior spinal artery",
+      "vertebral artery"
+    ],
+    "correctAnswer": "anterior spinal artery",
+    "image": null,
+    "explanation": "The lateral corticospinal tracts in the spinal cord are situated in the anterior two-thirds of the cord supplied by the anterior spinal artery (ASA)."
+  },
+  {
+    "id": 65,
+    "date": "11/10",
+    "formTitle": "11/10 Knowledge Check",
+    "question": "Occlusion of which blood vessel would result in loss of the pupillary light reflex, dilated pupil, and eye turned down and out all in the left eye.",
+    "options": [
+      "anterior cerebral artery",
+      "middle cerebral artery",
+      "posterior cerebral artery",
+      "anterior choroidal artery",
+      "internal carotid artery",
+      "ophthalmic artery",
+      "basilar artery",
+      "AICA",
+      "PICA",
+      "anterior spinal artery",
+      "posterior spinal artery",
+      "vertebral artery"
+    ],
+    "correctAnswer": "posterior cerebral artery",
+    "image": null,
+    "explanation": "CN III palsy (dilated, 'down and out' pupil) occurs with PCA or PCoA aneurysms or PCA vascular lesions in the midbrain."
+  },
+  {
+    "id": 66,
+    "date": "11/10",
+    "formTitle": "11/10 Knowledge Check",
+    "question": "A branch of this blood vessel forms the central retinal artery.",
+    "options": [
+      "25",
+      "26",
+      "27",
+      "28",
+      "29",
+      "30",
+      "31",
+      "32",
+      "33",
+      "34",
+      "35"
+    ],
+    "correctAnswer": "34",
+    "image": "medium_group/11_10_9_s-blob-v1-IMAGE-kONLXBGOSXk.jpg",
+    "explanation": "34 is the internal carotid artery, which gives off the ophthalmic artery; the ophthalmic artery gives rise to the central retinal artery."
+  },
+  {
+    "id": 67,
+    "date": "11/10",
+    "formTitle": "11/10 Knowledge Check",
+    "question": "A branch of this blood vessel results in UMN deficits on one side of the body without any sensory deficits.",
+    "options": [
+      "25",
+      "26",
+      "27",
+      "28",
+      "29",
+      "30",
+      "31",
+      "32",
+      "33",
+      "34",
+      "35"
+    ],
+    "correctAnswer": "31",
+    "image": "medium_group/11_10_10_s-blob-v1-IMAGE-E7aAALD8UKs.jpg",
+    "explanation": "31 is the middle cerebral artery trunk; its lenticulostriate branches supply the posterior limb of the internal capsule, causing pure motor stroke."
+  },
+  {
+    "id": 68,
+    "date": "11/11",
+    "formTitle": "11/11 Knowledge Check & Review",
+    "question": "Choose the correct letter for the Mammillary Bodies",
+    "options": [
+      "A",
+      "B",
+      "C",
+      "D",
+      "E",
+      "F",
+      "G"
+    ],
+    "correctAnswer": "E",
+    "image": "medium_group/11_11_1_s-blob-v1-IMAGE--MoR7WqyaQE.jpg",
+    "explanation": "E points to the mammillary body at the base of the hypothalamus."
+  },
+  {
+    "id": 69,
+    "date": "11/11",
+    "formTitle": "11/11 Knowledge Check & Review",
+    "question": "Choose the letter for the Fornix.",
+    "options": [
+      "A",
+      "B",
+      "C",
+      "D",
+      "E",
+      "F",
+      "G",
+      "H",
+      "K",
+      "L"
+    ],
+    "correctAnswer": "G",
+    "image": "medium_group/11_11__2_s-blob-v1-IMAGE-UmwWg4t_io8.jpg",
+    "explanation": "G is the column of the fornix."
+  },
+  {
+    "id": 70,
+    "date": "11/11",
+    "formTitle": "11/11 Knowledge Check & Review",
+    "question": "Choose the letter for the Hippocampus",
+    "options": [
+      "A",
+      "B",
+      "C",
+      "D",
+      "E",
+      "F",
+      "G"
+    ],
+    "correctAnswer": "F",
+    "image": "medium_group/11_11_3_s-blob-v1-IMAGE-36KUKZ_eabM.jpg",
+    "explanation": "F is the hippocampus in the medial temporal lobe."
+  },
+  {
+    "id": 71,
+    "date": "11/11",
+    "formTitle": "11/11 Knowledge Check & Review",
+    "question": "Choose the letter for the Amygdala",
+    "options": [
+      "A",
+      "B",
+      "C",
+      "D",
+      "E",
+      "F"
+    ],
+    "correctAnswer": "F",
+    "image": "medium_group/11_11_4_s-blob-v1-IMAGE-3efbsLZEyrc.jpg",
+    "explanation": "F is the amygdala in the anterior medial temporal lobe."
+  },
+  {
+    "id": 72,
+    "date": "11/11",
+    "formTitle": "11/11 Knowledge Check & Review",
+    "question": "Choose the letter for the splenium of corpus callosum",
+    "options": [
+      "A",
+      "B",
+      "C",
+      "D",
+      "E",
+      "F",
+      "G",
+      "H",
+      "K",
+      "L"
+    ],
+    "correctAnswer": "F",
+    "image": "medium_group/11_11_5_s-blob-v1-IMAGE-P-pRpboYEDE.jpg",
+    "explanation": "F is the splenium of the corpus callosum (posterior thickened end)."
+  },
+  {
+    "id": 73,
+    "date": "11/11",
+    "formTitle": "11/11 Knowledge Check & Review",
+    "question": "Identify the structure labeled F",
+    "options": [
+      "hippocampus",
+      "fornix",
+      "amygdala",
+      "mammillary body",
+      "corpus callosum"
+    ],
+    "correctAnswer": "fornix",
+    "image": "medium_group/11_11_6_s-blob-v1-IMAGE-ImIk7sjpafQ.jpg",
+    "explanation": "F is the body/columns of the fornix beneath the corpus callosum."
+  },
+  {
+    "id": 74,
+    "date": "11/11",
+    "formTitle": "11/11 Knowledge Check & Review",
+    "question": "Identify the structure labeled G",
+    "options": [
+      "hippocampus",
+      "fornix",
+      "amygdala",
+      "mammillary body"
+    ],
+    "correctAnswer": "amygdala",
+    "image": "medium_group/11_11_7_s-blob-v1-IMAGE-6VlGqJTa_Us.jpg",
+    "explanation": "G is the amygdala in the anterior medial temporal region at this coronal level."
+  },
+  {
+    "id": 75,
+    "date": "11/11",
+    "formTitle": "11/11 Knowledge Check & Review",
+    "question": "Identify the structure labeled G",
+    "options": [
+      "hippocampus",
+      "fornix",
+      "amygdala",
+      "mammillary body"
+    ],
+    "correctAnswer": "hippocampus",
+    "image": "medium_group/11_11_8_s-blob-v1-IMAGE-TnWAb0UB19I.jpg",
+    "explanation": "G is the hippocampus in the parahippocampal region."
+  },
+  {
+    "id": 76,
+    "date": "11/11",
+    "formTitle": "11/11 Knowledge Check & Review",
+    "question": "Identify the structure labeled K",
+    "options": [
+      "hippocampus",
+      "fornix",
+      "amygdala",
+      "mammillary body"
+    ],
+    "correctAnswer": "mammillary body",
+    "image": "medium_group/11_11_9_s-blob-v1-IMAGE-KiNliy3iODM.jpg",
+    "explanation": "K points to the mammillary body on the midsagittal brain surface."
+  },
+  {
+    "id": 77,
+    "date": "11/11",
+    "formTitle": "11/11 Knowledge Check & Review",
+    "question": "Choose the letter for the fornix",
+    "options": [
+      "A",
+      "B",
+      "C",
+      "D",
+      "E",
+      "F",
+      "G",
+      "H",
+      "K",
+      "L"
+    ],
+    "correctAnswer": "H",
+    "image": "medium_group/11_11_10_s-blob-v1-IMAGE-9j7dlGnVa60.jpg",
+    "explanation": "H is the fornix arching below the corpus callosum."
+  }
+]
