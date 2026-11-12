@@ -375,7 +375,7 @@ function App() {
                   </span>
                 )}
               </div>
-              <span style={{ fontSize: '0.85rem', color: '#94a3b8' }}>{exam3Data.length} Slides • 275 Questions • Blue Structures Only</span>
+              <span style={{ fontSize: '0.85rem', color: '#94a3b8' }}>{exam3Data.length} Slides • {exam3Data.reduce((acc, s) => acc + s.questions.length, 0)} Questions • Blue Structures Only</span>
               <div style={{ fontSize: '0.82rem', color: exam3DueCount > 0 ? '#f87171' : '#34d399', fontWeight: 600, marginTop: '2px' }}>
                 {exam3DueCount} Spaced Repetition {exam3DueCount === 1 ? 'card' : 'cards'} due
               </div>

@@ -327,7 +327,7 @@ function ZenMode({ quizData1, quizData2, quizData3, quizData3Focus, quizDataComp
               Cerebellum, Basal Ganglia, Cortex & Gross (Blue Only)
             </p>
             <p style={{ color: '#c4b5fd', fontWeight: 600, margin: '15px 0' }}>
-              {(quizData3 || []).length} Slides • 275 Questions • Rapid-fire
+              {(quizData3 || []).length} Slides • {(quizData3 || []).reduce((acc, s) => acc + (s.questions ? s.questions.length : 0), 0)} Questions • Rapid-fire
             </p>
             <button className="btn btn-primary" style={{ width: '100%', justifyContent: 'center', backgroundColor: '#8b5cf6' }}>
               <Zap size={18} style={{ marginRight: '8px' }} /> Start Exam 3 Zen

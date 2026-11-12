@@ -531,6 +531,11 @@
         "color": "blue"
       },
       {
+        "letter": "K",
+        "answer": "Dorsomedial thalamic nucleus",
+        "color": "blue"
+      },
+      {
         "letter": "L",
         "answer": "Caudate",
         "color": "blue"
@@ -588,6 +593,11 @@
         "color": "blue"
       },
       {
+        "letter": "H",
+        "answer": "Dorsomedial nucleus",
+        "color": "blue"
+      },
+      {
         "letter": "I",
         "answer": "VL",
         "color": "blue"
@@ -610,6 +620,11 @@
       {
         "letter": "M",
         "answer": "Mammillary body",
+        "color": "blue"
+      },
+      {
+        "letter": "N",
+        "answer": "Mammillothalamic tract",
         "color": "blue"
       },
       {
@@ -660,8 +675,18 @@
         "color": "blue"
       },
       {
+        "letter": "H",
+        "answer": "Dorsomedial thalamic nucleus",
+        "color": "blue"
+      },
+      {
         "letter": "I",
         "answer": "VL",
+        "color": "blue"
+      },
+      {
+        "letter": "J",
+        "answer": "Thalamic fasciculus",
         "color": "blue"
       },
       {
@@ -729,6 +754,11 @@
       {
         "letter": "H",
         "answer": "Amygdala",
+        "color": "blue"
+      },
+      {
+        "letter": "I",
+        "answer": "Ansa lenticularis",
         "color": "blue"
       },
       {
@@ -876,6 +906,11 @@
         "letter": "K",
         "answer": "Putamen",
         "color": "blue"
+      },
+      {
+        "letter": "L",
+        "answer": "Mammillothalamic tract",
+        "color": "blue"
       }
     ]
   },
@@ -932,6 +967,11 @@
         "color": "blue"
       },
       {
+        "letter": "F",
+        "answer": "Dorsomedial thalamic nucleus",
+        "color": "blue"
+      },
+      {
         "letter": "G",
         "answer": "VL",
         "color": "blue"
@@ -954,6 +994,11 @@
       {
         "letter": "K",
         "answer": "Posterior limb of internal capsule",
+        "color": "blue"
+      },
+      {
+        "letter": "L",
+        "answer": "Ventral anterior thalamic nucleus",
         "color": "blue"
       }
     ]

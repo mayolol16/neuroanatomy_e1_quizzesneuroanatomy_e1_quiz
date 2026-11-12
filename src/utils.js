@@ -1,6 +1,16 @@
 import stringSimilarity from 'string-similarity';
 
 export const ALTERNATIVE_ANSWERS = {
+  "ansa lenticularis": ["ansa lenticular", "ansa lenticularis of forel"],
+  "dorsomedial nucleus": ["dm", "dmn", "dorsomedial", "dorsomedial thalamic", "dorsomedial thalamic nucleus", "md", "mediodorsal", "mediodorsal nucleus", "mediodorsal thalamic nucleus"],
+  "dorsomedial thalamic": ["dm", "dmn", "dorsomedial", "dorsomedial nucleus", "dorsomedial thalamic nucleus", "md", "mediodorsal", "mediodorsal nucleus", "mediodorsal thalamic nucleus"],
+  "dorsomedial thalamic nucleus": ["dm", "dmn", "dorsomedial", "dorsomedial nucleus", "dorsomedial thalamic", "md", "mediodorsal", "mediodorsal nucleus", "mediodorsal thalamic nucleus"],
+  "mediodorsal nucleus": ["dm", "dmn", "dorsomedial", "dorsomedial nucleus", "dorsomedial thalamic", "dorsomedial thalamic nucleus", "md", "mediodorsal", "mediodorsal thalamic nucleus"],
+  "mammillothalamic tract": ["mammillo thalamic tract", "mammillo-thalamic tract", "mammillothalamic", "mammillothalamic tract of vicq d'azyr", "mtt", "tract of vicq d'azyr"],
+  "mammillothalamic": ["mammillo thalamic tract", "mammillo-thalamic tract", "mammillothalamic tract", "mammillothalamic tract of vicq d'azyr", "mtt"],
+  "ventral anterior": ["va", "va nucleus", "ventral anterior nucleus", "ventral anterior thalamic", "ventral anterior thalamic nucleus", "ventroanterior", "ventroanterior nucleus"],
+  "ventral anterior nucleus": ["va", "va nucleus", "ventral anterior", "ventral anterior thalamic", "ventral anterior thalamic nucleus", "ventroanterior", "ventroanterior nucleus"],
+  "ventral anterior thalamic nucleus": ["va", "va nucleus", "ventral anterior", "ventral anterior nucleus", "ventral anterior thalamic", "ventroanterior", "ventroanterior nucleus"],
   "3rd ventricle": ["iii ventricle", "third ventricle"],
   "4th ventricle": ["fourth ventricle", "iv ventricle"],
   "abducens": ["abducens nerve", "abducent", "abducent nerve", "cn 6", "cn vi", "cranial nerve 6", "cranial nerve vi", "sixth cranial nerve"],
