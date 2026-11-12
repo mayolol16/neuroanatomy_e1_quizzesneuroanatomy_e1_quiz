@@ -554,7 +554,26 @@ function MediumGroupQuiz({ onExit }) {
                 </p>
               )}
 
-              <div style={{ display: 'flex', justifyContent: 'flex-end', marginTop: '8px' }}>
+              <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginTop: '8px', flexWrap: 'wrap', gap: '8px' }}>
+                <button
+                  type="button"
+                  className="btn"
+                  onClick={() => {
+                    const updated = { ...userAnswers };
+                    delete updated[currentQ.id];
+                    setUserAnswers(updated);
+                    localStorage.setItem('neuroQuizMediumGroupAnswers', JSON.stringify(updated));
+                  }}
+                  style={{
+                    padding: '8px 14px',
+                    fontSize: '0.88rem',
+                    background: 'rgba(255, 255, 255, 0.08)',
+                    color: '#cbd5e1'
+                  }}
+                >
+                  <RotateCcw size={15} /> Try Again
+                </button>
+
                 <button
                   className="btn btn-primary"
                   onClick={handleNext}
