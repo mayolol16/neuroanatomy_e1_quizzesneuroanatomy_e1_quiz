@@ -745,9 +745,9 @@
       "H",
       "K"
     ],
-    "correctAnswer": "E",
+    "correctAnswer": "D",
     "image": "medium_group/11_06_9_s-blob-v1-IMAGE-aJgdTtiydAk.jpg",
-    "explanation": "E is Wernicke's area (posterior portion of the superior temporal gyrus)."
+    "explanation": "D designates Wernicke's area (receptive language region at the temporoparietal junction)."
   },
   {
     "id": 43,
@@ -794,9 +794,9 @@
       "34",
       "35"
     ],
-    "correctAnswer": "28",
+    "correctAnswer": "27",
     "image": "medium_group/11_06_12_s-blob-v1-IMAGE--32DiQGqc0U.jpg",
-    "explanation": "28 is the posterior communicating artery connecting the internal carotid (34) to the posterior cerebral artery (27)."
+    "explanation": "27 is the posterior communicating artery connecting the internal carotid to the posterior cerebral artery."
   },
   {
     "id": 46,
@@ -810,9 +810,9 @@
       "20",
       "21"
     ],
-    "correctAnswer": "12",
+    "correctAnswer": "13",
     "image": "medium_group/11_06_13_s-blob-v1-IMAGE-n6XfUqxUcZE.jpg",
-    "explanation": "12 is the anterior spinal artery descending along the anterior median fissure of the medulla."
+    "explanation": "13 is the anterior spinal artery descending along the ventral surface of the medulla and spinal cord."
   },
   {
     "id": 47,
