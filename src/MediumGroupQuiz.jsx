@@ -1,25 +1,30 @@
 import React, { useState, useEffect } from 'react';
-import { ChevronLeft, ChevronRight, CheckCircle, XCircle, RotateCcw, ArrowLeft, Shuffle, Sparkles, Image as ImageIcon } from 'lucide-react';
+import { ChevronLeft, ChevronRight, CheckCircle, XCircle, RotateCcw, ArrowLeft, Shuffle, Image as ImageIcon, Layers, Eye } from 'lucide-react';
 import mediumGroupData from './medium_group_data.json';
 
 const BASE_URL = import.meta.env.BASE_URL + 'images/';
 
-const DATES = [
-  { id: 'all', label: 'All Questions', count: 77 },
-  { id: '11/02', label: '11/02', count: 6, title: 'Basal Ganglia & MS' },
-  { id: '11/03', label: '11/03', count: 10, title: 'Cerebellar Anatomy & Peduncles' },
-  { id: '11/04', label: '11/04', count: 11, title: 'Brainstem Pathways & Tumors' },
-  { id: '11/05', label: '11/05', count: 6, title: 'CNS Infections & Pathophysiology' },
-  { id: '11/06', label: '11/06', count: 13, title: 'Cerebral Vasculature & Aphasia' },
-  { id: '11/09', label: '11/09', count: 11, title: 'Stroke, CBF & Brain Death' },
-  { id: '11/10', label: '11/10', count: 10, title: 'Stroke Syndromes & Angiography' },
-  { id: '11/11', label: '11/11', count: 10, title: 'Limbic System & Hippocampus' }
+const ALL_DATES = [
+  { id: 'all', label: 'All Questions' },
+  { id: '11/02', label: '11/02', title: 'Basal Ganglia & MS' },
+  { id: '11/03', label: '11/03', title: 'Cerebellar Anatomy & Peduncles' },
+  { id: '11/04', label: '11/04', title: 'Brainstem Pathways & Tumors' },
+  { id: '11/05', label: '11/05', title: 'CNS Infections & Pathophysiology' },
+  { id: '11/06', label: '11/06', title: 'Cerebral Vasculature & Aphasia' },
+  { id: '11/09', label: '11/09', title: 'Stroke, CBF & Brain Death' },
+  { id: '11/10', label: '11/10', title: 'Stroke Syndromes & Angiography' },
+  { id: '11/11', label: '11/11', title: 'Limbic System & Hippocampus' }
 ];
 
 function MediumGroupQuiz({ onExit }) {
+  // Mode: 'comprehensive' (all 77 Qs) vs 'images_only' (40 Qs with images)
+  const [subMode, setSubMode] = useState(() => {
+    return localStorage.getItem('neuroQuizMediumGroupSubMode') || 'comprehensive';
+  });
+
   const [selectedDate, setSelectedDate] = useState('all');
-  const [filteredQuestions, setFilteredQuestions] = useState(mediumGroupData);
   const [currentIndex, setCurrentIndex] = useState(0);
+  const [expandedImage, setExpandedImage] = useState(false);
 
   // Store user selections: { [questionId]: selectedOption }
   const [userAnswers, setUserAnswers] = useState(() => {
@@ -31,26 +36,38 @@ function MediumGroupQuiz({ onExit }) {
     }
   });
 
-  const [expandedImage, setExpandedImage] = useState(false);
+  // Base pool filtered by subMode (comprehensive vs images_only)
+  const basePool = subMode === 'images_only'
+    ? mediumGroupData.filter(q => Boolean(q.image))
+    : mediumGroupData;
 
-  // Filter questions whenever selectedDate changes
-  useEffect(() => {
-    if (selectedDate === 'all') {
-      setFilteredQuestions(mediumGroupData);
-    } else {
-      setFilteredQuestions(mediumGroupData.filter(q => q.date === selectedDate));
-    }
+  // Active question list filtered by selectedDate
+  const filteredQuestions = selectedDate === 'all'
+    ? basePool
+    : basePool.filter(q => q.date === selectedDate);
+
+  // When switching subMode or date, reset current index
+  const handleSwitchSubMode = (newMode) => {
+    setSubMode(newMode);
+    localStorage.setItem('neuroQuizMediumGroupSubMode', newMode);
+    setSelectedDate('all');
     setCurrentIndex(0);
     setExpandedImage(false);
-  }, [selectedDate]);
+  };
+
+  const handleSelectDate = (dateId) => {
+    setSelectedDate(dateId);
+    setCurrentIndex(0);
+    setExpandedImage(false);
+  };
 
   const currentQ = filteredQuestions[currentIndex] || filteredQuestions[0];
   const selectedAnswer = currentQ ? userAnswers[currentQ.id] : null;
   const isAnswered = selectedAnswer !== undefined && selectedAnswer !== null;
-  const isCorrect = isAnswered && selectedAnswer === currentQ.correctAnswer;
+  const isCorrect = isAnswered && selectedAnswer === currentQ?.correctAnswer;
 
   const handleSelectOption = (opt) => {
-    if (isAnswered) return; // already answered
+    if (isAnswered || !currentQ) return; // already answered
     const updated = { ...userAnswers, [currentQ.id]: opt };
     setUserAnswers(updated);
     try {
@@ -85,7 +102,7 @@ function MediumGroupQuiz({ onExit }) {
   };
 
   const handleResetSection = () => {
-    if (!window.confirm('Reset answers for the current filter?')) return;
+    if (!window.confirm(`Reset answers for the current ${subMode === 'images_only' ? 'Images Only' : 'Comprehensive'} filter?`)) return;
     const updated = { ...userAnswers };
     filteredQuestions.forEach(q => {
       delete updated[q.id];
@@ -100,19 +117,16 @@ function MediumGroupQuiz({ onExit }) {
   const correctInFilter = answeredInFilter.filter(q => userAnswers[q.id] === q.correctAnswer).length;
   const accuracyPct = answeredInFilter.length > 0 ? Math.round((correctInFilter / answeredInFilter.length) * 100) : 0;
 
-  if (!currentQ) {
-    return (
-      <div className="app-container" style={{ textAlign: 'center', padding: '40px' }}>
-        <p>No questions found.</p>
-        <button className="btn" onClick={onExit}>Return</button>
-      </div>
-    );
-  }
+  // Compute counts per date for active subMode
+  const dateCounts = {};
+  basePool.forEach(q => {
+    dateCounts[q.date] = (dateCounts[q.date] || 0) + 1;
+  });
 
   return (
     <div className="app-container" style={{ maxWidth: '960px', margin: '0 auto', padding: '1.5rem 1rem' }}>
-      {/* TOP NAVIGATION BAR */}
-      <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginBottom: '1.5rem', flexWrap: 'wrap', gap: '12px' }}>
+      {/* TOP HEADER & EXIT */}
+      <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginBottom: '1.25rem', flexWrap: 'wrap', gap: '12px' }}>
         <button
           className="btn"
           onClick={onExit}
@@ -136,7 +150,7 @@ function MediumGroupQuiz({ onExit }) {
             🍝 SECRET UNLOCKED
           </span>
           <span style={{ fontSize: '0.9rem', color: '#94a3b8' }}>
-            Medium Group (77 Qs)
+            Medium Group
           </span>
         </div>
 
@@ -160,6 +174,98 @@ function MediumGroupQuiz({ onExit }) {
         </div>
       </div>
 
+      {/* MODE TOGGLE: COMPREHENSIVE VS IMAGES ONLY */}
+      <div style={{
+        display: 'grid',
+        gridTemplateColumns: 'repeat(auto-fit, minmax(280px, 1fr))',
+        gap: '12px',
+        marginBottom: '1.25rem'
+      }}>
+        {/* COMPREHENSIVE MODE CARD */}
+        <div
+          onClick={() => handleSwitchSubMode('comprehensive')}
+          style={{
+            padding: '14px 18px',
+            borderRadius: '10px',
+            cursor: 'pointer',
+            border: subMode === 'comprehensive' ? '2px solid #3b82f6' : '1px solid rgba(255,255,255,0.08)',
+            background: subMode === 'comprehensive' ? 'rgba(59, 130, 246, 0.18)' : 'rgba(30, 41, 59, 0.5)',
+            transition: 'all 0.2s ease',
+            display: 'flex',
+            flexDirection: 'column',
+            gap: '4px'
+          }}
+        >
+          <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center' }}>
+            <span style={{
+              display: 'flex',
+              alignItems: 'center',
+              gap: '8px',
+              fontWeight: 700,
+              fontSize: '1rem',
+              color: subMode === 'comprehensive' ? '#60a5fa' : '#f8fafc'
+            }}>
+              <Layers size={18} /> Comprehensive Mode
+            </span>
+            <span style={{
+              fontSize: '0.74rem',
+              fontWeight: 700,
+              padding: '2px 8px',
+              borderRadius: '999px',
+              background: subMode === 'comprehensive' ? '#3b82f6' : 'rgba(255,255,255,0.08)',
+              color: subMode === 'comprehensive' ? '#fff' : '#94a3b8'
+            }}>
+              77 QUESTIONS
+            </span>
+          </div>
+          <span style={{ fontSize: '0.82rem', color: '#94a3b8', lineHeight: 1.35 }}>
+            All questions: Specimen & diagram images + text-based clinical scenarios & pathology.
+          </span>
+        </div>
+
+        {/* IMAGES ONLY MODE CARD */}
+        <div
+          onClick={() => handleSwitchSubMode('images_only')}
+          style={{
+            padding: '14px 18px',
+            borderRadius: '10px',
+            cursor: 'pointer',
+            border: subMode === 'images_only' ? '2px solid #10b981' : '1px solid rgba(255,255,255,0.08)',
+            background: subMode === 'images_only' ? 'rgba(16, 185, 129, 0.18)' : 'rgba(30, 41, 59, 0.5)',
+            transition: 'all 0.2s ease',
+            display: 'flex',
+            flexDirection: 'column',
+            gap: '4px'
+          }}
+        >
+          <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center' }}>
+            <span style={{
+              display: 'flex',
+              alignItems: 'center',
+              gap: '8px',
+              fontWeight: 700,
+              fontSize: '1rem',
+              color: subMode === 'images_only' ? '#34d399' : '#f8fafc'
+            }}>
+              <ImageIcon size={18} /> Just Images Mode
+            </span>
+            <span style={{
+              fontSize: '0.74rem',
+              fontWeight: 700,
+              padding: '2px 8px',
+              borderRadius: '999px',
+              background: subMode === 'images_only' ? '#10b981' : 'rgba(255,255,255,0.08)',
+              color: subMode === 'images_only' ? '#fff' : '#94a3b8'
+            }}>
+              40 IMAGES ONLY
+            </span>
+          </div>
+          <span style={{ fontSize: '0.82rem', color: '#94a3b8', lineHeight: 1.35 }}>
+            Filtered strictly to questions with anatomical brain slices, histology & angiograms.
+          </span>
+        </div>
+      </div>
+
       {/* DATE FILTER PILLS */}
       <div style={{
         display: 'flex',
@@ -169,12 +275,19 @@ function MediumGroupQuiz({ onExit }) {
         marginBottom: '1.25rem',
         scrollbarWidth: 'thin'
       }}>
-        {DATES.map(d => {
+        {ALL_DATES.map(d => {
           const isSelected = selectedDate === d.id;
+          const count = d.id === 'all' ? basePool.length : (dateCounts[d.id] || 0);
+
+          // If in images_only mode and count is 0, don't show or disable
+          if (subMode === 'images_only' && d.id !== 'all' && count === 0) {
+            return null;
+          }
+
           return (
             <button
               key={d.id}
-              onClick={() => setSelectedDate(d.id)}
+              onClick={() => handleSelectDate(d.id)}
               style={{
                 whiteSpace: 'nowrap',
                 padding: '7px 14px',
@@ -188,7 +301,7 @@ function MediumGroupQuiz({ onExit }) {
                 transition: 'all 0.15s ease'
               }}
             >
-              {d.label} <span style={{ opacity: 0.6, fontSize: '0.78rem' }}>({d.count})</span>
+              {d.label} <span style={{ opacity: 0.6, fontSize: '0.78rem' }}>({count})</span>
             </button>
           );
         })}
@@ -211,9 +324,11 @@ function MediumGroupQuiz({ onExit }) {
           <span style={{ fontWeight: 600, fontSize: '0.95rem', color: '#f8fafc' }}>
             Question {currentIndex + 1} of {filteredQuestions.length}
           </span>
-          <span style={{ fontSize: '0.8rem', color: '#94a3b8', background: 'rgba(255,255,255,0.08)', padding: '2px 8px', borderRadius: '4px' }}>
-            {currentQ.date} • {currentQ.formTitle}
-          </span>
+          {currentQ && (
+            <span style={{ fontSize: '0.8rem', color: '#94a3b8', background: 'rgba(255,255,255,0.08)', padding: '2px 8px', borderRadius: '4px' }}>
+              {currentQ.date} • {currentQ.formTitle}
+            </span>
+          )}
         </div>
 
         <div style={{ display: 'flex', alignItems: 'center', gap: '16px', fontSize: '0.9rem' }}>
@@ -230,219 +345,229 @@ function MediumGroupQuiz({ onExit }) {
       </div>
 
       {/* QUIZ MAIN CARD */}
-      <div className="quiz-card" style={{ padding: '1.75rem', gap: '1.5rem', background: '#1e293b' }}>
-        {/* QUESTION NAVIGATION CONTROLS */}
-        <div className="navigation" style={{ marginBottom: '-8px' }}>
-          <button
-            className="btn"
-            onClick={handlePrev}
-            disabled={currentIndex === 0}
-            style={{ fontSize: '0.9rem', padding: '8px 16px' }}
-          >
-            <ChevronLeft size={18} /> Previous
-          </button>
-          <span style={{ fontSize: '0.88rem', color: '#94a3b8' }}>
-            #{currentQ.id} of 77
-          </span>
-          <button
-            className="btn"
-            onClick={handleNext}
-            disabled={currentIndex === filteredQuestions.length - 1}
-            style={{ fontSize: '0.9rem', padding: '8px 16px' }}
-          >
-            Next <ChevronRight size={18} />
-          </button>
+      {!currentQ ? (
+        <div className="quiz-card" style={{ padding: '2rem', textAlign: 'center' }}>
+          <p>No questions match the current filter.</p>
+          <button className="btn" onClick={() => setSelectedDate('all')}>View All {subMode === 'images_only' ? 'Image' : ''} Questions</button>
         </div>
-
-        {/* IMAGE DISPLAY (IF PRESENT) */}
-        {currentQ.image && (
-          <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'center', gap: '8px' }}>
-            <div
-              className="image-container"
-              onClick={() => setExpandedImage(prev => !prev)}
-              style={{
-                cursor: 'pointer',
-                maxHeight: expandedImage ? '900px' : '520px',
-                width: '100%',
-                borderRadius: '10px',
-                border: '1px solid rgba(255,255,255,0.1)',
-                background: '#090d16',
-                display: 'flex',
-                justifyContent: 'center',
-                alignItems: 'center',
-                position: 'relative'
-              }}
-              title="Click to toggle zoom"
+      ) : (
+        <div className="quiz-card" style={{ padding: '1.75rem', gap: '1.5rem', background: '#1e293b' }}>
+          {/* QUESTION NAVIGATION CONTROLS */}
+          <div className="navigation" style={{ marginBottom: '-8px' }}>
+            <button
+              className="btn"
+              onClick={handlePrev}
+              disabled={currentIndex === 0}
+              style={{ fontSize: '0.9rem', padding: '8px 16px' }}
             >
-              <img
-                src={BASE_URL + currentQ.image}
-                alt="Neuroanatomy specimen"
-                style={{
-                  maxHeight: expandedImage ? '900px' : '520px',
-                  objectFit: 'contain',
-                  width: 'auto',
-                  maxWidth: '100%'
-                }}
-              />
-              <span style={{
-                position: 'absolute',
-                bottom: '10px',
-                right: '10px',
-                background: 'rgba(0,0,0,0.65)',
-                color: '#cbd5e1',
-                padding: '4px 10px',
-                borderRadius: '6px',
-                fontSize: '0.75rem',
-                backdropFilter: 'blur(4px)'
-              }}>
-                🔍 {expandedImage ? 'Click to shrink' : 'Click to enlarge'}
-              </span>
-            </div>
+              <ChevronLeft size={18} /> Previous
+            </button>
+            <span style={{ fontSize: '0.88rem', color: '#94a3b8' }}>
+              Slide #{currentQ.id} of {mediumGroupData.length}
+            </span>
+            <button
+              className="btn"
+              onClick={handleNext}
+              disabled={currentIndex === filteredQuestions.length - 1}
+              style={{ fontSize: '0.9rem', padding: '8px 16px' }}
+            >
+              Next <ChevronRight size={18} />
+            </button>
           </div>
-        )}
 
-        {/* QUESTION PROMPT */}
-        <div style={{ marginTop: currentQ.image ? '0.5rem' : '0' }}>
-          <h2 style={{
-            fontSize: '1.3rem',
-            lineHeight: 1.45,
-            fontWeight: 700,
-            color: '#f8fafc',
-            marginBottom: '0.25rem'
-          }}>
-            {currentQ.question}
-          </h2>
-          <span style={{ fontSize: '0.85rem', color: '#94a3b8' }}>
-            {isAnswered ? 'Question completed • Select an action below or move to the next question' : 'Select the single best answer:'}
-          </span>
-        </div>
-
-        {/* MULTIPLE CHOICE OPTIONS GRID */}
-        <div style={{
-          display: 'grid',
-          gridTemplateColumns: currentQ.options.length > 6 ? 'repeat(auto-fit, minmax(260px, 1fr))' : '1fr',
-          gap: '10px'
-        }}>
-          {currentQ.options.map((option, idx) => {
-            const isThisSelected = selectedAnswer === option;
-            const isThisCorrect = option === currentQ.correctAnswer;
-
-            let bgColor = 'rgba(30, 41, 59, 0.8)';
-            let borderColor = 'rgba(255, 255, 255, 0.08)';
-            let textColor = '#f8fafc';
-            let icon = null;
-
-            if (isAnswered) {
-              if (isThisCorrect) {
-                bgColor = 'rgba(16, 185, 129, 0.18)';
-                borderColor = '#10b981';
-                textColor = '#34d399';
-                icon = <CheckCircle size={20} color="#10b981" style={{ flexShrink: 0 }} />;
-              } else if (isThisSelected && !isThisCorrect) {
-                bgColor = 'rgba(239, 68, 68, 0.18)';
-                borderColor = '#ef4444';
-                textColor = '#f87171';
-                icon = <XCircle size={20} color="#ef4444" style={{ flexShrink: 0 }} />;
-              } else {
-                bgColor = 'rgba(15, 23, 42, 0.4)';
-                borderColor = 'rgba(255, 255, 255, 0.04)';
-                textColor = '#64748b';
-              }
-            }
-
-            return (
-              <button
-                key={idx}
-                type="button"
-                onClick={() => handleSelectOption(option)}
-                disabled={isAnswered}
+          {/* IMAGE DISPLAY (IF PRESENT) */}
+          {currentQ.image && (
+            <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'center', gap: '8px' }}>
+              <div
+                className="image-container"
+                onClick={() => setExpandedImage(prev => !prev)}
                 style={{
-                  display: 'flex',
-                  alignItems: 'center',
-                  justifyContent: 'space-between',
-                  padding: '14px 18px',
+                  cursor: 'pointer',
+                  maxHeight: expandedImage ? '900px' : '520px',
+                  width: '100%',
                   borderRadius: '10px',
-                  border: `2px solid ${borderColor}`,
-                  background: bgColor,
-                  color: textColor,
-                  fontSize: '1rem',
-                  fontWeight: isThisSelected || isThisCorrect ? 600 : 500,
-                  cursor: isAnswered ? 'default' : 'pointer',
-                  textAlign: 'left',
-                  transition: 'all 0.15s ease',
-                  boxShadow: isThisSelected ? '0 0 12px rgba(59,130,246,0.2)' : 'none'
+                  border: '1px solid rgba(255,255,255,0.1)',
+                  background: '#090d16',
+                  display: 'flex',
+                  justifyContent: 'center',
+                  alignItems: 'center',
+                  position: 'relative'
                 }}
+                title="Click to toggle zoom"
               >
-                <div style={{ display: 'flex', alignItems: 'center', gap: '12px' }}>
-                  <span style={{
-                    width: '28px',
-                    height: '28px',
-                    borderRadius: '50%',
-                    background: isThisSelected ? (isThisCorrect ? '#10b981' : '#ef4444') : (isThisCorrect && isAnswered ? '#10b981' : 'rgba(255,255,255,0.08)'),
-                    color: isThisSelected || (isThisCorrect && isAnswered) ? '#fff' : '#cbd5e1',
+                <img
+                  src={BASE_URL + currentQ.image}
+                  alt="Neuroanatomy specimen"
+                  style={{
+                    maxHeight: expandedImage ? '900px' : '520px',
+                    objectFit: 'contain',
+                    width: 'auto',
+                    maxWidth: '100%'
+                  }}
+                />
+                <span style={{
+                  position: 'absolute',
+                  bottom: '10px',
+                  right: '10px',
+                  background: 'rgba(0,0,0,0.65)',
+                  color: '#cbd5e1',
+                  padding: '4px 10px',
+                  borderRadius: '6px',
+                  fontSize: '0.75rem',
+                  backdropFilter: 'blur(4px)'
+                }}>
+                  🔍 {expandedImage ? 'Click to shrink' : 'Click to enlarge'}
+                </span>
+              </div>
+            </div>
+          )}
+
+          {/* QUESTION PROMPT */}
+          <div style={{ marginTop: currentQ.image ? '0.5rem' : '0' }}>
+            <h2 style={{
+              fontSize: '1.3rem',
+              lineHeight: 1.45,
+              fontWeight: 700,
+              color: '#f8fafc',
+              marginBottom: '0.25rem'
+            }}>
+              {currentQ.question}
+            </h2>
+            <span style={{ fontSize: '0.85rem', color: '#94a3b8' }}>
+              {isAnswered ? 'Question completed • Select an action below or move to the next question' : 'Select the single best answer:'}
+            </span>
+          </div>
+
+          {/* MULTIPLE CHOICE OPTIONS GRID */}
+          <div style={{
+            display: 'grid',
+            gridTemplateColumns: currentQ.options.length > 6 ? 'repeat(auto-fit, minmax(260px, 1fr))' : '1fr',
+            gap: '10px'
+          }}>
+            {currentQ.options.map((option, idx) => {
+              const isThisSelected = selectedAnswer === option;
+              const isThisCorrect = option === currentQ.correctAnswer;
+
+              let bgColor = 'rgba(30, 41, 59, 0.8)';
+              let borderColor = 'rgba(255, 255, 255, 0.08)';
+              let textColor = '#f8fafc';
+              let icon = null;
+
+              if (isAnswered) {
+                if (isThisCorrect) {
+                  bgColor = 'rgba(16, 185, 129, 0.18)';
+                  borderColor = '#10b981';
+                  textColor = '#34d399';
+                  icon = <CheckCircle size={20} color="#10b981" style={{ flexShrink: 0 }} />;
+                } else if (isThisSelected && !isThisCorrect) {
+                  bgColor = 'rgba(239, 68, 68, 0.18)';
+                  borderColor = '#ef4444';
+                  textColor = '#f87171';
+                  icon = <XCircle size={20} color="#ef4444" style={{ flexShrink: 0 }} />;
+                } else {
+                  bgColor = 'rgba(15, 23, 42, 0.4)';
+                  borderColor = 'rgba(255, 255, 255, 0.04)';
+                  textColor = '#64748b';
+                }
+              }
+
+              return (
+                <button
+                  key={idx}
+                  type="button"
+                  onClick={() => handleSelectOption(option)}
+                  disabled={isAnswered}
+                  style={{
                     display: 'flex',
                     alignItems: 'center',
-                    justifyContent: 'center',
-                    fontSize: '0.85rem',
-                    fontWeight: 700,
-                    flexShrink: 0
-                  }}>
-                    {String.fromCharCode(65 + idx)}
-                  </span>
-                  <span>{option}</span>
-                </div>
-                {icon}
-              </button>
-            );
-          })}
-        </div>
-
-        {/* EXPLANATION FEEDBACK BOX */}
-        {isAnswered && (
-          <div style={{
-            background: isCorrect ? 'rgba(16, 185, 129, 0.1)' : 'rgba(239, 68, 68, 0.1)',
-            border: `1px solid ${isCorrect ? 'rgba(16, 185, 129, 0.3)' : 'rgba(239, 68, 68, 0.3)'}`,
-            borderRadius: '10px',
-            padding: '16px 20px',
-            display: 'flex',
-            flexDirection: 'column',
-            gap: '8px'
-          }}>
-            <div style={{ display: 'flex', alignItems: 'center', gap: '8px' }}>
-              {isCorrect ? (
-                <>
-                  <CheckCircle size={22} color="#10b981" />
-                  <strong style={{ color: '#34d399', fontSize: '1.05rem' }}>Correct!</strong>
-                </>
-              ) : (
-                <>
-                  <XCircle size={22} color="#ef4444" />
-                  <strong style={{ color: '#f87171', fontSize: '1.05rem' }}>
-                    Incorrect. The correct answer is: {currentQ.correctAnswer}
-                  </strong>
-                </>
-              )}
-            </div>
-
-            {currentQ.explanation && (
-              <p style={{ color: '#e2e8f0', fontSize: '0.95rem', lineHeight: 1.5, margin: 0 }}>
-                💡 <strong>High-Yield Concept:</strong> {currentQ.explanation}
-              </p>
-            )}
-
-            <div style={{ display: 'flex', justifyContent: 'flex-end', marginTop: '8px' }}>
-              <button
-                className="btn btn-primary"
-                onClick={handleNext}
-                disabled={currentIndex === filteredQuestions.length - 1}
-                style={{ padding: '8px 20px', fontSize: '0.95rem' }}
-              >
-                {currentIndex === filteredQuestions.length - 1 ? 'End of Section' : 'Next Question'} <ChevronRight size={18} />
-              </button>
-            </div>
+                    justifyContent: 'space-between',
+                    padding: '14px 18px',
+                    borderRadius: '10px',
+                    border: `2px solid ${borderColor}`,
+                    background: bgColor,
+                    color: textColor,
+                    fontSize: '1rem',
+                    /* IMPORTANT: Only bold when answered to avoid giving away the answer */
+                    fontWeight: isAnswered && (isThisSelected || isThisCorrect) ? 600 : 500,
+                    cursor: isAnswered ? 'default' : 'pointer',
+                    textAlign: 'left',
+                    transition: 'all 0.15s ease',
+                    boxShadow: isThisSelected ? '0 0 12px rgba(59,130,246,0.2)' : 'none'
+                  }}
+                >
+                  <div style={{ display: 'flex', alignItems: 'center', gap: '12px' }}>
+                    <span style={{
+                      width: '28px',
+                      height: '28px',
+                      borderRadius: '50%',
+                      background: isAnswered
+                        ? (isThisCorrect ? '#10b981' : isThisSelected ? '#ef4444' : 'rgba(255,255,255,0.08)')
+                        : 'rgba(255,255,255,0.08)',
+                      color: isAnswered && (isThisCorrect || isThisSelected) ? '#fff' : '#cbd5e1',
+                      display: 'flex',
+                      alignItems: 'center',
+                      justifyContent: 'center',
+                      fontSize: '0.85rem',
+                      fontWeight: 700,
+                      flexShrink: 0
+                    }}>
+                      {String.fromCharCode(65 + idx)}
+                    </span>
+                    <span>{option}</span>
+                  </div>
+                  {icon}
+                </button>
+              );
+            })}
           </div>
-        )}
-      </div>
+
+          {/* EXPLANATION FEEDBACK BOX */}
+          {isAnswered && (
+            <div style={{
+              background: isCorrect ? 'rgba(16, 185, 129, 0.1)' : 'rgba(239, 68, 68, 0.1)',
+              border: `1px solid ${isCorrect ? 'rgba(16, 185, 129, 0.3)' : 'rgba(239, 68, 68, 0.3)'}`,
+              borderRadius: '10px',
+              padding: '16px 20px',
+              display: 'flex',
+              flexDirection: 'column',
+              gap: '8px'
+            }}>
+              <div style={{ display: 'flex', alignItems: 'center', gap: '8px' }}>
+                {isCorrect ? (
+                  <>
+                    <CheckCircle size={22} color="#10b981" />
+                    <strong style={{ color: '#34d399', fontSize: '1.05rem' }}>Correct!</strong>
+                  </>
+                ) : (
+                  <>
+                    <XCircle size={22} color="#ef4444" />
+                    <strong style={{ color: '#f87171', fontSize: '1.05rem' }}>
+                      Incorrect. The correct answer is: {currentQ.correctAnswer}
+                    </strong>
+                  </>
+                )}
+              </div>
+
+              {currentQ.explanation && (
+                <p style={{ color: '#e2e8f0', fontSize: '0.95rem', lineHeight: 1.5, margin: 0 }}>
+                  💡 <strong>High-Yield Concept:</strong> {currentQ.explanation}
+                </p>
+              )}
+
+              <div style={{ display: 'flex', justifyContent: 'flex-end', marginTop: '8px' }}>
+                <button
+                  className="btn btn-primary"
+                  onClick={handleNext}
+                  disabled={currentIndex === filteredQuestions.length - 1}
+                  style={{ padding: '8px 20px', fontSize: '0.95rem' }}
+                >
+                  {currentIndex === filteredQuestions.length - 1 ? 'End of Section' : 'Next Question'} <ChevronRight size={18} />
+                </button>
+              </div>
+            </div>
+          )}
+        </div>
+      )}
     </div>
   );
 }
