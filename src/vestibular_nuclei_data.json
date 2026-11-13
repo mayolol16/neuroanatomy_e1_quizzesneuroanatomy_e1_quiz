@@ -3,7 +3,8 @@
     "id": 101,
     "date": "Slide 6",
     "formTitle": "Caudal Pons / Abducens Level",
-    "question": "On Slide 6 (caudal pons), choose the letter for the Superior Vestibular Nucleus",
+    "question": "Slide 6 (Caudal Pons) — Which letter indicates the Superior Vestibular Nucleus?",
+    "letter": "A",
     "options": [
       "A",
       "C",
@@ -14,14 +15,25 @@
       "P"
     ],
     "correctAnswer": "A",
-    "image": "e3_s12.jpg",
-    "explanation": "A is the superior vestibular nucleus located dorsolaterally in the floor/wall of the fourth ventricle in the caudal pons."
+    "acceptedAnswers": [
+      "A",
+      "Superior vestibular nucleus",
+      "Superior vestibular",
+      "Bekhterev",
+      "Bekhterev nucleus",
+      "Superior"
+    ],
+    "image": "e3_s12_ulb.jpg",
+    "unlabeled_image": "e3_s12_ulb.jpg",
+    "labeled_image": "e3_s12.jpg",
+    "explanation": "Letter A indicates the Superior Vestibular Nucleus (Bekhterev's nucleus), located in the lateral wall/floor of the fourth ventricle in the caudal pons."
   },
   {
     "id": 102,
     "date": "Slide 7",
     "formTitle": "Caudal Pons / Facial Colliculus Level",
-    "question": "On Slide 7 (facial colliculus level), choose the letter for the Superior Vestibular Nucleus",
+    "question": "Slide 7 (Facial Colliculus Level) — Which letter indicates the Superior Vestibular Nucleus?",
+    "letter": "H",
     "options": [
       "A",
       "C",
@@ -32,14 +44,25 @@
       "L"
     ],
     "correctAnswer": "H",
-    "image": "e3_s15a.jpg",
-    "explanation": "H is the superior vestibular nucleus located dorsolaterally near the superior cerebellar peduncle in the caudal pons."
+    "acceptedAnswers": [
+      "H",
+      "Superior vestibular nucleus",
+      "Superior vestibular",
+      "Bekhterev",
+      "Bekhterev nucleus",
+      "Superior"
+    ],
+    "image": "e3_s15a_ulb.jpg",
+    "unlabeled_image": "e3_s15a_ulb.jpg",
+    "labeled_image": "e3_s15a.jpg",
+    "explanation": "Letter H indicates the Superior Vestibular Nucleus (Bekhterev's nucleus), located dorsolaterally near the superior cerebellar peduncle in the caudal pons."
   },
   {
     "id": 103,
     "date": "Slide 5",
     "formTitle": "Pontomedullary Junction Level",
-    "question": "On Slide 5 (pontomedullary junction), choose the letter for the Lateral Vestibular Nucleus (Deiters)",
+    "question": "Slide 5 (Pontomedullary Junction) — Which letter indicates the Lateral Vestibular Nucleus (Deiters)?",
+    "letter": "L",
     "options": [
       "B",
       "C",
@@ -50,14 +73,25 @@
       "P"
     ],
     "correctAnswer": "L",
-    "image": "e3_s09.jpg",
-    "explanation": "L is the lateral vestibular nucleus (Deiters' nucleus) containing giant multipolar neurons (Deiters cells) that give rise to the lateral vestibulospinal tract."
+    "acceptedAnswers": [
+      "L",
+      "Lateral vestibular nucleus",
+      "Lateral vestibular",
+      "Deiters",
+      "Deiters nucleus",
+      "Lateral"
+    ],
+    "image": "e3_s09_ulb.jpg",
+    "unlabeled_image": "e3_s09_ulb.jpg",
+    "labeled_image": "e3_s09.jpg",
+    "explanation": "Letter L indicates the Lateral Vestibular Nucleus (Deiters' nucleus), containing giant multipolar neurons (Deiters cells) that give rise to the uncrossed lateral vestibulospinal tract."
   },
   {
     "id": 104,
     "date": "Slide 5",
     "formTitle": "Pontomedullary Junction Level",
-    "question": "On Slide 5 (pontomedullary junction), choose the letter for the Medial Vestibular Nucleus",
+    "question": "Slide 5 (Pontomedullary Junction) — Which letter indicates the Medial Vestibular Nucleus?",
+    "letter": "M",
     "options": [
       "B",
       "C",
@@ -68,14 +102,25 @@
       "P"
     ],
     "correctAnswer": "M",
-    "image": "e3_s09.jpg",
-    "explanation": "M is the medial vestibular nucleus (Schwalbe's nucleus) lying medial to the lateral and inferior vestibular nuclei in the floor of the fourth ventricle."
+    "acceptedAnswers": [
+      "M",
+      "Medial vestibular nucleus",
+      "Medial vestibular",
+      "Schwalbe",
+      "Schwalbe nucleus",
+      "Medial"
+    ],
+    "image": "e3_s09_ulb.jpg",
+    "unlabeled_image": "e3_s09_ulb.jpg",
+    "labeled_image": "e3_s09.jpg",
+    "explanation": "Letter M indicates the Medial Vestibular Nucleus (Schwalbe's nucleus) in the floor of the fourth ventricle at the pontomedullary junction."
   },
   {
     "id": 105,
     "date": "Slide 5",
     "formTitle": "Pontomedullary Junction Level",
-    "question": "On Slide 5 (pontomedullary junction), choose the letter for the Inferior Vestibular Nucleus",
+    "question": "Slide 5 (Pontomedullary Junction) — Which letter indicates the Inferior Vestibular Nucleus?",
+    "letter": "B",
     "options": [
       "B",
       "C",
@@ -86,14 +131,26 @@
       "P"
     ],
     "correctAnswer": "B",
-    "image": "e3_s09.jpg",
-    "explanation": "B is the inferior (descending) vestibular nucleus (Roller's nucleus) perforated by longitudinal fibers of the vestibular nerve."
+    "acceptedAnswers": [
+      "B",
+      "Inferior vestibular nucleus",
+      "Inferior vestibular",
+      "Roller",
+      "Roller nucleus",
+      "Descending vestibular nucleus",
+      "Inferior"
+    ],
+    "image": "e3_s09_ulb.jpg",
+    "unlabeled_image": "e3_s09_ulb.jpg",
+    "labeled_image": "e3_s09.jpg",
+    "explanation": "Letter B indicates the Inferior (descending) Vestibular Nucleus (Roller's nucleus) perforated by longitudinal descending fibers."
   },
   {
     "id": 106,
     "date": "Slide 5",
     "formTitle": "Pontomedullary Junction Level",
-    "question": "On Slide 5 (pontomedullary junction), choose the letter for the Vestibular Division of CN VIII",
+    "question": "Slide 5 (Pontomedullary Junction) — Which letter indicates the Vestibular Division of CN VIII?",
+    "letter": "J",
     "options": [
       "B",
       "D",
@@ -104,14 +161,25 @@
       "P"
     ],
     "correctAnswer": "J",
-    "image": "e3_s09.jpg",
-    "explanation": "J represents primary afferent fibers of the vestibular division of CN VIII entering the brainstem between the inferior cerebellar peduncle and spinal trigeminal tract."
+    "acceptedAnswers": [
+      "J",
+      "Vestibular division of CN VIII",
+      "Vestibular division of 8",
+      "Vestibular division of viii",
+      "Vestibular nerve",
+      "Vestibular"
+    ],
+    "image": "e3_s09_ulb.jpg",
+    "unlabeled_image": "e3_s09_ulb.jpg",
+    "labeled_image": "e3_s09.jpg",
+    "explanation": "Letter J indicates the primary afferent fibers of the Vestibular Division of CN VIII entering the brainstem."
   },
   {
     "id": 107,
     "date": "Slide 4",
     "formTitle": "Rostral Medulla / Cochlear Level",
-    "question": "On Slide 4 (rostral medulla), choose the letter for the Medial Vestibular Nucleus",
+    "question": "Slide 4 (Rostral Medulla) — Which letter indicates the Medial Vestibular Nucleus?",
+    "letter": "B",
     "options": [
       "A",
       "B",
@@ -122,14 +190,25 @@
       "H"
     ],
     "correctAnswer": "B",
-    "image": "e3_s07.jpg",
-    "explanation": "B is the medial vestibular nucleus occupying the medial floor of the 4th ventricle in the rostral medulla."
+    "acceptedAnswers": [
+      "B",
+      "Medial vestibular nucleus",
+      "Medial vestibular",
+      "Schwalbe",
+      "Schwalbe nucleus",
+      "Medial"
+    ],
+    "image": "e3_s07_ulb.jpg",
+    "unlabeled_image": "e3_s07_ulb.jpg",
+    "labeled_image": "e3_s07.jpg",
+    "explanation": "Letter B indicates the Medial Vestibular Nucleus occupying the medial floor of the 4th ventricle in the rostral medulla."
   },
   {
     "id": 108,
     "date": "Slide 4",
     "formTitle": "Rostral Medulla / Cochlear Level",
-    "question": "On Slide 4 (rostral medulla), choose the letter for the Inferior Vestibular Nucleus",
+    "question": "Slide 4 (Rostral Medulla) — Which letter indicates the Inferior Vestibular Nucleus?",
+    "letter": "C",
     "options": [
       "A",
       "B",
@@ -140,14 +219,25 @@
       "H"
     ],
     "correctAnswer": "C",
-    "image": "e3_s07.jpg",
-    "explanation": "C is the inferior vestibular nucleus situated lateral to the medial vestibular nucleus, adjacent to the inferior cerebellar peduncle."
+    "acceptedAnswers": [
+      "C",
+      "Inferior vestibular nucleus",
+      "Inferior vestibular",
+      "Descending vestibular nucleus",
+      "Roller",
+      "Inferior"
+    ],
+    "image": "e3_s07_ulb.jpg",
+    "unlabeled_image": "e3_s07_ulb.jpg",
+    "labeled_image": "e3_s07.jpg",
+    "explanation": "Letter C indicates the Inferior Vestibular Nucleus situated lateral to the medial vestibular nucleus, adjacent to the restiform body."
   },
   {
     "id": 109,
     "date": "11/03",
     "formTitle": "Open Medulla / Cerebellar Peduncle Level",
-    "question": "Choose the letter for the Vestibular Nuclei on this cross section of the open medulla",
+    "question": "Open Medulla Specimen — Which letter indicates the Vestibular Nuclei complex?",
+    "letter": "K",
     "options": [
       "A",
       "B",
@@ -160,14 +250,25 @@
       "K"
     ],
     "correctAnswer": "K",
+    "acceptedAnswers": [
+      "K",
+      "Vestibular nuclei",
+      "Vestibular nucleus",
+      "Vestibular",
+      "Vestibular complex",
+      "Vestibular nuclear complex"
+    ],
     "image": "medium_group/11_03_7_s-blob-v1-IMAGE-Nt2B3xeaUkY.jpg",
-    "explanation": "K is the vestibular nuclear complex occupying the dorsolateral area of the open medulla, medial to the restiform body (inferior cerebellar peduncle, F)."
+    "unlabeled_image": "medium_group/11_03_7_s-blob-v1-IMAGE-Nt2B3xeaUkY.jpg",
+    "labeled_image": "medium_group/11_03_7_s-blob-v1-IMAGE-Nt2B3xeaUkY.jpg",
+    "explanation": "Letter K indicates the vestibular nuclear complex occupying the dorsolateral area of the open medulla, medial to the restiform body."
   },
   {
     "id": 110,
     "date": "Slide 6",
     "formTitle": "Caudal Pons Identification",
-    "question": "Identify the structure labeled A on Slide 6",
+    "question": "Slide 6 (Caudal Pons) — Identify the structure labeled A:",
+    "letter": "A",
     "options": [
       "Superior vestibular nucleus",
       "Lateral vestibular nucleus",
@@ -176,14 +277,24 @@
       "Abducens nucleus"
     ],
     "correctAnswer": "Superior vestibular nucleus",
-    "image": "e3_s12.jpg",
+    "acceptedAnswers": [
+      "Superior vestibular nucleus",
+      "Superior vestibular",
+      "A",
+      "Bekhterev",
+      "Bekhterev nucleus"
+    ],
+    "image": "e3_s12_ulb.jpg",
+    "unlabeled_image": "e3_s12_ulb.jpg",
+    "labeled_image": "e3_s12.jpg",
     "explanation": "Structure A on Slide 6 is the Superior Vestibular Nucleus (Bekhterev's nucleus)."
   },
   {
     "id": 111,
     "date": "Slide 7",
     "formTitle": "Caudal Pons Identification",
-    "question": "Identify the structure labeled H on Slide 7",
+    "question": "Slide 7 (Facial Colliculus Level) — Identify the structure labeled H:",
+    "letter": "H",
     "options": [
       "Superior vestibular nucleus",
       "Lateral vestibular nucleus",
@@ -192,14 +303,24 @@
       "Facial nucleus"
     ],
     "correctAnswer": "Superior vestibular nucleus",
-    "image": "e3_s15a.jpg",
+    "acceptedAnswers": [
+      "Superior vestibular nucleus",
+      "Superior vestibular",
+      "H",
+      "Bekhterev",
+      "Bekhterev nucleus"
+    ],
+    "image": "e3_s15a_ulb.jpg",
+    "unlabeled_image": "e3_s15a_ulb.jpg",
+    "labeled_image": "e3_s15a.jpg",
     "explanation": "Structure H on Slide 7 is the Superior Vestibular Nucleus (Bekhterev's nucleus)."
   },
   {
     "id": 112,
     "date": "Slide 5",
     "formTitle": "Pontomedullary Junction Identification",
-    "question": "Identify the structure labeled L on Slide 5",
+    "question": "Slide 5 (Pontomedullary Junction) — Identify the structure labeled L:",
+    "letter": "L",
     "options": [
       "Superior vestibular nucleus",
       "Lateral vestibular nucleus",
@@ -208,14 +329,24 @@
       "Dorsal cochlear nucleus"
     ],
     "correctAnswer": "Lateral vestibular nucleus",
-    "image": "e3_s09.jpg",
+    "acceptedAnswers": [
+      "Lateral vestibular nucleus",
+      "Lateral vestibular",
+      "L",
+      "Deiters",
+      "Deiters nucleus"
+    ],
+    "image": "e3_s09_ulb.jpg",
+    "unlabeled_image": "e3_s09_ulb.jpg",
+    "labeled_image": "e3_s09.jpg",
     "explanation": "Structure L on Slide 5 is the Lateral Vestibular Nucleus (Deiters' nucleus)."
   },
   {
     "id": 113,
     "date": "Slide 5",
     "formTitle": "Pontomedullary Junction Identification",
-    "question": "Identify the structure labeled M on Slide 5",
+    "question": "Slide 5 (Pontomedullary Junction) — Identify the structure labeled M:",
+    "letter": "M",
     "options": [
       "Superior vestibular nucleus",
       "Lateral vestibular nucleus",
@@ -224,14 +355,24 @@
       "Hypoglossal nucleus"
     ],
     "correctAnswer": "Medial vestibular nucleus",
-    "image": "e3_s09.jpg",
+    "acceptedAnswers": [
+      "Medial vestibular nucleus",
+      "Medial vestibular",
+      "M",
+      "Schwalbe",
+      "Schwalbe nucleus"
+    ],
+    "image": "e3_s09_ulb.jpg",
+    "unlabeled_image": "e3_s09_ulb.jpg",
+    "labeled_image": "e3_s09.jpg",
     "explanation": "Structure M on Slide 5 is the Medial Vestibular Nucleus (Schwalbe's nucleus)."
   },
   {
     "id": 114,
     "date": "Slide 5",
     "formTitle": "Pontomedullary Junction Identification",
-    "question": "Identify the structure labeled B on Slide 5",
+    "question": "Slide 5 (Pontomedullary Junction) — Identify the structure labeled B:",
+    "letter": "B",
     "options": [
       "Superior vestibular nucleus",
       "Lateral vestibular nucleus",
@@ -240,14 +381,25 @@
       "Solitary nucleus"
     ],
     "correctAnswer": "Inferior vestibular nucleus",
-    "image": "e3_s09.jpg",
+    "acceptedAnswers": [
+      "Inferior vestibular nucleus",
+      "Inferior vestibular",
+      "B",
+      "Descending vestibular nucleus",
+      "Roller",
+      "Roller nucleus"
+    ],
+    "image": "e3_s09_ulb.jpg",
+    "unlabeled_image": "e3_s09_ulb.jpg",
+    "labeled_image": "e3_s09.jpg",
     "explanation": "Structure B on Slide 5 is the Inferior (descending) Vestibular Nucleus (Roller's nucleus)."
   },
   {
     "id": 115,
     "date": "Slide 4",
     "formTitle": "Rostral Medulla Identification",
-    "question": "Identify the structure labeled B on Slide 4",
+    "question": "Slide 4 (Rostral Medulla) — Identify the structure labeled B:",
+    "letter": "B",
     "options": [
       "Superior vestibular nucleus",
       "Lateral vestibular nucleus",
@@ -256,14 +408,24 @@
       "Nucleus cuneatus"
     ],
     "correctAnswer": "Medial vestibular nucleus",
-    "image": "e3_s07.jpg",
+    "acceptedAnswers": [
+      "Medial vestibular nucleus",
+      "Medial vestibular",
+      "B",
+      "Schwalbe",
+      "Schwalbe nucleus"
+    ],
+    "image": "e3_s07_ulb.jpg",
+    "unlabeled_image": "e3_s07_ulb.jpg",
+    "labeled_image": "e3_s07.jpg",
     "explanation": "Structure B on Slide 4 is the Medial Vestibular Nucleus (Schwalbe's nucleus)."
   },
   {
     "id": 116,
     "date": "Slide 4",
     "formTitle": "Rostral Medulla Identification",
-    "question": "Identify the structure labeled C on Slide 4",
+    "question": "Slide 4 (Rostral Medulla) — Identify the structure labeled C:",
+    "letter": "C",
     "options": [
       "Superior vestibular nucleus",
       "Lateral vestibular nucleus",
@@ -272,14 +434,25 @@
       "Spinal trigeminal nucleus"
     ],
     "correctAnswer": "Inferior vestibular nucleus",
-    "image": "e3_s07.jpg",
+    "acceptedAnswers": [
+      "Inferior vestibular nucleus",
+      "Inferior vestibular",
+      "C",
+      "Descending vestibular nucleus",
+      "Roller",
+      "Roller nucleus"
+    ],
+    "image": "e3_s07_ulb.jpg",
+    "unlabeled_image": "e3_s07_ulb.jpg",
+    "labeled_image": "e3_s07.jpg",
     "explanation": "Structure C on Slide 4 is the Inferior Vestibular Nucleus (Roller's nucleus)."
   },
   {
     "id": 117,
     "date": "Slide 5",
     "formTitle": "Pontomedullary Junction Identification",
-    "question": "Identify the nerve structure labeled J on Slide 5",
+    "question": "Slide 5 (Pontomedullary Junction) — Identify the nerve structure labeled J:",
+    "letter": "J",
     "options": [
       "Vestibular division of CN VIII",
       "Cochlear division of CN VIII",
@@ -288,8 +461,18 @@
       "Abducens nerve (CN VI)"
     ],
     "correctAnswer": "Vestibular division of CN VIII",
-    "image": "e3_s09.jpg",
-    "explanation": "J is the Vestibular Division of Cranial Nerve VIII entering the brainstem."
+    "acceptedAnswers": [
+      "Vestibular division of CN VIII",
+      "Vestibular division of 8",
+      "Vestibular division of viii",
+      "Vestibular nerve",
+      "Vestibular",
+      "J"
+    ],
+    "image": "e3_s09_ulb.jpg",
+    "unlabeled_image": "e3_s09_ulb.jpg",
+    "labeled_image": "e3_s09.jpg",
+    "explanation": "Structure J on Slide 5 is the Vestibular Division of Cranial Nerve VIII entering the brainstem."
   },
   {
     "id": 118,
@@ -303,7 +486,17 @@
       "Inferior vestibular nucleus"
     ],
     "correctAnswer": "Lateral vestibular nucleus (Deiters)",
-    "image": "e3_s09.jpg",
+    "acceptedAnswers": [
+      "Lateral vestibular nucleus",
+      "Lateral vestibular",
+      "Deiters",
+      "Deiters nucleus",
+      "Lateral",
+      "Lateral vestibular nucleus (Deiters)"
+    ],
+    "image": "e3_s09_ulb.jpg",
+    "unlabeled_image": "e3_s09_ulb.jpg",
+    "labeled_image": "e3_s09.jpg",
     "explanation": "The Lateral Vestibular Nucleus (Deiters) contains giant Deiters cells whose axons form the uncrossed lateral vestibulospinal tract, facilitating alpha and gamma motor neurons for postural extensor tone."
   },
   {
@@ -318,7 +511,17 @@
       "Lateral vestibular nucleus only"
     ],
     "correctAnswer": "Superior and Medial vestibular nuclei",
-    "image": "e3_s15a.jpg",
+    "acceptedAnswers": [
+      "Superior and medial",
+      "Superior and medial vestibular nuclei",
+      "Superior and medial vestibular",
+      "Superior & medial",
+      "Superior, medial",
+      "Medial and superior"
+    ],
+    "image": "e3_s15a_ulb.jpg",
+    "unlabeled_image": "e3_s15a_ulb.jpg",
+    "labeled_image": "e3_s15a.jpg",
     "explanation": "The Superior and Medial vestibular nuclei send primary ascending projections through the MLF to coordinate compensatory eye movements that stabilize gaze during head motion (VOR)."
   },
   {
@@ -333,7 +536,18 @@
       "Medial vestibular nucleus"
     ],
     "correctAnswer": "Inferior (descending) vestibular nucleus",
-    "image": "e3_s07.jpg",
+    "acceptedAnswers": [
+      "Inferior vestibular nucleus",
+      "Inferior vestibular",
+      "Descending vestibular nucleus",
+      "Roller",
+      "Inferior",
+      "Descending vestibular",
+      "Inferior (descending) vestibular nucleus"
+    ],
+    "image": "e3_s07_ulb.jpg",
+    "unlabeled_image": "e3_s07_ulb.jpg",
+    "labeled_image": "e3_s07.jpg",
     "explanation": "The Inferior (descending) vestibular nucleus contains longitudinal bundles of primary vestibular afferents and descending secondary fibers running through its neuropil, producing its characteristic stippled appearance."
   }
 ]
