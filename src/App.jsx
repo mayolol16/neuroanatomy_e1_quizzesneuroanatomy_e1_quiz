@@ -504,9 +504,9 @@ function App() {
                     {activeExam === 'medium_group' ? 'SELECTED' : 'SECRET UNLOCKED'}
                   </span>
                 </div>
-                <span style={{ fontSize: '0.85rem', color: '#cbd5e1' }}>77 Questions Across 8 Forms • Comprehensive & Just Images Modes</span>
+                <span style={{ fontSize: '0.85rem', color: '#cbd5e1' }}>Comprehensive (77 Qs) • Just Images (40 Qs) • Vestibular Nuclei Drill (20 Qs)</span>
                 <div style={{ fontSize: '0.82rem', color: '#fbbf24', fontWeight: 600, marginTop: '2px' }}>
-                  Unlocked via 'pasta' • Practice with Images or Full Exam
+                  Unlocked via 'pasta' • Images, Full Exam, or Dedicated Vestibular Drills
                 </div>
               </div>
             )}

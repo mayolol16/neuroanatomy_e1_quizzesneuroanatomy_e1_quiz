@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
-import { ChevronLeft, ChevronRight, CheckCircle, XCircle, RotateCcw, ArrowLeft, Shuffle, Image as ImageIcon, Layers, Eye } from 'lucide-react';
+import { ChevronLeft, ChevronRight, CheckCircle, XCircle, RotateCcw, ArrowLeft, Shuffle, Image as ImageIcon, Layers, Compass, Brain } from 'lucide-react';
 import mediumGroupData from './medium_group_data.json';
+import vestibularNucleiData from './vestibular_nuclei_data.json';
 
 const BASE_URL = import.meta.env.BASE_URL + 'images/';
 
@@ -16,8 +17,19 @@ const ALL_DATES = [
   { id: '11/11', label: '11/11', title: 'Limbic System & Hippocampus' }
 ];
 
+const VESTIBULAR_SECTIONS = [
+  { id: 'all', label: 'All Vestibular' },
+  { id: 'Slide 6', label: 'Slide 6 (Caudal Pons)' },
+  { id: 'Slide 7', label: 'Slide 7 (Facial Colliculus)' },
+  { id: 'Slide 5', label: 'Slide 5 (PM Junction)' },
+  { id: 'Slide 4', label: 'Slide 4 (Rostral Medulla)' },
+  { id: '11/03', label: '11/03 (Open Medulla)' },
+  { id: 'Pathways', label: 'Pathways (LVST & VOR)' },
+  { id: 'Histology', label: 'Histology Recognition' }
+];
+
 function MediumGroupQuiz({ onExit }) {
-  // Mode: 'comprehensive' (all 77 Qs) vs 'images_only' (40 Qs with images)
+  // Mode: 'comprehensive' (all 77 Qs), 'images_only' (40 Qs with images), 'vestibular' (20 Vestibular Nuclei Drill Qs)
   const [subMode, setSubMode] = useState(() => {
     return localStorage.getItem('neuroQuizMediumGroupSubMode') || 'comprehensive';
   });
@@ -36,10 +48,12 @@ function MediumGroupQuiz({ onExit }) {
     }
   });
 
-  // Base pool filtered by subMode (comprehensive vs images_only)
-  const basePool = subMode === 'images_only'
-    ? mediumGroupData.filter(q => Boolean(q.image))
-    : mediumGroupData;
+  // Base pool filtered by subMode
+  const basePool = subMode === 'vestibular'
+    ? vestibularNucleiData
+    : subMode === 'images_only'
+      ? mediumGroupData.filter(q => Boolean(q.image))
+      : mediumGroupData;
 
   // Active question list filtered by selectedDate
   const filteredQuestions = selectedDate === 'all'
@@ -102,7 +116,8 @@ function MediumGroupQuiz({ onExit }) {
   };
 
   const handleResetSection = () => {
-    if (!window.confirm(`Reset answers for the current ${subMode === 'images_only' ? 'Images Only' : 'Comprehensive'} filter?`)) return;
+    const modeLabel = subMode === 'vestibular' ? 'Vestibular Nuclei Drill' : subMode === 'images_only' ? 'Images Only' : 'Comprehensive';
+    if (!window.confirm(`Reset answers for the current ${modeLabel} filter?`)) return;
     const updated = { ...userAnswers };
     filteredQuestions.forEach(q => {
       delete updated[q.id];
@@ -117,14 +132,16 @@ function MediumGroupQuiz({ onExit }) {
   const correctInFilter = answeredInFilter.filter(q => userAnswers[q.id] === q.correctAnswer).length;
   const accuracyPct = answeredInFilter.length > 0 ? Math.round((correctInFilter / answeredInFilter.length) * 100) : 0;
 
-  // Compute counts per date for active subMode
+  // Compute counts per date/section for active subMode
   const dateCounts = {};
   basePool.forEach(q => {
     dateCounts[q.date] = (dateCounts[q.date] || 0) + 1;
   });
 
+  const activeFilterOptions = subMode === 'vestibular' ? VESTIBULAR_SECTIONS : ALL_DATES;
+
   return (
-    <div className="app-container" style={{ maxWidth: '960px', margin: '0 auto', padding: '1.5rem 1rem' }}>
+    <div className="app-container" style={{ maxWidth: '980px', margin: '0 auto', padding: '1.5rem 1rem' }}>
       {/* TOP HEADER & EXIT */}
       <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginBottom: '1.25rem', flexWrap: 'wrap', gap: '12px' }}>
         <button
@@ -150,7 +167,7 @@ function MediumGroupQuiz({ onExit }) {
             🍝 SECRET UNLOCKED
           </span>
           <span style={{ fontSize: '0.9rem', color: '#94a3b8' }}>
-            Medium Group
+            Medium Group & Targeted Drills
           </span>
         </div>
 
@@ -174,10 +191,10 @@ function MediumGroupQuiz({ onExit }) {
         </div>
       </div>
 
-      {/* MODE TOGGLE: COMPREHENSIVE VS IMAGES ONLY */}
+      {/* MODE TOGGLE: COMPREHENSIVE VS IMAGES ONLY VS VESTIBULAR NUCLEI */}
       <div style={{
         display: 'grid',
-        gridTemplateColumns: 'repeat(auto-fit, minmax(280px, 1fr))',
+        gridTemplateColumns: 'repeat(auto-fit, minmax(260px, 1fr))',
         gap: '12px',
         marginBottom: '1.25rem'
       }}>
@@ -185,11 +202,11 @@ function MediumGroupQuiz({ onExit }) {
         <div
           onClick={() => handleSwitchSubMode('comprehensive')}
           style={{
-            padding: '14px 18px',
+            padding: '14px 16px',
             borderRadius: '10px',
             cursor: 'pointer',
             border: subMode === 'comprehensive' ? '2px solid #3b82f6' : '1px solid rgba(255,255,255,0.08)',
-            background: subMode === 'comprehensive' ? 'rgba(59, 130, 246, 0.18)' : 'rgba(30, 41, 59, 0.5)',
+            background: subMode === 'comprehensive' ? 'rgba(59, 130, 246, 0.2)' : 'rgba(30, 41, 59, 0.5)',
             transition: 'all 0.2s ease',
             display: 'flex',
             flexDirection: 'column',
@@ -202,13 +219,13 @@ function MediumGroupQuiz({ onExit }) {
               alignItems: 'center',
               gap: '8px',
               fontWeight: 700,
-              fontSize: '1rem',
+              fontSize: '0.95rem',
               color: subMode === 'comprehensive' ? '#60a5fa' : '#f8fafc'
             }}>
-              <Layers size={18} /> Comprehensive Mode
+              <Layers size={17} /> Comprehensive
             </span>
             <span style={{
-              fontSize: '0.74rem',
+              fontSize: '0.72rem',
               fontWeight: 700,
               padding: '2px 8px',
               borderRadius: '999px',
@@ -218,8 +235,8 @@ function MediumGroupQuiz({ onExit }) {
               77 QUESTIONS
             </span>
           </div>
-          <span style={{ fontSize: '0.82rem', color: '#94a3b8', lineHeight: 1.35 }}>
-            All questions: Specimen & diagram images + text-based clinical scenarios & pathology.
+          <span style={{ fontSize: '0.8rem', color: '#94a3b8', lineHeight: 1.35 }}>
+            All questions: Specimen images + text-based clinical scenarios & pathology.
           </span>
         </div>
 
@@ -227,11 +244,11 @@ function MediumGroupQuiz({ onExit }) {
         <div
           onClick={() => handleSwitchSubMode('images_only')}
           style={{
-            padding: '14px 18px',
+            padding: '14px 16px',
             borderRadius: '10px',
             cursor: 'pointer',
             border: subMode === 'images_only' ? '2px solid #10b981' : '1px solid rgba(255,255,255,0.08)',
-            background: subMode === 'images_only' ? 'rgba(16, 185, 129, 0.18)' : 'rgba(30, 41, 59, 0.5)',
+            background: subMode === 'images_only' ? 'rgba(16, 185, 129, 0.2)' : 'rgba(30, 41, 59, 0.5)',
             transition: 'all 0.2s ease',
             display: 'flex',
             flexDirection: 'column',
@@ -244,13 +261,13 @@ function MediumGroupQuiz({ onExit }) {
               alignItems: 'center',
               gap: '8px',
               fontWeight: 700,
-              fontSize: '1rem',
+              fontSize: '0.95rem',
               color: subMode === 'images_only' ? '#34d399' : '#f8fafc'
             }}>
-              <ImageIcon size={18} /> Just Images Mode
+              <ImageIcon size={17} /> Just Images
             </span>
             <span style={{
-              fontSize: '0.74rem',
+              fontSize: '0.72rem',
               fontWeight: 700,
               padding: '2px 8px',
               borderRadius: '999px',
@@ -260,13 +277,55 @@ function MediumGroupQuiz({ onExit }) {
               40 IMAGES ONLY
             </span>
           </div>
-          <span style={{ fontSize: '0.82rem', color: '#94a3b8', lineHeight: 1.35 }}>
-            Filtered strictly to questions with anatomical brain slices, histology & angiograms.
+          <span style={{ fontSize: '0.8rem', color: '#94a3b8', lineHeight: 1.35 }}>
+            Strictly questions with anatomical brain slices, histology & angiograms.
+          </span>
+        </div>
+
+        {/* VESTIBULAR NUCLEI MODE CARD */}
+        <div
+          onClick={() => handleSwitchSubMode('vestibular')}
+          style={{
+            padding: '14px 16px',
+            borderRadius: '10px',
+            cursor: 'pointer',
+            border: subMode === 'vestibular' ? '2px solid #a855f7' : '1px solid rgba(168, 85, 247, 0.3)',
+            background: subMode === 'vestibular' ? 'rgba(168, 85, 247, 0.22)' : 'rgba(168, 85, 247, 0.08)',
+            transition: 'all 0.2s ease',
+            display: 'flex',
+            flexDirection: 'column',
+            gap: '4px'
+          }}
+        >
+          <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center' }}>
+            <span style={{
+              display: 'flex',
+              alignItems: 'center',
+              gap: '8px',
+              fontWeight: 700,
+              fontSize: '0.95rem',
+              color: subMode === 'vestibular' ? '#c084fc' : '#e9d5ff'
+            }}>
+              <Compass size={17} /> Vestibular Nuclei
+            </span>
+            <span style={{
+              fontSize: '0.72rem',
+              fontWeight: 700,
+              padding: '2px 8px',
+              borderRadius: '999px',
+              background: '#a855f7',
+              color: '#fff'
+            }}>
+              20 DRILLS
+            </span>
+          </div>
+          <span style={{ fontSize: '0.8rem', color: '#cbd5e1', lineHeight: 1.35 }}>
+            Targeted drill: Identify Superior, Lateral, Medial & Inferior Vestibular Nuclei on brainstem slices.
           </span>
         </div>
       </div>
 
-      {/* DATE FILTER PILLS */}
+      {/* FILTER PILLS (DATES OR VESTIBULAR SECTIONS) */}
       <div style={{
         display: 'flex',
         gap: '8px',
@@ -275,14 +334,18 @@ function MediumGroupQuiz({ onExit }) {
         marginBottom: '1.25rem',
         scrollbarWidth: 'thin'
       }}>
-        {ALL_DATES.map(d => {
+        {activeFilterOptions.map(d => {
           const isSelected = selectedDate === d.id;
           const count = d.id === 'all' ? basePool.length : (dateCounts[d.id] || 0);
 
-          // If in images_only mode and count is 0, don't show or disable
-          if (subMode === 'images_only' && d.id !== 'all' && count === 0) {
+          // If count is 0 in filtered modes, omit
+          if (d.id !== 'all' && count === 0) {
             return null;
           }
+
+          const accentColor = subMode === 'vestibular' ? '#a855f7' : '#f59e0b';
+          const accentTextColor = subMode === 'vestibular' ? '#d8b4fe' : '#fbbf24';
+          const accentBg = subMode === 'vestibular' ? 'rgba(168, 85, 247, 0.2)' : 'rgba(245, 158, 11, 0.18)';
 
           return (
             <button
@@ -295,9 +358,9 @@ function MediumGroupQuiz({ onExit }) {
                 fontSize: '0.85rem',
                 fontWeight: isSelected ? 700 : 500,
                 cursor: 'pointer',
-                border: isSelected ? '2px solid #f59e0b' : '1px solid rgba(255,255,255,0.08)',
-                background: isSelected ? 'rgba(245, 158, 11, 0.18)' : 'rgba(30, 41, 59, 0.6)',
-                color: isSelected ? '#fbbf24' : '#cbd5e1',
+                border: isSelected ? `2px solid ${accentColor}` : '1px solid rgba(255,255,255,0.08)',
+                background: isSelected ? accentBg : 'rgba(30, 41, 59, 0.6)',
+                color: isSelected ? accentTextColor : '#cbd5e1',
                 transition: 'all 0.15s ease'
               }}
             >
@@ -325,7 +388,14 @@ function MediumGroupQuiz({ onExit }) {
             Question {currentIndex + 1} of {filteredQuestions.length}
           </span>
           {currentQ && (
-            <span style={{ fontSize: '0.8rem', color: '#94a3b8', background: 'rgba(255,255,255,0.08)', padding: '2px 8px', borderRadius: '4px' }}>
+            <span style={{
+              fontSize: '0.8rem',
+              color: subMode === 'vestibular' ? '#c084fc' : '#94a3b8',
+              background: subMode === 'vestibular' ? 'rgba(168, 85, 247, 0.15)' : 'rgba(255,255,255,0.08)',
+              padding: '2px 8px',
+              borderRadius: '4px',
+              fontWeight: 600
+            }}>
               {currentQ.date} • {currentQ.formTitle}
             </span>
           )}
@@ -348,7 +418,7 @@ function MediumGroupQuiz({ onExit }) {
       {!currentQ ? (
         <div className="quiz-card" style={{ padding: '2rem', textAlign: 'center' }}>
           <p>No questions match the current filter.</p>
-          <button className="btn" onClick={() => setSelectedDate('all')}>View All {subMode === 'images_only' ? 'Image' : ''} Questions</button>
+          <button className="btn" onClick={() => setSelectedDate('all')}>View All Questions</button>
         </div>
       ) : (
         <div className="quiz-card" style={{ padding: '1.75rem', gap: '1.5rem', background: '#1e293b' }}>
@@ -363,7 +433,7 @@ function MediumGroupQuiz({ onExit }) {
               <ChevronLeft size={18} /> Previous
             </button>
             <span style={{ fontSize: '0.88rem', color: '#94a3b8' }}>
-              Slide #{currentQ.id} of {mediumGroupData.length}
+              {subMode === 'vestibular' ? `Drill #${currentIndex + 1} of ${filteredQuestions.length}` : `Slide #${currentQ.id} of ${mediumGroupData.length}`}
             </span>
             <button
               className="btn"
